@@ -1,8 +1,8 @@
 import Head from 'next/head'
 
-export default () => (
+export default ({ title }) => (
   <Head>
-    <title>Jack Hanford</title>
+    <title>{title ? title : 'Jack Hanford'}</title>
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     <style dangerouslySetInnerHTML={{__html: `
         @font-face {
@@ -34,6 +34,10 @@ export default () => (
 
           * {
             box-sizing: border-box;
+          }
+
+          #__next {
+            font-size: 16px;
           }
     `}} />
   </Head>
