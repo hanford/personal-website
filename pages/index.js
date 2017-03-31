@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Head from './head'
+import Head from '../components/head'
 
 // <img src='../static/me.jpg' className='profer' />
 // <Link prefetch href="/projects">

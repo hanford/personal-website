@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import Head from '../head'
+import Head from '../../components/head'
 import projects from './projects'
 
 export default () => (
