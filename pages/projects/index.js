@@ -1,40 +1,115 @@
+import React, { Component } from 'react'
 import Link from 'next/link'
+import Router from 'next/router'
+import Overdrive from 'react-overdrive'
 
+import Modal from '../../components/modal'
 import Head from '../../components/head'
-import projects from './projects'
+// import projects from './projects'
 
-export default () => (
-  <div>
-    <Head title='Jack Hanford | Projects' />
-    <Link href='/'><a>Back</a></Link>
+export default class Projects extends Component {
+  static getInitialProps () {
+    return {
+      projects: new Array(20).fill(1).map((v, k) => k + 1)
+    }
+  }
 
-    <div className='container'>
-      <div>Projects</div>
-      <div>I started writing JavaScript professionally 5 years ago.</div>
-
-      <div>
-        {
-          projects.map((p, index) => {
-            console.log(p)
-            return (
-              <div key={index}>{p.name}</div>
-            )
-          })
-        }
-      </div>
-    </div>
-
-    <style jsx>{`
-      .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        border: 1px solid black;
-        font-size: 1.6rem;
-        max-width: 76rem;
-        margin: 3rem auto;
+  showPhoto (e, id) {
+    e.preventDefault()
+    Router.push({
+      pathname: '/projects',
+      query: {
+        projectId: id
       }
-    `}</style>
-  </div>
-)
+    })
+  }
+
+  onKeyDown (e) {
+    if (!this.props.url.query.projectId) return
+    if (e.keyCode === 27) {
+      this.props.url.back()
+    }
+  }
+
+  dismissModal () {
+    Router.push('/projects')
+  }
+
+  render () {
+    const { url, projects } = this.props
+
+    return (
+      <div>
+        <Head title='Jack Hanford | Projects' />
+        <Link href='/'><a>Back</a></Link>
+
+        <div className='container'>
+          <div>Projects</div>
+          <div>I started writing JavaScript professionally 5 years ago.</div>
+
+          <div className='list'>
+            {
+              url.query.projectId &&
+                <Modal
+                  id={url.query.projectId}
+                  onDismiss={() => this.dismissModal()}
+                />
+            }
+
+            {
+              projects.map((id) => (
+                <Overdrive id={`project-${id}`} key={id} animationDelay={1}>
+                  <a
+                    className='project'
+                    onClick={(e) => this.showPhoto(e, id)}
+                  >
+                    {id}
+                  </a>
+                </Overdrive>
+              ))
+            }
+          </div>
+        </div>
+
+        <style jsx>{`
+          .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: 1px solid black;
+            max-width: 80rem;
+            margin: 3rem auto;
+          }
+
+          .list {
+            padding: 0 50px;
+            display: flex;
+            text-align: center;
+            flex-wrap: wrap;
+          }
+
+          .project {
+            color: #333;
+            cursor: pointer;
+            background: #eee;
+            width: 20rem;
+            height: 20rem;
+            line-height: 20rem;
+            margin: 10px;
+            border: 2px solid transparent;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .project:hover {
+            borderColor: blue;
+          }
+        `}</style>
+      </div>
+    )
+  }
+}
+
