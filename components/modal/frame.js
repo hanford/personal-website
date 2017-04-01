@@ -4,50 +4,53 @@ import Overdrive from 'react-overdrive'
 
 export default ({ id }) => (
   <Overdrive id={`project-${id}`} animationDelay={1}>
-    <div className='project'>
-      <div className='image'>
-        {id}
-      </div>
+    <div className='projectContainer'>
+      <div className='project'>
+        <div className='image'>
+          {id}
+        </div>
 
-      <div className='sidebar'>
-        dope project {id}
+        <div className='sidebar'>
+          dope project {id}
+        </div>
       </div>
 
       <style jsx>{`
+        .projectContainer {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
         .project {
-          width: 80rem;
+          max-width: 60rem;
           overflow: hidden;
-          height: 50rem;
-          display: inline-block;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
         }
 
         .image {
-          float: left;
-          width: 60rem;
-          height: 60rem;
+          width: 40rem;
+          height: 20rem;
           background: #333;
           color: #fff;
           text-align: center;
-          vertical-align: middle;
-          line-height: 50rem;
           font-size: 4rem;
+
+          align-items: center;
+          justify-content: center;
+          display: flex;
         }
 
         .sidebar {
-          float: right;
           background: #fff;
-          width: 20rem;
-          height: 50rem;
+          width: 100%;
+          height: 40rem;
           text-align: left;
           box-sizing: border-box;
           padding: 2rem;
           font-size: 1.2rem;
-        }
-
-        .sidebarList {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
         }
       `}</style>
     </div>

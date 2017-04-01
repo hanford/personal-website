@@ -15,7 +15,7 @@ export default class extends PureComponent {
   render () {
     return (
       <div ref={el => (this._shim = el)} className='shim' onClick={(e) => this.dismiss(e)}>
-        <div ref={el => (this._photoWrap = el)} className='photo'>
+        <div ref={el => (this._photoWrap = el)} className='project'>
           <Photo id={this.props.id} />
         </div>
         <style jsx>{`
@@ -29,10 +29,11 @@ export default class extends PureComponent {
             margin: auto;
           }
 
-          .photo {
+          .project {
             position: absolute;
             top: 50%;
             width: 100%;
+            text-align: center;
             margin-top: -25rem;
           }
         `}</style>

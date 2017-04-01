@@ -10,7 +10,9 @@ import Head from '../../components/head'
 export default class Projects extends Component {
   static getInitialProps () {
     return {
-      projects: new Array(20).fill(1).map((v, k) => k + 1)
+      projects: new Array(7)
+        .fill(1)
+        .map((v, k) => k + 1)
     }
   }
 
@@ -39,9 +41,18 @@ export default class Projects extends Component {
     const { url, projects } = this.props
 
     return (
-      <div>
+      <div style={{height: '100%', width: '100%'}}>
         <Head title='Jack Hanford | Projects' />
         <Link href='/'><a>Back</a></Link>
+
+        {
+          url.query.projectId &&
+            <Modal
+              id={url.query.projectId}
+              onDismiss={() => this.dismissModal()}
+            />
+        }
+
 
         <div className='container'>
           <div>Projects</div>
@@ -49,22 +60,14 @@ export default class Projects extends Component {
 
           <div className='list'>
             {
-              url.query.projectId &&
-                <Modal
-                  id={url.query.projectId}
-                  onDismiss={() => this.dismissModal()}
-                />
-            }
-
-            {
               projects.map((id) => (
                 <Overdrive id={`project-${id}`} key={id} animationDelay={1}>
-                  <a
+                  <div
                     className='project'
                     onClick={(e) => this.showPhoto(e, id)}
                   >
                     {id}
-                  </a>
+                  </div>
                 </Overdrive>
               ))
             }
@@ -77,7 +80,6 @@ export default class Projects extends Component {
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            border: 1px solid black;
             max-width: 80rem;
             margin: 3rem auto;
           }

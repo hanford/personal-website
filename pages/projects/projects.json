@@ -1,6 +1,15 @@
 [
   {
-    "name": "test",
-    "description": "lala, js"
+    "id": 1,
+    "name": "Veneer",
+    "description": "A chrome extension allowing you to modify the CSS on any given website with 0 config. Built using vanilla JavaScript and CodeMirror."
+  }, {
+    "id": 2,
+    "name": "Facebook data visualizer",
+    "description": "A node script that parses data downloaded from facebook, which then used AngularJS and d3 to display the data on interactive graphs. Some of the graphs include usuage by hour, weekday, month and year. I also did a  sentiment analysis on all messages showing you which friends made you happiest and which friends made you saddest."
+  }, {
+    "id": 3,
+    "name": "MobileGit",
+    "description": "A fully functional mobile github app built using AngularJS, Ionic and Cordova to achieve a very native feel/asesthetic."
   }
 ]
