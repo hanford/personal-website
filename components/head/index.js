@@ -29,7 +29,8 @@ export default ({ title }) => (
         margin: 0;
         padding: 0;
         font-size: 10px;
-        background: -webkit-linear-gradient(top, #1AD6FD, #1D62F0);
+        background-color: #545da9;
+        background-image: linear-gradient(to bottom left, rgba(100,255,250,0) 0%, rgba(100,255,250,.5) 75%, rgba(100,255,250,.5) 100%);
         color: white;
       }
 
