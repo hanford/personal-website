@@ -66,6 +66,7 @@ export default () => (
         border-radius: 0.4rem;
         padding: 2rem;
         margin-top: 8rem;
+        animation: slideIn 0.4s ease-out;
       }
 
       .button-row {
@@ -103,13 +104,12 @@ export default () => (
 
       .waver {
         font-size: 4rem;
-        animation: waving 0.25s linear;
       }
 
-      @keyframes waving {
+      @keyframes slideIn {
         from {
-          transform: scale(0.5);
-          opacity: 0;
+          transform: scale(0.95);
+          opacity: 0.25;
         }
         to {
           transform: scale(1);
