@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import { Motion, spring, presets } from 'react-motion'
+import Link from 'next/link'
 
 export default ({ open, toggle }) => (
   <div>
@@ -26,9 +27,9 @@ export default ({ open, toggle }) => (
                   </a>
                 </li>
                 <li>
-                  <a href='' target='_blank'>
-                    <i className='icon ion-social-snapchat-outline'></i> Snapchat
-                  </a>
+                  <Link prefetch href='/snapchat'>
+                    <a><i className='icon ion-social-snapchat-outline'></i> Snapchat</a>
+                  </Link>
                 </li>
                 <li>
                   <a href='https://facebook.com/jackhanford' target='_blank'>
