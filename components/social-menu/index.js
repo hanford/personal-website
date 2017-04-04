@@ -10,13 +10,41 @@ export default ({ open, toggle }) => (
             <div style={{height: '100%'}}>
               <button onClick={toggle} className='closeButton'>×</button>
               <ul>
-                <li><span>Github</span></li>
-                <li><span>Twitter</span></li>
-                <li><span>Instagram</span></li>
-                <li><span>Snapchat</span></li>
-                <li><span>Facebook</span></li>
-                <li><span>Email</span></li>
-                <li><span>Linkedin</span></li>
+                <li>
+                  <a href='https://github.com/hanford' target='_blank'>
+                    <i className='icon ion-social-github'></i> Github
+                  </a>
+                </li>
+                <li>
+                  <a href='https://twitter.com/jackhanford' target='_blank'>
+                    <i className='icon ion-social-twitter-outline'></i> Twitter
+                  </a>
+                </li>
+                <li>
+                  <a href='https://www.instagram.com/jackhanford/' target='_blank'>
+                    <i className='icon ion-social-instagram-outline'></i> Instagram
+                  </a>
+                </li>
+                <li>
+                  <a href='' target='_blank'>
+                    <i className='icon ion-social-snapchat-outline'></i> Snapchat
+                  </a>
+                </li>
+                <li>
+                  <a href='https://facebook.com/jackhanford' target='_blank'>
+                    <i className='icon ion-social-facebook-outline'></i> Facebook
+                  </a>
+                </li>
+                <li>
+                  <a href='mailto:jackhanford@gmail.com' target='_blank'>
+                    <i className='icon ion-ios-email-outline'></i> Email
+                  </a>
+                </li>
+                <li>
+                  <a href='https://www.linkedin.com/in/jack-hanford-98352761/' target='_blank'>
+                    <i className='icon ion-social-linkedin-outline'></i> Linkedin
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -34,6 +62,11 @@ export default ({ open, toggle }) => (
         margin-top: 6rem;
         padding: 2rem 4rem;
         color: black;
+      }
+
+      .icon {
+        font-size: 2rem;
+        margin-right: 2rem;
       }
 
       .closeButton {
@@ -58,11 +91,18 @@ export default ({ open, toggle }) => (
         transition: all 0.3s;
       }
 
+      a {
+        display: flex;
+        align-items: center;
+        color: black;
+        text-decoration: none;
+      }
+
       li:first-child {
       }
 
       li:hover {
-        transform: translateX(2rem);
+        transform: translateX(1rem);
       }
 
     `}</style>
