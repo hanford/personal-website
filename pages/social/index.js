@@ -9,55 +9,53 @@ export default ({ open }) => (
   <div className='body'>
     <Head />
 
-      <div className='container'>
-        <Overdrive id='card' animationDelay={1}>
-          <div className='card'>
+      <section className='container'>
 
-            <Link href='/'>
-              <button className='closeButton'>×</button>
-            </Link>
+        <Overdrive id='card' animationDelay={1} className='card'>
+          <Link href='/'>
+            <button className='closeButton'>×</button>
+          </Link>
 
-            <ul>
-              <li>
-                <a href='https://github.com/hanford' target='_blank'>
-                  <i className='icon ion-social-github'></i> Github
-                </a>
-              </li>
-              <li>
-                <a href='https://twitter.com/jackhanford' target='_blank'>
-                  <i className='icon ion-social-twitter-outline'></i> Twitter
-                </a>
-              </li>
-              <li>
-                <a href='https://www.instagram.com/jackhanford/' target='_blank'>
-                  <i className='icon ion-social-instagram-outline'></i> Instagram
-                </a>
-              </li>
-              <li>
-                <Link prefetch href='/snapchat'>
-                  <a><i className='icon ion-social-snapchat-outline'></i> Snapchat</a>
-                </Link>
-              </li>
-              <li>
-                <a href='https://facebook.com/jackhanford' target='_blank'>
-                  <i className='icon ion-social-facebook-outline'></i> Facebook
-                </a>
-              </li>
-              <li>
-                <a href='mailto:jackhanford@gmail.com' target='_blank'>
-                  <i className='icon ion-ios-email-outline'></i> Email
-                </a>
-              </li>
-              <li>
-                <a href='https://www.linkedin.com/in/jack-hanford-98352761/' target='_blank'>
-                  <i className='icon ion-social-linkedin-outline'></i> Linkedin
-                </a>
-              </li>
-            </ul>
-
-          </div>
+          <ul>
+            <li>
+              <a href='https://github.com/hanford' target='_blank'>
+                <i className='icon ion-social-github'></i> Github
+              </a>
+            </li>
+            <li>
+              <a href='https://twitter.com/jackhanford' target='_blank'>
+                <i className='icon ion-social-twitter-outline'></i> Twitter
+              </a>
+            </li>
+            <li>
+              <a href='https://www.instagram.com/jackhanford/' target='_blank'>
+                <i className='icon ion-social-instagram-outline'></i> Instagram
+              </a>
+            </li>
+            <li>
+              <Link prefetch href='/snapchat'>
+                <a><i className='icon ion-social-snapchat-outline'></i> Snapchat</a>
+              </Link>
+            </li>
+            <li>
+              <a href='https://facebook.com/jackhanford' target='_blank'>
+                <i className='icon ion-social-facebook-outline'></i> Facebook
+              </a>
+            </li>
+            <li>
+              <a href='mailto:jackhanford@gmail.com' target='_blank'>
+                <i className='icon ion-ios-email-outline'></i> Email
+              </a>
+            </li>
+            <li>
+              <a href='https://www.linkedin.com/in/jack-hanford-98352761/' target='_blank'>
+                <i className='icon ion-social-linkedin-outline'></i> Linkedin
+              </a>
+            </li>
+          </ul>
         </Overdrive>
-      </div>
+
+      </section>
 
     <style jsx>{`
       .body {
