@@ -11,7 +11,8 @@ export default ({ open }) => (
 
       <section className='container'>
 
-        <Overdrive id='card' animationDelay={1} className='card'>
+        <Overdrive id='card' animationDelay={1}>
+          <div className='card'> 
           <Link href='/'>
             <button className='closeButton'>×</button>
           </Link>
@@ -53,6 +54,7 @@ export default ({ open }) => (
               </a>
             </li>
           </ul>
+          </div>
         </Overdrive>
 
       </section>
