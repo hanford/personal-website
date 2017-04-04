@@ -1,14 +1,9 @@
 import React, { PureComponent } from 'react'
 import Link from 'next/link'
 import { Motion, spring } from 'react-motion'
+import Overdrive from 'react-overdrive'
 
-import SocialMenu from '../components/social-menu'
 import Head from '../components/head'
-
-// <img src='../static/me.jpg' className='profer' />
-// <Link prefetch href='/projects'>
-//  <button>Open source</button>
-// </Link>
 
 const name = (
   <span style={{fontWeight: 600}}>Jack Hanford</span>
@@ -41,38 +36,34 @@ export default class Landing extends PureComponent {
         <Head />
 
         <div className='container'>
+          <Overdrive id='card' animationDelay={1}>
+            <div className='card'>
+              <div className='content'>
+                <div className='waver'>👋</div>
 
-          <SocialMenu open={expanded} toggle={this.toggle} />
-
-          <Motion style={{opacity: spring(expanded ? 0 : 1)}}>
-            {({ opacity }) => {
-              return (
-                <div className='card' style={{opacity: expanded ? 0 : 1, opacity}}>
-                  <div className='waver'>👋</div>
-
-                  <div className='intro'>
-                    Hi I'm {name}
-                    <br />
-                    <br />
-                    I'm working as a senior software engineer at <a href='https://eaze.com' target='_blank'>Eaze</a>. 
-                  </div>
-
-                  <div className='button-row'>
-                    <div>
-                      <Link prefetch href='/projects'>
-                        <button className='beauty-button'>Projects</button>
-                      </Link>
-                      <Link prefetch href='/work'>
-                        <button className='beauty-button'>Work</button>
-                      </Link>
-                      <button className='beauty-button' onClick={this.toggle} >Contact Me</button>
-                    </div>
-                  </div>
-                  <p className='abt-me'>Lately I've been obssessed with open source software, which I keep <a href='https://github.com/hanford' target='_blank'>on github</a>. I've been writing JavaScript profressionally for around 4 years, and have become an expert with some of the latest and greatest frontend frameworks including <a href='https://www.npmjs.com/package/virtual-dom' target='_blank'>virtual-dom</a>, <a href='https://angular.io' target='_blank'>AngularJS</a> and most recently <a href='https://facebook.github.io/react' target='_blank'>ReactJS</a>.</p>
+                <div className='intro'>
+                  Hi I'm {name}
+                  <br />
+                  <br />
+                  I'm working as a senior software engineer at <a href='https://eaze.com' target='_blank'>Eaze</a>. 
                 </div>
-              )
-            }}
-          </Motion>
+
+                <div className='button-row'>
+                  <Link prefetch href='/projects'>
+                    <button className='beauty-button'>Projects</button>
+                  </Link>
+                  <Link prefetch href='/work'>
+                    <button className='beauty-button'>Work</button>
+                  </Link>
+                  <Link prefetch href='/social'>
+                    <button className='beauty-button'>Contact me</button>
+                  </Link>
+                </div>
+
+                <p className='abt-me'>Lately I've been obssessed with open source software, which I keep <a href='https://github.com/hanford' target='_blank'>on github</a>. I've been writing JavaScript profressionally for around 4 years, and have become an expert with some of the latest and greatest frontend frameworks including <a href='https://www.npmjs.com/package/virtual-dom' target='_blank'>virtual-dom</a>, <a href='https://angular.io' target='_blank'>AngularJS</a> and most recently <a href='https://facebook.github.io/react' target='_blank'>ReactJS</a>.</p>
+              </div>
+            </div>
+          </Overdrive>
         </div>
 
         <style jsx>{`
@@ -108,17 +99,39 @@ export default class Landing extends PureComponent {
             border-radius: 0.4rem;
             padding: 2rem 4rem;
             margin-top: 8rem;
-            animation: slideIn 0.4s ease-out;
             position: relative;
           }
+
+          .content {
+            animation: fadeIn 0.3s linear;
+          }
+
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+
 
           .button-row {
             display: flex;
             margin: 1rem 0 2rem;
+
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row;
+            width: 100%;
           }
 
           .button-row button {
             margin-right: 1rem;
+            align-items: center;
+            display: flex;
+            flex: 1;
+            justify-content: center;
           }
 
           .beauty-button {
@@ -141,7 +154,7 @@ export default class Landing extends PureComponent {
           }
 
           .beauty-button:hover {
-            transform: translateY(-0.5rem);
+            transform: scale(1.1);
             color: #1461f4;
           }
 
