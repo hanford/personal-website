@@ -1,10 +1,17 @@
+import Link from 'next/link'
+
 import Head from '../../components/head'
 
 export default () => (
   <div className='container'>
     <Head />
     
-    <img src='../static/snapcode.png' className='snapcode' />
+    <div className='snapcode'>
+      <img src='../static/snapcode.png' />
+      <Link href='/social'>
+        <button className='backButton'>Back</button>
+      </Link>
+    </div>
 
     <style jsx>{`
       .container {
@@ -16,9 +23,24 @@ export default () => (
 
       .snapcode {
         max-width: 100%;
-        height: 20rem;
+        max-width: 20rem;
         display: flex;
+        flex-direction: column;
         align-self: center;
+      }
+
+      .backButton {
+        background-color: transparent;
+        margin-top: 3rem;
+        color: white;
+        border: 0;
+        font-size: 1.6rem;
+        cursor: pointer;
+        outline: none;
+      }
+
+      img {
+        height: 20rem;
       }
     `}</style>
   </div>
