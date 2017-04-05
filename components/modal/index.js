@@ -27,6 +27,7 @@ export default class extends PureComponent {
             top: 0;
             bottom: 0;
             margin: auto;
+            z-index: 5;
           }
 
           .project {

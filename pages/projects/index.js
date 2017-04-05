@@ -10,7 +10,7 @@ import Head from '../../components/head'
 export default class Projects extends Component {
   static getInitialProps () {
     return {
-      projects: new Array(7)
+      projects: new Array(6)
         .fill(1)
         .map((v, k) => k + 1)
     }
@@ -43,7 +43,6 @@ export default class Projects extends Component {
     return (
       <div style={{height: '100%', width: '100%'}}>
         <Head title='Jack Hanford | Projects' />
-        <Link href='/'><a>Back</a></Link>
 
         {
           url.query.projectId &&
@@ -55,23 +54,28 @@ export default class Projects extends Component {
 
 
         <div className='container'>
-          <div>Projects</div>
-          <div>I started writing JavaScript professionally 5 years ago.</div>
+          <Overdrive id='card' animationDelay={1}>
+            <div className='card'>
+              <Link href='/'><a>Back</a></Link>
+              <div>Projects</div>
+              <div>I started writing JavaScript professionally 5 years ago.</div>
 
-          <div className='list'>
-            {
-              projects.map((id) => (
-                <Overdrive id={`project-${id}`} key={id} animationDelay={1}>
-                  <div
-                    className='project'
-                    onClick={(e) => this.showPhoto(e, id)}
-                  >
-                    {id}
-                  </div>
-                </Overdrive>
-              ))
-            }
-          </div>
+              <div className='list'>
+                {
+                  projects.map((id) => (
+                    <Overdrive id={`project-${id}`} key={id} animationDelay={1}>
+                      <div
+                        className='project'
+                        onClick={(e) => this.showPhoto(e, id)}
+                      >
+                        {id}
+                      </div>
+                    </Overdrive>
+                  ))
+                }
+              </div>
+            </div>
+          </Overdrive>
         </div>
 
         <style jsx>{`
@@ -85,10 +89,20 @@ export default class Projects extends Component {
           }
 
           .list {
-            padding: 0 50px;
             display: flex;
+            justify-content: center;
             text-align: center;
             flex-wrap: wrap;
+          }
+
+          .card {
+            box-shadow: 0 18px 35px rgba(50,50,93,.1), 0 8px 15px rgba(0,0,0,.07);
+            background-color: #f6f9fc;
+            color: #32325d;
+            border-radius: 0.4rem;
+            padding: 2rem 4rem;
+            position: relative;
+            margin-top: 6rem;
           }
 
           .project {
