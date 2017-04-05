@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react'
 import Link from 'next/link'
 import { Motion, spring } from 'react-motion'
-import Overdrive from 'react-overdrive'
 
 import Head from '../components/head'
 
@@ -37,33 +36,31 @@ export default class Landing extends PureComponent {
 
         <section className='container'>
 
-          <Overdrive id='card' animationDelay={1}>
-            <div className='card'>
-              <div className='content'>
-                <div className='waver'>👋</div>
-                <div className='intro'>
-                  Hi I'm {name}
-                  <br />
-                  <br />
-                  I'm working as a senior software engineer at <a href='https://eaze.com' target='_blank'>Eaze</a>. 
-                </div>
-
-                <div className='button-row'>
-                  <Link prefetch href='/projects'>
-                    <button className='beauty-button'>Projects</button>
-                  </Link>
-                  <Link prefetch href='/work'>
-                    <button className='beauty-button'>Work</button>
-                  </Link>
-                  <Link prefetch href='/social'>
-                    <button className='beauty-button'>Contact me</button>
-                  </Link>
-                </div>
-
-                <p className='abt-me'>Lately I've been obssessed with open source software, which I keep <a href='https://github.com/hanford' target='_blank'>on github</a>. I've been writing JavaScript profressionally for around 4 years, and have become an expert with some of the latest and greatest frontend frameworks including <a href='https://www.npmjs.com/package/virtual-dom' target='_blank'>virtual-dom</a>, <a href='https://angular.io' target='_blank'>AngularJS</a> and most recently <a href='https://facebook.github.io/react' target='_blank'>ReactJS</a>.</p>
+          <div className='card'>
+            <div className='content'>
+              <div className='waver'>👋</div>
+              <div className='intro'>
+                Hi I'm {name}
+                <br />
+                <br />
+                I'm working as a senior software engineer at <a href='https://eaze.com' target='_blank'>Eaze</a>. 
               </div>
+
+              <div className='button-row'>
+                <Link prefetch href='/projects'>
+                  <button className='beauty-button'>Projects</button>
+                </Link>
+                <Link prefetch href='/work'>
+                  <button className='beauty-button'>Work</button>
+                </Link>
+                <Link prefetch href='/social'>
+                  <button className='beauty-button'>Contact me</button>
+                </Link>
+              </div>
+
+              <p className='abt-me'>Lately I've been obssessed with open source software, which I keep <a href='https://github.com/hanford' target='_blank'>on github</a>. I've been writing JavaScript profressionally for around 4 years, and have become an expert with some of the latest and greatest frontend frameworks including <a href='https://www.npmjs.com/package/virtual-dom' target='_blank'>virtual-dom</a>, <a href='https://angular.io' target='_blank'>AngularJS</a> and most recently <a href='https://facebook.github.io/react' target='_blank'>ReactJS</a>.</p>
             </div>
-          </Overdrive>
+          </div>
 
         </section>
 

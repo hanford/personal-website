@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react'
 import { Motion, spring, presets } from 'react-motion'
 import Link from 'next/link'
-import Overdrive from 'react-overdrive'
 
 import Head from '../../components/head'
 
@@ -11,8 +10,7 @@ export default ({ open }) => (
 
       <section className='container'>
 
-        <Overdrive id='card' animationDelay={1}>
-          <div className='card'> 
+        <div className='card'> 
           <Link href='/'>
             <button className='closeButton'>×</button>
           </Link>
@@ -54,8 +52,7 @@ export default ({ open }) => (
               </a>
             </li>
           </ul>
-          </div>
-        </Overdrive>
+        </div>
 
       </section>
 

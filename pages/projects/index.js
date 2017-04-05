@@ -54,28 +54,28 @@ export default class Projects extends Component {
 
 
         <div className='container'>
-          <Overdrive id='card' animationDelay={1}>
-            <div className='card'>
-              <Link href='/'><a>Back</a></Link>
-              <div>Projects</div>
-              <div>I started writing JavaScript professionally 5 years ago.</div>
 
-              <div className='list'>
-                {
-                  projects.map((id) => (
-                    <Overdrive id={`project-${id}`} key={id} animationDelay={1}>
-                      <div
-                        className='project'
-                        onClick={(e) => this.showPhoto(e, id)}
-                      >
-                        {id}
-                      </div>
-                    </Overdrive>
-                  ))
-                }
-              </div>
+          <div className='card'>
+            <Link href='/'><a>Back</a></Link>
+            <div>Projects</div>
+            <div>I started writing JavaScript professionally 5 years ago.</div>
+
+            <div className='list'>
+              {
+                projects.map((id) => (
+                  <Overdrive id={`project-${id}`} key={id} animationDelay={1}>
+                    <div
+                      className='project'
+                      onClick={(e) => this.showPhoto(e, id)}
+                    >
+                      {id}
+                    </div>
+                  </Overdrive>
+                ))
+              }
             </div>
-          </Overdrive>
+          </div>
+
         </div>
 
         <style jsx>{`
