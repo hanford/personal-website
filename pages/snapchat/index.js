@@ -8,7 +8,7 @@ export default () => (
     
     <div className='snapcode'>
       <img src='../static/snapcode.png' />
-      <Link href='/social'>
+      <Link href='/'>
         <button className='backButton'>Back</button>
       </Link>
     </div>

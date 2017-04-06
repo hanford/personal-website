@@ -46,6 +46,18 @@ export default ({ title }) => (
         height: 100%;
         width: 100%;
       }
+
+      .ReactModal__Content {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+        right: 4rem;
+        bottom: 4rem;
+        border: none !important;
+        overflow: hidden !important;
+        background: transparent !important;
+        padding: 2rem;
+      }
     `}} />
   </Head>
 )

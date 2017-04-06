@@ -4,57 +4,53 @@ import Link from 'next/link'
 
 import Head from '../../components/head'
 
-export default ({ open }) => (
+export default ({ toggle }) => (
   <div className='body'>
-    <Head />
+    <section className='container'>
 
-      <section className='container'>
+      <div className='card'> 
+        <button className='closeButton' onClick={toggle}>×</button>
 
-        <div className='card'> 
-          <Link href='/'>
-            <button className='closeButton'>×</button>
-          </Link>
+        <ul>
+          <li>
+            <a href='https://github.com/hanford' target='_blank'>
+              <i className='icon ion-social-github'></i> Github
+            </a>
+          </li>
+          <li>
+            <a href='https://twitter.com/jackhanford' target='_blank'>
+              <i className='icon ion-social-twitter-outline'></i> Twitter
+            </a>
+          </li>
+          <li>
+            <a href='https://www.instagram.com/jackhanford/' target='_blank'>
+              <i className='icon ion-social-instagram-outline'></i> Instagram
+            </a>
+          </li>
+          <li>
+            <Link prefetch href='/snapchat'>
+              <a><i className='icon ion-social-snapchat-outline'></i> Snapchat</a>
+            </Link>
+          </li>
+          <li>
+            <a href='https://facebook.com/jackhanford' target='_blank'>
+              <i className='icon ion-social-facebook-outline'></i> Facebook
+            </a>
+          </li>
+          <li>
+            <a href='mailto:jackhanford@gmail.com' target='_blank'>
+              <i className='icon ion-ios-email-outline'></i> Email
+            </a>
+          </li>
+          <li>
+            <a href='https://www.linkedin.com/in/jack-hanford-98352761/' target='_blank'>
+              <i className='icon ion-social-linkedin-outline'></i> Linkedin
+            </a>
+          </li>
+        </ul>
+      </div>
 
-          <ul>
-            <li>
-              <a href='https://github.com/hanford' target='_blank'>
-                <i className='icon ion-social-github'></i> Github
-              </a>
-            </li>
-            <li>
-              <a href='https://twitter.com/jackhanford' target='_blank'>
-                <i className='icon ion-social-twitter-outline'></i> Twitter
-              </a>
-            </li>
-            <li>
-              <a href='https://www.instagram.com/jackhanford/' target='_blank'>
-                <i className='icon ion-social-instagram-outline'></i> Instagram
-              </a>
-            </li>
-            <li>
-              <Link prefetch href='/snapchat'>
-                <a><i className='icon ion-social-snapchat-outline'></i> Snapchat</a>
-              </Link>
-            </li>
-            <li>
-              <a href='https://facebook.com/jackhanford' target='_blank'>
-                <i className='icon ion-social-facebook-outline'></i> Facebook
-              </a>
-            </li>
-            <li>
-              <a href='mailto:jackhanford@gmail.com' target='_blank'>
-                <i className='icon ion-ios-email-outline'></i> Email
-              </a>
-            </li>
-            <li>
-              <a href='https://www.linkedin.com/in/jack-hanford-98352761/' target='_blank'>
-                <i className='icon ion-social-linkedin-outline'></i> Linkedin
-              </a>
-            </li>
-          </ul>
-        </div>
-
-      </section>
+    </section>
 
     <style jsx>{`
       .body {
@@ -75,7 +71,7 @@ export default ({ open }) => (
         color: #32325d;
         border-radius: 0.4rem;
         padding: 2rem 4rem;
-        margin-top: 8rem;
+        margin-top: 2rem;
         position: relative;
       }
 
@@ -110,6 +106,7 @@ export default ({ open }) => (
       }
 
       ul {
+        min-width: 32rem;
         padding-left: 0;
         list-style: none;
         animation: fadeIn 0.3s linear;
@@ -138,7 +135,7 @@ export default ({ open }) => (
       }
 
       li:hover {
-        transform: scale(1.15);
+        transform: translateX(4rem) scale(1.15);
       }
     `}</style>
   </div>

@@ -1,8 +1,10 @@
 import React, { PureComponent } from 'react'
 import Link from 'next/link'
 import { Motion, spring } from 'react-motion'
+import Modal from 'react-modal'
 
 import Head from '../components/head'
+import SocialModal from '../components/social-modal'
 
 const name = (
   <span style={{fontWeight: 600}}>Jack Hanford</span>
@@ -53,9 +55,7 @@ export default class Landing extends PureComponent {
                 <Link prefetch href='/work'>
                   <button className='beauty-button'>Work</button>
                 </Link>
-                <Link prefetch href='/social'>
-                  <button className='beauty-button'>Contact me</button>
-                </Link>
+                <button className='beauty-button' onClick={this.toggle}>Contact me</button>
               </div>
 
               <p className='abt-me'>Lately I've been obssessed with open source software, which I keep <a href='https://github.com/hanford' target='_blank'>on github</a>. I've been writing JavaScript profressionally for around 4 years, and have become an expert with some of the latest and greatest frontend frameworks including <a href='https://www.npmjs.com/package/virtual-dom' target='_blank'>virtual-dom</a>, <a href='https://angular.io' target='_blank'>AngularJS</a> and most recently <a href='https://facebook.github.io/react' target='_blank'>ReactJS</a>.</p>
@@ -63,6 +63,10 @@ export default class Landing extends PureComponent {
           </div>
 
         </section>
+
+        <Modal isOpen={expanded} onRequestClose={this.toggle} shouldCloseOnOverlayClick={true} contentLabel='social modal'>
+          <SocialModal toggle={this.toggle} />
+        </Modal>
 
         <style jsx>{`
           .body {
