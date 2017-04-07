@@ -22,7 +22,7 @@ export default class Landing extends PureComponent {
   }
 
   toggle () {
-    this.setState((state) => { 
+    this.setState((state) => {
       return {
         expanded: !state.expanded
       }
@@ -45,15 +45,15 @@ export default class Landing extends PureComponent {
                 Hi I'm {name}
                 <br />
                 <br />
-                I'm working as a senior software engineer at <a href='https://eaze.com' target='_blank'>Eaze</a>. 
+                I'm working as a senior software engineer at <a href='https://eaze.com' target='_blank'>Eaze</a>.
               </div>
 
               <div className='button-row'>
                 <Link prefetch href='/projects'>
-                  <button className='beauty-button'>Projects</button>
+                  <a className='beauty-button'>Projects</a>
                 </Link>
                 <Link prefetch href='/work'>
-                  <button className='beauty-button'>Work</button>
+                  <a className='beauty-button'>Work</a>
                 </Link>
                 <button className='beauty-button' onClick={this.toggle}>Contact me</button>
               </div>
@@ -128,6 +128,7 @@ export default class Landing extends PureComponent {
             width: 100%;
           }
 
+          .button-row a,
           .button-row button {
             margin-right: 1rem;
             align-items: center;
