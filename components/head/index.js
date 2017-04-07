@@ -37,6 +37,11 @@ export default ({ title }) => (
         color: white;
       }
 
+      body > div {
+        height: 100%;
+        display: block;
+      }
+
       * {
         box-sizing: border-box;
       }
