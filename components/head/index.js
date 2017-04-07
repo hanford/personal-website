@@ -37,7 +37,7 @@ export default ({ title }) => (
         color: white;
       }
 
-      body > div {
+      body > div:first-of-type {
         height: 100%;
         display: block;
       }

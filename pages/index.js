@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react'
 import Link from 'next/link'
 import { Motion, spring } from 'react-motion'
-import Modal from 'react-modal'
 
 import Head from '../components/head'
+import Drawer from '../components/drawer'
 import SocialModal from '../components/social-modal'
 
 const name = (
@@ -33,9 +33,10 @@ export default class Landing extends PureComponent {
     const { expanded } = this.state
 
     return (
-      <div className='body'>
+      <div style={{height: '100%'}}>
         <Head />
 
+        <div className='body'>
         <section className='container'>
 
           <div className='card'>
@@ -63,10 +64,11 @@ export default class Landing extends PureComponent {
           </div>
 
         </section>
+        </div>
 
-        <Modal isOpen={expanded} onRequestClose={this.toggle} shouldCloseOnOverlayClick={true} contentLabel='social modal'>
+        <Drawer open={expanded} onRequestClose={this.toggle} shouldCloseOnOverlayClick={true} contentLabel='social modal'>
           <SocialModal toggle={this.toggle} />
-        </Modal>
+        </Drawer>
 
         <style jsx>{`
           .body {
@@ -74,6 +76,7 @@ export default class Landing extends PureComponent {
             width: 100%;
             display: flex;
             justify-content: center;
+            position: relative;
           }
 
           a {
