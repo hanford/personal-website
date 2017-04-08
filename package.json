@@ -11,10 +11,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "github-api": "~3.0.0",
     "next": "~2.1.1",
     "react": "~15.5.0",
     "react-dom": "~15.5.0",
     "react-motion": "~0.4.7",
-    "react-overdrive": "~0.0.4"
+    "sort-on": "~2.0.0"
   }
 }

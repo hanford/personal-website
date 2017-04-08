@@ -1,22 +1,32 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
 import Router from 'next/router'
-import Overdrive from 'react-overdrive'
+import GitHub from 'github-api'
+import sortOn from 'sort-on'
 
 import Modal from '../../components/modal'
 import Head from '../../components/head'
-// import projects from './projects'
+import config from '../../config.json'
+
+const USER_NAME = 'hanford'
+
+const gh = new GitHub({ token: config.token })
+
+const me = gh.getUser(USER_NAME)
 
 export default class Projects extends Component {
-  static getInitialProps () {
+  static async getInitialProps () {
+    const { data } = await me.listRepos()
+
+    let myRepos = data.filter(({ owner, fork }) => owner.login === USER_NAME && !fork)
+    let repos = sortOn(myRepos, '-stargazers_count')
+
     return {
-      projects: new Array(6)
-        .fill(1)
-        .map((v, k) => k + 1)
+      repos
     }
   }
 
-  showPhoto (e, id) {
+  showRepo (e, id) {
     e.preventDefault()
     Router.push({
       pathname: '/projects',
@@ -38,20 +48,12 @@ export default class Projects extends Component {
   }
 
   render () {
-    const { url, projects } = this.props
+    const { url, repos } = this.props
+    console.log('repos', repos)
 
     return (
-      <div style={{height: '100%', width: '100%'}}>
+      <div style={{height: '100%', width: '100%', overflow: 'scroll'}}>
         <Head title='Jack Hanford | Projects' />
-
-        {
-          url.query.projectId &&
-            <Modal
-              id={url.query.projectId}
-              onDismiss={() => this.dismissModal()}
-            />
-        }
-
 
         <div className='container'>
 
@@ -60,17 +62,33 @@ export default class Projects extends Component {
             <div>Projects</div>
             <div>I started writing JavaScript professionally 5 years ago.</div>
 
+
+            {
+              url.query.projectId &&
+                <Modal
+                  id={url.query.projectId}
+                  onDismiss={() => this.dismissModal()}
+                />
+            }
+
+
             <div className='list'>
               {
-                projects.map((id) => (
-                  <Overdrive id={`project-${id}`} key={id} animationDelay={1}>
-                    <div
-                      className='project'
-                      onClick={(e) => this.showPhoto(e, id)}
-                    >
-                      {id}
+                repos.map(({ name, id, description, stargazers_count: stars, language }) => (
+                  <div className='project' onClick={(e) => this.showRepo(e, id)} key={id}>
+                    <div className='content'>
+                      <div className='about'>
+                        <div className='title'>{name}</div>
+                        <div>{description}</div>
+                      </div>
+
+                      <div className='breakdown'>
+                        <div>{language || 'Other'}</div>
+                        <div className='divider'></div>
+                        <div><i className='ion-android-star'></i> {stars}</div>
+                      </div>
                     </div>
-                  </Overdrive>
+                  </div>
                 ))
               }
             </div>
@@ -84,7 +102,8 @@ export default class Projects extends Component {
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            max-width: 80rem;
+            max-width: 100%;
+            width: 110rem;
             margin: 3rem auto;
           }
 
@@ -102,30 +121,68 @@ export default class Projects extends Component {
             border-radius: 0.4rem;
             padding: 2rem 4rem;
             position: relative;
-            margin-top: 6rem;
+            margin-top: 2rem;
           }
 
           .project {
             color: #333;
             cursor: pointer;
-            background: #eee;
-            width: 20rem;
-            height: 20rem;
-            line-height: 20rem;
-            margin: 10px;
-            border: 2px solid transparent;
+            background: white;
+            width: 31.6rem;
+            max-width: 95%;
+            margin: 1.6rem auto;
             text-align: center;
             display: flex;
             align-items: center;
             justify-content: center;
+            border-radius: 0.6rem;
+            border: 1px solid #e7eef6;
+            transition: all 0.2s ease-out;
+          }
+
+          .project .content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+          }
+
+          .divider {
+            display: inline-block;
+            height: 3rem;
+            margin: 0 1.8rem 0;
+            content: '';
+            border-left: 1px solid #e7eef6;
+          }
+
+          .breakdown {
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .project .content .about {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            padding: 0 0 2rem 0;
+          }
+
+          .project .content .title {
+            font-size: 1.8rem;
+            line-height: 3rem;
+            letter-spacing: -0.3px;
+            font-weight: 600;
+            color: #1461f4;
           }
 
           .project:hover {
-            borderColor: blue;
+            transform: scale(1.1);
           }
         `}</style>
       </div>
     )
   }
 }
-

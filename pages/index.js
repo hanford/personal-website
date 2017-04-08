@@ -53,9 +53,6 @@ export default class Landing extends PureComponent {
                 <Link prefetch href='/projects'>
                   <a className='beauty-button'>Projects</a>
                 </Link>
-                <Link prefetch href='/work'>
-                  <a className='beauty-button'>Work</a>
-                </Link>
                 <button className='beauty-button' onClick={this.toggle}>Contact me</button>
               </div>
 
