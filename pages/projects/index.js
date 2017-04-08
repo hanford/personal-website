@@ -7,6 +7,7 @@ import sortOn from 'sort-on'
 import Modal from '../../components/modal'
 import Head from '../../components/head'
 import config from '../../config.json'
+import Card from './card'
 
 const USER_NAME = 'hanford'
 
@@ -28,6 +29,7 @@ export default class Projects extends Component {
 
   showRepo (e, id) {
     e.preventDefault()
+
     Router.push({
       pathname: '/projects',
       query: {
@@ -49,19 +51,21 @@ export default class Projects extends Component {
 
   render () {
     const { url, repos } = this.props
-    console.log('repos', repos)
 
     return (
       <div style={{height: '100%', width: '100%', overflow: 'scroll'}}>
         <Head title='Jack Hanford | Projects' />
 
         <div className='container'>
-
           <div className='card'>
-            <Link href='/'><a>Back</a></Link>
-            <div>Projects</div>
-            <div>I started writing JavaScript professionally 5 years ago.</div>
+            <Link href='/'>
+              <a style={{position: 'absolute', top: '1rem', right: '1rem'}}>Back</a>
+            </Link>
 
+            <div className='projects'>
+              <div>Projects</div>
+              <div>I started writing JavaScript professionally 5 years ago.</div>
+            </div>
 
             {
               url.query.projectId &&
@@ -71,29 +75,21 @@ export default class Projects extends Component {
                 />
             }
 
-
             <div className='list'>
               {
                 repos.map(({ name, id, description, stargazers_count: stars, language }) => (
-                  <div className='project' onClick={(e) => this.showRepo(e, id)} key={id}>
-                    <div className='content'>
-                      <div className='about'>
-                        <div className='title'>{name}</div>
-                        <div>{description}</div>
-                      </div>
-
-                      <div className='breakdown'>
-                        <div>{language || 'Other'}</div>
-                        <div className='divider'></div>
-                        <div><i className='ion-android-star'></i> {stars}</div>
-                      </div>
-                    </div>
-                  </div>
+                  <Card
+                    name={name}
+                    id={id}
+                    description={description}
+                    stars={stars}
+                    language={language}
+                    showRepo={this.showRepo}
+                  />
                 ))
               }
             </div>
           </div>
-
         </div>
 
         <style jsx>{`
@@ -105,6 +101,10 @@ export default class Projects extends Component {
             max-width: 100%;
             width: 110rem;
             margin: 3rem auto;
+          }
+
+          .projects {
+
           }
 
           .list {
@@ -122,64 +122,6 @@ export default class Projects extends Component {
             padding: 2rem 4rem;
             position: relative;
             margin-top: 2rem;
-          }
-
-          .project {
-            color: #333;
-            cursor: pointer;
-            background: white;
-            width: 31.6rem;
-            max-width: 95%;
-            margin: 1.6rem auto;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 0.6rem;
-            border: 1px solid #e7eef6;
-            transition: all 0.2s ease-out;
-          }
-
-          .project .content {
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-          }
-
-          .divider {
-            display: inline-block;
-            height: 3rem;
-            margin: 0 1.8rem 0;
-            content: '';
-            border-left: 1px solid #e7eef6;
-          }
-
-          .breakdown {
-            display: flex;
-            width: 100%;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-          }
-
-          .project .content .about {
-            display: flex;
-            flex: 1;
-            flex-direction: column;
-            padding: 0 0 2rem 0;
-          }
-
-          .project .content .title {
-            font-size: 1.8rem;
-            line-height: 3rem;
-            letter-spacing: -0.3px;
-            font-weight: 600;
-            color: #1461f4;
-          }
-
-          .project:hover {
-            transform: scale(1.1);
           }
         `}</style>
       </div>
