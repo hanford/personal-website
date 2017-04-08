@@ -181,81 +181,87 @@ export default class Drawer extends React.Component {
     const animationSpring = touching ? {damping: 20, stiffness: 300} : presets.stiff
 
     return (
-      <div>
-      <Motion style={{
-        translateY: spring(open ? position : window.innerHeight, animationSpring),
-        opacity: spring(open ? this.BACKGROUND_OPACITY : 0)
-      }}>
-        {({ translateY, opacity }) => {
-          return (
-            <div
-              style={{backgroundColor: `rgba(55, 56, 56, ${opacity})`}}
-              onClick={this.hideDrawer}
-              className='drawerContainer'>
+      <div style={{height: '100%'}}>
+        <Motion style={{
+          translateY: spring(open ? position : window.innerHeight, animationSpring),
+          opacity: spring(open ? this.BACKGROUND_OPACITY : 0)
+        }}>
+          {({ translateY, opacity }) => {
+            return (
               <div
-                style={{transform: `translateY(${translateY}px)`}}
-                onClick={(e) => e.stopPropagation()}
-                ref={(drawer) => { this.drawer = drawer }}>
-                {this.props.children}
+                style={{backgroundColor: `rgba(55, 56, 56, ${opacity})`}}
+                onClick={this.hideDrawer}
+                className='drawerContainer'>
+                <div
+                  style={{transform: `translateY(${translateY}px)`}}
+                  onClick={(e) => e.stopPropagation()}
+                  ref={(drawer) => { this.drawer = drawer }}>
+                  {this.props.children}
+                </div>
               </div>
-            </div>
-          )
-        }}
-      </Motion>
-      <style jsx>{`
-        .modal {
-          outline: none;
-          background: white;
-          font-size: var(--fontSizeParagraph);
-          width: 76rem;
-          max-width: 90%;
-          display: flex;
-          justify-content: space-between;
-          flex-direction: column;
-          z-index: 15;
-          min-height: 47rem;
+            )
+          }}
+        </Motion>
 
-          /* add all the CSS hacks */
-          will-change: transform;
-          transform: translate3d(0, 0, 0);
-          -webkit-backface-visibility: hidden;
-          -webkit-transform-style: preserve-3d;
+        <style jsx>{`
+          .modal {
+            outline: none;
+            background: white;
+            font-size: var(--fontSizeParagraph);
+            width: 76rem;
+            max-width: 90%;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            z-index: 15;
+            min-height: 47rem;
+
+            /* add all the CSS hacks */
+            will-change: transform;
+            transform: translate3d(0, 0, 0);
+            -webkit-backface-visibility: hidden;
+            -webkit-transform-style: preserve-3d;
+          }
 
           @media (max-width: 991px) and (min-width: 560px) {
-            width: 42rem;
-            margin: 4rem auto 0;
+            .modal {
+              width: 42rem;
+              margin: 4rem auto 0;
+            }
           }
 
           @media(min-width: 768px) {
-            border-radius: 0.8rem;
+            .modal {
+              border-radius: 0.8rem;
+            }
           }
 
           @media (max-width: 559px) {
-            width: 100%;
-            max-width: 100%;
-            margin-top: 4rem;
-            margin-bottom: 0;
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
+            .modal {
+              width: 100%;
+              max-width: 100%;
+              margin-bottom: 0;
+              border-top-left-radius: 8px;
+              border-top-right-radius: 8px;
+            }
           }
-        }
 
-        .drawerContainer {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          display: flex;
-          justify-content: center;
-          z-index: 11;
-
-          @media(min-width: 768px) {
+          .drawerContainer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            z-index: 11;
             align-items: center;
           }
-        }
 
-      `}</style>
+          @media(max-width: 768px) {
+            height: 100%;
+          }
+        `}</style>
       </div>
     )
   }

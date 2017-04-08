@@ -64,7 +64,8 @@ export default class Projects extends Component {
 
             <div className='projects'>
               <div>Projects</div>
-              <div>I started writing JavaScript professionally 5 years ago.</div>
+
+              <p className='abt-me'>Lately I've been obssessed with open source software, which I keep <a href='https://github.com/hanford' target='_blank'>on github</a>. I've been writing JavaScript profressionally for around 4 years, and have become an expert with some of the latest and greatest frontend frameworks including <a href='https://www.npmjs.com/package/virtual-dom' target='_blank'>virtual-dom</a>, <a href='https://angular.io' target='_blank'>AngularJS</a> and most recently <a href='https://facebook.github.io/react' target='_blank'>ReactJS</a>.</p>
             </div>
 
             {
@@ -79,6 +80,7 @@ export default class Projects extends Component {
               {
                 repos.map(({ name, id, description, stargazers_count: stars, language }) => (
                   <Card
+                    key={id}
                     name={name}
                     id={id}
                     description={description}
@@ -103,8 +105,10 @@ export default class Projects extends Component {
             margin: 3rem auto;
           }
 
-          .projects {
-
+          a {
+            color: #1461f4;
+            font-weight: 600;
+            text-decoration: none;
           }
 
           .list {

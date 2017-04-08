@@ -1,5 +1,5 @@
 export default ({ name, id, description, stars, language, showRepo}) => (
-  <div className='project' onClick={(e) => showRepo(e, id)} key={id}>
+  <div className='project' onClick={(e) => showRepo(e, id)}>
     <div className='content'>
       <div className='about'>
         <div className='title'>{name}</div>
@@ -69,7 +69,7 @@ export default ({ name, id, description, stars, language, showRepo}) => (
       }
 
       .project:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
       }
     `}</style>
   </div>

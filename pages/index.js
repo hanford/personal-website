@@ -44,19 +44,24 @@ export default class Landing extends PureComponent {
               <div className='waver'>👋</div>
               <div className='intro'>
                 Hi I'm {name}
+
                 <br />
                 <br />
-                I'm working as a senior software engineer at <a href='https://eaze.com' target='_blank'>Eaze</a>.
+
+                <div>I'm a senior software engineer at <a href='https://eaze.com' target='_blank'>Eaze</a>.</div>
+
+                <br />
+
+                <div>I live in San Francisco. When I'm not coding, I can be found at Dolores park.</div>
               </div>
 
               <div className='button-row'>
                 <Link prefetch href='/projects'>
-                  <a className='beauty-button'>Projects</a>
+                  <a className='beauty-button'>Open Source</a>
                 </Link>
                 <button className='beauty-button' onClick={this.toggle}>Contact me</button>
               </div>
 
-              <p className='abt-me'>Lately I've been obssessed with open source software, which I keep <a href='https://github.com/hanford' target='_blank'>on github</a>. I've been writing JavaScript profressionally for around 4 years, and have become an expert with some of the latest and greatest frontend frameworks including <a href='https://www.npmjs.com/package/virtual-dom' target='_blank'>virtual-dom</a>, <a href='https://angular.io' target='_blank'>AngularJS</a> and most recently <a href='https://facebook.github.io/react' target='_blank'>ReactJS</a>.</p>
             </div>
           </div>
 
@@ -120,21 +125,22 @@ export default class Landing extends PureComponent {
 
           .button-row {
             display: flex;
-            margin: 1rem 0 2rem;
+            margin: 1rem auto;
 
             align-items: center;
             justify-content: space-between;
-            flex-direction: row;
+            flex-direction: column;
             width: 100%;
           }
 
           .button-row a,
           .button-row button {
-            margin-right: 1rem;
             align-items: center;
             display: flex;
             flex: 1;
             justify-content: center;
+            width: 100%;
+            margin-top: 1rem;
           }
 
           .beauty-button {

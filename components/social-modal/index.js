@@ -8,7 +8,7 @@ export default ({ toggle }) => (
   <div className='body'>
     <section className='container'>
 
-      <div className='card'> 
+      <div className='card'>
         <button className='closeButton' onClick={toggle}>×</button>
 
         <ul>
@@ -71,8 +71,16 @@ export default ({ toggle }) => (
         color: #32325d;
         border-radius: 0.4rem;
         padding: 2rem 4rem;
-        margin-top: 2rem;
+        margin-top: 0rem;
         position: relative;
+      }
+
+      @media(max-width: 768px) {
+        .card {
+          height: 100%;
+          margin-top: 8rem;
+          padding: 2rem;
+        }
       }
 
       .menu {
