@@ -37,35 +37,28 @@ export default class Landing extends PureComponent {
         <Head />
 
         <div className='body'>
-        <section className='container'>
+          <section className='container'>
+            <div className='card'>
+              <div className='content'>
+                <div className='waver'>👋</div>
+                <div className='intro'>
+                  <div>Hi I'm {name}</div>
 
-          <div className='card'>
-            <div className='content'>
-              <div className='waver'>👋</div>
-              <div className='intro'>
-                Hi I'm {name}
+                  <br />
 
-                <br />
-                <br />
+                  <div>I'm a senior software engineer at <a href='https://eaze.com' target='_blank'>Eaze</a>.</div>
+                </div>
 
-                <div>I'm a senior software engineer at <a href='https://eaze.com' target='_blank'>Eaze</a>.</div>
+                <div className='button-row'>
+                  <Link prefetch href='/projects'>
+                    <a className='beauty-button'>Open Source</a>
+                  </Link>
+                  <button className='beauty-button' onClick={this.toggle}>Contact me</button>
+                </div>
 
-                <br />
-
-                <div>I live in San Francisco. When I'm not coding, I can be found at Dolores park.</div>
               </div>
-
-              <div className='button-row'>
-                <Link prefetch href='/projects'>
-                  <a className='beauty-button'>Open Source</a>
-                </Link>
-                <button className='beauty-button' onClick={this.toggle}>Contact me</button>
-              </div>
-
             </div>
-          </div>
-
-        </section>
+          </section>
         </div>
 
         <Drawer open={expanded} onRequestClose={this.toggle} shouldCloseOnOverlayClick={true} contentLabel='social modal'>
@@ -122,7 +115,6 @@ export default class Landing extends PureComponent {
             }
           }
 
-
           .button-row {
             display: flex;
             margin: 1rem auto;
@@ -163,7 +155,7 @@ export default class Landing extends PureComponent {
           }
 
           .beauty-button:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
             color: #1461f4;
           }
 

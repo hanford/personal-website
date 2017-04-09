@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import Link from 'next/link'
 import Router from 'next/router'
 import GitHub from 'github-api'
-import sortOn from 'sort-on'
+// import sortOn from 'sort-on'
 
 import Modal from '../../components/modal'
 import Head from '../../components/head'
@@ -15,12 +15,12 @@ const gh = new GitHub({ token: config.token })
 
 const me = gh.getUser(USER_NAME)
 
-export default class Projects extends Component {
+export default class Projects extends PureComponent {
   static async getInitialProps () {
     const { data } = await me.listRepos()
 
-    let myRepos = data.filter(({ owner, fork }) => owner.login === USER_NAME && !fork)
-    let repos = sortOn(myRepos, '-stargazers_count')
+    let repos = data.filter(({ owner, fork }) => owner.login === USER_NAME && !fork)
+    // let repos = sortOn(myRepos, '-stargazers_count')
 
     return {
       repos
@@ -36,13 +36,6 @@ export default class Projects extends Component {
         projectId: id
       }
     })
-  }
-
-  onKeyDown (e) {
-    if (!this.props.url.query.projectId) return
-    if (e.keyCode === 27) {
-      this.props.url.back()
-    }
   }
 
   dismissModal () {
@@ -78,13 +71,13 @@ export default class Projects extends Component {
 
             <div className='list'>
               {
-                repos.map(({ name, id, description, stargazers_count: stars, language }) => (
+                repos.map(({ name, id, description, stargazers_count, language }) => (
                   <Card
                     key={id}
                     name={name}
                     id={id}
                     description={description}
-                    stars={stars}
+                    stars={stargazers_count}
                     language={language}
                     showRepo={this.showRepo}
                   />
@@ -119,7 +112,7 @@ export default class Projects extends Component {
           }
 
           .card {
-            box-shadow: 0 18px 35px rgba(50,50,93,.1), 0 8px 15px rgba(0,0,0,.07);
+            box-shadow: 0 18px 35px rgba(50,50,93,.1);
             background-color: #f6f9fc;
             color: #32325d;
             border-radius: 0.4rem;

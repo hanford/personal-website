@@ -191,7 +191,8 @@ export default class Drawer extends React.Component {
               <div
                 style={{backgroundColor: `rgba(55, 56, 56, ${opacity})`}}
                 onClick={this.hideDrawer}
-                className='drawerContainer'>
+                className='drawerContainer'
+              >
                 <div
                   style={{transform: `translateY(${translateY}px)`}}
                   onClick={(e) => e.stopPropagation()}
@@ -223,20 +224,7 @@ export default class Drawer extends React.Component {
             -webkit-transform-style: preserve-3d;
           }
 
-          @media (max-width: 991px) and (min-width: 560px) {
-            .modal {
-              width: 42rem;
-              margin: 4rem auto 0;
-            }
-          }
-
-          @media(min-width: 768px) {
-            .modal {
-              border-radius: 0.8rem;
-            }
-          }
-
-          @media (max-width: 559px) {
+          @media (max-width: 768px) {
             .modal {
               width: 100%;
               max-width: 100%;
@@ -259,7 +247,9 @@ export default class Drawer extends React.Component {
           }
 
           @media(max-width: 768px) {
-            height: 100%;
+            .drawerContainer {
+              height: 100%;
+            }
           }
         `}</style>
       </div>

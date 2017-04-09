@@ -5,7 +5,7 @@ import Head from '../../components/head'
 export default () => (
   <div className='container'>
     <Head />
-    
+
     <div className='snapcode'>
       <img src='../static/snapcode.png' />
       <Link href='/'>
