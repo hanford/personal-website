@@ -61,7 +61,7 @@ export default class Landing extends PureComponent {
           </section>
         </div>
 
-        <Drawer open={expanded} onRequestClose={this.toggle} shouldCloseOnOverlayClick={true} contentLabel='social modal'>
+        <Drawer open={expanded} onRequestClose={this.toggle} shouldCloseOnOverlayClick={true} contentLabel='social modal' negativeScroll={-5}>
           <SocialModal toggle={this.toggle} />
         </Drawer>
 
@@ -136,7 +136,7 @@ export default class Landing extends PureComponent {
           }
 
           .beauty-button {
-            display: inline-block;
+            display: block;
             line-height: 4rem;
             padding: 0 1.4rem;
             box-shadow: 0 0.4rem 0.6rem rgba(50,50,93,.11), 0 0.1rem 0.3rem rgba(0,0,0,.08);
@@ -152,6 +152,7 @@ export default class Landing extends PureComponent {
             cursor: pointer;
             outline: none;
             transition: all 0.25s ease-out;
+            text-align: center;
           }
 
           .beauty-button:hover {
