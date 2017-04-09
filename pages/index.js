@@ -5,6 +5,7 @@ import { Motion, spring } from 'react-motion'
 import Head from '../components/head'
 import Drawer from '../components/drawer'
 import SocialModal from '../components/social-modal'
+import TiltedBackground from '../components/tilted-background'
 
 const name = (
   <span style={{fontWeight: 600}}>Jack Hanford</span>
@@ -17,11 +18,9 @@ export default class Landing extends PureComponent {
     this.state = {
       expanded: false
     }
-
-    this.toggle = this.toggle.bind(this)
   }
 
-  toggle () {
+  toggle = () => {
     this.setState((state) => {
       return {
         expanded: !state.expanded
@@ -37,9 +36,7 @@ export default class Landing extends PureComponent {
         <Head />
 
         <div className='body'>
-          <div>
-            <div className='tiltedBack' />
-          </div>
+          <TiltedBackground />
 
           <section className='container'>
             <div className='card'>
@@ -53,6 +50,9 @@ export default class Landing extends PureComponent {
                 <div className='button-row'>
                   <Link prefetch href='/projects'>
                     <a className='beauty-button'>Open Source</a>
+                  </Link>
+                  <Link href='/writing'>
+                    <a className='beauty-button'>Writing</a>
                   </Link>
                   <button className='beauty-button' onClick={this.toggle}>Contact me</button>
                 </div>
@@ -80,17 +80,6 @@ export default class Landing extends PureComponent {
             position: relative;
             overflow: hidden;
             justify-content: center;
-          }
-
-          .tiltedBack {
-            width: 150%;
-            height: 110%;
-            background-color: white;
-            transform: rotateZ(5deg);
-            position: absolute;
-            top: -20rem;
-            left: -118px;
-            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
           }
 
           a {

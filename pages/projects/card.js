@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default ({ name, id, description, stars, language, showRepo }) => (
-  <div className='project' onClick={(e) => showRepo(e, id)}>
+export default ({ name, id, description, stars, language }) => (
+  <div className='project'>
     <div className='content'>
       <div className='about'>
         <div className='title'>{name}</div>
