@@ -50,21 +50,6 @@ export default class Projects extends PureComponent {
     })
   }
 
-  showRepo (e, id) {
-    e.preventDefault()
-
-    Router.push({
-      pathname: '/projects',
-      query: {
-        projectId: id
-      }
-    })
-  }
-
-  dismissModal () {
-    Router.push('/projects')
-  }
-
   render () {
     const { url, repos } = this.props
     const { expanded, repo } = this.state
@@ -134,6 +119,10 @@ export default class Projects extends PureComponent {
             margin: 3rem auto;
           }
 
+          .projects {
+            margin: 2rem;
+          }
+
           a {
             color: #1461f4;
             font-weight: 600;
@@ -149,10 +138,9 @@ export default class Projects extends PureComponent {
 
           .card {
             box-shadow: 0 18px 35px rgba(50,50,93,.1);
-            background-color: #f6f9fc;
+            background-color: white;
             color: #32325d;
-            border-radius: 0.4rem;
-            padding: 2rem 4rem;
+            padding: 2rem;
             position: relative;
             margin-top: 2rem;
           }
