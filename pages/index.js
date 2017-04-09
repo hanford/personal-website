@@ -87,7 +87,7 @@ export default class Landing extends PureComponent {
 
           .tiltedBack {
             width: 150%;
-            height: 95%;
+            height: 100%;
             background-color: white;
             transform: rotateZ(10deg);
             position: absolute;
