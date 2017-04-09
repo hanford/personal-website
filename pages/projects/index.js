@@ -2,8 +2,10 @@ import React, { PureComponent } from 'react'
 import Link from 'next/link'
 import Router from 'next/router'
 import GitHub from 'github-api'
+import { partial } from 'ap'
 
-import Modal from '../../components/modal'
+import ProjectModal from '../../components/project-modal'
+import Drawer from '../../components/drawer'
 import Head from '../../components/head'
 import config from '../../config.json'
 import Card from './card'
@@ -25,6 +27,29 @@ export default class Projects extends PureComponent {
     }
   }
 
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      expanded: false
+    }
+
+    this.toggle = this.toggle.bind(this)
+  }
+
+  toggle (id) {
+    const { repos } = this.props
+
+    const repo = repos.find(r => r.id === id) || null
+
+    this.setState((state) => {
+      return {
+        expanded: !state.expanded,
+        repo
+      }
+    })
+  }
+
   showRepo (e, id) {
     e.preventDefault()
 
@@ -42,6 +67,7 @@ export default class Projects extends PureComponent {
 
   render () {
     const { url, repos } = this.props
+    const { expanded, repo } = this.state
 
     const containerStyle = {
       height: '100%',
@@ -66,13 +92,17 @@ export default class Projects extends PureComponent {
               <p className='abt-me'>Lately I've been obssessed with open source software, which I keep <a href='https://github.com/hanford' target='_blank'>on github</a>. I've been writing JavaScript profressionally for around 4 years, and have become an expert with some of the latest and greatest frontend frameworks including <a href='https://www.npmjs.com/package/virtual-dom' target='_blank'>virtual-dom</a>, <a href='https://angular.io' target='_blank'>AngularJS</a> and most recently <a href='https://facebook.github.io/react' target='_blank'>ReactJS</a>.</p>
             </div>
 
-            {
-              url.query.projectId &&
-                <Modal
-                  id={url.query.projectId}
-                  onDismiss={() => this.dismissModal()}
-                />
-            }
+            <Drawer
+              open={expanded}
+              onRequestClose={this.toggle}
+              contentLabel='project modal'
+              negativeScroll={-1}
+            >
+              <ProjectModal
+                repo={repo}
+                toggle={this.toggle}
+              />
+            </Drawer>
 
             <div className='list'>
               {
@@ -84,7 +114,7 @@ export default class Projects extends PureComponent {
                     description={description}
                     stars={stargazers_count}
                     language={language}
-                    showRepo={this.showRepo}
+                    showRepo={partial(this.toggle, id)}
                   />
                 ))
               }
