@@ -100,6 +100,7 @@ export default class Projects extends PureComponent {
             flex-direction: column;
             max-width: 100%;
             width: 110rem;
+            overflow-x: hidden;
             margin: 3rem auto;
           }
 

@@ -37,6 +37,10 @@ export default class Landing extends PureComponent {
         <Head />
 
         <div className='body'>
+          <div>
+            <div className='tiltedBack' />
+          </div>
+
           <section className='container'>
             <div className='card'>
               <div className='content'>
@@ -61,7 +65,12 @@ export default class Landing extends PureComponent {
           </section>
         </div>
 
-        <Drawer open={expanded} onRequestClose={this.toggle} shouldCloseOnOverlayClick={true} contentLabel='social modal' negativeScroll={-5}>
+        <Drawer
+          open={expanded}
+          onRequestClose={this.toggle}
+          contentLabel='social modal'
+          negativeScroll={-1}
+        >
           <SocialModal toggle={this.toggle} />
         </Drawer>
 
@@ -72,34 +81,47 @@ export default class Landing extends PureComponent {
             display: flex;
             justify-content: center;
             position: relative;
+            overflow: hidden;
+            justify-content: center;
+          }
+
+          .tiltedBack {
+            width: 150%;
+            height: 95%;
+            background-color: white;
+            transform: rotateZ(10deg);
+            position: absolute;
+            top: -20rem;
+            left: -118px;
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
           }
 
           a {
             color: #1461f4;
             font-weight: 600;
-            text-decoration: none;
+            text-decoration: underline;
           }
 
           .container {
-            width: 48rem;
-            max-width: 100%;
-            position: relative;
+            width: 100%;
+            color: #32325d;
           }
 
           .intro {
             line-height: 1.8rem;
             letter-spacing: 0.03em;
+            opacity: 0.9;
             margin: 1rem 0 2rem;
           }
 
           .card {
-            box-shadow: 0 18px 35px rgba(50,50,93,.1), 0 8px 15px rgba(0,0,0,.07);
-            background-color: #f6f9fc;
+            width: 40rem;
+            max-width: 100%;
             color: #32325d;
-            border-radius: 0.4rem;
             padding: 2rem 4rem;
-            margin-top: 8rem;
+            padding-top: 16rem;
             position: relative;
+            margin: 0 auto
           }
 
           .content {
@@ -121,18 +143,15 @@ export default class Landing extends PureComponent {
 
             align-items: center;
             justify-content: space-between;
-            flex-direction: column;
             width: 100%;
           }
 
           .button-row a,
           .button-row button {
-            align-items: center;
-            display: flex;
-            flex: 1;
-            justify-content: center;
+            text-align: center;
+            font-weight: 600 !important;
             width: 100%;
-            margin-top: 1rem;
+            margin-right: 1rem;
           }
 
           .beauty-button {
@@ -152,7 +171,6 @@ export default class Landing extends PureComponent {
             cursor: pointer;
             outline: none;
             transition: all 0.25s ease-out;
-            text-align: center;
           }
 
           .beauty-button:hover {

@@ -30,6 +30,7 @@ export default ({ name, id, description, stars, language, showRepo }) => (
         border-radius: 0.6rem;
         border: 1px solid #e7eef6;
         transition: all 0.2s ease-out;
+        box-shadow: rgba(0, 0, 0, 0.0980392) 0px 5px 15px -5px;
       }
 
       .project .content {

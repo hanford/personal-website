@@ -29,11 +29,11 @@ export default ({ title }) => (
         font-family: Brandon, Arial;
         height: 100%;
         width: 100%;
+        overflow: auto;
         margin: 0;
         padding: 0;
         font-size: 10px;
-        background-color: #545da9;
-        background-image: linear-gradient(to bottom left, rgba(100,255,250,0) 0%, rgba(100,255,250,.5) 75%, rgba(100,255,250,.5) 100%);
+        background: radial-gradient(circle farthest-corner at right bottom,#ffd08a 0,#ffa376 28%,#d26578 52%,#682a84 79%,#241668 100%);
         color: white;
       }
 
@@ -48,9 +48,8 @@ export default ({ title }) => (
       }
 
       [data-reactroot] {
-        font-size: 16px;
+        font-size: 1.6rem;
         height: 100%;
-        width: 100%;
       }
     `}} />
   </Head>
