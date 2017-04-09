@@ -33,7 +33,7 @@ export default ({ title }) => (
         margin: 0;
         padding: 0;
         font-size: 10px;
-        background: radial-gradient(circle farthest-corner at right bottom,#ffd08a 0,#ffa376 28%,#d26578 52%,#682a84 79%,#241668 100%);
+        background-image: linear-gradient(-45deg, #D20B54 0%, #FFB849 100%);
         color: white;
       }
 

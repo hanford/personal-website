@@ -67,42 +67,44 @@ export default class Projects extends PureComponent {
 
         <div className='container'>
           <div className='card'>
-            <Link href='/'>
-              <a style={{position: 'absolute', top: '1rem', right: '2rem', fontSize: '3rem'}}>×</a>
-            </Link>
+            <div style={{maxWidth: '110rem', marginLeft: 'auto', marginRight: 'auto'}}>
+              <Link href='/'>
+                <a style={{position: 'absolute', top: '1rem', right: '2rem', fontSize: '3rem'}}>×</a>
+              </Link>
 
-            <div className='projects'>
-              <div>Projects</div>
+              <div className='projects'>
+                <div>Projects</div>
 
-              <p className='abt-me'>Lately I've been obssessed with open source software, which I keep <a href='https://github.com/hanford' target='_blank'>on github</a>. I've been writing JavaScript profressionally for around 4 years, and have become an expert with some of the latest and greatest frontend frameworks including <a href='https://www.npmjs.com/package/virtual-dom' target='_blank'>virtual-dom</a>, <a href='https://angular.io' target='_blank'>AngularJS</a> and most recently <a href='https://facebook.github.io/react' target='_blank'>ReactJS</a>.</p>
-            </div>
+                <p className='abt-me'>Lately I've been obssessed with open source software, which I keep <a href='https://github.com/hanford' target='_blank'>on github</a>. I've been writing JavaScript profressionally for around 4 years, and have become an expert with some of the latest and greatest frontend frameworks including <a href='https://www.npmjs.com/package/virtual-dom' target='_blank'>virtual-dom</a>, <a href='https://angular.io' target='_blank'>AngularJS</a> and most recently <a href='https://facebook.github.io/react' target='_blank'>ReactJS</a>.</p>
+              </div>
 
-            <Drawer
-              open={expanded}
-              onRequestClose={this.toggle}
-              contentLabel='project modal'
-              negativeScroll={-1}
-            >
-              <ProjectModal
-                repo={repo}
-                toggle={this.toggle}
-              />
-            </Drawer>
+              <Drawer
+                open={expanded}
+                onRequestClose={this.toggle}
+                contentLabel='project modal'
+                negativeScroll={-1}
+              >
+                <ProjectModal
+                  repo={repo}
+                  toggle={this.toggle}
+                />
+              </Drawer>
 
-            <div className='list'>
-              {
-                repos.map(({ name, id, description, stargazers_count, language }) => (
-                  <Card
-                    key={id}
-                    name={name}
-                    id={id}
-                    description={description}
-                    stars={stargazers_count}
-                    language={language}
-                    showRepo={partial(this.toggle, id)}
-                  />
-                ))
-              }
+              <div className='list'>
+                {
+                  repos.map(({ name, id, description, stargazers_count, language }) => (
+                    <Card
+                      key={id}
+                      name={name}
+                      id={id}
+                      description={description}
+                      stars={stargazers_count}
+                      language={language}
+                      showRepo={partial(this.toggle, id)}
+                    />
+                  ))
+                }
+              </div>
             </div>
           </div>
         </div>
@@ -113,8 +115,7 @@ export default class Projects extends PureComponent {
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            max-width: 100%;
-            width: 110rem;
+            width: 100%;
             overflow-x: hidden;
             margin: 3rem auto;
           }
@@ -141,6 +142,7 @@ export default class Projects extends PureComponent {
             background-color: white;
             color: #32325d;
             padding: 2rem;
+            width: 100%;
             position: relative;
             margin-top: 2rem;
           }
