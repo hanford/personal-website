@@ -58,11 +58,19 @@ export default ({ toggle }) => (
         width: 100%;
         display: flex;
         justify-content: center;
+        align-items: center;
       }
 
       .container {
         max-width: 100%;
         position: relative;
+      }
+
+      @media(max-width: 768px) {
+        .container {
+          width: 100%;
+          height: 100%;
+        }
       }
 
       .card {

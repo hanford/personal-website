@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react'
 import Link from 'next/link'
 import Router from 'next/router'
 import GitHub from 'github-api'
-// import sortOn from 'sort-on'
 
 import Modal from '../../components/modal'
 import Head from '../../components/head'
@@ -20,7 +19,6 @@ export default class Projects extends PureComponent {
     const { data } = await me.listRepos()
 
     let repos = data.filter(({ owner, fork }) => owner.login === USER_NAME && !fork)
-    // let repos = sortOn(myRepos, '-stargazers_count')
 
     return {
       repos
@@ -45,8 +43,15 @@ export default class Projects extends PureComponent {
   render () {
     const { url, repos } = this.props
 
+    const containerStyle = {
+      height: '100%',
+      width: '100%',
+      overflow: 'scroll',
+      WebkitOverflowScrolling: 'touch'
+    }
+
     return (
-      <div style={{height: '100%', width: '100%', overflow: 'scroll'}}>
+      <div style={containerStyle}>
         <Head title='Jack Hanford | Projects' />
 
         <div className='container'>

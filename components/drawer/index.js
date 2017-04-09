@@ -194,7 +194,7 @@ export default class Drawer extends React.Component {
                 className='drawerContainer'
               >
                 <div
-                  style={{transform: `translateY(${translateY}px)`}}
+                  style={{transform: `translateY(${translateY}px)`, height: '100%', width: '100%'}}
                   onClick={(e) => e.stopPropagation()}
                   ref={(drawer) => { this.drawer = drawer }}>
                   {this.props.children}
@@ -249,6 +249,7 @@ export default class Drawer extends React.Component {
           @media(max-width: 768px) {
             .drawerContainer {
               height: 100%;
+              width: 100%;
             }
           }
         `}</style>
