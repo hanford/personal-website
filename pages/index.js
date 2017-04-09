@@ -47,9 +47,6 @@ export default class Landing extends PureComponent {
                 <div className='waver'>👋</div>
                 <div className='intro'>
                   <div>Hi I'm {name}</div>
-
-                  <br />
-
                   <div>I'm a senior software engineer at <a href='https://eaze.com' target='_blank'>Eaze</a>.</div>
                 </div>
 
@@ -87,9 +84,9 @@ export default class Landing extends PureComponent {
 
           .tiltedBack {
             width: 150%;
-            height: 100%;
+            height: 110%;
             background-color: white;
-            transform: rotateZ(10deg);
+            transform: rotateZ(5deg);
             position: absolute;
             top: -20rem;
             left: -118px;
@@ -108,14 +105,24 @@ export default class Landing extends PureComponent {
           }
 
           .intro {
-            line-height: 1.8rem;
+            font-size: 2rem;
+            line-height: 2rem;
             letter-spacing: 0.03em;
             opacity: 0.9;
             margin: 1rem 0 2rem;
           }
 
+          .intro > div:first-child {
+            margin-bottom: 2rem;
+          }
+
+          .intro > div:last-child {
+            font-size: 1.6rem;
+            line-height: 2rem
+          }
+
           .card {
-            width: 40rem;
+            width: 50rem;
             max-width: 100%;
             color: #32325d;
             padding: 2rem 4rem;
@@ -149,7 +156,6 @@ export default class Landing extends PureComponent {
           .button-row a,
           .button-row button {
             text-align: center;
-            font-weight: 600 !important;
             width: 100%;
             margin-right: 1rem;
           }
@@ -162,7 +168,6 @@ export default class Landing extends PureComponent {
             background: #fff;
             border-radius: 0.4rem;
             font-size: 1.2rem;
-            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: .025em;
             color: #32325d;

@@ -57,7 +57,7 @@ export default class Projects extends PureComponent {
         <div className='container'>
           <div className='card'>
             <Link href='/'>
-              <a style={{position: 'absolute', top: '1rem', right: '1rem'}}>Back</a>
+              <a style={{position: 'absolute', top: '1rem', right: '2rem', fontSize: '3rem'}}>×</a>
             </Link>
 
             <div className='projects'>
