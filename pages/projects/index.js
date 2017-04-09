@@ -125,7 +125,7 @@ export default class Projects extends PureComponent {
           }
 
           a {
-            color: #1461f4;
+            color: #d40052;
             font-weight: 600;
             text-decoration: none;
           }

@@ -59,7 +59,7 @@ export default ({ toggle, repo }) => {
         line-height: 3rem;
         letter-spacing: -0.3px;
         font-weight: 600;
-        color: #1461f4;
+        color: #d40052;
       }
 
       @media(max-width: 768px) {
@@ -91,7 +91,7 @@ export default ({ toggle, repo }) => {
         top: 1rem;
         cursor: pointer;
         font-size: 2rem;
-        color: #78909C;
+        color: #d40052;
         z-index: 5;
         padding: 1rem;
       }

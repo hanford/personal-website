@@ -68,7 +68,7 @@ export default ({ name, id, description, stars, language, showRepo }) => (
         line-height: 3rem;
         letter-spacing: -0.3px;
         font-weight: 600;
-        color: #1461f4;
+        color: #d40052;
       }
 
       .project:hover {

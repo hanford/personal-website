@@ -94,7 +94,7 @@ export default class Landing extends PureComponent {
           }
 
           a {
-            color: #1461f4;
+            color: #d40052;
             font-weight: 600;
             text-decoration: underline;
           }
@@ -180,7 +180,7 @@ export default class Landing extends PureComponent {
 
           .beauty-button:hover {
             transform: scale(1.05);
-            color: #1461f4;
+            color: #d40052;
           }
 
           .waver {
