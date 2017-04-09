@@ -4,8 +4,6 @@ import Router from 'next/router'
 import GitHub from 'github-api'
 import { partial } from 'ap'
 
-import ProjectModal from '../../components/project-modal'
-import Drawer from '../../components/drawer'
 import Head from '../../components/head'
 import config from '../../config.json'
 import Card from './card'
@@ -78,30 +76,18 @@ export default class Projects extends PureComponent {
                 <p className='abt-me'>Lately I've been obssessed with open source software, which I keep <a href='https://github.com/hanford' target='_blank'>on github</a>. I've been writing JavaScript profressionally for around 4 years, and have become an expert with some of the latest and greatest frontend frameworks including <a href='https://www.npmjs.com/package/virtual-dom' target='_blank'>virtual-dom</a>, <a href='https://angular.io' target='_blank'>AngularJS</a> and most recently <a href='https://facebook.github.io/react' target='_blank'>ReactJS</a>.</p>
               </div>
 
-              <Drawer
-                open={expanded}
-                onRequestClose={this.toggle}
-                contentLabel='project modal'
-                negativeScroll={-1}
-              >
-                <ProjectModal
-                  repo={repo}
-                  toggle={this.toggle}
-                />
-              </Drawer>
-
               <div className='list'>
                 {
-                  repos.map(({ name, id, description, stargazers_count, language }) => (
-                    <Card
-                      key={id}
-                      name={name}
-                      id={id}
-                      description={description}
-                      stars={stargazers_count}
-                      language={language}
-                      showRepo={partial(this.toggle, id)}
-                    />
+                  repos.map(({ name, id, description, stargazers_count, language, html_url }) => (
+                    <a href={html_url} key={id} target='_blank' className='card-link'>
+                      <Card
+                        name={name}
+                        id={id}
+                        description={description}
+                        stars={stargazers_count}
+                        language={language}
+                      />
+                    </a>
                   ))
                 }
               </div>
@@ -117,7 +103,12 @@ export default class Projects extends PureComponent {
             flex-direction: column;
             width: 100%;
             overflow-x: hidden;
-            margin: 3rem auto;
+            margin: 6rem auto;
+            transform: translateZ(0);
+          }
+
+          .card-link {
+            display: flex;
           }
 
           .projects {
@@ -144,7 +135,6 @@ export default class Projects extends PureComponent {
             padding: 2rem;
             width: 100%;
             position: relative;
-            margin-top: 2rem;
           }
         `}</style>
       </div>
