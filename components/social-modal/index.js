@@ -75,8 +75,7 @@ export default ({ toggle }) => (
 
       .card {
         box-shadow: 0 18px 35px rgba(50,50,93,.1), 0 8px 15px rgba(0,0,0,.07);
-        background-color: #f6f9fc;
-        color: #32325d;
+        background-color: white;
         border-radius: 0.4rem;
         padding: 2rem 4rem;
         margin-top: 0rem;

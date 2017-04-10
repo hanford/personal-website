@@ -142,11 +142,25 @@ export default class Landing extends PureComponent {
             width: 100%;
           }
 
+          @media(max-width: 767px) {
+            .button-row {
+              flex-direction: column;
+            }
+          }
+
           .button-row a,
           .button-row button {
             text-align: center;
             width: 100%;
             margin-right: 1rem;
+          }
+
+          @media(max-width: 767px) {
+            .button-row a,
+            .button-row button {
+              margin-right: 0;
+              margin-top: 1.5rem;
+            }
           }
 
           .beauty-button {

@@ -33,12 +33,12 @@ export default class Writing extends PureComponent {
 
         <div className='container'>
           <div className='content'>
-            <h1>Writing</h1>
-
             <div className='article-list'>
+              <h2>Writing</h2>
               {
                 Object.keys(posts).length && Object.keys(posts).map((p, index) => {
                   const post = posts[p]
+                  console.log(post)
 
                   return (
                     <Link
@@ -67,34 +67,38 @@ export default class Writing extends PureComponent {
 
           .content {
             box-shadow: 0 18px 35px rgba(50,50,93,.1);
-            background-color: white;
             color: #32325d;
+            background: white;
             padding: 2rem;
             width: 100%;
             position: relative;
-            margin: 4rem 0;
+            margin: 4rem auto;
           }
 
           .article-list {
             display: flex;
             flex-direction: column;
+            max-width: 70rem;
+            margin-left: auto;
+            margin-right: auto;
           }
 
           .article {
             margin-bottom: 1rem;
             font-size: 2rem;
+            font-weight: 700;
           }
 
           a,
           a:visited,
           a:active {
-            color: #32325d;
+            color: #d40052;
             text-decoration: none;
+            transition: all 0.2s linear;
           }
 
           a:hover {
-            color: #32325d;
-            text-decoration: underline;
+            transform: translateX(0.5rem) scale(1.05);
           }
 
           .backButton {
