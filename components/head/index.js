@@ -4,6 +4,8 @@ export default ({ title }) => (
   <Head>
     <title>{title ? title : 'Jack Hanford'}</title>
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <meta name="name" content="Jack Hanford" />
+    <meta name="description" content="Engineer - Hacker - Technology Addict" />
 
     <link rel='stylesheet' type='text/css' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' />
 
