@@ -18,7 +18,7 @@
     "react": "~15.5.0",
     "react-dom": "~15.5.0",
     "react-motion": "~0.4.7",
-    "sort-on": "~2.0.0"
+    "sort-on": "~1.3.0"
   },
   "now": {
     "alias": [
