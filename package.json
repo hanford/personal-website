@@ -17,7 +17,8 @@
     "node-fetch": "~1.6.3",
     "react": "~15.5.0",
     "react-dom": "~15.5.0",
-    "react-motion": "~0.4.7"
+    "react-motion": "~0.4.7",
+    "sort-on": "~2.0.0"
   },
   "now": {
     "alias": [

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Router from 'next/router'
 import GitHub from 'github-api'
 import { partial } from 'ap'
+import sortOn from 'sort-on'
 
 import Head from '../../components/head'
 import Card from './card'
@@ -17,7 +18,8 @@ export default class Projects extends PureComponent {
   static async getInitialProps () {
     const { data } = await me.listRepos()
 
-    let repos = data.filter(({ owner, fork }) => owner.login === USER_NAME && !fork)
+    let myRepos = data.filter(({ owner, fork }) => owner.login === USER_NAME && !fork)
+    let repos = sortOn(myRepos, '-stargazers_count')
 
     return {
       repos
