@@ -49,7 +49,7 @@ export default class Landing extends PureComponent {
 
                 <div className='button-row'>
                   <Link prefetch href='/projects'>
-                    <a className='beauty-button'>Open Source</a>
+                    <a className='beauty-button'>Open source</a>
                   </Link>
                   <Link href='/writing'>
                     <a className='beauty-button'>Writing</a>
@@ -185,11 +185,12 @@ export default class Landing extends PureComponent {
             cursor: pointer;
             outline: none;
             transition: all 0.25s ease-out;
+            border: 2px solid #db594b;
+            color: #db594b;
           }
 
           .beauty-button:hover {
             transform: scale(1.05);
-            color: #d40052;
           }
 
           .waver {
