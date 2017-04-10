@@ -120,6 +120,12 @@ export default class Landing extends PureComponent {
             margin: 0 auto
           }
 
+          @media(max-width: 767px) {
+            .card {
+              padding-top: 6rem;
+            }
+          }
+
           .content {
             animation: fadeIn 0.3s linear;
           }
