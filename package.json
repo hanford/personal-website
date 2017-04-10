@@ -18,5 +18,11 @@
     "react": "~15.5.0",
     "react-dom": "~15.5.0",
     "react-motion": "~0.4.7"
+  },
+  "now": {
+    "alias": [
+      "jackhanford.com",
+      "www.jackhanford.com"
+    ]
   }
 }

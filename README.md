@@ -5,9 +5,7 @@ $ yarn install
 $ yarn dev
 ```
 
-To build the site on your own, you'll need a `config.json` in the root directory that looks like this:
-```js
-{
-  "token": "your github token here.."
-}
+To build the site on your own, you'll need a github access token saved in now.
+```sh
+$ now secret add GITHUB_TOKEN "..."
 ```

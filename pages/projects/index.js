@@ -5,12 +5,11 @@ import GitHub from 'github-api'
 import { partial } from 'ap'
 
 import Head from '../../components/head'
-import config from '../../config.json'
 import Card from './card'
 
 const USER_NAME = 'hanford'
 
-const gh = new GitHub({ token: config.token })
+const gh = new GitHub({ token: process.env.GITHUB_TOKEN })
 
 const me = gh.getUser(USER_NAME)
 

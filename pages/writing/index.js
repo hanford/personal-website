@@ -72,7 +72,15 @@ export default class Writing extends PureComponent {
             padding: 2rem;
             width: 100%;
             position: relative;
-            margin: 4rem auto;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            overflow-x: hidden;
+            margin: 6rem auto;
+            transform: translateZ(0);
           }
 
           .article-list {
@@ -98,7 +106,7 @@ export default class Writing extends PureComponent {
           }
 
           a:hover {
-            transform: translateX(0.5rem) scale(1.05);
+            transform: scale(1.05);
           }
 
           .backButton {
