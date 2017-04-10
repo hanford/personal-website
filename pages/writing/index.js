@@ -34,7 +34,7 @@ export default class Writing extends PureComponent {
         <div className='container'>
           <div className='content'>
             <div className='article-list'>
-              <h2>Writing</h2>
+              <div className='page-title'>Writing</div>
               {
                 Object.keys(posts).length && Object.keys(posts).map((p, index) => {
                   const post = posts[p]
@@ -65,6 +65,12 @@ export default class Writing extends PureComponent {
             overflow: hidden;
           }
 
+          .page-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+          }
+
           .content {
             box-shadow: 0 18px 35px rgba(50,50,93,.1);
             color: #32325d;
@@ -92,7 +98,7 @@ export default class Writing extends PureComponent {
           }
 
           .article {
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
             font-size: 2rem;
             font-weight: 700;
           }
