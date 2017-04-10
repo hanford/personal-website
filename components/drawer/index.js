@@ -181,79 +181,77 @@ export default class Drawer extends React.Component {
     const animationSpring = touching ? {damping: 20, stiffness: 300} : presets.stiff
 
     return (
-      <div style={{height: '100%'}}>
-        <Motion style={{
-          translateY: spring(open ? position : window.innerHeight, animationSpring),
-          opacity: spring(open ? this.BACKGROUND_OPACITY : 0)
-        }}>
-          {({ translateY, opacity }) => {
-            return (
+      <Motion style={{
+        translateY: spring(open ? position : window.innerHeight, animationSpring),
+        opacity: spring(open ? this.BACKGROUND_OPACITY : 0)
+      }}>
+        {({ translateY, opacity }) => {
+          return (
+            <div
+              style={{backgroundColor: `rgba(55, 56, 56, ${opacity})`}}
+              onClick={this.hideDrawer}
+              className='drawerContainer'
+            >
               <div
-                style={{backgroundColor: `rgba(55, 56, 56, ${opacity})`}}
-                onClick={this.hideDrawer}
-                className='drawerContainer'
-              >
-                <div
-                  style={{transform: `translateY(${translateY}px)`, height: '100%', width: '100%'}}
-                  onClick={(e) => e.stopPropagation()}
-                  ref={(drawer) => { this.drawer = drawer }}>
-                  {this.props.children}
-                </div>
+                style={{transform: `translateY(${translateY}px)`, height: '100%', width: '100%'}}
+                onClick={(e) => e.stopPropagation()}
+                ref={(drawer) => { this.drawer = drawer }}>
+                {this.props.children}
               </div>
-            )
-          }}
-        </Motion>
 
-        <style jsx>{`
-          .modal {
-            outline: none;
-            background: white;
-            font-size: var(--fontSizeParagraph);
-            width: 76rem;
-            max-width: 90%;
-            display: flex;
-            justify-content: space-between;
-            flex-direction: column;
-            z-index: 15;
-            min-height: 47rem;
+              <style jsx>{`
+                .modal {
+                  outline: none;
+                  background: white;
+                  font-size: var(--fontSizeParagraph);
+                  width: 76rem;
+                  max-width: 90%;
+                  display: flex;
+                  justify-content: space-between;
+                  flex-direction: column;
+                  z-index: 15;
+                  min-height: 47rem;
 
-            /* add all the CSS hacks */
-            will-change: transform;
-            transform: translate3d(0, 0, 0);
-            -webkit-backface-visibility: hidden;
-            -webkit-transform-style: preserve-3d;
-          }
+                  /* add all the CSS hacks */
+                  will-change: transform;
+                  transform: translate3d(0, 0, 0);
+                  -webkit-backface-visibility: hidden;
+                  -webkit-transform-style: preserve-3d;
+                }
 
-          @media (max-width: 768px) {
-            .modal {
-              width: 100%;
-              max-width: 100%;
-              margin-bottom: 0;
-              border-top-left-radius: 8px;
-              border-top-right-radius: 8px;
-            }
-          }
+                @media (max-width: 768px) {
+                  .modal {
+                    width: 100%;
+                    max-width: 100%;
+                    margin-bottom: 0;
+                    border-top-left-radius: 8px;
+                    border-top-right-radius: 8px;
+                  }
+                }
 
-          .drawerContainer {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            display: flex;
-            justify-content: center;
-            z-index: 11;
-            align-items: center;
-          }
+                .drawerContainer {
+                  position: fixed;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
+                  display: flex;
+                  justify-content: center;
+                  z-index: 11;
+                  align-items: center;
+                }
 
-          @media(max-width: 768px) {
-            .drawerContainer {
-              height: 100%;
-              width: 100%;
-            }
-          }
-        `}</style>
-      </div>
+                @media(max-width: 768px) {
+                  .drawerContainer {
+                    height: 100%;
+                    width: 100%;
+                  }
+                }
+              `}</style>
+            </div>
+          )
+        }}
+      </Motion>
     )
   }
 }
