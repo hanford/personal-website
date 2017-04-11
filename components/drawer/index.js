@@ -181,16 +181,10 @@ export default class Drawer extends React.Component {
     const animationSpring = touching ? {damping: 20, stiffness: 300} : presets.stiff
 
     return (
-      <Motion
-        style={{
-          translateY: spring(open ? position : window.innerHeight, animationSpring),
-          opacity: spring(open ? this.BACKGROUND_OPACITY : 0)
-        }}
-        defaultStyle={{
-          opacity: 0,
-          translateY: window.innerHeight
-        }}
-      >
+      <Motion style={{
+        translateY: spring(open ? position : window.innerHeight, animationSpring),
+        opacity: spring(open ? this.BACKGROUND_OPACITY : 0)
+      }}>
         {({ translateY, opacity }) => {
           return (
             <div
