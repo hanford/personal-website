@@ -12,6 +12,7 @@ const name = (
 )
 
 export default class Landing extends PureComponent {
+
   constructor (props) {
     super(props)
 

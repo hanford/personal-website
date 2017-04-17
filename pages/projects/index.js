@@ -15,6 +15,7 @@ const gh = new GitHub({ token: process.env.GITHUB_TOKEN })
 const me = gh.getUser(USER_NAME)
 
 export default class Projects extends PureComponent {
+
   static async getInitialProps () {
     const { data } = await me.listRepos()
 
@@ -29,25 +30,23 @@ export default class Projects extends PureComponent {
   constructor (props) {
     super(props)
 
-    this.state = {
-      expanded: false
-    }
-
-    this.toggle = this.toggle.bind(this)
+    // this.state = {
+    //   expanded: false
+    // }
   }
 
-  toggle (id) {
-    const { repos } = this.props
+  // toggle (id) {
+  //   const { repos } = this.props
 
-    const repo = repos.find(r => r.id === id) || null
+  //   const repo = repos.find(r => r.id === id) || null
 
-    this.setState((state) => {
-      return {
-        expanded: !state.expanded,
-        repo
-      }
-    })
-  }
+  //   this.setState((state) => {
+  //     return {
+  //       expanded: !state.expanded,
+  //       repo
+  //     }
+  //   })
+  // }
 
   render () {
     const { url, repos } = this.props

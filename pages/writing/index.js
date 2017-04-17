@@ -6,6 +6,7 @@ import Head from '../../components/head'
 import TiltedBackground from '../../components/tilted-background'
 
 export default class Writing extends PureComponent {
+
   static async getInitialProps () {
     const res = await get('https://medium-proxy-oycoiqhsbf.now.sh')
     const data = await res.data
