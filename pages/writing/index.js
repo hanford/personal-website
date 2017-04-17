@@ -1,20 +1,19 @@
 import React, { PureComponent } from 'react'
 import Link from 'next/link'
-import fetch from 'node-fetch'
+import { get } from 'axios'
 
 import Head from '../../components/head'
 import TiltedBackground from '../../components/tilted-background'
 
 export default class Writing extends PureComponent {
   static async getInitialProps () {
-    return fetch('https://medium-proxy-gxwtirwype.now.sh')
-      .then(r => r.json())
-    	.then(({ payload }) => {
-        const { Post: posts } = payload.references
-        return {
-          posts
-        }
-      })
+    const res = await get('https://medium-proxy-oycoiqhsbf.now.sh')
+    const data = await res.data
+    const { Post: posts } = await data.payload.references
+
+    return {
+      posts
+    }
   }
 
   render () {
@@ -38,14 +37,20 @@ export default class Writing extends PureComponent {
               {
                 Object.keys(posts).length && Object.keys(posts).map((p, index) => {
                   const post = posts[p]
-                  console.log(post)
+                  const { subtitle, readingTime } = post.virtuals
+                  const timeToRead = Math.round(readingTime)
 
                   return (
                     <Link
                       href={`https://medium.com/@jackhanford/${post.uniqueSlug}`}
                       key={index}
                     >
-                      <a className='article' target='_blank'>{post.title}</a>
+                      <div className='article'>
+                        <a className='title' target='_blank'>{post.title}</a>
+                        <div className='createdAt'>
+                          {`${timeToRead} minute read`} - {subtitle}
+                        </div>
+                      </div>
                     </Link>
                   )
                 })
@@ -60,14 +65,14 @@ export default class Writing extends PureComponent {
           .container {
             display: flex;
             max-width: 100%;
-            height: 100%;
+            min-height: 100%;
             justify-content: center;
             overflow: hidden;
           }
 
           .page-title {
             font-size: 2rem;
-            margin-bottom: 2rem;
+            padding: 1rem;
             font-weight: 700;
           }
 
@@ -76,7 +81,6 @@ export default class Writing extends PureComponent {
             color: #32325d;
             background: white;
             padding: 2rem;
-            width: 100%;
             position: relative;
 
             display: flex;
@@ -98,9 +102,22 @@ export default class Writing extends PureComponent {
           }
 
           .article {
-            margin-bottom: 2rem;
+            padding: 1rem;
+            border-radius: 0.4rem;
+          }
+
+          .article:hover {
+            cursor: pointer;
+            background-color: rgba(0,0,0,0.05);
+          }
+
+          .article > .title {
             font-size: 2rem;
             font-weight: 700;
+          }
+
+          .article > .createdAt {
+            width: 100%;
           }
 
           a,

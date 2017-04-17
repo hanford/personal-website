@@ -127,7 +127,7 @@ export default class Landing extends PureComponent {
           }
 
           .content {
-            animation: fadeIn 0.3s linear;
+            animation: fadeIn 0.6s linear;
           }
 
           @keyframes fadeIn {
@@ -197,17 +197,6 @@ export default class Landing extends PureComponent {
 
           .waver {
             font-size: 4rem;
-          }
-
-          @keyframes slideIn {
-            from {
-              transform: scale(0.95);
-              opacity: 0.25;
-            }
-            to {
-              transform: scale(1);
-              opacity: 1;
-            }
           }
         `}</style>
       </div>
