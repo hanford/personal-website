@@ -50,12 +50,12 @@ export default class Writing extends PureComponent {
                       href={`https://medium.com/@jackhanford/${post.uniqueSlug}`}
                       key={index}
                     >
-                      <div className='article'>
-                        <a className='title' target='_blank'>{post.title}</a>
+                      <a className='article' target='_blank'>
+                        <a className='title'>{post.title}</a>
                         <div className='createdAt'>
                           {`${timeToRead} minute read`} - {subtitle}
                         </div>
-                      </div>
+                      </a>
                     </Link>
                   )
                 })
@@ -117,6 +117,7 @@ export default class Writing extends PureComponent {
 
           .article > .createdAt {
             width: 100%;
+            color: black;
           }
 
           a,
