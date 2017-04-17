@@ -6,6 +6,7 @@ import { partial } from 'ap'
 import sortOn from 'sort-on'
 
 import Head from '../../components/head'
+import Title from '../../components/title'
 import Card from './card'
 
 const USER_NAME = 'hanford'
@@ -50,7 +51,7 @@ export default class Projects extends PureComponent {
 
   render () {
     const { url, repos } = this.props
-    const { expanded, repo } = this.state
+    // const { expanded, repo } = this.state
 
     const containerStyle = {
       height: '100%',
@@ -71,7 +72,7 @@ export default class Projects extends PureComponent {
               </Link>
 
               <div className='projects'>
-                <div>Projects</div>
+                <Title content='Projects' />
 
                 <p className='abt-me'>Lately I've been obssessed with open source software, which I keep <a href='https://github.com/hanford' target='_blank'>on github</a>. I've been writing JavaScript profressionally for around 4 years, and have become an expert with some of the latest and greatest frontend frameworks including <a href='https://www.npmjs.com/package/virtual-dom' target='_blank'>virtual-dom</a>, <a href='https://angular.io' target='_blank'>AngularJS</a> and most recently <a href='https://facebook.github.io/react' target='_blank'>ReactJS</a>.</p>
               </div>
@@ -112,7 +113,8 @@ export default class Projects extends PureComponent {
           }
 
           .projects {
-            margin: 2rem;
+            max-width: 80%;
+            margin: 2rem auto;
           }
 
           a {

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { get } from 'axios'
 
 import Head from '../../components/head'
+import Title from '../../components/title'
 import TiltedBackground from '../../components/tilted-background'
 
 export default class Writing extends PureComponent {
@@ -34,7 +35,10 @@ export default class Writing extends PureComponent {
         <div className='container'>
           <div className='content'>
             <div className='article-list'>
-              <div className='page-title'>Writing</div>
+              <div style={{padding: '1rem'}}>
+                <Title content='Writing' />
+              </div>
+
               {
                 Object.keys(posts).length && Object.keys(posts).map((p, index) => {
                   const post = posts[p]
@@ -69,12 +73,6 @@ export default class Writing extends PureComponent {
             min-height: 100%;
             justify-content: center;
             overflow: hidden;
-          }
-
-          .page-title {
-            font-size: 2rem;
-            padding: 1rem;
-            font-weight: 700;
           }
 
           .content {
