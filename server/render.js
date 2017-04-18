@@ -11,7 +11,7 @@ const handle = app.getRequestHandler()
 // This is where we cache our rendered HTML pages
 const ssrCache = new LRUCache({
   max: 100,
-  maxAge: 1000 * 60 * 10 // 10 hours
+  maxAge: 1000 * 60 * 24 // 1 day
 })
 
 const cachedRoutes = [
