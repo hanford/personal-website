@@ -14,6 +14,7 @@ export default ({ title }) => (
         font-family: 'Brandon';
         font-style: normal;
         font-weight: 300;
+        font-display: auto;
         src: local('Brandon'), url('/static/brandon-regular.woff') format('woff');
       }
 
@@ -21,6 +22,7 @@ export default ({ title }) => (
         font-family: 'Brandon';
         font-style: normal;
         font-weight: 600;
+        font-display: auto;
         src: local('Brandon'),
              url('/static/brandon-medium.woff') format('woff');
       }
