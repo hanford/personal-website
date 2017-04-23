@@ -51,7 +51,7 @@ export default class Writing extends PureComponent {
                       key={index}
                     >
                       <a className='article' target='_blank'>
-                        <a className='title'>{post.title}</a>
+                        <div className='title'>{post.title}</div>
                         <div className='createdAt'>
                           {`${timeToRead} minute read`} - {subtitle}
                         </div>
