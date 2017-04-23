@@ -1,4 +1,4 @@
-Probably migrate my personal website to this at some point ..
+[https://jackhanford.com](https://jackhanford.com)
 
 ```sh
 $ yarn install
