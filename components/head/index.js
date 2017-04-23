@@ -1,4 +1,7 @@
 import Head from 'next/head'
+import Segment from 'load-segment'
+
+Segment({key: 'ZxJCBTbXZd76MG9R33zSOb43ULCjknzN'})
 
 export default ({ title }) => (
   <Head>

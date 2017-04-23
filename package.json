@@ -16,6 +16,7 @@
     "debug": "~2.6.3",
     "express": "~4.15.2",
     "github-api": "~3.0.0",
+    "load-segment": "~1.0.1",
     "lru-cache": "~4.0.2",
     "next": "~2.1.1",
     "react": "~15.5.0",
