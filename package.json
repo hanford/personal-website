@@ -21,6 +21,7 @@
     "next": "~2.3.0",
     "react": "~15.5.0",
     "react-dom": "~15.5.0",
+    "react-drag-drawer": "~0.1.0",
     "react-motion": "~0.4.7",
     "sort-on": "~1.3.0"
   },

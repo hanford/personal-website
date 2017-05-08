@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react'
 import Link from 'next/link'
 import { Motion, spring } from 'react-motion'
+import Drawer from 'react-drag-drawer'
 
 import Head from '../components/head'
-import Drawer from '../components/drawer'
 import SocialModal from '../components/social-modal'
 import TiltedBackground from '../components/tilted-background'
 
