@@ -106,8 +106,8 @@ export default () => (
         max-width: 60rem;
         box-sizing: border-box;
         margin: 0 auto;
-        border: 1px solid rgba(0,0,0,0.2);
-        box-shadow: 0 0.4rem 4rem rgba(0,0,0,0.2);
+        box-shadow: 0 0.4rem 4rem rgba(0, 0, 0, 0.35);
+        border-radius: 4px;
       }
     `}</style>
   </div>
