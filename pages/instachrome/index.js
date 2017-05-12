@@ -21,7 +21,7 @@ export default () => (
           href='https://chrome.google.com/webstore/detail/dffakiimcpeogagieklcdchklmghdnhd'
           className='backButton'
         >
-          Add to chrome
+          Add to Google chrome
         </a>
       </div>
     </div>
