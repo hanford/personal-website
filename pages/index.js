@@ -190,6 +190,8 @@ export default class Landing extends PureComponent {
             transition: all 0.25s ease-out;
             border: 2px solid #db594b;
             color: #db594b;
+            font-weight: bold;
+            font-family: Brandon;
           }
 
           .beauty-button:hover {
