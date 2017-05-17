@@ -56,6 +56,18 @@ export default class Landing extends PureComponent {
                   <button className='beauty-button' onClick={this.toggle}>Contact me</button>
                 </div>
 
+                <div>
+                  <Link href='/instachrome'>
+                    <a target='_blank'>Instachrome</a>
+                  </Link>
+
+                  <br />
+
+                  <Link href='/youtube-darkmode'>
+                    <a target='_blank'>Youtube Darkmode</a>
+                  </Link>
+                </div>
+
               </div>
             </div>
           </section>
