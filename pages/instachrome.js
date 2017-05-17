@@ -42,7 +42,8 @@ export default () => (
         width: 100%;
         background-color: white;
         color: rgba(0, 0, 0, 0.8);
-        margin: 6rem 0;
+        padding: 2rem 0;
+        margin-top: 2rem;
         min-height: 60rem;
       }
 
