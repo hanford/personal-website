@@ -34,7 +34,6 @@ export const Head = ({ title }) => (
       body,
       #__next {
         font-family: Brandon, Arial;
-        height: 100%;
         width: 100%;
         overflow: auto;
         margin: 0;

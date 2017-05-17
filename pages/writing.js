@@ -19,15 +19,8 @@ export default class Writing extends PureComponent {
   render () {
     const { posts } = this.props
 
-    const containerStyle = {
-      height: '100%',
-      width: '100%',
-      overflow: 'scroll',
-      WebkitOverflowScrolling: 'touch'
-    }
-
     return (
-      <div style={containerStyle}>
+      <div>
         <Head title='Jack Hanford | Writing' />
 
         <div className='container'>
@@ -80,13 +73,9 @@ export default class Writing extends PureComponent {
             padding: 2rem;
             position: relative;
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
             width: 100%;
             overflow-x: hidden;
-            margin: 6rem auto;
+            margin: 0 auto 0;
             transform: translateZ(0);
           }
 

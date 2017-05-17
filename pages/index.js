@@ -31,11 +31,12 @@ export default class Landing extends PureComponent {
     const { expanded } = this.state
 
     return (
-      <div style={{height: '100%'}}>
+      <div>
         <Head />
 
+        <TiltedBack />
+
         <div className='body'>
-          <TiltedBack />
 
           <section className='container'>
             <div className='card'>
@@ -84,12 +85,11 @@ export default class Landing extends PureComponent {
 
         <style jsx>{`
           .body {
-            height: 100%;
             width: 100%;
             display: flex;
             justify-content: center;
             position: relative;
-            overflow: hidden;
+            background-color: white;
             justify-content: center;
           }
 
@@ -133,7 +133,7 @@ export default class Landing extends PureComponent {
 
           @media(max-width: 767px) {
             .card {
-              padding-top: 6rem;
+              padding-top: 1rem;
             }
           }
 

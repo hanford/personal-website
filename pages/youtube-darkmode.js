@@ -45,6 +45,8 @@ export default () => (
         max-width: 100%;
         justify-content: center;
         text-align: center;
+        -webkit-overflow-scrolling: touch;
+        overflow: auto;
       }
 
       .hero {

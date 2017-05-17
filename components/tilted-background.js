@@ -9,8 +9,8 @@ export const TiltedBack = () => (
         min-height: 62rem;
         background-color: white;
         transform: rotateZ(5deg);
-        position: absolute;
-        top: -20rem;
+        position: fixed;
+        top: -15rem;
         left: -118px;
         box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
       }

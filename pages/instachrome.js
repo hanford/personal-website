@@ -49,6 +49,8 @@ export default () => (
       .content {
         display: flex;
         flex-direction: column;
+        width: 80%;
+        margin: 0 auto;
       }
 
       .backButton {
