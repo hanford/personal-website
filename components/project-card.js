@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default ({ name, id, description, stars, language }) => (
+export const ProjectCard = ({ name, id, description, stars, language }) => (
   <div className='project'>
     <div className='content'>
       <div className='about'>
@@ -77,3 +77,5 @@ export default ({ name, id, description, stars, language }) => (
     `}</style>
   </div>
 )
+
+export default ProjectCard

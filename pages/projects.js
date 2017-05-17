@@ -5,13 +5,10 @@ import GitHub from 'github-api'
 import { partial } from 'ap'
 import sortOn from 'sort-on'
 
-import { Title, Head } from '../../components'
-import Card from './card'
+import { Title, Head, ProjectCard } from '../components'
 
 const USER_NAME = 'hanford'
-
 const gh = new GitHub({ token: process.env.GITHUB_TOKEN })
-
 const me = gh.getUser(USER_NAME)
 
 export default class Projects extends PureComponent {
@@ -26,27 +23,6 @@ export default class Projects extends PureComponent {
       repos
     }
   }
-
-  constructor (props) {
-    super(props)
-
-    // this.state = {
-    //   expanded: false
-    // }
-  }
-
-  // toggle (id) {
-  //   const { repos } = this.props
-
-  //   const repo = repos.find(r => r.id === id) || null
-
-  //   this.setState((state) => {
-  //     return {
-  //       expanded: !state.expanded,
-  //       repo
-  //     }
-  //   })
-  // }
 
   render () {
     const { url, repos } = this.props
@@ -80,7 +56,7 @@ export default class Projects extends PureComponent {
                 {
                   repos.map(({ name, id, description, stargazers_count, language, html_url }) => (
                     <a href={html_url} key={id} target='_blank' className='card-link'>
-                      <Card
+                      <ProjectCard
                         name={name}
                         id={id}
                         description={description}
