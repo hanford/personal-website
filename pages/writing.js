@@ -24,7 +24,7 @@ export default class Writing extends PureComponent {
         <Head title='Jack Hanford | Writing' />
 
         <div className='container'>
-          <div className='content'>
+          <div className='hero'>
             <div className='article-list'>
               <div style={{padding: '1rem'}}>
                 <Title content='Writing' />
@@ -61,22 +61,21 @@ export default class Writing extends PureComponent {
           .container {
             display: flex;
             max-width: 100%;
-            min-height: 100%;
             justify-content: center;
-            overflow: hidden;
+            text-align: left;
+            -webkit-overflow-scrolling: touch;
+            overflow: auto;
           }
 
-          .content {
-            box-shadow: 0 18px 35px rgba(50,50,93,.1);
-            color: #32325d;
-            background: white;
-            padding: 2rem;
-            position: relative;
-
+          .hero {
+            max-width: 100%;
             width: 100%;
-            overflow-x: hidden;
-            margin: 0 auto 0;
-            transform: translateZ(0);
+            background-color: white;
+            color: rgba(0, 0, 0, 0.8);
+            padding: 6rem 0;
+            min-height: 60rem;
+            margin: 2rem auto 0;
+            position: relative;
           }
 
           .article-list {

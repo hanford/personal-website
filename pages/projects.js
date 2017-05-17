@@ -28,44 +28,39 @@ export default class Projects extends PureComponent {
     const { url, repos } = this.props
     // const { expanded, repo } = this.state
 
-    const containerStyle = {
-      height: '100%',
-      width: '100%',
-      overflow: 'scroll',
-      WebkitOverflowScrolling: 'touch'
-    }
-
     return (
-      <div style={containerStyle}>
+      <div>
         <Head title='Jack Hanford | Projects' />
 
         <div className='container'>
-          <div className='card'>
-            <div style={{maxWidth: '110rem', marginLeft: 'auto', marginRight: 'auto'}}>
-              <Link href='/'>
-                <a style={{position: 'absolute', top: '1rem', right: '2rem', fontSize: '3rem'}}>×</a>
-              </Link>
+          <div className='hero'>
+            <div className='content'>
+              <div style={{maxWidth: '110rem', marginLeft: 'auto', marginRight: 'auto'}}>
+                <Link href='/'>
+                  <a style={{position: 'absolute', top: '2rem', right: '2rem', fontSize: '3rem'}}>×</a>
+                </Link>
 
-              <div className='projects'>
-                <Title content='Projects' />
+                <div className='projects'>
+                  <Title content='Projects' />
 
-                <p className='abt-me'>Lately I've been obssessed with open source software, which I keep <a href='https://github.com/hanford' target='_blank'>on github</a>. I've been writing JavaScript profressionally for around 4 years, and have become an expert with some of the latest and greatest frontend frameworks including <a href='https://www.npmjs.com/package/virtual-dom' target='_blank'>virtual-dom</a>, <a href='https://angular.io' target='_blank'>AngularJS</a> and most recently <a href='https://facebook.github.io/react' target='_blank'>ReactJS</a>.</p>
-              </div>
+                  <p className='abt-me'>Lately I've been obssessed with open source software, which I keep <a href='https://github.com/hanford' target='_blank'>on github</a>. I've been writing JavaScript profressionally for around 4 years, and have become an expert with some of the latest and greatest frontend frameworks including <a href='https://www.npmjs.com/package/virtual-dom' target='_blank'>virtual-dom</a>, <a href='https://angular.io' target='_blank'>AngularJS</a> and most recently <a href='https://facebook.github.io/react' target='_blank'>ReactJS</a>.</p>
+                </div>
 
-              <div className='list'>
-                {
-                  repos.map(({ name, id, description, stargazers_count, language, html_url }) => (
-                    <a href={html_url} key={id} target='_blank' className='card-link'>
-                      <ProjectCard
-                        name={name}
-                        id={id}
-                        description={description}
-                        stars={stargazers_count}
-                        language={language}
-                      />
-                    </a>
-                  ))
-                }
+                <div className='list'>
+                  {
+                    repos.map(({ name, id, description, stargazers_count, language, html_url }) => (
+                      <a href={html_url} key={id} target='_blank' className='card-link'>
+                        <ProjectCard
+                          name={name}
+                          id={id}
+                          description={description}
+                          stars={stargazers_count}
+                          language={language}
+                        />
+                      </a>
+                    ))
+                  }
+                </div>
               </div>
             </div>
           </div>
@@ -74,13 +69,28 @@ export default class Projects extends PureComponent {
         <style jsx>{`
           .container {
             display: flex;
+            max-width: 100%;
+            height: 100%;
             justify-content: center;
-            align-items: center;
-            flex-direction: column;
+            text-align: left;
+            overflow: hidden !important;
+          }
+
+          .hero {
+            max-width: 100%;
             width: 100%;
-            overflow-x: hidden;
-            margin: 6rem auto;
-            transform: translateZ(0);
+            background-color: white;
+            color: rgba(0, 0, 0, 0.8);
+            padding: 2rem 0;
+            margin-top: 2rem;
+            min-height: 60rem;
+          }
+
+          .content {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            margin: 0 auto;
           }
 
           .card-link {
