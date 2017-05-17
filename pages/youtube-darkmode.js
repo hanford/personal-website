@@ -18,7 +18,7 @@ export default () => (
           Google is redesigning youtube and also adding darkmode, this enables it right now
         </p>
 
-        <img src='../static/darkmode.png' />
+        <img src='../static/darkmode.jpg' />
 
 
         <a

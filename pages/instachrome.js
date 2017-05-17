@@ -15,7 +15,7 @@ export default () => (
       <div className='content'>
         <h1 style={{marginBottom: '0'}}>Instachrome</h1>
         <p style={{marginTop: '0.5rem', marginBottom: '3rem'}}>Browse instagram from anywhere</p>
-        <img src='../static/instachrome.png' />
+        <img src='../static/instachrome.jpg' />
 
         <a
           target='_blank'
