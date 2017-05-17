@@ -72,7 +72,7 @@ export default class Writing extends PureComponent {
             width: 100%;
             background-color: white;
             color: rgba(0, 0, 0, 0.8);
-            padding: 6rem 0;
+            padding: 6rem 2rem;
             min-height: 60rem;
             margin: 2rem auto 0;
             position: relative;

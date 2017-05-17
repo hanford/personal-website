@@ -11,7 +11,6 @@ export const TiltedBack = () => (
         transform: rotateZ(5deg);
         position: fixed;
         top: -15rem;
-        left: -118px;
         box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
       }
     `}</style>

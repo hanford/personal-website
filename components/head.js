@@ -39,15 +39,8 @@ export const Head = ({ title }) => (
         margin: 0;
         padding: 0;
         font-size: 10px;
-        background-image: linear-gradient(-45deg, #D20B54 0%, #FFB849 100%);
-
-        color: white;
-      }
-
-      body > div:first-of-type {
-        height: 100%;
-        display: block;
-        overflow: scroll;
+        background: linear-gradient(-45deg, #D20B54 0%, #FFB849 100%) no-repeat center center fixed;
+        backround-size: cover
       }
 
       * {
