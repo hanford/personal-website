@@ -3,9 +3,7 @@ import Link from 'next/link'
 import { Motion, spring } from 'react-motion'
 import Drawer from 'react-drag-drawer'
 
-import Head from '../components/head'
-import SocialModal from '../components/social-modal'
-import TiltedBackground from '../components/tilted-background'
+import { SocialModal, TiltedBack, Head } from '../components'
 
 const name = (
   <span style={{fontWeight: 600}}>Jack Hanford</span>
@@ -37,7 +35,7 @@ export default class Landing extends PureComponent {
         <Head />
 
         <div className='body'>
-          <TiltedBackground />
+          <TiltedBack />
 
           <section className='container'>
             <div className='card'>

@@ -1,10 +1,10 @@
-import Head from 'next/head'
+import HeadTag from 'next/head'
 import Segment from 'load-segment'
 
 Segment({key: 'ZxJCBTbXZd76MG9R33zSOb43ULCjknzN'})
 
-export default ({ title }) => (
-  <Head>
+export const Head = ({ title }) => (
+  <HeadTag>
     <title>{title ? title : 'Jack Hanford'}</title>
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     <meta name="name" content="Jack Hanford" />
@@ -41,6 +41,7 @@ export default ({ title }) => (
         padding: 0;
         font-size: 10px;
         background-image: linear-gradient(-45deg, #D20B54 0%, #FFB849 100%);
+
         color: white;
       }
 
@@ -59,5 +60,7 @@ export default ({ title }) => (
         height: 100%;
       }
     `}} />
-  </Head>
+  </HeadTag>
 )
+
+export default Head

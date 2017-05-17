@@ -1,19 +1,21 @@
 import Link from 'next/link'
 
-import Head from '../../components/head'
+import { GithubBadge, Head } from '../../components'
 
 export default () => (
   <div className='container'>
     <Head />
 
-    <div className='star-container'>
-      <a className='starOnGithub' href='https://github.com/hanford/youtube-darkmode' target='_blank'>Star on Github</a>
-    </div>
+    <GithubBadge
+      url='https://github.com/hanford/youtube-darkmode'
+      title='Star on Github'
+    />
 
     <div className='hero'>
       <div className='content'>
-        <h1 style={{marginBottom: '0'}}>Youtube's Native Darkmode</h1>
-        <p style={{marginTop: '0.5rem', marginBottom: '3rem'}}>Join Youtube's latest UI A/B test right now to use a redesigned youtube</p>
+        <h1 style={{marginBottom: '0'}}>Youtube Material UI</h1>
+        <p style={{marginTop: '0.5rem', marginBottom: '3rem'}}>Google is redesigning youtube and adding darkmode, this enables it right now.</p>
+
         <iframe width='100%' height='360' src='https://www.youtube.com/embed/plz6bGOb3VI' frameborder='0' allowfullscreen></iframe>
 
         <a
@@ -21,27 +23,18 @@ export default () => (
           href='https://chrome.google.com/webstore/detail/ajngaombckgmodafdnmipfmcfgppnnhp'
           className='backButton'
         >
-          Add to Google chrome
+          Add to Google Chrome
         </a>
       </div>
     </div>
 
     <style jsx>{`
-      .star-container {
-        overflow: hidden;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        height: 20rem;
-      }
-
       .container {
         display: flex;
         max-width: 100%;
         height: 100%;
         justify-content: center;
         text-align: center;
-        overflow: hidden !important;
       }
 
       .hero {
@@ -80,28 +73,6 @@ export default () => (
         font-weight: bold;
       }
 
-      .starOnGithub {
-        display: block;
-        position: absolute;
-        top: 3rem;
-        right: -7rem;
-        padding: .8em 1.5em;
-        width: 15em;
-        text-align: center;
-        background-color: #0a1818;
-        font-size: 1.2em;
-        font-weight: 500;
-        color: #fefefe;
-        text-decoration: none;
-        white-space: nowrap;
-        -webkit-transform: rotate(45deg);
-        transform: rotate(45deg);
-        -webkit-transform-origin: 50% 50%;
-        transform-origin: 50% 50%;
-        -webkit-transition: all .2s;
-        transition: all .2s;
-      }
-
       iframe {
         width: 100%;
         max-width: 60rem;
@@ -109,6 +80,7 @@ export default () => (
         margin: 0 auto;
         box-shadow: 0 0.4rem 4rem rgba(0, 0, 0, 0.35);
         border-radius: 4px;
+        border: 0;
       }
     `}</style>
   </div>

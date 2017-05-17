@@ -5,8 +5,7 @@ import GitHub from 'github-api'
 import { partial } from 'ap'
 import sortOn from 'sort-on'
 
-import Head from '../../components/head'
-import Title from '../../components/title'
+import { Title, Head } from '../../components'
 import Card from './card'
 
 const USER_NAME = 'hanford'

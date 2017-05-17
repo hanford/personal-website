@@ -1,4 +1,4 @@
-export default ({ content }) => (
+export const Title = ({ content }) => (
   <div>
     <div className='title'>{content}</div>
     <style jsx>{`
@@ -10,3 +10,5 @@ export default ({ content }) => (
     `}</style>
   </div>
 )
+
+export default Title

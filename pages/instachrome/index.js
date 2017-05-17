@@ -1,14 +1,15 @@
 import Link from 'next/link'
 
-import Head from '../../components/head'
+import { Head, GithubBadge } from '../../components'
 
 export default () => (
   <div className='container'>
     <Head />
 
-    <div className='star-container'>
-      <a className='starOnGithub' href='https://github.com/hanford/Instachrome' target='_blank'>Star on Github</a>
-    </div>
+    <GithubBadge
+      href='https://github.com/hanford/Instachrome'
+      title='Star on Github'
+    />
 
     <div className='hero'>
       <div className='content'>
@@ -27,13 +28,6 @@ export default () => (
     </div>
 
     <style jsx>{`
-      .star-container {
-        overflow: hidden;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        height: 20rem;
-      }
       .container {
         display: flex;
         max-width: 100%;
@@ -77,28 +71,6 @@ export default () => (
         color: #db594b;
         margin: 4rem auto 0;
         font-weight: bold;
-      }
-
-      .starOnGithub {
-        display: block;
-        position: absolute;
-        top: 3rem;
-        right: -7rem;
-        padding: .8em 1.5em;
-        width: 15em;
-        text-align: center;
-        background-color: #0a1818;
-        font-size: 1.2em;
-        font-weight: 500;
-        color: #fefefe;
-        text-decoration: none;
-        white-space: nowrap;
-        -webkit-transform: rotate(45deg);
-        transform: rotate(45deg);
-        -webkit-transform-origin: 50% 50%;
-        transform-origin: 50% 50%;
-        -webkit-transition: all .2s;
-        transition: all .2s;
       }
 
       img {

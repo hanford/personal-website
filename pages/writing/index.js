@@ -2,8 +2,7 @@ import React, { PureComponent } from 'react'
 import Link from 'next/link'
 import { get } from 'axios'
 
-import Head from '../../components/head'
-import Title from '../../components/title'
+import { Head, Title } from '../../components'
 import TiltedBackground from '../../components/tilted-background'
 
 export default class Writing extends PureComponent {

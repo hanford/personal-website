@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import Head from '../../components/head'
+import { Head } from '../../components'
 
 export default () => (
   <div className='container'>

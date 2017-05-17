@@ -2,9 +2,7 @@ import React, { PureComponent } from 'react'
 import { Motion, spring, presets } from 'react-motion'
 import Link from 'next/link'
 
-import Head from '../../components/head'
-
-export default ({ toggle }) => (
+export const SocialModal = ({ toggle }) => (
   <div className='body'>
     <section className='container'>
 
@@ -155,3 +153,5 @@ export default ({ toggle }) => (
     `}</style>
   </div>
 )
+
+export default SocialModal

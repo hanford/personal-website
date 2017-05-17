@@ -1,4 +1,4 @@
-export default () => (
+export const TiltedBack = () => (
   <div>
     <div className='tiltedBack' />
 
@@ -17,3 +17,5 @@ export default () => (
     `}</style>
   </div>
 )
+
+export default TiltedBack
