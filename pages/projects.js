@@ -26,7 +26,6 @@ export default class Projects extends PureComponent {
 
   render () {
     const { url, repos } = this.props
-    // const { expanded, repo } = this.state
 
     return (
       <div>
@@ -83,7 +82,7 @@ export default class Projects extends PureComponent {
             color: rgba(0, 0, 0, 0.8);
             padding: 2rem 0;
             margin-top: 2rem;
-            min-height: 60rem;
+            min-height: 70rem;
           }
 
           .content {

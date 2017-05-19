@@ -2869,9 +2869,9 @@ react-dom@~15.5.0:
     object-assign "^4.1.0"
     prop-types "~15.5.0"
 
-react-drag-drawer@~0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/react-drag-drawer/-/react-drag-drawer-0.1.1.tgz#de90c869b82f9faad2616dacc09c8ad688f21af8"
+react-drag-drawer@~0.5.0:
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/react-drag-drawer/-/react-drag-drawer-0.5.3.tgz#e64cc3f7c484fb537f5c7b8387b75dfcb6ba4c0d"
   dependencies:
     global "~4.3.1"
     prop-types "~15.5.8"
