@@ -23,7 +23,7 @@ export default () => (
         <div className='download-section'>
           <h3>Downloads</h3>
 
-          <div className='row'>
+          <div className='download-row'>
             <a
               target='_blank'
               href='https://file-siuhxgiiog.now.sh/Chirp.zip'
@@ -88,12 +88,18 @@ export default () => (
         margin-top: 6rem;
       }
 
-      .row {
+      .download-row {
         display: flex;
         flex-direction: row;
         justify-cotent: space-between;
         max-width: 36rem;
         margin: auto;
+      }
+
+      @media(max-width: 768px) {
+        .download-row {
+          flex-direction: column;
+        }
       }
 
       .backButton {
@@ -117,6 +123,13 @@ export default () => (
         margin: 0 1.5rem;
         font-weight: bold;
         min-width: 10rem;
+      }
+
+      @media(max-width: 768px) {
+        .backButton {
+          margin: 1.5rem 0;
+          min-width: 20rem;
+        }
       }
 
       iframe,
