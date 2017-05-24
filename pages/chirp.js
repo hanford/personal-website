@@ -26,7 +26,7 @@ export default () => (
           <div className='row'>
             <a
               target='_blank'
-              href='https://file-jgfjwlcpdu.now.sh/mac.zip'
+              href='https://file-siuhxgiiog.now.sh/Chirp.zip'
               className='backButton'
               download='Chirp.zip'
             >
