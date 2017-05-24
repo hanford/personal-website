@@ -92,7 +92,6 @@ export default () => (
         display: flex;
         flex-direction: row;
         justify-cotent: space-between;
-        max-width: 36rem;
         margin: auto;
       }
 
@@ -122,13 +121,13 @@ export default () => (
         color: #db594b;
         margin: 0 1.5rem;
         font-weight: bold;
-        min-width: 10rem;
+        min-width: 20rem;
       }
 
       @media(max-width: 768px) {
         .backButton {
           margin: 1.5rem 0;
-          min-width: 20rem;
+          min-width: 24rem;
         }
       }
 
