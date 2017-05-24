@@ -26,7 +26,7 @@ export default () => (
           <div className='download-row'>
             <a
               target='_blank'
-              href='https://file-jjvyzmvomz.now.sh/chirp-mac.zip'
+              href='https://file-skihftbnli.now.sh/Chirp-darwin-x64.zip'
               className='backButton'
               download='Chirp.zip'
             >
@@ -35,7 +35,7 @@ export default () => (
 
             <a
               target='_blank'
-              href='https://file-pewuevramw.now.sh/chirp-linux.zip'
+              href='https://file-bxdmzaqkor.now.sh/Chirp-linux-x64.zip'
               className='backButton'
               download='Chirp.zip'
             >
@@ -44,7 +44,7 @@ export default () => (
 
             <a
               target='_blank'
-              href='https://file-xzttzczllf.now.sh/chirp-windows.zip'
+              href='https://file-tfmmrxtwrd.now.sh/Chirp-win32-x64.zip'
               className='backButton'
               download='Chirp.zip'
             >
