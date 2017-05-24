@@ -7,32 +7,56 @@ export default () => (
     <Head />
 
     <GithubBadge
-      url='https://github.com/hanford/youtube-darkmode'
+      url='https://github.com/hanford/chirp'
       title='Star on Github'
     />
 
     <div className='hero'>
       <div className='content'>
-        <h1 style={{marginBottom: '0'}}>Youtube Darkmode <span style={{fontSize: '3rem'}}>🎉</span></h1>
+        <h1 style={{marginBottom: '0'}}>Chirp <span style={{fontSize: '3rem'}}>🐦</span></h1>
         <p style={{marginTop: '0.5rem', marginBottom: '3rem'}}>
-          Google is redesigning youtube and also adding darkmode, this enables it right now
+          A desktop twitter application built for all platforms
         </p>
 
-        <img src='../static/darkmode.jpg' />
+        <img src='../static/chirp.jpg' />
 
-        <a
-          target='_blank'
-          href='https://chrome.google.com/webstore/detail/ajngaombckgmodafdnmipfmcfgppnnhp'
-          className='backButton'
-        >
-          Add to Google Chrome
-        </a>
+        <div className='download-section'>
+          <h3>Downloads</h3>
+
+          <div className='row'>
+            <a
+              target='_blank'
+              href='https://file-jgfjwlcpdu.now.sh/mac.zip'
+              className='backButton'
+              download='Chirp.zip'
+            >
+              Mac
+            </a>
+
+            <a
+              target='_blank'
+              href='https://file-cluhollhkd.now.sh/linux.zip'
+              className='backButton'
+              download='Chirp.zip'
+            >
+              Linux
+            </a>
+
+            <a
+              target='_blank'
+              href='https://file-ztvyykkdka.now.sh/windows.zip'
+              className='backButton'
+              download='Chirp.zip'
+            >
+              Windows
+            </a>
+            </div>
+        </div>
 
 
-        <h2 style={{marginTop: '8rem'}}>How to video</h2>
-        <p style={{maxWidth: '60rem', margin: '0 auto'}}>After installing the chrome extension, simply go to youtube and click "ok", and you'll load up the new youtube interface, from there you can enable darkmode or just enjoy the new white interface.</p>
+        <h2 style={{marginTop: '14rem'}}>Video</h2>
         <br />
-        <iframe width='100%' height='360' src='https://www.youtube.com/embed/plz6bGOb3VI' frameborder='0' allowfullscreen></iframe>
+        <iframe width='100%' height='360' src='https://www.youtube.com/embed/OfysGhGIHp8' frameborder='0' allowfullscreen></iframe>
         <br />
         <br />
       </div>
@@ -58,9 +82,18 @@ export default () => (
         padding: 2rem;
       }
 
-      .content {
+      .download-section {
         display: flex;
         flex-direction: column;
+        margin-top: 6rem;
+      }
+
+      .row {
+        display: flex;
+        flex-direction: row;
+        justify-cotent: space-between;
+        max-width: 36rem;
+        margin: auto;
       }
 
       .backButton {
@@ -81,8 +114,9 @@ export default () => (
         transition: all 0.25s ease-out;
         border: 2px solid #db594b;
         color: #db594b;
-        margin: 4rem auto 0;
+        margin: 0 1.5rem;
         font-weight: bold;
+        min-width: 10rem;
       }
 
       iframe,

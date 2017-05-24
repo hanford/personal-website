@@ -58,6 +58,11 @@ export default class Landing extends PureComponent {
                 </div>
 
                 <div>
+                  <Link href='/chirp'>
+                    <a target='_blank'>Chirp 🐦</a>
+                  </Link>
+
+                  <br />
                   <Link href='/instachrome'>
                     <a target='_blank'>Instachrome</a>
                   </Link>
