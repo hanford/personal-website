@@ -7,7 +7,7 @@ export default () => (
     <Head />
 
     <GithubBadge
-      href='https://github.com/hanford/Instachrome'
+      url='https://github.com/hanford/Instachrome'
       title='Star on Github'
     />
 
@@ -24,6 +24,13 @@ export default () => (
         >
           Add to Google chrome
         </a>
+
+        <h2 style={{marginTop: '8rem'}}>How to video</h2>
+        <p style={{maxWidth: '60rem', margin: '0 auto'}}>After installing the chrome extension, simply click the icon and you should be good to go!.</p>
+        <br />
+        <iframe width='100%' height='360' src='https://www.youtube.com/embed/IC9JDy6i4-s' frameborder='0' allowfullscreen></iframe>
+        <br />
+        <br />
       </div>
     </div>
 
@@ -76,13 +83,15 @@ export default () => (
         font-weight: bold;
       }
 
+      iframe,
       img {
-        width: 100%;
-        max-width: 60rem;
+        width: 60rem;
+        max-width: 80%;
         box-sizing: border-box;
         margin: 0 auto;
         box-shadow: 0 0.4rem 4rem rgba(0, 0, 0, 0.35);
         border-radius: 4px;
+        border: 0;
       }
     `}</style>
   </div>
