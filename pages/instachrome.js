@@ -26,7 +26,7 @@ export default () => (
         </a>
 
         <h2 style={{marginTop: '8rem'}}>How to video</h2>
-        <p style={{maxWidth: '60rem', margin: '0 auto'}}>After installing the chrome extension, simply click the icon and you should be good to go!.</p>
+        <p style={{maxWidth: '60rem', margin: '0 auto'}}>After installing the chrome extension, simply click the icon and you should be good to go!</p>
         <br />
         <iframe width='100%' height='360' src='https://www.youtube.com/embed/IC9JDy6i4-s' frameborder='0' allowfullscreen></iframe>
         <br />
