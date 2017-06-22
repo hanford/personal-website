@@ -3,20 +3,12 @@ import Link from 'next/link'
 import { Motion, spring } from 'react-motion'
 import Drawer from 'react-drag-drawer'
 
-import { SocialModal, TiltedBack, Head } from '../components'
-
-const name = (
-  <span style={{fontWeight: 600}}>Jack Hanford</span>
-)
+import { SocialModal, TiltedBack, Head, Article } from '../components'
 
 export default class Landing extends PureComponent {
 
-  constructor (props) {
-    super(props)
-
-    this.state = {
-      expanded: false
-    }
+  state = {
+    expanded: false
   }
 
   toggle = () => {
@@ -34,16 +26,13 @@ export default class Landing extends PureComponent {
       <div>
         <Head />
 
-        <TiltedBack />
-
         <div className='body'>
-
-          <section className='container'>
+          <div className='card-container'>
             <div className='card'>
               <div className='content'>
                 <div className='waver'>👋</div>
                 <div className='intro'>
-                  <div>Hi I'm {name}</div>
+                  <div>Hi I'm <span style={{fontWeight: 600}}>Jack Hanford</span></div>
                   <div>I'm a senior software engineer at <a href='https://eaze.com' target='_blank'>Eaze</a>.</div>
                 </div>
 
@@ -51,29 +40,55 @@ export default class Landing extends PureComponent {
                   <Link prefetch href='/projects'>
                     <a className='beauty-button'>Open source</a>
                   </Link>
+                  <Link href='/writing'>
+                    <a className='beauty-button'>Writing</a>
+                  </Link>
                   <button className='beauty-button' onClick={this.toggle}>Contact me</button>
                 </div>
+              </div>
+            </div>
+          </div>
 
-                <div>
-                  <Link href='/chirp'>
-                    <a target='_blank'>Chirp 🐦</a>
-                  </Link>
+          <div className='skew-line' />
 
-                  <br />
-                  <Link href='/instachrome'>
-                    <a target='_blank'>Instachrome</a>
-                  </Link>
+          <div className='card-container'>
+            <div className='card'>
+              <div className='content'>
 
-                  <br />
+                <Article
+                  path='/instachrome'
+                  name='Instachrome'
+                  about='Browse Instagram from anywhere'
+                />
 
-                  <Link href='/youtube-darkmode'>
-                    <a target='_blank'>Youtube Darkmode</a>
-                  </Link>
-                </div>
+                <Article
+                  path='/chirp'
+                  name='Chirp 🐦'
+                  about='A desktop twitter application built for all platforms'
+                />
+
+                <Article
+                  path='https://github.com/hanford/react-drag-drawer'
+                  name='React Drag Drawer'
+                  about='Mobile first ReactJS modal component with native touch gesture support'
+                />
+
+                <Article
+                  path='https://github.com/hanford/react-motion-kanban'
+                  name='React Kanban'
+                  about='Custom react drag and drop interface built trello style but with better animations'
+                />
+
+                <Article
+                  path='/youtube-darkmode'
+                  name='Youtube Darkmode 🐦'
+                  about='Google is redesigning youtube and also adding darkmode, this enables it right now'
+                />
 
               </div>
             </div>
-          </section>
+          </div>
+
         </div>
 
         <Drawer
@@ -91,19 +106,15 @@ export default class Landing extends PureComponent {
             display: flex;
             justify-content: center;
             position: relative;
-            background-color: white;
             justify-content: center;
+            flex-direction: column;
+            color: #32325d;
           }
 
           a {
             color: #d40052;
             font-weight: 600;
             text-decoration: underline;
-          }
-
-          .container {
-            width: 100%;
-            color: #32325d;
           }
 
           .intro {
@@ -123,24 +134,37 @@ export default class Landing extends PureComponent {
             line-height: 2rem
           }
 
-          .card {
-            width: 50rem;
+          .card-container {
             max-width: 100%;
-            color: #32325d;
-            padding: 2rem 4rem;
+            padding: 2rem;
+            animation: fadeIn 0.6s linear;
+          }
+
+          .card-container:first-of-type {
             padding-top: 16rem;
+          }
+
+          @media(max-width: 767px) {
+            .card-container:first-of-type {
+              padding-top: 2rem;
+            }
+          }
+
+          .card {
+            max-width: 55rem;
+            color: #32325d;
+            padding: 4rem;
             position: relative;
-            margin: 0 auto
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 0.4rem;
+            box-shadow: 0 1rem 3.5rem rgba(0,0,0,0.2);
           }
 
           @media(max-width: 767px) {
             .card {
-              padding-top: 1rem;
+              padding: 2rem;
             }
-          }
-
-          .content {
-            animation: fadeIn 0.6s linear;
           }
 
           @keyframes fadeIn {
@@ -157,7 +181,6 @@ export default class Landing extends PureComponent {
           .button-row {
             display: flex;
             margin: 1rem auto;
-
             align-items: center;
             justify-content: space-between;
             width: 100%;
@@ -188,13 +211,12 @@ export default class Landing extends PureComponent {
             display: block;
             line-height: 4rem;
             padding: 0 1.4rem;
-            box-shadow: 0 0.4rem 0.6rem rgba(50,50,93,.11), 0 0.1rem 0.3rem rgba(0,0,0,.08);
+            box-shadow: 0 0.4rem 0.6rem rgba(50,50,93,.10);
             background: #fff;
             border-radius: 0.4rem;
             font-size: 1.2rem;
             text-transform: uppercase;
             letter-spacing: .025em;
-            color: #32325d;
             text-decoration: none;
             border: 0px;
             cursor: pointer;
@@ -207,18 +229,21 @@ export default class Landing extends PureComponent {
           }
 
           .beauty-button:hover {
-            transform: scale(1.05);
+            background-color: #db594b;
+            color: white;
           }
 
           .waver {
             font-size: 4rem;
+          }
+
+          .skew-line {
+            height: 2rem;
+            transform: skewY(-2deg);
+            width: 100%;
           }
         `}</style>
       </div>
     )
   }
 }
-
-// <Link href='/writing'>
-//   <a className='beauty-button'>Writing</a>
-// </Link>
