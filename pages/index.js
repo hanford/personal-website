@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Motion, spring } from 'react-motion'
 import Drawer from 'react-drag-drawer'
 
-import { SocialModal, TiltedBack, Head, Article } from '../components'
+import { SocialModal, Head, Article } from '../components'
 
 export default class Landing extends PureComponent {
 
@@ -45,46 +45,44 @@ export default class Landing extends PureComponent {
                   </Link>
                   <button className='beauty-button' onClick={this.toggle}>Contact me</button>
                 </div>
-              </div>
-            </div>
-          </div>
 
-          <div className='skew-line' />
+                <div className='content'>
 
-          <div className='card-container'>
-            <div className='card'>
-              <div className='content'>
+                  <div className='title'>
+                    Projects
+                  </div>
 
-                <Article
-                  path='/instachrome'
-                  name='Instachrome'
-                  about='Browse Instagram from anywhere'
-                />
+                  <Article
+                    path='/instachrome'
+                    name='Instachrome'
+                    about='Browse Instagram from anywhere'
+                  />
 
-                <Article
-                  path='/chirp'
-                  name='Chirp 🐦'
-                  about='A desktop twitter application built for all platforms'
-                />
+                  <Article
+                    path='/chirp'
+                    name='Chirp 🐦'
+                    about='A desktop twitter application built for all platforms'
+                  />
 
-                <Article
-                  path='https://github.com/hanford/react-drag-drawer'
-                  name='React Drag Drawer'
-                  about='Mobile first ReactJS modal component with native touch gesture support'
-                />
+                  <Article
+                    path='https://github.com/hanford/react-drag-drawer'
+                    name='React Drag Drawer'
+                    about='Mobile first ReactJS modal component with native touch gesture support'
+                  />
 
-                <Article
-                  path='https://github.com/hanford/react-motion-kanban'
-                  name='React Kanban'
-                  about='Custom react drag and drop interface built trello style but with better animations'
-                />
+                  <Article
+                    path='https://github.com/hanford/react-motion-kanban'
+                    name='React Kanban'
+                    about='Custom react drag and drop interface built trello style but with better animations'
+                  />
 
-                <Article
-                  path='/youtube-darkmode'
-                  name='Youtube Darkmode 🐦'
-                  about='Google is redesigning youtube and also adding darkmode, this enables it right now'
-                />
+                  <Article
+                    path='/youtube-darkmode'
+                    name='Youtube Darkmode 🐦'
+                    about='Google is redesigning youtube and also adding darkmode, this enables it right now'
+                  />
 
+                </div>
               </div>
             </div>
           </div>
@@ -121,7 +119,6 @@ export default class Landing extends PureComponent {
             font-size: 2rem;
             line-height: 2rem;
             letter-spacing: 0.03em;
-            opacity: 0.9;
             margin: 1rem 0 2rem;
           }
 
@@ -136,16 +133,13 @@ export default class Landing extends PureComponent {
 
           .card-container {
             max-width: 100%;
-            padding: 2rem;
+            padding: 16rem 2rem 2rem;
             animation: fadeIn 0.6s linear;
-          }
-
-          .card-container:first-of-type {
             padding-top: 16rem;
           }
 
           @media(max-width: 767px) {
-            .card-container:first-of-type {
+            .card-container {
               padding-top: 2rem;
             }
           }
@@ -237,10 +231,13 @@ export default class Landing extends PureComponent {
             font-size: 4rem;
           }
 
-          .skew-line {
-            height: 2rem;
-            transform: skewY(-2deg);
-            width: 100%;
+          .title {
+            margin: 4rem 0 1rem;
+            font-size: 2rem;
+            line-height: 2rem;
+            padding: 0 1rem;
+            letter-spacing: 0.03em;
+            font-weight: bold;
           }
         `}</style>
       </div>
