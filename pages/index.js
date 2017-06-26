@@ -71,7 +71,7 @@ export default class Landing extends PureComponent {
                   />
 
                   <Article
-                    path='https://github.com/hanford/react-motion-kanban'
+                    path='https://github.com/hanford/react-kanban'
                     name='React Kanban'
                     about='Custom react drag and drop interface built trello style but with better animations'
                   />
