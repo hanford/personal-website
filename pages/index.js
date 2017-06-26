@@ -133,14 +133,13 @@ export default class Landing extends PureComponent {
 
           .card-container {
             max-width: 100%;
-            padding: 16rem 2rem 2rem;
+            padding: 16rem 2rem;
             animation: fadeIn 0.6s linear;
-            padding-top: 16rem;
           }
 
           @media(max-width: 767px) {
             .card-container {
-              padding-top: 2rem;
+              padding: 2rem;
             }
           }
 
