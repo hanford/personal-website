@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import Link from 'next/link'
 import { get } from 'axios'
 
-import { Head, Title, TiltBack } from '../components'
+import { Head, Title, Screen } from '../components'
 
 export default class Writing extends PureComponent {
 
@@ -20,42 +20,39 @@ export default class Writing extends PureComponent {
     const { posts } = this.props
 
     return (
-      <div>
+      <div className='container'>
         <Head title='Jack Hanford | Writing' />
-
-        <div className='container'>
-          <div className='hero'>
-            <div className='article-list'>
-              <div style={{padding: '1rem'}}>
-                <Title content='Writing' />
-              </div>
-
-              {
-                Object.keys(posts).length && Object.keys(posts).map((p, index) => {
-                  const post = posts[p]
-                  const { subtitle, readingTime } = post.virtuals
-                  const timeToRead = Math.round(readingTime)
-
-                  return (
-                    <Link
-                      href={`https://medium.com/@jackhanford/${post.uniqueSlug}`}
-                      key={index}
-                    >
-                      <a className='article' target='_blank'>
-                        <div className='title'>{post.title}</div>
-                        <div className='createdAt'>
-                          {`${timeToRead} minute read`} - {subtitle}
-                        </div>
-                      </a>
-                    </Link>
-                  )
-                })
-              }
+        <Screen>
+          <div className='article-list'>
+            <div style={{padding: '1rem'}}>
+              <Title content='Writing' />
             </div>
 
-            <Link href='/'><a style={{position: 'absolute', top: '1rem', right: '2rem', fontSize: '3rem'}}>×</a></Link>
+            {
+              Object.keys(posts).length && Object.keys(posts).map((p, index) => {
+                const post = posts[p]
+                const { subtitle, readingTime } = post.virtuals
+                const timeToRead = Math.round(readingTime)
+
+                return (
+                  <Link
+                    href={`https://medium.com/@jackhanford/${post.uniqueSlug}`}
+                    key={index}
+                  >
+                    <a className='article' target='_blank'>
+                      <div className='title'>{post.title}</div>
+                      <div className='createdAt'>
+                        {`${timeToRead} minute read`} - {subtitle}
+                      </div>
+                    </a>
+                  </Link>
+                )
+              })
+            }
           </div>
-        </div>
+
+          <Link href='/'><a style={{position: 'absolute', top: '1rem', right: '2rem', fontSize: '3rem'}}>×</a></Link>
+        </Screen>
 
         <style jsx>{`
           .container {

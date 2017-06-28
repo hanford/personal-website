@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Motion, spring } from 'react-motion'
 import Drawer from 'react-drag-drawer'
 
-import { SocialModal, Head, Article } from '../components'
+import { SocialModal, Head, Article, Screen } from '../components'
 
 export default class Landing extends PureComponent {
 
@@ -23,71 +23,60 @@ export default class Landing extends PureComponent {
     const { expanded } = this.state
 
     return (
-      <div>
+      <div className='body'>
         <Head />
 
-        <div className='body'>
-          <div className='card-container'>
-            <div className='card'>
-              <div className='content'>
-                <div className='waver'>👋</div>
-                <div className='intro'>
-                  <div>Hi I'm <span style={{fontWeight: 600}}>Jack Hanford</span></div>
-                  <div>I'm a senior software engineer at <a href='https://eaze.com' target='_blank'>Eaze</a>.</div>
-                </div>
-
-                <div className='button-row'>
-                  <Link prefetch href='/projects'>
-                    <a className='beauty-button'>Open source</a>
-                  </Link>
-                  <Link href='/writing'>
-                    <a className='beauty-button'>Writing</a>
-                  </Link>
-                  <button className='beauty-button' onClick={this.toggle}>Contact me</button>
-                </div>
-
-                <div className='content'>
-
-                  <div className='title'>
-                    Projects
-                  </div>
-
-                  <Article
-                    path='/instachrome'
-                    name='Instachrome'
-                    about='Browse Instagram from anywhere'
-                  />
-
-                  <Article
-                    path='/chirp'
-                    name='Chirp 🐦'
-                    about='A desktop twitter application built for all platforms'
-                  />
-
-                  <Article
-                    path='https://github.com/hanford/react-drag-drawer'
-                    name='React Drag Drawer'
-                    about='Mobile first ReactJS modal component with native touch gesture support'
-                  />
-
-                  <Article
-                    path='https://github.com/hanford/react-kanban'
-                    name='React Kanban'
-                    about='Custom react drag and drop interface built trello style but with better animations'
-                  />
-
-                  <Article
-                    path='/youtube-darkmode'
-                    name='Youtube Darkmode 🐦'
-                    about='Google is redesigning youtube and also adding darkmode, this enables it right now'
-                  />
-
-                </div>
-              </div>
-            </div>
+        <Screen>
+          <div className='waver'>👋</div>
+          <div className='intro'>
+            <div>Hi I'm <span style={{fontWeight: 600}}>Jack Hanford</span></div>
+            <div>I'm a senior software engineer at <a href='https://eaze.com' target='_blank'>Eaze</a>.</div>
           </div>
 
-        </div>
+          <div className='button-row'>
+            <Link prefetch href='/projects'>
+              <a className='beauty-button'>Open source</a>
+            </Link>
+            <Link href='/writing'>
+              <a className='beauty-button'>Writing</a>
+            </Link>
+            <button className='beauty-button' onClick={this.toggle}>Contact me</button>
+          </div>
+
+          <div className='title'>
+            Projects
+          </div>
+
+          <Article
+            path='/instachrome'
+            name='Instachrome'
+            about='Browse Instagram from anywhere'
+          />
+
+          <Article
+            path='/chirp'
+            name='Chirp 🐦'
+            about='A desktop twitter application built for all platforms'
+          />
+
+          <Article
+            path='https://github.com/hanford/react-drag-drawer'
+            name='React Drag Drawer'
+            about='Mobile first ReactJS modal component with native touch gesture support'
+          />
+
+          <Article
+            path='https://github.com/hanford/react-kanban'
+            name='React Kanban'
+            about='Custom react drag and drop interface built trello style but with better animations'
+          />
+
+          <Article
+            path='/youtube-darkmode'
+            name='Youtube Darkmode 🐦'
+            about='Google is redesigning youtube and also adding darkmode, this enables it right now'
+          />
+        </Screen>
 
         <Drawer
           open={expanded}
@@ -129,46 +118,6 @@ export default class Landing extends PureComponent {
           .intro > div:last-child {
             font-size: 1.6rem;
             line-height: 2rem
-          }
-
-          .card-container {
-            max-width: 100%;
-            padding: 8rem 2rem;
-            animation: fadeIn 0.4s linear;
-          }
-
-          @media(max-width: 767px) {
-            .card-container {
-              padding: 2rem;
-            }
-          }
-
-          .card {
-            max-width: 55rem;
-            color: #32325d;
-            padding: 4rem;
-            position: relative;
-            margin: 0 auto;
-            background-color: white;
-            border-radius: 0.4rem;
-            box-shadow: 0 1rem 3.5rem rgba(0,0,0,0.2);
-          }
-
-          @media(max-width: 767px) {
-            .card {
-              padding: 2rem;
-            }
-          }
-
-          @keyframes fadeIn {
-            from {
-              opacity: 0;
-              transform: translateY(10rem);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0rem);
-            }
           }
 
           .button-row {
