@@ -1,11 +1,10 @@
 import React, { PureComponent } from 'react'
-import Link from 'next/link'
 import Router from 'next/router'
 import GitHub from 'github-api'
 import { partial } from 'ap'
 import sortOn from 'sort-on'
 
-import { Title, Head, Article, Screen } from '../components'
+import { Title, Head, Article, Screen, BackButton } from '../components'
 
 const USER_NAME = 'hanford'
 const gh = new GitHub({ token: process.env.GITHUB_TOKEN })
@@ -35,10 +34,7 @@ export default class Projects extends PureComponent {
         <Head title='Jack Hanford | Projects' />
 
         <Screen>
-          <Link href='/'>
-            <a style={{position: 'absolute', top: '2rem', right: '2rem', fontSize: '3rem'}}>×</a>
-          </Link>
-
+          <BackButton />
 
           <div style={{fontSize: '4rem'}}>💻</div>
 
@@ -71,12 +67,6 @@ export default class Projects extends PureComponent {
 
           .card-link {
             display: flex;
-          }
-
-          a {
-            color: #d40052;
-            font-weight: 600;
-            text-decoration: none;
           }
         `}</style>
       </div>
