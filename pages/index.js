@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react'
 import Link from 'next/link'
-import { Motion, spring } from 'react-motion'
 import Drawer from 'react-drag-drawer'
 
 import { SocialModal, Head, Article, Screen } from '../components'

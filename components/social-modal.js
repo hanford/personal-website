@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react'
-import { Motion, spring, presets } from 'react-motion'
 import Link from 'next/link'
 
 export const SocialModal = ({ toggle }) => (
