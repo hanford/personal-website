@@ -77,9 +77,7 @@ export default class Writing extends PureComponent {
           .article-list {
             display: flex;
             flex-direction: column;
-            max-width: 70rem;
-            margin-left: auto;
-            margin-right: auto;
+            min-height: 40rem;
           }
 
           .article {
