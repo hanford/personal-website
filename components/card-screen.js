@@ -9,6 +9,7 @@ export const Screen = ({ children }) => (
         max-width: 100%;
         padding: 8rem 2rem;
         animation: fadeIn 0.4s linear;
+        transform-origin: 50% 50%;
       }
 
       @media(max-width: 767px) {
@@ -37,11 +38,11 @@ export const Screen = ({ children }) => (
       @keyframes fadeIn {
         from {
           opacity: 0;
-          transform: translateY(10rem);
+          transform: scale(0.9);
         }
         to {
           opacity: 1;
-          transform: translateY(0);
+          transform: scale(1);
         }
       }
     `}</style>
