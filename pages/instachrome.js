@@ -1,6 +1,8 @@
+import React from 'react'
 import Link from 'next/link'
+import GithubBadge from 'react-github-badge'
 
-import { Head, GithubBadge } from '../components'
+import { Head } from '../components'
 
 export default () => (
   <div className='container'>

@@ -1,4 +1,3 @@
-export * from './github-badge'
 export * from './title'
 export * from './head'
 export * from './social-modal'
