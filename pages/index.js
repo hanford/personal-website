@@ -70,6 +70,13 @@ export default class Landing extends PureComponent {
             about='Custom react drag and drop interface built trello style but with better animations'
           />
 
+
+          <Article
+            path='https://react-fab-fan.jackhanford.com'
+            name='React Fab Fan'
+            about='A material design inspired floating action button animation built with physics'
+          />
+
           <Article
             path='/youtube-darkmode'
             name='Youtube Darkmode 🐦'
