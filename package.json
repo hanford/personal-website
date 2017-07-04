@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "DEBUG=app node server/index.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server/index.js"
+    "start": "NODE_ENV=production node server/index.js",
+    "deploy": "now && now alias -r rules.json"
   },
   "author": "",
   "license": "ISC",

@@ -59,13 +59,13 @@ export default class Landing extends PureComponent {
           />
 
           <Article
-            path='https://github.com/hanford/react-drag-drawer'
+            path='https://react-drag-drawer.jackhanford.com'
             name='React Drag Drawer'
             about='Mobile first ReactJS modal component with native touch gesture support'
           />
 
           <Article
-            path='https://github.com/hanford/react-kanban'
+            path='https://react-kanban.jackhanford.com'
             name='React Kanban'
             about='Custom react drag and drop interface built trello style but with better animations'
           />
