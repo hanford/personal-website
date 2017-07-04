@@ -10,7 +10,11 @@ export const Article = ({path, name, about, stars = '', language = ''}) => (
 
       <p className='project-about'>{about}</p>
 
-      <div className='other'>{language}</div>
+      <div className='other-container' style={{display: language ? 'flex' : 'none'}}>
+        <div className='other'>⭐️ {stars}</div>
+        <div style={{marginLeft: '1rem'}}>·</div>
+        <div className='other' style={{marginLeft: '1rem'}}>{language}</div>
+      </div>
 
       <style jsx>{`
         .container {
@@ -25,9 +29,14 @@ export const Article = ({path, name, about, stars = '', language = ''}) => (
           background-color: rgba(0,0,0,0.05)
         }
 
+        .other-container {
+          display: flex;
+          align-items: center;
+        }
+
         .other {
           font-size: 1.2rem;
-          opacity: 0.5;
+          opacity: 0.75;
           font-weight: bold;
         }
 
