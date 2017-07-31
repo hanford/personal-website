@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react'
 import Router from 'next/router'
 import GitHub from 'github-api'
-import { partial } from 'ap'
 import sortOn from 'sort-on'
 
 import { Title, Head, Article, Screen, BackButton } from '../components'
@@ -27,7 +26,7 @@ export default class Projects extends PureComponent {
   }
 
   render () {
-    const { url, repos } = this.props
+    const { repos } = this.props
 
     return (
       <div className='container'>
@@ -64,7 +63,6 @@ export default class Projects extends PureComponent {
             justify-content: center;
             text-align: left;
           }
-
 
           a {
             color: #d40052;

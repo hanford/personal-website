@@ -19,14 +19,14 @@ export const Article = ({path, name, about, stars = '', language = ''}) => (
       <style jsx>{`
         .container {
           display: block;
-          padding: 1rem;
           transition: all 0.2s linear;
           border-radius: 0.4rem;
+          border: 1px solid transparent;
+          padding: 1rem;
         }
 
         .container:hover {
-          transform: scale(1.05);
-          background-color: rgba(0,0,0,0.05)
+          border: 1px solid #d40052;
         }
 
         .other-container {
