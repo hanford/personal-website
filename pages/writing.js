@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import Link from 'next/link'
 import { get } from 'axios'
 
-import { Head, Title, Screen, BackButton } from '../components'
+import { Head, Title, Screen, BackButton, Article } from '../components'
 
 export default class Writing extends PureComponent {
 
@@ -40,12 +40,10 @@ export default class Writing extends PureComponent {
                     href={`https://medium.com/@jackhanford/${post.uniqueSlug}`}
                     key={index}
                   >
-                    <a className='article' target='_blank'>
-                      <div className='title'>{post.title}</div>
-                      <div className='createdAt'>
-                        {`${timeToRead} minute read`} - {subtitle}
-                      </div>
-                    </a>
+                    <Article
+                      name={post.title}
+                      about={`${timeToRead} minute read - ${subtitle}`}
+                    />
                   </Link>
                 )
               })
@@ -78,38 +76,6 @@ export default class Writing extends PureComponent {
             display: flex;
             flex-direction: column;
             min-height: 40rem;
-          }
-
-          .article {
-            padding: 1rem;
-            border-radius: 0.4rem;
-          }
-
-          .article:hover {
-            cursor: pointer;
-            background-color: rgba(0,0,0,0.05);
-          }
-
-          .article > .title {
-            font-size: 2rem;
-            font-weight: 700;
-          }
-
-          .article > .createdAt {
-            width: 100%;
-            color: black;
-          }
-
-          a,
-          a:visited,
-          a:active {
-            color: #d40052;
-            text-decoration: none;
-            transition: all 0.2s linear;
-          }
-
-          a:hover {
-            transform: scale(1.05);
           }
 
           .backButton {

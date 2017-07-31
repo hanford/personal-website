@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react'
-import Router from 'next/router'
 import GitHub from 'github-api'
 import sortOn from 'sort-on'
 
@@ -14,8 +13,8 @@ export default class Projects extends PureComponent {
   static async getInitialProps () {
     const { data } = await me.listRepos()
 
-    let myRepos = data.filter(({ owner, fork, stargazers_count }) =>
-      owner.login === USER_NAME && !fork && stargazers_count > 0
+    let myRepos = data.filter(({ owner, fork, stargazers_count: stars }) =>
+      owner.login === USER_NAME && !fork && stars > 0
     )
 
     let repos = sortOn(myRepos, '-stargazers_count')
@@ -42,13 +41,13 @@ export default class Projects extends PureComponent {
           <p className='abt-me'>Lately I've been obssessed with open source software which I keep on <a href='https://github.com/hanford' target='_blank'>GitHub</a>. I've been writing JavaScript profressionally for around 4 years, and have become an expert with some of the latest and greatest frontend frameworks including <a href='https://www.npmjs.com/package/virtual-dom' target='_blank'>virtual-dom</a>, <a href='https://angular.io' target='_blank'>AngularJS</a> and most recently <a href='https://facebook.github.io/react' target='_blank'>ReactJS</a>.</p>
           <div className='list'>
             {
-              repos.map(({ name, id, description, stargazers_count, language, html_url }) => (
+              repos.map(({ name, id, description, stargazers_count: stars, language, html_url: html }) => (
                 <Article
                   key={id}
-                  path={html_url}
+                  path={html}
                   name={name}
                   about={description}
-                  stars={stargazers_count}
+                  stars={stars}
                   language={language}
                 />
               ))

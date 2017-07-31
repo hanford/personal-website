@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import GithubBadge from 'react-github-badge'
 
 import { Head } from '../components'
@@ -51,13 +50,12 @@ export default () => (
             >
               Windows
             </a>
-            </div>
+          </div>
         </div>
-
 
         <h2 style={{marginTop: '14rem'}}>Video</h2>
         <br />
-        <iframe width='100%' height='360' src='https://www.youtube.com/embed/OfysGhGIHp8' frameborder='0' allowfullscreen></iframe>
+        <iframe width='100%' height='360' src='https://www.youtube.com/embed/OfysGhGIHp8' frameborder='0' allowfullscreen />
         <br />
         <br />
       </div>
