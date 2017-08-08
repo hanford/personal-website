@@ -19,7 +19,7 @@
     "github-api": "~3.0.0",
     "load-segment": "~1.0.1",
     "lru-cache": "~4.0.2",
-    "next": "3.0.0-beta3",
+    "next": "3.0.0",
     "preact": "~8.1.0",
     "preact-compat": "~3.16.0",
     "preact-motion": "~1.1.0",
