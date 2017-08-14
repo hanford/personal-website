@@ -47,6 +47,12 @@ export default class Landing extends PureComponent {
           </div>
 
           <Article
+            path='/uber-chrome'
+            name='Uber Chrome'
+            about='A chrome extension allowing you to order and uber from your desktop'
+          />
+
+          <Article
             path='/instachrome'
             name='Instachrome'
             about='A chrome extension for browsing instagram with around 6,000 active users'
