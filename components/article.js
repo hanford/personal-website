@@ -23,6 +23,8 @@ export const Article = ({path, name, about, stars = '', language = ''}) => (
           border-radius: 0.4rem;
           border: 1px solid transparent;
           padding: 1rem;
+          margin-left: -1rem;
+          margin-right: -1rem;
         }
 
         .container:hover {

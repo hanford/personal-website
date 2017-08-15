@@ -191,7 +191,7 @@ export default class Landing extends PureComponent {
           }
 
           .title {
-            margin: 4rem 0 1rem;
+            margin: 4rem -1rem 1rem;
             font-size: 2rem;
             line-height: 2rem;
             padding: 0 1rem;
