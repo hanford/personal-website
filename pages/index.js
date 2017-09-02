@@ -52,7 +52,7 @@ export default class Landing extends PureComponent {
           <Article
             path='/instachrome'
             name='Instachrome'
-            about='A chrome extension for browsing instagram with around 6,000 active users'
+            about='A chrome extension for browsing instagram with around 7,500 active users'
           />
 
           <Article
