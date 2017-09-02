@@ -36,9 +36,6 @@ export default class Landing extends PureComponent {
             <Link prefetch href='/projects'>
               <a className='beauty-button'>Open source</a>
             </Link>
-            <Link href='/writing'>
-              <a className='beauty-button'>Writing</a>
-            </Link>
             <button className='beauty-button' onClick={this.toggle}>Contact me</button>
           </div>
 
@@ -92,8 +89,6 @@ export default class Landing extends PureComponent {
         <Drawer
           open={expanded}
           onRequestClose={this.toggle}
-          contentLabel='social modal'
-          negativeScroll={-1}
         >
           <SocialModal toggle={this.toggle} />
         </Drawer>
