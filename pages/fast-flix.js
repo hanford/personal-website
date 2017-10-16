@@ -9,19 +9,19 @@ export default () => (
     <Head />
 
     <GithubBadge
-      url='https://github.com/hanford/Instachrome'
+      url='https://github.com/hanford/fast-flix'
       title='Star on Github'
     />
 
     <div className='hero'>
       <div className='content'>
-        <h1 style={{marginBottom: '0'}}>Instachrome</h1>
-        <p style={{marginTop: '0.5rem', marginBottom: '3rem'}}>Browse instagram from anywhere</p>
-        <img src='../static/instachrome.jpg' />
+        <h1 style={{marginBottom: '0'}}>Fast Flix 🍿</h1>
+        <p style={{marginTop: '0.5rem', marginBottom: '3rem'}}>Modify playback speed of any video on the internet</p>
+        <img src='../static/fast-flix.jpg' />
 
         <a
           target='_blank'
-          href='https://chrome.google.com/webstore/detail/dffakiimcpeogagieklcdchklmghdnhd'
+          href='https://chrome.google.com/webstore/detail/ldcailklfommolipjecojcgodjdoaedi'
           className='backButton'
         >
           Add to Google chrome
@@ -30,7 +30,7 @@ export default () => (
         <h2 style={{marginTop: '8rem'}}>How to video</h2>
         <p style={{maxWidth: '60rem', margin: '0 auto'}}>After installing the chrome extension, click the icon and you should be good to go!</p>
         <br />
-        <iframe width='100%' height='360' src='https://www.youtube.com/embed/IC9JDy6i4-s' frameborder='0' allowfullscreen />
+        <iframe width='100%' height='360' src='https://www.youtube.com/embed/D2ry16dNEIY' frameborder='0' allowfullscreen />
         <br />
         <br />
       </div>

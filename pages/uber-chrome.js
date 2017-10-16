@@ -29,7 +29,7 @@ export default function UberChrome () {
           </a>
 
           <h2 style={{marginTop: '8rem'}}>How to video</h2>
-          <p style={{maxWidth: '60rem', margin: '0 auto'}}>After installing the chrome extension, simply click the icon and you should be ready!</p>
+          <p style={{maxWidth: '60rem', margin: '0 auto'}}>After installing the chrome extension, click the icon and you should be ready!</p>
           <br />
           <iframe width='100%' height='360' src='https://www.youtube.com/embed/4rXzuy_fGsU' frameborder='0' allowfullscreen></iframe>
           <br />

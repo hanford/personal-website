@@ -44,6 +44,12 @@ export default class Landing extends PureComponent {
           </div>
 
           <Article
+            path='/fast-flix'
+            name='Fast Flix 🍿'
+            about='Change the playback rate of any video on the internet'
+          />
+
+          <Article
             path='/uber-chrome'
             name='Uber Chrome'
             about='A chrome extension allowing you to order and uber from your desktop'
