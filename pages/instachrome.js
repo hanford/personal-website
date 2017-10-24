@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import GithubBadge from 'react-github-badge'
 
-import { Head, CtaButton } from '../components'
+import { Head, CtaButton, HeroImage, Title } from '../components'
 
 export default () => (
   <div className='container'>
@@ -15,9 +15,11 @@ export default () => (
 
     <div className='hero'>
       <div className='content'>
-        <h1 style={{marginBottom: '0'}}>Instachrome</h1>
+        <Title>Instachrome</Title>
+
         <p style={{marginTop: '0.5rem', marginBottom: '3rem'}}>Browse instagram from anywhere</p>
-        <img src='../static/instachrome.jpg' />
+
+        <HeroImage src='../static/instachrome.jpg' />
 
         <CtaButton link='https://chrome.google.com/webstore/detail/dffakiimcpeogagieklcdchklmghdnhd'>Add to Google chrome</CtaButton>
 
@@ -79,8 +81,7 @@ export default () => (
         font-weight: bold;
       }
 
-      iframe,
-      img {
+      iframe {
         width: 60rem;
         max-width: 80%;
         box-sizing: border-box;

@@ -1,6 +1,6 @@
 import GithubBadge from 'react-github-badge'
 
-import { Head, CtaButton } from '../components'
+import { Head, CtaButton, HeroImage, Title } from '../components'
 
 export default () => (
   <div className='container'>
@@ -13,12 +13,12 @@ export default () => (
 
     <div className='hero'>
       <div className='content'>
-        <h1 style={{marginBottom: '0'}}>Chirp <span style={{fontSize: '3rem'}}>🐦</span></h1>
+        <Title>Chirp <span style={{fontSize: '3rem'}}>🐦</span></Title>
         <p style={{marginTop: '0.5rem', marginBottom: '3rem'}}>
           A desktop twitter application built for all platforms
         </p>
 
-        <img src='../static/chirp.jpg' />
+        <HeroImage src='../static/chirp.jpg' />
 
         <div className='download-section'>
           <h3>Downloads</h3>
@@ -130,8 +130,7 @@ export default () => (
         }
       }
 
-      iframe,
-      img {
+      iframe {
         width: 60rem;
         max-width: 80%;
         box-sizing: border-box;

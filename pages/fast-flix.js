@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import GithubBadge from 'react-github-badge'
 
-import { Head, Title, CtaButton } from '../components'
+import { Head, Title, CtaButton, HeroImage } from '../components'
 
 export default () => (
   <div className='container'>
@@ -17,7 +17,8 @@ export default () => (
       <div className='content'>
         <Title>Fast Flix 🍿</Title>
         <p style={{marginTop: '0.5rem', marginBottom: '3rem'}}>Modify playback speed of any video on netflix</p>
-        <img src='../static/fast-flix.jpg' />
+
+        <HeroImage src='../static/fast-flix.jpg' />
 
         <CtaButton link='https://chrome.google.com/webstore/detail/ldcailklfommolipjecojcgodjdoaedi'>Add to Google chrome</CtaButton>
 
@@ -57,8 +58,7 @@ export default () => (
         margin: 0 auto;
       }
 
-      iframe,
-      img {
+      iframe {
         width: 60rem;
         max-width: 80%;
         box-sizing: border-box;

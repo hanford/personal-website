@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import GithubBadge from 'react-github-badge'
 
-import { Head, CtaButton, Title } from '../components'
+import { Head, CtaButton, Title, HeroImage } from '../components'
 
 export default function YoutubeDarkmode () {
   return (
@@ -20,7 +20,7 @@ export default function YoutubeDarkmode () {
             Google is redesigning youtube and also adding darkmode, this enables it right now
           </p>
 
-          <img src='../static/darkmode.jpg' />
+          <HeroImage src='../static/darkmode.jpg' />
 
           <CtaButton link='https://chrome.google.com/webstore/detail/ajngaombckgmodafdnmipfmcfgppnnhp'>Add to Google chrome</CtaButton>
 
@@ -80,8 +80,7 @@ export default function YoutubeDarkmode () {
           font-weight: bold;
         }
 
-        iframe,
-        img {
+        iframe {
           width: 60rem;
           max-width: 80%;
           box-sizing: border-box;

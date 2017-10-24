@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import GithubBadge from 'react-github-badge'
 
-import { Head, CtaButton } from '../components'
+import { Head, CtaButton, HeroImage } from '../components'
 
 export default function UberChrome () {
   return (
@@ -18,7 +18,8 @@ export default function UberChrome () {
         <div className='content'>
           <h1 style={{marginBottom: '0'}}>Uber Chrome</h1>
           <p style={{marginTop: '0.5rem', marginBottom: '3rem'}}>Call an uber from chrome</p>
-          <img src='../static/uber-chrome.jpg' />
+
+          <HeroImage src='../static/uber-chrome.jpg' />
 
           <CtaButton link='https://chrome.google.com/webstore/detail/uberchrome/foakblnhnfmanccjhkkcicepglbflaff'>Add to Google chrome</CtaButton>
 
