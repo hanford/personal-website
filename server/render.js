@@ -16,7 +16,13 @@ const ssrCache = new LRUCache({
 
 const cachedRoutes = [
   '/projects',
-  '/writing'
+  '/writing',
+  '/instachrome',
+  '/fast-flix',
+  '/chirp',
+  '/youtube-darkmode',
+  '/uber-chrome',
+  '/snapchat'
 ]
 
 function renderAndCache (req, res, pagePath, queryParams) {
