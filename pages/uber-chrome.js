@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import GithubBadge from 'react-github-badge'
 
-import { Head, CtaButton, HeroImage, Title, Frame, Content } from '../components'
+import { Head, CtaButton, HeroImage, Title, Frame, Content, Description } from '../components'
 
 export default function UberChrome () {
   return (
