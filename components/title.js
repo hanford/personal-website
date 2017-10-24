@@ -1,11 +1,13 @@
-export const Title = ({ content }) => (
+export const Title = ({ children }) => (
   <div>
-    <div className='title'>{content}</div>
+    <h1 className='title'>{children}</h1>
+
     <style jsx>{`
       .title {
         letter-spacing: 0.03em;
         font-size: 2rem;
         font-weight: 700;
+        margin: 0;
       }
     `}</style>
   </div>

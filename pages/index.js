@@ -46,7 +46,7 @@ export default class Landing extends PureComponent {
           <Article
             path='/fast-flix'
             name='Fast Flix 🍿'
-            about='Change the playback rate of any video on the internet'
+            about='Change the playback rate of any video on netflix'
           />
 
           <Article
@@ -87,17 +87,12 @@ export default class Landing extends PureComponent {
 
           <Article
             path='/youtube-darkmode'
-            name='Youtube Darkmode 🐦'
+            name='Youtube Darkmode'
             about='Google is redesigning youtube and also adding darkmode, this enables it right now'
           />
         </Screen>
 
-        <Drawer
-          open={expanded}
-          onRequestClose={this.toggle}
-        >
-          <SocialModal toggle={this.toggle} />
-        </Drawer>
+        <SocialModal open={expanded} toggle={this.toggle} />
 
         <style jsx>{`
           .body {

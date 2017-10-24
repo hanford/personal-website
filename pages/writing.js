@@ -26,7 +26,7 @@ export default class Writing extends PureComponent {
         <Screen>
           <BackButton />
           <div style={{fontSize: '4rem'}}>✍️</div>
-          <Title content='Writing' />
+          <Title>Writing</Title>
 
           <div className='article-list'>
             {

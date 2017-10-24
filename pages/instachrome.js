@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import GithubBadge from 'react-github-badge'
 
-import { Head } from '../components'
+import { Head, CtaButton } from '../components'
 
 export default () => (
   <div className='container'>
@@ -19,13 +19,7 @@ export default () => (
         <p style={{marginTop: '0.5rem', marginBottom: '3rem'}}>Browse instagram from anywhere</p>
         <img src='../static/instachrome.jpg' />
 
-        <a
-          target='_blank'
-          href='https://chrome.google.com/webstore/detail/dffakiimcpeogagieklcdchklmghdnhd'
-          className='backButton'
-        >
-          Add to Google chrome
-        </a>
+        <CtaButton link='https://chrome.google.com/webstore/detail/dffakiimcpeogagieklcdchklmghdnhd'>Add to Google chrome</CtaButton>
 
         <h2 style={{marginTop: '8rem'}}>How to video</h2>
         <p style={{maxWidth: '60rem', margin: '0 auto'}}>After installing the chrome extension, click the icon and you should be good to go!</p>

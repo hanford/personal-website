@@ -36,7 +36,7 @@ export default class Projects extends PureComponent {
 
           <div style={{fontSize: '4rem'}}>💻</div>
 
-          <Title content='Projects' />
+          <Title>Projects</Title>
 
           <p className='abt-me'>Lately I've been obssessed with open source software which I keep on <a href='https://github.com/hanford' target='_blank'>GitHub</a>. I've been writing JavaScript profressionally for around 4 years, and have become an expert with some of the latest and greatest frontend frameworks including <a href='https://www.npmjs.com/package/virtual-dom' target='_blank'>virtual-dom</a>, <a href='https://angular.io' target='_blank'>AngularJS</a> and most recently <a href='https://facebook.github.io/react' target='_blank'>ReactJS</a>.</p>
           <div className='list'>

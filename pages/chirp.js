@@ -1,6 +1,6 @@
 import GithubBadge from 'react-github-badge'
 
-import { Head } from '../components'
+import { Head, CtaButton } from '../components'
 
 export default () => (
   <div className='container'>
