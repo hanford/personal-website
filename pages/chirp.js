@@ -16,51 +16,49 @@ export default function Chirp () {
       />
 
       <div className='hero'>
-        <div className='content'>
-          <Title>Chirp <span style={{fontSize: '3rem'}}>🐦</span></Title>
-          <p style={{marginTop: '0.5rem', marginBottom: '3rem'}}>
-            A desktop twitter application built for all platforms
-          </p>
+        <Title>Chirp <span style={{fontSize: '3rem'}}>🐦</span></Title>
+        <p style={{marginTop: '0.5rem', marginBottom: '3rem'}}>
+          A desktop twitter application built for all platforms
+        </p>
 
-          <HeroImage src='../static/chirp.jpg' />
+        <HeroImage src='../static/chirp.jpg' />
 
-          <div className='download-section'>
-            <h3>Downloads</h3>
+        <div className='download-section'>
+          <h3>Downloads</h3>
 
-            <div className='download-row'>
-              <a
-                target='_blank'
-                href='https://file-cjddyxvqbc.now.sh/Chirp-darwin-x64.zip'
-                className='downloadBtn'
-                download='Chirp.zip'
-              >
-                Mac
-              </a>
+          <div className='download-row'>
+            <a
+              target='_blank'
+              href='https://file-cjddyxvqbc.now.sh/Chirp-darwin-x64.zip'
+              className='downloadBtn'
+              download='Chirp.zip'
+            >
+              Mac
+            </a>
 
-              <a
-                target='_blank'
-                href='https://file-fevwnujbqw.now.sh/Chirp-linux-x64.zip'
-                className='downloadBtn'
-                download='Chirp.zip'
-              >
-                Linux
-              </a>
+            <a
+              target='_blank'
+              href='https://file-fevwnujbqw.now.sh/Chirp-linux-x64.zip'
+              className='downloadBtn'
+              download='Chirp.zip'
+            >
+              Linux
+            </a>
 
-              <a
-                target='_blank'
-                href='https://file-pwszcfrfqv.now.sh/Chirp-win32-x64.zip'
-                className='downloadBtn'
-                download='Chirp.zip'
-              >
-                Windows
-              </a>
-            </div>
+            <a
+              target='_blank'
+              href='https://file-pwszcfrfqv.now.sh/Chirp-win32-x64.zip'
+              className='downloadBtn'
+              download='Chirp.zip'
+            >
+              Windows
+            </a>
           </div>
-
-          <h2 style={{marginTop: '14rem'}}>Video</h2>
-
-          <Frame src='https://www.youtube.com/embed/OfysGhGIHp8' />
         </div>
+
+        <h2 style={{marginTop: '14rem'}}>Video</h2>
+
+        <Frame src='https://www.youtube.com/embed/OfysGhGIHp8' />
       </div>
 
       <style jsx>{`

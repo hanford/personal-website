@@ -51,7 +51,7 @@ export default class Landing extends PureComponent {
 
           <Article
             path='/uber-chrome'
-            name='Uber Chrome'
+            name='Uber chrome'
             about='A chrome extension allowing you to order and uber from your desktop'
           />
 
@@ -87,7 +87,7 @@ export default class Landing extends PureComponent {
 
           <Article
             path='/youtube-darkmode'
-            name='Youtube Darkmode'
+            name='Youtube darkmode'
             about='Google is redesigning youtube and also adding darkmode, this enables it right now'
           />
         </Screen>
