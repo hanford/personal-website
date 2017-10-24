@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import Link from 'next/link'
 import { get } from 'axios'
 
-import { Head, Title, Screen, BackButton, Article } from '../components'
+import { Head, Title, Screen, BackButton, Article, Emoji } from '../components'
 
 export default class Writing extends PureComponent {
 
@@ -25,7 +25,9 @@ export default class Writing extends PureComponent {
 
         <Screen>
           <BackButton />
-          <div style={{fontSize: '4rem'}}>✍️</div>
+
+          <Emoji>✍️</Emoji>
+
           <Title>Writing</Title>
 
           <div className='article-list'>

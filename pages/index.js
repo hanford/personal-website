@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import Link from 'next/link'
 import Drawer from 'react-drag-drawer'
 
-import { SocialModal, Head, Article, Screen } from '../components'
+import { SocialModal, Head, Article, Screen, Emoji } from '../components'
 
 export default class Landing extends PureComponent {
 
@@ -26,7 +26,7 @@ export default class Landing extends PureComponent {
         <Head />
 
         <Screen>
-          <div className='waver'>👋</div>
+          <Emoji>👋</Emoji>
           <div className='intro'>
             <div>Hi I'm <span style={{fontWeight: 600}}>Jack Hanford</span></div>
             <div>I'm a senior software engineer at <a href='https://eaze.com' target='_blank'>Eaze</a>.</div>
@@ -180,10 +180,6 @@ export default class Landing extends PureComponent {
           .beauty-button:hover {
             background-color: #db594b;
             color: white;
-          }
-
-          .waver {
-            font-size: 4rem;
           }
 
           .title {

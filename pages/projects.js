@@ -34,7 +34,7 @@ export default class Projects extends PureComponent {
         <Screen>
           <BackButton />
 
-          <div style={{fontSize: '4rem'}}>💻</div>
+          <Emoji>💻</Emoji>
 
           <Title>Projects</Title>
 

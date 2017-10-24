@@ -41,6 +41,13 @@ export default function UberChrome () {
           overflow: hidden !important;
         }
 
+        .content {
+          display: flex;
+          flex-direction: column;
+          width: 80%;
+          margin: 0 auto;
+        }
+
         .hero {
           max-width: 100%;
           width: 100%;
@@ -49,13 +56,6 @@ export default function UberChrome () {
           padding: 2rem 0;
           margin-top: 2rem;
           min-height: 60rem;
-        }
-
-        .content {
-          display: flex;
-          flex-direction: column;
-          width: 80%;
-          margin: 0 auto;
         }
       `}</style>
     </div>
