@@ -1,6 +1,6 @@
 import GithubBadge from 'react-github-badge'
 
-import { Head, CtaButton, HeroImage, Title, Frame } from '../components'
+import { Head, CtaButton, HeroImage, Title, Description, Frame } from '../components'
 
 export default function Chirp () {
   return (
@@ -17,9 +17,7 @@ export default function Chirp () {
 
       <div className='hero'>
         <Title>Chirp <span style={{fontSize: '3rem'}}>🐦</span></Title>
-        <p style={{marginTop: '0.5rem', marginBottom: '3rem'}}>
-          A desktop twitter application built for all platforms
-        </p>
+        <Description>A desktop twitter application built for all platforms</Description>
 
         <HeroImage src='../static/chirp.jpg' />
 

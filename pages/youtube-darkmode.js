@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import GithubBadge from 'react-github-badge'
 
-import { Head, CtaButton, Title, HeroImage, Frame, Content } from '../components'
+import { Head, CtaButton, Title, HeroImage, Frame, Content, Description } from '../components'
 
 export default function YoutubeDarkmode () {
   return (
@@ -18,9 +18,7 @@ export default function YoutubeDarkmode () {
 
       <Content>
         <Title>Youtube Darkmode</Title>
-        <p style={{marginTop: '0.5rem', marginBottom: '3rem'}}>
-          Google is redesigning youtube and also adding darkmode, this enables it right now
-        </p>
+        <Description>Google is redesigning youtube and also adding darkmode, this enables it right now</Description>
 
         <HeroImage src='../static/darkmode.jpg' />
 

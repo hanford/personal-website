@@ -20,7 +20,7 @@ export default function UberChrome () {
       <Content>
         <Title>Uber chrome</Title>
 
-        <p style={{marginTop: '0.5rem', marginBottom: '3rem'}}>Call an uber from chrome</p>
+        <Description>Call an uber from chrome</Description>
 
         <HeroImage src='../static/uber-chrome.jpg' />
 

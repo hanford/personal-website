@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import GithubBadge from 'react-github-badge'
 
-import { Head, CtaButton, HeroImage, Title, Frame, Content } from '../components'
+import { Head, CtaButton, HeroImage, Title, Frame, Content, Description } from '../components'
 
 export default function Instachrome () {
   return (
@@ -19,8 +19,7 @@ export default function Instachrome () {
 
       <Content>
         <Title>Instachrome</Title>
-
-        <p style={{marginTop: '0.5rem', marginBottom: '3rem'}}>Browse instagram from anywhere</p>
+        <Description>Browse instagram from anywhere</Description>
 
         <HeroImage src='../static/instachrome.jpg' />
 

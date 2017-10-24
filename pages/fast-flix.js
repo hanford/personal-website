@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import GithubBadge from 'react-github-badge'
 
-import { Head, Title, CtaButton, HeroImage, Frame, Content } from '../components'
+import { Head, Title, CtaButton, HeroImage, Frame, Content, Description } from '../components'
 
 export default function FastFlix () {
   return (
@@ -19,7 +19,7 @@ export default function FastFlix () {
 
       <Content>
         <Title>Fast Flix 🍿</Title>
-        <p style={{marginTop: '0.5rem', marginBottom: '3rem'}}>Modify playback speed of any video on netflix</p>
+        <Description>Modify playback speed of any video on netflix</Description>
 
         <HeroImage src='../static/fast-flix.jpg' />
 
