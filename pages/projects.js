@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import GitHub from 'github-api'
 import sortOn from 'sort-on'
 
-import { Title, Head, Article, Screen, BackButton } from '../components'
+import { Title, Head, Article, Screen, BackButton, Emoji } from '../components'
 
 const USER_NAME = 'hanford'
 const gh = new GitHub({ token: process.env.GITHUB_TOKEN })
@@ -29,7 +29,7 @@ export default class Projects extends PureComponent {
 
     return (
       <div className='container'>
-        <Head title='Jack Hanford | Projects' />
+        <Head title='Projects | Jack Hanford' />
 
         <Screen>
           <BackButton />
@@ -67,10 +67,6 @@ export default class Projects extends PureComponent {
             color: #d40052;
             font-weight: 600;
             text-decoration: underline;
-          }
-
-          .card-link {
-            display: flex;
           }
         `}</style>
       </div>

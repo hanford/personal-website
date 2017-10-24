@@ -3,12 +3,12 @@ import Segment from 'load-segment'
 
 Segment({key: 'ZxJCBTbXZd76MG9R33zSOb43ULCjknzN'})
 
-export const Head = ({ title }) => (
+export const Head = ({ title, description }) => (
   <HeadTag>
     <title>{title || 'Jack Hanford'}</title>
     <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-    <meta name='name' content='Jack Hanford' />
-    <meta name='description' content='Engineer - Hacker - Technology Addict' />
+    <meta name='name' content={title || 'Jack Hanford'} />
+    <meta name='description' content={description || 'Engineer - Hacker - Technology Addict'} />
 
     <link rel='stylesheet' type='text/css' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' />
 

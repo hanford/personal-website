@@ -4,7 +4,10 @@ import { Head, CtaButton, HeroImage, Title, Frame } from '../components'
 
 export default () => (
   <div className='container'>
-    <Head />
+    <Head
+      title='Chirp | Jack Hanford'
+      description='A desktop twitter application built for all platforms'
+    />
 
     <GithubBadge
       url='https://github.com/hanford/chirp'

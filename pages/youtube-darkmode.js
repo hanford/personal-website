@@ -6,7 +6,10 @@ import { Head, CtaButton, Title, HeroImage, Frame } from '../components'
 export default function YoutubeDarkmode () {
   return (
     <div className='container'>
-      <Head />
+      <Head
+        title='Youtube Darkmode | Jack Hanford'
+        description='Get youtube darkmode, before google releases it'
+      />
 
       <GithubBadge
         url='https://github.com/hanford/youtube-darkmode'

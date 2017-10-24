@@ -4,7 +4,7 @@ import { Head } from '../components'
 
 export default () => (
   <div className='container'>
-    <Head />
+    <Head title='Snapchat | Jack Hanford' />
 
     <div className='snapcode'>
       <img src='../static/snapcode.png' />

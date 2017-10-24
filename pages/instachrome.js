@@ -6,7 +6,10 @@ import { Head, CtaButton, HeroImage, Title, Frame } from '../components'
 
 export default () => (
   <div className='container'>
-    <Head />
+    <Head
+      title='Instachrome | Jack Hanford'
+      description='Browse instagram from anywhere'
+    />
 
     <GithubBadge
       url='https://github.com/hanford/Instachrome'

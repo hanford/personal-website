@@ -7,7 +7,10 @@ import { Head, CtaButton, HeroImage, Title, Frame } from '../components'
 export default function UberChrome () {
   return (
     <div className='container'>
-      <Head />
+      <Head
+        title='Uber chrome | Jack Hanford'
+        description='Call an uber from chrome'
+      />
 
       <GithubBadge
         url='https://github.com/hanford/uber-chrome'

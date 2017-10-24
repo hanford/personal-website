@@ -6,7 +6,10 @@ import { Head, Title, CtaButton, HeroImage, Frame } from '../components'
 
 export default () => (
   <div className='container'>
-    <Head />
+    <Head
+      title='Fast Flix | Jack Hanford'
+      description='Modify playback speed of any video on netflix'
+    />
 
     <GithubBadge
       url='https://github.com/hanford/fast-flix'
