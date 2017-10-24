@@ -5,7 +5,7 @@ export const Title = ({ children }) => (
     <style jsx>{`
       .title {
         letter-spacing: 0.03em;
-        font-size: 2rem;
+        font-size: 2.4rem;
         font-weight: 700;
         margin: 0;
       }

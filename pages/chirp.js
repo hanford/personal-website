@@ -1,6 +1,6 @@
 import GithubBadge from 'react-github-badge'
 
-import { Head, CtaButton, HeroImage, Title } from '../components'
+import { Head, CtaButton, HeroImage, Title, Frame } from '../components'
 
 export default () => (
   <div className='container'>
@@ -27,7 +27,7 @@ export default () => (
             <a
               target='_blank'
               href='https://file-cjddyxvqbc.now.sh/Chirp-darwin-x64.zip'
-              className='backButton'
+              className='downloadBtn'
               download='Chirp.zip'
             >
               Mac
@@ -36,7 +36,7 @@ export default () => (
             <a
               target='_blank'
               href='https://file-fevwnujbqw.now.sh/Chirp-linux-x64.zip'
-              className='backButton'
+              className='downloadBtn'
               download='Chirp.zip'
             >
               Linux
@@ -45,7 +45,7 @@ export default () => (
             <a
               target='_blank'
               href='https://file-pwszcfrfqv.now.sh/Chirp-win32-x64.zip'
-              className='backButton'
+              className='downloadBtn'
               download='Chirp.zip'
             >
               Windows
@@ -54,10 +54,8 @@ export default () => (
         </div>
 
         <h2 style={{marginTop: '14rem'}}>Video</h2>
-        <br />
-        <iframe width='100%' height='360' src='https://www.youtube.com/embed/OfysGhGIHp8' frameborder='0' allowfullscreen />
-        <br />
-        <br />
+
+        <Frame src='https://www.youtube.com/embed/OfysGhGIHp8' />
       </div>
     </div>
 
@@ -100,7 +98,7 @@ export default () => (
         }
       }
 
-      .backButton {
+      .downloadBtn {
         display: block;
         line-height: 4rem;
         padding: 0 1.4rem;
@@ -124,21 +122,12 @@ export default () => (
       }
 
       @media(max-width: 768px) {
-        .backButton {
+        .downloadBtn {
           margin: 1.5rem 0;
           min-width: 24rem;
         }
       }
 
-      iframe {
-        width: 60rem;
-        max-width: 80%;
-        box-sizing: border-box;
-        margin: 0 auto;
-        box-shadow: 0 0.4rem 4rem rgba(0, 0, 0, 0.35);
-        border-radius: 4px;
-        border: 0;
-      }
     `}</style>
   </div>
 )

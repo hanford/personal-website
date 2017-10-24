@@ -11,8 +11,6 @@ export const HeroImage = ({ src }) => (
         box-shadow: 0 0.4rem 4rem rgba(0, 0, 0, 0.35);
         border-radius: 4px;
         border: 0;
-        background-color: rgba(0, 0, 0, 0.25);
-        min-height: 30rem;
       }
     `}</style>
   </div>
