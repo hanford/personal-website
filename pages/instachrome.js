@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import GithubBadge from 'react-github-badge'
 
-import { Head, CtaButton, HeroImage, Title } from '../components'
+import { Head, CtaButton, HeroImage, Title, Frame } from '../components'
 
 export default () => (
   <div className='container'>
