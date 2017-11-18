@@ -9,8 +9,8 @@
     "start": "NODE_ENV=production node server/index.js",
     "deploy": "now && now alias -r rules.json"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Jack Hanford",
+  "license": "MIT",
   "dependencies": {
     "axios": "~0.16.2",
     "debug": "~2.6.9",
@@ -18,7 +18,7 @@
     "github-api": "~3.0.0",
     "load-segment": "~1.0.1",
     "lru-cache": "~4.0.2",
-    "next": "~4.1.0",
+    "next": "~4.1.4",
     "react": "~16.0.0",
     "react-dom": "~16.0.0",
     "react-drag-drawer": "~1.12.1",
