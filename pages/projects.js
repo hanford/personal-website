@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { PureComponent, Fragment } from 'react'
 import GitHub from 'github-api'
 import sortOn from 'sort-on'
 
@@ -34,12 +34,11 @@ export default class Projects extends PureComponent {
         <Screen>
           <BackButton />
 
-          <Emoji>💻</Emoji>
-
           <Title>Projects</Title>
 
           <p className='abt-me'>Lately I've been obssessed with open source software which I keep on <a href='https://github.com/hanford' target='_blank'>GitHub</a>. I've been writing JavaScript profressionally for around 4 years, and have become an expert with some of the latest and greatest frontend frameworks including <a href='https://www.npmjs.com/package/virtual-dom' target='_blank'>virtual-dom</a>, <a href='https://angular.io' target='_blank'>AngularJS</a> and most recently <a href='https://facebook.github.io/react' target='_blank'>ReactJS</a>.</p>
-          <div className='list'>
+
+          <Fragment>
             {
               repos.map(({ name, id, description, stargazers_count: stars, language, html_url: html }) => (
                 <Article
@@ -52,7 +51,7 @@ export default class Projects extends PureComponent {
                 />
               ))
             }
-          </div>
+          </Fragment>
         </Screen>
 
         <style jsx>{`
