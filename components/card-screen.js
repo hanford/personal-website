@@ -19,7 +19,8 @@ export const Screen = ({ children }) => (
       }
 
       .card {
-        max-width: 55rem;
+        width: 76rem;
+        max-width: 100%;
         color: #32325d;
         padding: 4rem;
         position: relative;

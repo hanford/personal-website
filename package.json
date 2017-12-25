@@ -20,7 +20,7 @@
     "github-api": "~3.0.0",
     "load-segment": "~1.0.1",
     "lru-cache": "~4.0.2",
-    "next": "~4.1.4",
+    "next": "~4.2.1",
     "react": "~16.0.0",
     "react-dom": "~16.0.0",
     "react-drag-drawer": "~1.12.1",

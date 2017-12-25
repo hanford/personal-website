@@ -17,7 +17,7 @@ export default class Projects extends PureComponent {
       owner.login === USER_NAME && !fork && stars > 0
     )
 
-    let repos = sortOn(myRepos, '-stargazers_count')
+    const repos = sortOn(myRepos, '-stargazers_count')
 
     return {
       repos
