@@ -1,5 +1,7 @@
+import { Fragment } from 'react'
+
 export const Emoji = ({ children }) => (
-  <div>
+  <Fragment>
     <div className='emoji'>{children}</div>
 
     <style jsx>{`
@@ -7,7 +9,7 @@ export const Emoji = ({ children }) => (
         font-size: 4rem;
       }
     `}</style>
-  </div>
+  </Fragment>
 )
 
 export default Emoji
