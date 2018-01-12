@@ -12,7 +12,7 @@ const me = gh.getUser(USER_NAME)
 
 export default class Projects extends PureComponent {
   static async getInitialProps () {
-    const { err, data } = await wrap(me.listRepos())
+    const { err, data: { data } } = await wrap(me.listRepos())
 
     if (err) return { repos: [] }
 
