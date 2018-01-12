@@ -1,7 +1,7 @@
 import styled from 'react-emotion'
 
-export const Screen = ({ children, scale = 1, blur = 0 }) => (
-  <Container scale={scale} blur={blur}>
+export const Screen = ({ children, scale = 1 }) => (
+  <Container scale={scale}>
     <Card>
       {children}
     </Card>
@@ -14,7 +14,6 @@ const Container = styled.div`
   animation: fadeIn 0.4s linear;
   transform-origin: 50% 50%;
   transform: scale(${({ scale }) => scale});
-  filter: blur(${({ blur }) => blur}px);
 
   @media(max-width: 767px) {
     padding: 2rem;

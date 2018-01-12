@@ -26,9 +26,9 @@ export default class Landing extends PureComponent {
       <Body>
         <Head />
 
-        <Motion style={{shrink: spring(expanded ? 0.8 : 1, presets.stiff), blur: expanded ? 10 : 0}}>
-          {({ shrink, blur }) => (
-            <Screen scale={shrink} blur={blur}>
+        <Motion style={{shrink: spring(expanded ? 0.8 : 1, presets.stiff)}}>
+          {({ shrink }) => (
+            <Screen scale={shrink}>
               <Emoji>👋</Emoji>
               <Intro>
                 <div>Hi I'm <span style={{fontWeight: 600}}>Jack Hanford</span></div>
