@@ -1,64 +1,57 @@
 import Link from 'next/link'
+import styled from 'react-emotion'
 
 export const Article = ({path, name, about, stars = '', language = ''}) => (
   <Link href={path}>
-    <a
-      target='_blank'
-      className='container'
-    >
-      <h4 className='project-title'>{name}</h4>
+    <Container target='_blank'>
+      <Title>{name}</Title>
 
-      <p className='project-about'>{about}</p>
+      <About>{about}</About>
 
-      <div className='other-container' style={{display: language ? 'flex' : 'none'}}>
-        <div className='other'>⭐️ {stars}</div>
+      <Content style={{display: language ? 'flex' : 'none'}}>
+        <Other>⭐️ {stars}</Other>
         <div style={{marginLeft: '1rem'}}>·</div>
-        <div className='other' style={{marginLeft: '1rem'}}>{language}</div>
-      </div>
-
-      <style jsx>{`
-        .container {
-          display: block;
-          transition: all 0.2s linear;
-          border-radius: 0.4rem;
-          border: 1px solid transparent;
-          padding: 1rem;
-          margin-left: -1rem;
-          margin-right: -1rem;
-        }
-
-        .container:hover {
-          border: 1px solid #d40052;
-        }
-
-        .other-container {
-          display: flex;
-          align-items: center;
-        }
-
-        .other {
-          font-size: 1.2rem;
-          opacity: 0.75;
-          font-weight: bold;
-        }
-
-        a {
-          text-decoration: none;
-          color: black;
-        }
-
-        .project-title {
-          color: #d40052;
-          margin: 0;
-          font-size: 1.8rem;
-        }
-
-        .project-about {
-          margin: 0;
-        }
-      `}</style>
-    </a>
+        <Other style={{marginLeft: '1rem'}}>{language}</Other>
+      </Content>
+    </Container>
   </Link>
 )
+
+const Container = styled.a`
+  display: block;
+  transition: all 0.2s linear;
+  border-radius: 0.4rem;
+  border: 1px solid transparent;
+  padding: 1rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    border: 1px solid #d40052;
+  }
+`
+
+const Title = styled.h4`
+  color: #d40052;
+  margin: 0;
+  font-size: 1.8rem;
+`
+
+const Content = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+const Other = styled.div`
+  font-size: 1.2rem;
+  opacity: 0.75;
+  font-weight: bold;
+`
+
+const About = styled.p`
+  margin: 0;
+`
 
 export default Article

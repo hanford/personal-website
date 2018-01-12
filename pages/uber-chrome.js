@@ -2,11 +2,11 @@ import React from 'react'
 import Link from 'next/link'
 import GithubBadge from 'react-github-badge'
 
-import { Head, CtaButton, HeroImage, Title, Frame, Content, Description } from '../components'
+import { Head, CtaButton, HeroImage, Title, Frame, Content, Description, Container } from '../components'
 
 export default function UberChrome () {
   return (
-    <div className='container'>
+    <Container>
       <Head
         title='Uber chrome | Jack Hanford'
         description='Call an uber from chrome'
@@ -31,17 +31,6 @@ export default function UberChrome () {
 
         <Frame src='https://www.youtube.com/embed/4rXzuy_fGsU' />
       </Content>
-
-      <style jsx>{`
-        .container {
-          display: flex;
-          max-width: 100%;
-          height: 100%;
-          justify-content: center;
-          text-align: center;
-          overflow: hidden !important;
-        }
-      `}</style>
-    </div>
+    </Container>
   )
 }

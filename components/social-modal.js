@@ -1,15 +1,14 @@
-import React, { PureComponent } from 'react'
 import Drawer from 'react-drag-drawer'
+import styled, { css } from 'react-emotion'
 
 export const SocialModal = ({ toggle, open }) => (
   <Drawer
     open={open}
     onRequestClose={toggle}
+    modalElementClass={Card}
   >
-    <div className='card'>
-      <button className='closeButton' onClick={toggle}>×</button>
-
-      <ul>
+    <Content>
+      <List>
         <Link
           link='https://github.com/hanford'
           text='Github'
@@ -51,76 +50,71 @@ export const SocialModal = ({ toggle, open }) => (
           text='Linkedin'
           icon='ion-social-linkedin-outline'
         />
-      </ul>
 
-      <style jsx>{`
-        .card {
-          box-shadow: 0 18px 35px rgba(50,50,93,.1), 0 8px 15px rgba(0,0,0,.07);
-          background-color: white;
-          border-radius: 0.4rem;
-          padding: 2rem 4rem;
-          position: relative;
-        }
-
-        @media(max-width: 767px) {
-          .card {
-            padding: 2rem;
-          }
-        }
-
-        .closeButton {
-          border: 0;
-          background: transparent;
-          position: absolute;
-          right: 1rem;
-          top: 1rem;
-          cursor: pointer;
-          font-size: 2rem;
-          color: #78909C;
-          z-index: 5;
-          padding: 1rem;
-        }
-
-        ul {
-          min-width: 32rem;
-          padding-left: 0;
-          list-style: none;
-        }
-      `}</style>
-    </div>
+        <Close onClick={toggle}>Close</Close>
+      </List>
+    </Content>
   </Drawer>
 )
 
 const Link = ({ icon, text, link }) => (
-  <li>
-    <a href={link} target='_blank'>
-      <i className={`icon ${icon}`} /> {text}
-    </a>
-
-    <style jsx>{`
-      li {
-        padding: 1rem;
-        cursor: pointer;
-        transition: all 0.3s;
-      }
-
-      .icon {
-        font-size: 2rem;
-        margin-right: 2rem;
-      }
-
-      a {
-        display: flex;
-        align-items: center;
-        color: black;
-        text-decoration: none;
-      }
-
-      li:hover {
-        transform: translateX(4rem) scale(1.15);
-      }
-    `}</style>
-  </li>
+  <Item>
+    <Anchor href={link} target='_blank'>
+      <i style={{fontSize: '2rem', marginRight: '2rem'}} className={`${icon}`} /> {text}
+    </Anchor>
+  </Item>
 )
 
 export default SocialModal
+
+const Card = css`
+  background-color: white;
+  border-radius: 0.4rem;
+  position: relative;
+
+  @media(max-width: 767px) {
+    width: 100%;
+    height: 100%;
+    margin-top: 20%;
+  }
+`
+
+const Content = styled.div`
+  width: 50rem;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+`
+
+const Close = styled.button`
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-size: 2rem;
+  color: red;
+  z-index: 5;
+  padding: 1rem;
+  font-size: 1.4rem;
+  padding-left: 3rem;
+  width: 100%;
+  text-align: left;
+`
+
+const List = styled.ul`
+  min-width: 32rem;
+  padding-left: 0;
+  list-style: none;
+`
+
+const Item = styled.li`
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+`
+
+const Anchor = styled.a`
+  display: flex;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+`

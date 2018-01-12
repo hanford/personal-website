@@ -2,11 +2,11 @@ import React from 'react'
 import Link from 'next/link'
 import GithubBadge from 'react-github-badge'
 
-import { Head, CtaButton, HeroImage, Title, Frame, Content, Description } from '../components'
+import { Head, CtaButton, HeroImage, Title, Frame, Content, Description, Container } from '../components'
 
 export default function Instachrome () {
   return (
-    <div className='container'>
+    <Container>
       <Head
         title='Instachrome | Jack Hanford'
         description='Browse instagram from anywhere'
@@ -30,17 +30,6 @@ export default function Instachrome () {
 
         <Frame src='https://www.youtube.com/embed/IC9JDy6i4-s' />
       </Content>
-
-      <style jsx>{`
-        .container {
-          display: flex;
-          max-width: 100%;
-          height: 100%;
-          justify-content: center;
-          text-align: center;
-          overflow: hidden !important;
-        }
-      `}</style>
-    </div>
+    </Container>
   )
 }

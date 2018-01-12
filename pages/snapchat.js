@@ -1,49 +1,47 @@
 import Link from 'next/link'
+import styled from 'react-emotion'
 
 import { Head } from '../components'
 
+const Container = styled.div`
+  display: flex;
+  max-width: 100%;
+  justify-content: center;
+  margin-top: 16rem;
+`
+
+const Content = styled.div`
+  max-width: 100%;
+  max-width: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+`
+
+const Back = styled.button`
+  background-color: transparent;
+  margin-top: 3rem;
+  color: white;
+  border: 0;
+  font-size: 1.6rem;
+  cursor: pointer;
+  outline: none;
+`
+
+const Snapcode = styled.img`
+  height: 20rem;
+`
+
 export default function Snapchat () {
   return (
-    <div className='container'>
+    <Container>
       <Head title='Snapchat | Jack Hanford' />
-
-      <div className='snapcode'>
-        <img src='../static/snapcode.png' />
+      <Content>
+        <Snapcode src='../static/snapcode.png' />
         <Link href='/'>
-          <button className='backButton'>Back</button>
+          <Back>Back</Back>
         </Link>
-      </div>
-
-      <style jsx>{`
-        .container {
-          display: flex;
-          max-width: 100%;
-          justify-content: center;
-          margin-top: 16rem;
-        }
-
-        .snapcode {
-          max-width: 100%;
-          max-width: 20rem;
-          display: flex;
-          flex-direction: column;
-          align-self: center;
-        }
-
-        .backButton {
-          background-color: transparent;
-          margin-top: 3rem;
-          color: white;
-          border: 0;
-          font-size: 1.6rem;
-          cursor: pointer;
-          outline: none;
-        }
-
-        img {
-          height: 20rem;
-        }
-      `}</style>
-    </div>
+      </Content>
+    </Container>
   )
 }

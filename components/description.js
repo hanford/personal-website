@@ -1,14 +1,11 @@
-export const Description = ({ children }) => (
-  <div>
-    <p className='description'>{children}</p>
+import styled from 'react-emotion'
 
-    <style jsx>{`
-      .description {
-        margin-top: 0.5rem;
-        margin-bottom: 3rem;
-      }
-    `}</style>
-  </div>
+const DescriptionComponent = styled.p`
+  margin-top: 0.5rem;
+  margin-bottom: 3rem;
+`
+export const Description = ({ children }) => (
+  <DescriptionComponent>{children}</DescriptionComponent>
 )
 
 export default Description

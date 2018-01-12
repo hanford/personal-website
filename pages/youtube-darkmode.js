@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import GithubBadge from 'react-github-badge'
 
-import { Head, CtaButton, Title, HeroImage, Frame, Content, Description } from '../components'
+import { Head, CtaButton, Title, HeroImage, Frame, Content, Description, Container } from '../components'
 
 export default function YoutubeDarkmode () {
   return (
-    <div className='container'>
+    <Container>
       <Head
         title='Youtube Darkmode | Jack Hanford'
         description='Get youtube darkmode, before google releases it'
@@ -29,17 +29,6 @@ export default function YoutubeDarkmode () {
 
         <Frame src='https://www.youtube.com/embed/plz6bGOb3VI' />
       </Content>
-
-      <style jsx>{`
-        .container {
-          display: flex;
-          max-width: 100%;
-          justify-content: center;
-          text-align: center;
-          -webkit-overflow-scrolling: touch;
-          overflow: auto;
-        }
-      `}</style>
-    </div>
+    </Container>
   )
 }
