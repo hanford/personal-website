@@ -11,8 +11,7 @@ export const Screen = ({ children, scale = 1 }) => (
 const Container = styled.div`
   max-width: 100%;
   padding: 8rem 2rem;
-  animation: fadeIn 0.4s linear;
-  transform-origin: 50% 50%;
+  will-change: transform;
   transform: scale(${({ scale }) => scale});
 
   @media(max-width: 767px) {
