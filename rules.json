@@ -1,7 +1,0 @@
-{
-  "rules": [
-    { "pathname": "/react-kanban", "dest": "react-kanban.now.sh" },
-    { "pathname": "/react-drag-drawer", "dest": "react-drag-drawer.now.sh" },
-    { "dest": "jackhanford.com" }
-  ]
-}
