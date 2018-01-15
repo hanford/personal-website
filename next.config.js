@@ -15,7 +15,9 @@ const AnalyzeGetStats = {
 
 module.exports = {
   webpack: function (config, { dev }) {
-    config.plugins = config.plugins.filter(p => p.constructor.name !== 'UglifyJsPlugin')
+    if (!dev) {
+      config.plugins = config.plugins.filter(p => p.constructor.name !== 'UglifyJsPlugin')
+    }
 
     if (ANALYZE) {
       const opts = ANALYZE === 1 ? AnalyzeOpts : AnalyzeGetStats
