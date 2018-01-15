@@ -3,7 +3,7 @@ import styled from 'react-emotion'
 
 export const Article = ({path, name, about, stars = '', language = ''}) => (
   <Link href={path}>
-    <Container target='_blank'>
+    <Container href={path} target='_blank'>
       <Title>{name}</Title>
 
       <About>{about}</About>

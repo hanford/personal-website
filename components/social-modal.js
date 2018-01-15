@@ -51,7 +51,9 @@ export const SocialModal = ({ toggle, open }) => (
           icon='ion-social-linkedin-outline'
         />
 
-        <Close onClick={toggle}>Close</Close>
+        <Item onClick={toggle}>
+          <i style={{fontSize: '2rem', marginRight: '2rem'}} className='ion-close-round' /> Close
+        </Item>
       </List>
     </Content>
   </Drawer>
@@ -65,12 +67,15 @@ const Link = ({ icon, text, link }) => (
   </Item>
 )
 
+const noop = () => {}
+
 export default SocialModal
 
 const Card = css`
   background-color: white;
   border-radius: 0.4rem;
   position: relative;
+  padding: 2rem;
 
   @media(max-width: 767px) {
     width: 100%;
@@ -109,7 +114,8 @@ const List = styled.ul`
 const Item = styled.li`
   padding: 1rem;
   cursor: pointer;
-  transition: all 0.3s;
+  display: flex;
+  align-items: center;
 `
 
 const Anchor = styled.a`

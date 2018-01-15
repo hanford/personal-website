@@ -14,7 +14,7 @@ export default class Projects extends PureComponent {
   static async getInitialProps () {
     const { err, data: { data } } = await wrap(me.listRepos())
 
-    if (err) return { repos: [] }
+    if (err || !data) return { repos: [] }
 
     let myRepos = data.filter(({ owner, fork, stargazers_count: stars }) =>
       owner.login === USER_NAME && !fork && stars > 0
@@ -64,6 +64,7 @@ const Container = styled.div`
   max-width: 100%;
   justify-content: center;
   text-align: left;
+  font-size: 1.6rem;
 `
 
 const Anchor = styled.a`

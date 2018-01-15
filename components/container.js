@@ -13,4 +13,5 @@ const Component = styled.div`
   justify-content: center;
   text-align: center;
   overflow: hidden !important;
+  font-size: 1.6rem;
 `

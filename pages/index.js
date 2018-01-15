@@ -73,6 +73,7 @@ const Body = styled.div`
   justify-content: center;
   flex-direction: column;
   color: #32325d;
+  font-size: 1.6rem;
 `
 
 const Anchor = styled.a`
@@ -92,8 +93,8 @@ const Intro = styled.div`
   }
 
   & > div:last-child {
-    font-size: 1.6rem;
     line-height: 2rem
+    font-size: 1.6rem;
   }
 `
 
