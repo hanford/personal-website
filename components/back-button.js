@@ -11,7 +11,7 @@ const Anchor = styled.a`
   font-size: 3rem;
 `
 
-export const BackButton = () => (
+export const BackButton = props => (
   <Link href='/'>
     <Anchor>×</Anchor>
   </Link>
