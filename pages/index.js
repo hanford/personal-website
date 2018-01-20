@@ -160,7 +160,7 @@ const projects = [
   {
     path: '/instachrome',
     name: 'Instachrome',
-    about: 'A chrome extension for browsing instagram with around 10,000 active users',
+    about: 'A chrome extension for browsing instagram with around 11,000 active users',
   },
   {
     path: '/chirp',
