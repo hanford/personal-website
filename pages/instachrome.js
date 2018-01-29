@@ -80,7 +80,7 @@ export default class Instachrome extends PureComponent {
             modalElementClass={TakeDown}
           >
             <Emoji>😥</Emoji>
-            <p>On 1/28/17 I received an email informing me of me that this extension was breaking chrome's terms of service around copyright infringement.  I've decided to remove the chrome extension from the chrome web store but keep the source code on <a href='https://github.com/hanford/Instachrome'>Github</a>.</p>
+            <p>On 1/28/17 I received an email informing me that this extension was breaking chrome's terms of service around copyright infringement. I've since decided to remove Instachrome from the chrome web store as a result - however the code will continue to live on <a href='https://github.com/hanford/Instachrome'>Github</a>.</p>
             <Button onClick={this.toggleDrawer}>Got it</Button>
           </Drawer>
 
