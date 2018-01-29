@@ -22,8 +22,9 @@ const Button = styled.a`
   font-weight: bold;
 `
 
-export const CtaButton = ({ link, children }) => (
+export const CtaButton = ({ link, children, onClick = () => {} }) => (
   <Button
+    onClick={onClick}
     target='_blank'
     href={link}
   >
