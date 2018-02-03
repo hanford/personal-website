@@ -3,8 +3,9 @@ import Link from 'next/link'
 import GithubBadge from 'react-github-badge'
 
 import { Head, CtaButton, HeroImage, Title, Frame, Content, Description, Container } from '../components'
+import withTakedown from '../hocs/takedown'
 
-export default function UberChrome () {
+function UberChrome () {
   return (
     <Container>
       <Head
@@ -34,3 +35,5 @@ export default function UberChrome () {
     </Container>
   )
 }
+
+export default withTakedown(UberChrome)

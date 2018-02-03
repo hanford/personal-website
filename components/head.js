@@ -46,7 +46,7 @@ export const Head = ({ title, description }) => (
         box-sizing: border-box;
       }
 
-      [data-reactroot] {
+      #__next {
         font-size: 1.6rem;
       }
     `}} />
