@@ -38,7 +38,7 @@ class Landing extends PureComponent {
 
               <Row>
                 <Link prefetch href='/projects'>
-                  <Button>Open source</Button>
+                  <Button>Projects</Button>
                 </Link>
                 <Button onClick={this.toggle}>Contact me</Button>
               </Row>
