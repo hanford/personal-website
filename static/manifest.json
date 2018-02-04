@@ -1,0 +1,10 @@
+{
+  "name": "Jack Hanford's personal website",
+  "short_name": "Jack Hanford",
+  "background_color": "#FFFFFF",
+  "theme_color": "#d31253",
+  "description": "Jack Hanford's personal website",
+  "display": "standalone",
+  "start_url": "../",
+  "icons": []
+}

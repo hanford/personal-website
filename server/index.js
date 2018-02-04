@@ -24,8 +24,10 @@ const cachedRoutes = [
 ]
 
 app.prepare().then(() => {
+  const Renderer = render(app)
+
   cachedRoutes.forEach(route => {
-    server.get(route, (req, res) => render(req, res, route))
+    server.get(route, (req, res) => Renderer(req, res, route))
   })
 
   server.get('/service-worker.js', ServiceWorker(app))

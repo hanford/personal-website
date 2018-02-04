@@ -19,6 +19,8 @@ export default class DocumentComponent extends Document {
       <html>
         <Head>
           <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
+
+          <link rel="manifest" href="/static/manifest.json" />
         </Head>
         <body>
           <Main />
