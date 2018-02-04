@@ -2,8 +2,9 @@ import GithubBadge from 'react-github-badge'
 import styled from 'react-emotion'
 
 import { Head, CtaButton, HeroImage, Title, Description, Frame, Container } from '../components'
+import withServiceWorker from '../hocs/service-worker'
 
-export default function Chirp () {
+function Chirp () {
   return (
     <Container>
       <Head
@@ -59,6 +60,8 @@ export default function Chirp () {
     </Container>
   )
 }
+
+export default withServiceWorker(Chirp)
 
 const Hero = styled.div`
   max-width: 100%;

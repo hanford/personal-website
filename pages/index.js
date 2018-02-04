@@ -4,9 +4,10 @@ import Drawer from 'react-drag-drawer'
 import styled from 'react-emotion'
 import { Motion, spring, presets } from 'react-motion'
 
+import withServiceWorker from '../hocs/service-worker'
 import { SocialModal, Head, Article, Screen, Emoji } from '../components'
 
-export default class Landing extends PureComponent {
+class Landing extends PureComponent {
   state = {
     expanded: false
   }
@@ -64,6 +65,7 @@ export default class Landing extends PureComponent {
   }
 }
 
+export default withServiceWorker(Landing)
 
 const Body = styled.div`
   width: 100%;

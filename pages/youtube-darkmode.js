@@ -3,7 +3,9 @@ import GithubBadge from 'react-github-badge'
 
 import { Head, CtaButton, Title, HeroImage, Frame, Content, Description, Container } from '../components'
 
-export default function YoutubeDarkmode () {
+import withServiceWorker from '../hocs/service-worker'
+
+function YoutubeDarkmode () {
   return (
     <Container>
       <Head
@@ -32,3 +34,5 @@ export default function YoutubeDarkmode () {
     </Container>
   )
 }
+
+export default withServiceWorker(YoutubeDarkmode)

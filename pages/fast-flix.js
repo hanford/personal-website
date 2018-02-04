@@ -2,9 +2,10 @@ import React from 'react'
 import Link from 'next/link'
 import GithubBadge from 'react-github-badge'
 
+import withServiceWorker from '../hocs/service-worker'
 import { Head, Title, CtaButton, HeroImage, Frame, Content, Description, Container } from '../components'
 
-export default function FastFlix () {
+function FastFlix () {
   return (
     <Container>
       <Head
@@ -33,3 +34,5 @@ export default function FastFlix () {
     </Container>
   )
 }
+
+export default withServiceWorker(FastFlix)

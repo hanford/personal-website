@@ -1,5 +1,6 @@
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 const { ANALYZE } = process.env
 
 const AnalyzeOpts = {
@@ -25,6 +26,20 @@ module.exports = {
         })
       )
     }
+
+   config.plugins.push(
+     new SWPrecacheWebpackPlugin({
+       verbose: true,
+       minify: true,
+       staticFileGlobsIgnorePatterns: [/\.next\//],
+       runtimeCaching: [
+         {
+           handler: 'networkFirst',
+           urlPattern: /^https?.*/
+         }
+       ]
+     })
+   )
 
     if (ANALYZE) {
       const opts = ANALYZE === 1 ? AnalyzeOpts : AnalyzeGetStats

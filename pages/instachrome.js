@@ -6,6 +6,7 @@ import styled, { css } from 'react-emotion'
 
 import { Head, CtaButton, HeroImage, Title, Frame, Content, Description, Container } from '../components'
 import withTakedown from '../hocs/takedown.js'
+import withServiceWorker from '../hocs/service-worker'
 
 class Instachrome extends PureComponent {
 
@@ -40,4 +41,5 @@ class Instachrome extends PureComponent {
   }
 }
 
-export default withTakedown(Instachrome)
+const hasTakedown = withTakedown(Instachrome)
+export default withServiceWorker(hasTakedown)

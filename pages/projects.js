@@ -5,12 +5,13 @@ import styled from 'react-emotion'
 import wrap from 'await-wrap'
 
 import { Title, Head, Article, Screen, BackButton, Emoji } from '../components'
+import withServiceWorker from '../hocs/service-worker'
 
 const USER_NAME = 'hanford'
 const gh = new GitHub({ token: process.env.GITHUB_TOKEN })
 const me = gh.getUser(USER_NAME)
 
-export default class Projects extends PureComponent {
+class Projects extends PureComponent {
   static async getInitialProps () {
     const { err, data: { data } } = await wrap(me.listRepos())
 
@@ -58,6 +59,8 @@ export default class Projects extends PureComponent {
     )
   }
 }
+
+export default withServiceWorker(Projects)
 
 const Container = styled.div`
   display: flex;

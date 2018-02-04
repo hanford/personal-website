@@ -5,7 +5,7 @@ import requestCallback from 'request-callback'
 import Drawer from 'react-drag-drawer'
 
 export default function withTakedown (Component) {
-  class withTakedown extends PureComponent {
+  class withTakedownComponent extends PureComponent {
     state = {
       open: false
     }
@@ -41,7 +41,7 @@ export default function withTakedown (Component) {
     }
   }
 
-  return hoistStatics(withTakedown, Component)
+  return hoistStatics(withTakedownComponent, Component)
 }
 
 const TakeDown = css`

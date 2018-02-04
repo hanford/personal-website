@@ -1,29 +1,13 @@
 const express = require('express')
-const next = require('next')
+
 const LRUCache = require('lru-cache')
 const debug = require('debug')('app')
-
-const server = express()
-const dev = process.env.NODE_ENV !== 'production'
-const app = next({ dir: '.', dev })
-const handle = app.getRequestHandler()
 
 // This is where we cache our rendered HTML pages
 const ssrCache = new LRUCache({
   max: 100,
   maxAge: 1000 * 60 * 24 // 1 day
 })
-
-const cachedRoutes = [
-  '/projects',
-  '/writing',
-  '/instachrome',
-  '/fast-flix',
-  '/chirp',
-  '/youtube-darkmode',
-  '/uber-chrome',
-  '/snapchat'
-]
 
 function renderAndCache (req, res, pagePath, queryParams) {
   // If we have a page in the cache, let's serve it
@@ -46,15 +30,4 @@ function renderAndCache (req, res, pagePath, queryParams) {
     })
 }
 
-app.prepare().then(() => {
-  // Use the `renderAndCache` utility defined below to serve pages
-  cachedRoutes.forEach(route => {
-    server.get(route, (req, res) => renderAndCache(req, res, route))
-  })
-
-  server.get('*', (req, res) => {
-    return handle(req, res)
-  })
-})
-
-module.exports = server
+module.exports = renderAndCache
