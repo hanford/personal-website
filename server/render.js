@@ -1,5 +1,3 @@
-const express = require('express')
-
 const LRUCache = require('lru-cache')
 const debug = require('debug')('app')
 
@@ -9,7 +7,7 @@ const ssrCache = new LRUCache({
   maxAge: 1000 * 60 * 24 // 1 day
 })
 
-function renderAndCache (req, res, pagePath, queryParams) {
+module.exports = function render (req, res, pagePath, queryParams) {
   // If we have a page in the cache, let's serve it
   if (!dev && ssrCache.has(req.url)) {
     debug(`CACHE HIT: ${req.url}`)
@@ -21,6 +19,7 @@ function renderAndCache (req, res, pagePath, queryParams) {
     .then((html) => {
       // Let's cache this page
       debug(`CACHE MISS: ${req.url}`)
+
       ssrCache.set(req.url, html)
 
       res.send(html)
@@ -29,5 +28,3 @@ function renderAndCache (req, res, pagePath, queryParams) {
       app.renderError(err, req, res, pagePath, queryParams)
     })
 }
-
-module.exports = renderAndCache

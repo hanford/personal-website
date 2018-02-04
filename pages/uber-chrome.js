@@ -26,7 +26,7 @@ function UberChrome () {
 
         <HeroImage src='../static/uber-chrome.jpg' />
 
-        <CtaButton link='https://chrome.google.com/webstore/detail/uberchrome/foakblnhnfmanccjhkkcicepglbflaff'>Add to Google chrome</CtaButton>
+        <CtaButton>Add to Google chrome</CtaButton>
 
         <h2 style={{marginTop: '8rem'}}>How to video</h2>
         <p style={{maxWidth: '60rem', margin: '0 auto'}}>After installing the chrome extension, click the icon and you should be ready!</p>
