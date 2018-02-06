@@ -1,5 +1,4 @@
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 const { ANALYZE } = process.env
 
@@ -17,16 +16,6 @@ const AnalyzeGetStats = {
 
 module.exports = {
   webpack: function (config, { dev }) {
-    if (!dev) {
-      // remove this once this is resolved: https://github.com/zeit/next.js/issues/1195
-      config.plugins = config.plugins.filter(p => p.constructor.name !== 'UglifyJsPlugin')
-      config.plugins.push(
-        new UglifyJSPlugin({
-          parallel: true
-        })
-      )
-    }
-
    config.plugins.push(
      new SWPrecacheWebpackPlugin({
        verbose: true,
