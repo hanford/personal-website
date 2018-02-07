@@ -1,8 +1,8 @@
 import GithubBadge from 'react-github-badge'
 import styled from 'react-emotion'
+import withOffline from 'next-offline/hoc'
 
 import { Head, CtaButton, HeroImage, Title, Description, Frame, Container } from '../components'
-import withServiceWorker from '../hocs/service-worker'
 
 function Chirp () {
   return (
@@ -61,7 +61,7 @@ function Chirp () {
   )
 }
 
-export default withServiceWorker(Chirp)
+export default withOffline(Chirp)
 
 const Hero = styled.div`
   max-width: 100%;

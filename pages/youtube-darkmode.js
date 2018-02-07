@@ -1,9 +1,8 @@
 import Link from 'next/link'
 import GithubBadge from 'react-github-badge'
+import withOffline from 'next-offline/hoc'
 
 import { Head, CtaButton, Title, HeroImage, Frame, Content, Description, Container } from '../components'
-
-import withServiceWorker from '../hocs/service-worker'
 
 function YoutubeDarkmode () {
   return (
@@ -35,4 +34,4 @@ function YoutubeDarkmode () {
   )
 }
 
-export default withServiceWorker(YoutubeDarkmode)
+export default withOffline(YoutubeDarkmode)

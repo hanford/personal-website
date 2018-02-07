@@ -1,10 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
 import GithubBadge from 'react-github-badge'
+import withOffline from 'next-offline/hoc'
 
 import { Head, CtaButton, HeroImage, Title, Frame, Content, Description, Container } from '../components'
 import withTakedown from '../hocs/takedown'
-import withServiceWorker from '../hocs/service-worker'
 
 function UberChrome () {
   return (
@@ -38,4 +38,4 @@ function UberChrome () {
 }
 
 const hasTakedown = withTakedown(UberChrome)
-export default withServiceWorker(hasTakedown)
+export default withOffline(hasTakedown)

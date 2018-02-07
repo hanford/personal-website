@@ -3,9 +3,9 @@ import GitHub from 'github-api'
 import sortOn from 'sort-on'
 import styled from 'react-emotion'
 import wrap from 'await-wrap'
+import withOffline from 'next-offline/hoc'
 
 import { Title, Head, Article, Screen, BackButton, Emoji } from '../components'
-import withServiceWorker from '../hocs/service-worker'
 
 const USER_NAME = 'hanford'
 const gh = new GitHub({ token: process.env.GITHUB_TOKEN })
@@ -60,7 +60,7 @@ class Projects extends PureComponent {
   }
 }
 
-export default withServiceWorker(Projects)
+export default withOffline(Projects)
 
 const Container = styled.div`
   display: flex;

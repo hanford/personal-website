@@ -3,10 +3,10 @@ import Link from 'next/link'
 import GithubBadge from 'react-github-badge'
 import Drawer from 'react-drag-drawer'
 import styled, { css } from 'react-emotion'
+import withOffline from 'next-offline/hoc'
 
 import { Head, CtaButton, HeroImage, Title, Frame, Content, Description, Container } from '../components'
 import withTakedown from '../hocs/takedown.js'
-import withServiceWorker from '../hocs/service-worker'
 
 class Instachrome extends PureComponent {
 
@@ -42,4 +42,4 @@ class Instachrome extends PureComponent {
 }
 
 const hasTakedown = withTakedown(Instachrome)
-export default withServiceWorker(hasTakedown)
+export default withOffline(hasTakedown)

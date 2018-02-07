@@ -2,12 +2,12 @@ const express = require('express')
 const debug = require('debug')('app')
 const assert = require('assert')
 const next = require('next')
+const { join } = require('path')
 
 const server = express()
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dir: '.', dev })
 const handle = app.getRequestHandler()
-const ServiceWorker = require('./service-worker')
 
 const config = require('./config')
 const render = require('./render')
@@ -36,6 +36,12 @@ app.prepare().then(() => {
     return handle(req, res)
   })
 })
+
+const ServiceWorker = app => (req, res) => {
+  const filePath = join(__dirname, '../', '.next', 'service-worker.js')
+
+  app.serveStatic(req, res, filePath)
+}
 
 server.listen(config.PORT, err => {
   if (err) throw err

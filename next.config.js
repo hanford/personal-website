@@ -1,5 +1,5 @@
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
-const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
+const withOffline = require('next-offline')
 const { ANALYZE } = process.env
 
 const AnalyzeOpts = {
@@ -14,22 +14,8 @@ const AnalyzeGetStats = {
   generateStatsFile: true
 }
 
-module.exports = {
-  webpack: function (config, { dev }) {
-   config.plugins.push(
-     new SWPrecacheWebpackPlugin({
-       verbose: true,
-       minify: true,
-       staticFileGlobsIgnorePatterns: [/\.next\//],
-       runtimeCaching: [
-         {
-           handler: 'networkFirst',
-           urlPattern: /^https?.*/
-         }
-       ]
-     })
-   )
-
+module.exports = withOffline({
+  webpack (config, { dev }) {
     if (ANALYZE) {
       const opts = ANALYZE === 1 ? AnalyzeOpts : AnalyzeGetStats
 
@@ -38,4 +24,4 @@ module.exports = {
 
     return config
   }
-}
+})
