@@ -1,11 +1,10 @@
 import { PureComponent } from 'react'
 import GithubBadge from 'react-github-badge'
 import styled from 'react-emotion'
-import withOffline from 'next-offline/hoc'
 
 import { Head, CtaButton, HeroImage, Title, Description, Frame, Container } from '../components'
 
-class Chirp extends PureComponent {
+export default class Chirp extends PureComponent {
   render () {
     return (
       <Container>
@@ -63,8 +62,6 @@ class Chirp extends PureComponent {
     )
   }
 }
-
-export default withOffline(Chirp)
 
 const Hero = styled.div`
   max-width: 100%;

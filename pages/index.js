@@ -3,11 +3,10 @@ import Link from 'next/link'
 import Drawer from 'react-drag-drawer'
 import styled from 'react-emotion'
 import { Motion, spring, presets } from 'react-motion'
-import withOffline from 'next-offline/hoc'
 
 import { SocialModal, Head, Article, Screen, Emoji } from '../components'
 
-class Landing extends PureComponent {
+export default class Landing extends PureComponent {
   state = {
     expanded: false
   }
@@ -64,8 +63,6 @@ class Landing extends PureComponent {
     )
   }
 }
-
-export default withOffline(Landing)
 
 const Body = styled.div`
   width: 100%;

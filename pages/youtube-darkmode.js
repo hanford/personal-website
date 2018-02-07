@@ -1,11 +1,10 @@
 import { PureComponent } from 'react'
 import Link from 'next/link'
 import GithubBadge from 'react-github-badge'
-import withOffline from 'next-offline/hoc'
 
 import { Head, CtaButton, Title, HeroImage, Frame, Content, Description, Container } from '../components'
 
-class YoutubeDarkmode extends PureComponent {
+export default class YoutubeDarkmode extends PureComponent {
   render () {
     return (
       <Container>
@@ -36,5 +35,3 @@ class YoutubeDarkmode extends PureComponent {
     )
   }
 }
-
-export default withOffline(YoutubeDarkmode)

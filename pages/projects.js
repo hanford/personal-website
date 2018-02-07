@@ -3,7 +3,6 @@ import GitHub from 'github-api'
 import sortOn from 'sort-on'
 import styled from 'react-emotion'
 import wrap from 'await-wrap'
-import withOffline from 'next-offline/hoc'
 
 import { Title, Head, Article, Screen, BackButton, Emoji } from '../components'
 
@@ -11,7 +10,7 @@ const USER_NAME = 'hanford'
 const gh = new GitHub({ token: process.env.GITHUB_TOKEN })
 const me = gh.getUser(USER_NAME)
 
-class Projects extends PureComponent {
+export default class Projects extends PureComponent {
   static async getInitialProps () {
     const { err, data: { data } } = await wrap(me.listRepos())
 
@@ -59,8 +58,6 @@ class Projects extends PureComponent {
     )
   }
 }
-
-export default withOffline(Projects)
 
 const Container = styled.div`
   display: flex;
