@@ -1,64 +1,67 @@
+import { PureComponent } from 'react'
 import GithubBadge from 'react-github-badge'
 import styled from 'react-emotion'
 import withOffline from 'next-offline/hoc'
 
 import { Head, CtaButton, HeroImage, Title, Description, Frame, Container } from '../components'
 
-function Chirp () {
-  return (
-    <Container>
-      <Head
-        title='Chirp | Jack Hanford'
-        description='A desktop twitter application built for all platforms'
-      />
+class Chirp extends PureComponent {
+  render () {
+    return (
+      <Container>
+        <Head
+          title='Chirp | Jack Hanford'
+          description='A desktop twitter application built for all platforms'
+        />
 
-      <GithubBadge
-        url='https://github.com/hanford/chirp'
-        title='Star on Github'
-      />
+        <GithubBadge
+          url='https://github.com/hanford/chirp'
+          title='Star on Github'
+        />
 
-      <Hero>
-        <Title>Chirp <span style={{fontSize: '3rem'}}>🐦</span></Title>
-        <Description>A desktop twitter application built for all platforms</Description>
+        <Hero>
+          <Title>Chirp <span style={{fontSize: '3rem'}}>🐦</span></Title>
+          <Description>A desktop twitter application built for all platforms</Description>
 
-        <HeroImage src='../static/chirp.jpg' />
+          <HeroImage src='../static/chirp.jpg' />
 
-        <Section>
-          <h3>Downloads</h3>
+          <Section>
+            <h3>Downloads</h3>
 
-          <Row>
-            <Button
-              target='_blank'
-              href='https://file-cjddyxvqbc.now.sh/Chirp-darwin-x64.zip'
-              download='Chirp.zip'
-            >
-              Mac
-            </Button>
+            <Row>
+              <Button
+                target='_blank'
+                href='https://file-cjddyxvqbc.now.sh/Chirp-darwin-x64.zip'
+                download='Chirp.zip'
+              >
+                Mac
+              </Button>
 
-            <Button
-              target='_blank'
-              href='https://file-fevwnujbqw.now.sh/Chirp-linux-x64.zip'
-              download='Chirp.zip'
-            >
-              Linux
-            </Button>
+              <Button
+                target='_blank'
+                href='https://file-fevwnujbqw.now.sh/Chirp-linux-x64.zip'
+                download='Chirp.zip'
+              >
+                Linux
+              </Button>
 
-            <Button
-              target='_blank'
-              href='https://file-pwszcfrfqv.now.sh/Chirp-win32-x64.zip'
-              download='Chirp.zip'
-            >
-              Windows
-            </Button>
-          </Row>
-        </Section>
+              <Button
+                target='_blank'
+                href='https://file-pwszcfrfqv.now.sh/Chirp-win32-x64.zip'
+                download='Chirp.zip'
+              >
+                Windows
+              </Button>
+            </Row>
+          </Section>
 
-        <h2 style={{marginTop: '14rem'}}>Video</h2>
+          <h2 style={{marginTop: '14rem'}}>Video</h2>
 
-        <Frame src='https://www.youtube.com/embed/OfysGhGIHp8' />
-      </Hero>
-    </Container>
-  )
+          <Frame src='https://www.youtube.com/embed/OfysGhGIHp8' />
+        </Hero>
+      </Container>
+    )
+  }
 }
 
 export default withOffline(Chirp)
