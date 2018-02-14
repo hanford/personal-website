@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "DEBUG=app node server/index.js",
-    "build": "next build",
+    "build": "next build && node node_modules/next-offline/precache.js",
     "start": "NODE_ENV=production node server/index.js",
     "deploy": "now && now alias -r rules.json",
     "analyze": "cross-env ANALYZE=1 next build",
@@ -24,7 +24,6 @@
     "load-segment": "~1.0.1",
     "lru-cache": "~4.0.2",
     "next": "~5.0.0",
-    "next-offline": "~0.1.0",
     "react": "~16.2.0",
     "react-dom": "~16.2.0",
     "react-drag-drawer": "~1.12.1",
@@ -43,6 +42,7 @@
   "devDependencies": {
     "babel-plugin-emotion": "~8.0.12",
     "cross-env": "~5.1.1",
+    "next-offline": "~0.2.0-9",
     "webpack-bundle-analyzer": "~2.9.1"
   }
 }
