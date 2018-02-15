@@ -15,7 +15,6 @@ const AnalyzeGetStats = {
 }
 
 module.exports = withOffline({
-  UNSAFE_workbox: true,
   webpack (config, { dev }) {
     if (ANALYZE) {
       const opts = ANALYZE === 1 ? AnalyzeOpts : AnalyzeGetStats
