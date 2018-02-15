@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "DEBUG=app node server/index.js",
-    "build": "next build && node node_modules/next-offline/precache.js",
+    "build": "next build",
     "start": "NODE_ENV=production node server/index.js",
     "deploy": "now && now alias -r rules.json",
     "analyze": "cross-env ANALYZE=1 next build",
@@ -42,7 +42,7 @@
   "devDependencies": {
     "babel-plugin-emotion": "~8.0.12",
     "cross-env": "~5.1.1",
-    "next-offline": "~1.0.1",
+    "next-offline": "~1.1.0",
     "webpack-bundle-analyzer": "~2.9.1"
   }
 }
