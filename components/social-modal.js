@@ -89,6 +89,7 @@ const Content = styled.div`
   max-width: 100%;
   margin: 0 auto;
   position: relative;
+  font-size: 1.6rem;
 `
 
 const Close = styled.button`
