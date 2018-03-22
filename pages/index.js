@@ -184,6 +184,6 @@ const projects = [
   {
     path: '/youtube-darkmode',
     name: 'Youtube darkmode',
-    about: 'Google is redesigning youtube and also adding darkmode, this enables it right now',
+    about: 'Google was redesigning youtube and also adding darkmode, this enables it right now',
   }
 ]
