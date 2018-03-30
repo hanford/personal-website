@@ -1,7 +1,6 @@
 import { Component, Fragment } from 'react'
 import styled from 'react-emotion'
 import Observer from 'react-intersection-observer'
-import { Motion, spring, presets } from 'react-motion'
 
 if (typeof window !== 'undefined') {
   require('intersection-observer')
@@ -18,17 +17,12 @@ export class Screen extends Component {
 
   render () {
     const { scale, children } = this.props
-    const { hideNavbar } = this.state
 
     return (
       <Fragment>
-        <Motion style={{translateY: spring(hideNavbar ? -10 : 0, presets.stiff)}}>
-          {({ translateY }) => (
-            <Navbar hide={hideNavbar} onClick={this.backToTop} style={{transform: `translateY(${translateY}rem)`}}>
-              Back to top
-            </Navbar>
-          )}
-        </Motion>
+        <Navbar hide={this.state.hideNavbar} onClick={this.backToTop}>
+          Back to top
+        </Navbar>
 
         <Observer onChange={hideNavbar => this.setState({ hideNavbar })}>
           <SrollMeasure />
@@ -95,6 +89,6 @@ const Navbar = styled.nav`
   backdrop-filter: saturate(180%) blur(20px);
   background-color: rgba(255, 255, 255, 0.75) !important;
 
-  opacity: ${({ hide }) => hide ? 0 : 1};
-  transition: opacity 0.25s;
+  transform: translateY(${({ hide }) => hide ? -6 : 0}rem);
+  transition: all 0.4s;
 `
