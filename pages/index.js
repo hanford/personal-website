@@ -47,7 +47,7 @@ export default class Landing extends PureComponent {
               {
                 projects.map(p => (
                   <Article
-                    key={p.name}
+                    key={p.kname}
                     path={p.path}
                     name={p.name}
                     about={p.about}

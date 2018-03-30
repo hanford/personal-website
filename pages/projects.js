@@ -31,7 +31,7 @@ export default class Projects extends PureComponent {
     const { repos } = this.props
 
     return (
-      <Container>
+      <Fragment>
         <Head title='Projects | Jack Hanford' />
 
         <Screen>
@@ -54,18 +54,10 @@ export default class Projects extends PureComponent {
             ))
           }
         </Screen>
-      </Container>
+      </Fragment>
     )
   }
 }
-
-const Container = styled.div`
-  display: flex;
-  max-width: 100%;
-  justify-content: center;
-  text-align: left;
-  font-size: 1.6rem;
-`
 
 const Anchor = styled.a`
   color: #d40052;

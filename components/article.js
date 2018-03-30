@@ -2,6 +2,7 @@ import Link from 'next/link'
 import styled from 'react-emotion'
 
 import Observer from 'react-intersection-observer'
+
 if (typeof window !== 'undefined') {
   require('intersection-observer')
 }
