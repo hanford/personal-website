@@ -1,20 +1,29 @@
 import Link from 'next/link'
 import styled from 'react-emotion'
 
+import Observer from 'react-intersection-observer'
+if (typeof window !== 'undefined') {
+  require('intersection-observer')
+}
+
 export const Article = ({path, name, about, stars = '', language = ''}) => (
-  <Link href={path}>
-    <Container href={path} target='_blank'>
-      <Title>{name}</Title>
+  <Observer triggerOnce>
+    {inView => (
+      <Link href={path}>
+        <Container href={path} target='_blank' opacity={inView ? 1 : 0}>
 
-      <About>{about}</About>
+          <Title>{name}</Title>
+          <About>{about}</About>
 
-      <Content style={{display: language ? 'flex' : 'none'}}>
-        <Other>⭐️ {stars}</Other>
-        <div style={{marginLeft: '1rem'}}>·</div>
-        <Other style={{marginLeft: '1rem'}}>{language}</Other>
-      </Content>
-    </Container>
-  </Link>
+          <Content style={{display: language ? 'flex' : 'none'}}>
+            <Other>⭐️ {stars}</Other>
+            <div style={{marginLeft: '1rem'}}>·</div>
+            <Other style={{marginLeft: '1rem'}}>{language}</Other>
+          </Content>
+        </Container>
+      </Link>
+    )}
+  </Observer>
 )
 
 const Container = styled.a`
@@ -27,6 +36,7 @@ const Container = styled.a`
   margin-right: -1rem;
   text-decoration: none;
   color: black;
+  opacity: ${({ opacity}) => opacity};
 
   &:hover {
     border: 1px solid #d40052;
