@@ -31,7 +31,7 @@ export default function withTakedown (Component) {
             modalElementClass={TakeDown}
           >
             <Emoji>😥</Emoji>
-            <Text>On 1/28/17 I received an email informing me that this extension was breaking chrome's terms of service around coTextyright infringement. I've since decided to remove Instachrome and UberChrome from the chrome web store as a result - however the code will continue to live on <a href='https://github.com/hanford'>Github</a>.</Text>
+            <Text>On 1/28/17 I received an email informing me that this extension was breaking chrome's terms of service around copyright infringement. I've since decided to remove Instachrome and UberChrome from the chrome web store as a result - however the code will continue to live on <a href='https://github.com/hanford'>Github</a>.</Text>
             <Button onClick={this.toggleDrawer}>Got it</Button>
           </Drawer>
 
