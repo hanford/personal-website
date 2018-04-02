@@ -25,7 +25,7 @@
     "intersection-observer": "~0.5.0",
     "load-segment": "~1.0.1",
     "lru-cache": "~4.0.2",
-    "next": "~5.0.0",
+    "next": "~5.1.0",
     "react": "~16.2.0",
     "react-dom": "~16.2.0",
     "react-drag-drawer": "~2.1.0",
