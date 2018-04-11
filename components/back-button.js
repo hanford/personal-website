@@ -9,6 +9,7 @@ const Anchor = styled.a`
   top: 2rem;
   right: 2rem;
   font-size: 3rem;
+  cursor: pointer;
 `
 
 export const BackButton = props => (
