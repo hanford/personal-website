@@ -19,6 +19,20 @@ export default class Landing extends PureComponent {
     })
   }
 
+  componentDidMount () {
+    window.addEventListener('beforeinstallprompt', function (event) {
+      event.userChoice.then(function(choiceResult) {
+        console.log(choiceResult.outcome)
+
+        if(choiceResult.outcome == 'dismissed') {
+          console.log('User cancelled home screen install')
+        } else {
+          console.log('User added to home screen')
+        }
+      })
+    })
+  }
+
   render () {
     const { expanded } = this.state
 

@@ -6,6 +6,7 @@ export const Head = ({ title, description }) => (
     <meta name='viewport' content='initial-scale=1.0, width=device-width' />
     <meta name='name' content={title || 'Jack Hanford'} />
     <meta name='description' content={description || 'Engineer - Hacker - Technology Addict'} />
+    <meta name='theme-color' content='#db594b' />
 
     <link rel='stylesheet' type='text/css' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' />
 
