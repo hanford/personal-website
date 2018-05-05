@@ -1,30 +1,20 @@
 import Link from 'next/link'
 import styled from 'react-emotion'
 
-import Observer from 'react-intersection-observer'
-
-if (typeof window !== 'undefined') {
-  require('intersection-observer')
-}
-
 export const Article = ({path, name, about, stars = '', language = ''}) => (
-  <Observer triggerOnce>
-    {inView => (
-      <Link href={path}>
-        <Container href={path} target='_blank' opacity={inView ? 1 : 0}>
+  <Link href={path}>
+    <Container href={path} target='_blank'>
 
-          <Title>{name}</Title>
-          <About>{about}</About>
+      <Title>{name}</Title>
+      <About>{about}</About>
 
-          <Content style={{display: language ? 'flex' : 'none'}}>
-            <Other>⭐️ {stars}</Other>
-            <div style={{marginLeft: '1rem'}}>·</div>
-            <Other style={{marginLeft: '1rem'}}>{language}</Other>
-          </Content>
-        </Container>
-      </Link>
-    )}
-  </Observer>
+      <Content style={{display: language ? 'flex' : 'none'}}>
+        <Other>⭐️ {stars}</Other>
+        <div style={{marginLeft: '1rem'}}>·</div>
+        <Other style={{marginLeft: '1rem'}}>{language}</Other>
+      </Content>
+    </Container>
+  </Link>
 )
 
 const Container = styled.a`
