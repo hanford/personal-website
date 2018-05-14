@@ -2,6 +2,7 @@ import Link from 'next/link'
 import styled from 'react-emotion'
 
 import { Head } from '../components'
+import withSegment from '../hocs/segment'
 
 const Container = styled.div`
   display: flex;
@@ -32,7 +33,7 @@ const Snapcode = styled.img`
   height: 20rem;
 `
 
-export default function Snapchat () {
+function Snapchat () {
   return (
     <Container>
       <Head title='Snapchat | Jack Hanford' />
@@ -45,3 +46,5 @@ export default function Snapchat () {
     </Container>
   )
 }
+
+export default withSegment(Snapchat)

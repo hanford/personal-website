@@ -1,10 +1,11 @@
 import { PureComponent } from 'react'
 import GithubBadge from 'react-github-badge'
 import styled from 'react-emotion'
+import withSegment from '../hocs/segment'
 
 import { Head, CtaButton, HeroImage, Title, Description, Frame, Container } from '../components'
 
-export default class Chirp extends PureComponent {
+class Chirp extends PureComponent {
   render () {
     return (
       <Container>
@@ -62,6 +63,8 @@ export default class Chirp extends PureComponent {
     )
   }
 }
+
+export default withSegment(Chirp)
 
 const Hero = styled.div`
   max-width: 100%;

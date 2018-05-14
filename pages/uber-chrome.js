@@ -4,6 +4,7 @@ import GithubBadge from 'react-github-badge'
 
 import { Head, CtaButton, HeroImage, Title, Frame, Content, Description, Container } from '../components'
 import withTakedown from '../hocs/takedown'
+import withSegment from '../hocs/segment'
 
 function UberChrome () {
   return (
@@ -36,4 +37,6 @@ function UberChrome () {
   )
 }
 
-export default withTakedown(UberChrome)
+const hasTakedown = withTakedown(UberChrome)
+
+export default withSegment(hasTakedown)

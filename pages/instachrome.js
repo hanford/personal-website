@@ -5,7 +5,8 @@ import Drawer from 'react-drag-drawer'
 import styled, { css } from 'react-emotion'
 
 import { Head, CtaButton, HeroImage, Title, Frame, Content, Description, Container } from '../components'
-import withTakedown from '../hocs/takedown.js'
+import withTakedown from '../hocs/takedown'
+import withSegment from '../hocs/segment'
 
 class Instachrome extends PureComponent {
 
@@ -46,4 +47,6 @@ class Instachrome extends PureComponent {
   }
 }
 
-export default withTakedown(Instachrome)
+const hasTakedown = withTakedown(Instachrome)
+
+export default withSegment(hasTakedown)

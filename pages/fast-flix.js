@@ -1,10 +1,11 @@
 import { PureComponent } from 'react'
 import Link from 'next/link'
 import GithubBadge from 'react-github-badge'
+import withSegment from '../hocs/segment'
 
 import { Head, Title, CtaButton, HeroImage, Frame, Content, Description, Container } from '../components'
 
-export default class FastFlix extends PureComponent {
+class FastFlix extends PureComponent {
   render () {
     return (
       <Container>
@@ -35,3 +36,5 @@ export default class FastFlix extends PureComponent {
     )
   }
 }
+
+export default withSegment(FastFlix)

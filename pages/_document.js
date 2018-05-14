@@ -1,5 +1,4 @@
 import Document, { Head, Main, NextScript } from 'next/document'
-import Segment from 'load-segment'
 
 import { extractCritical } from 'emotion-server'
 import { fontFace } from 'emotion'
@@ -13,10 +12,6 @@ export default class DocumentComponent extends Document {
       ...renderPage(),
       ...stylesTAG
     }
-  }
-
-  componentDidMount () {
-    Segment({key: 'ZxJCBTbXZd76MG9R33zSOb43ULCjknzN'})
   }
 
   render () {

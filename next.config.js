@@ -15,18 +15,18 @@ const AnalyzeGetStats = {
 }
 
 module.exports = withOffline({
-  exportPathMap () {
-    return {
-      '/': { page: '/' },
-      '/chirp': { page: '/chirp' },
-      '/fast-flix': { page: '/fast-flix' },
-      '/instachrome': { page: '/instachrome' },
-      '/projects': { page: '/projects' },
-      '/snapchat': { page: '/snapchat' },
-      '/uber-chrome': { page: '/uber-chrome' },
-      '/youtube-darkmode': { page: '/youtube-darkmode' },
-    }
-  },
+  // exportPathMap () {
+  //   return {
+  //     '/': { page: '/' },
+  //     '/chirp': { page: '/chirp' },
+  //     '/fast-flix': { page: '/fast-flix' },
+  //     '/instachrome': { page: '/instachrome' },
+  //     '/projects': { page: '/projects' },
+  //     '/snapchat': { page: '/snapchat' },
+  //     '/uber-chrome': { page: '/uber-chrome' },
+  //     '/youtube-darkmode': { page: '/youtube-darkmode' },
+  //   }
+  // },
   webpack (config, { dev }) {
     if (ANALYZE) {
       const opts = ANALYZE === 1 ? AnalyzeOpts : AnalyzeGetStats

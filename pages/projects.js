@@ -5,12 +5,13 @@ import styled from 'react-emotion'
 import wrap from 'await-wrap'
 
 import { Title, Head, Article, Screen, BackButton, Emoji } from '../components'
+import withSegment from '../hocs/segment'
 
 const USER_NAME = 'hanford'
 const gh = new GitHub({ token: process.env.GITHUB_TOKEN })
 const me = gh.getUser(USER_NAME)
 
-export default class Projects extends PureComponent {
+class Projects extends PureComponent {
   static async getInitialProps () {
     const { err, data: { data } } = await wrap(me.listRepos())
 
@@ -58,6 +59,8 @@ export default class Projects extends PureComponent {
     )
   }
 }
+
+export default withSegment(Projects)
 
 const Anchor = styled.a`
   color: #d40052;

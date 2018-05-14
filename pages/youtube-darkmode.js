@@ -3,8 +3,9 @@ import Link from 'next/link'
 import GithubBadge from 'react-github-badge'
 
 import { Head, CtaButton, Title, HeroImage, Frame, Content, Description, Container } from '../components'
+import withSegment from '../hocs/segment'
 
-export default class YoutubeDarkmode extends PureComponent {
+class YoutubeDarkmode extends PureComponent {
   render () {
     return (
       <Container>
@@ -35,3 +36,5 @@ export default class YoutubeDarkmode extends PureComponent {
     )
   }
 }
+
+export default withSegment(YoutubeDarkmode)
