@@ -164,6 +164,11 @@ const Title = styled.div`
 
 const projects = [
   {
+    path: 'https://trends.now.sh',
+    name: 'Trends ⭐️',
+    about: 'Ultra high performance github trending PWA built with Next.js and Redux but only ~10 lines of client side Javascript',
+  },
+  {
     path: '/fast-flix',
     name: 'Fast Flix 🍿',
     about: 'Change the playback rate of any video on netflix',
