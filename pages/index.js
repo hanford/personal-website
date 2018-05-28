@@ -164,6 +164,11 @@ const Title = styled.div`
 
 const projects = [
   {
+    path: 'https://www.youtube.com/watch?v=JjRV-l9jSYE',
+    name: 'Rewriting Eaze.com with Next.js',
+    about: 'On 4/28/18 I gave a ~15 minute talk about my experience rewriting a large consumer facing website with Next.js',
+  },
+  {
     path: 'https://trends.now.sh',
     name: 'Trends ⭐️',
     about: 'Ultra high performance github trending PWA built with Next.js and Redux but only ~10 lines of client side Javascript',
