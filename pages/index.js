@@ -166,7 +166,7 @@ const projects = [
   {
     path: 'https://www.youtube.com/watch?v=JjRV-l9jSYE',
     name: 'Rewriting Eaze.com with Next.js',
-    about: 'On 4/28/18 I gave a ~15 minute talk about my experience rewriting a large consumer facing website with Next.js',
+    about: 'On 4/28/18 I gave a ~15 minute talk at Zeit Day about my experience rewriting a large consumer facing website with Next.js',
   },
   {
     path: 'https://trends.now.sh',
