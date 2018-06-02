@@ -1,10 +1,36 @@
+import { Fragment } from 'react'
 import styled from 'react-emotion'
+import Link from 'next/link'
 
 export const Container = ({ children }) => (
-  <Component>{children}</Component>
+  <Fragment>
+    <Link href='/'>
+      <BackButton>Back</BackButton>
+    </Link>
+
+    <Component>
+
+      {children}
+    </Component>
+  </Fragment>
 )
 
 export default Container
+
+const BackButton = styled.a`
+  display: block;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  padding: 16px;
+  text-align: center;
+  background-color: white;
+  font-size: 16px;
+  text-decoration: none;
+  box-shadow: 0 0rem 2rem rgba(0,0,0,0.15);
+  border-radius: 0.4rem;
+  cursor: pointer;
+`
 
 const Component = styled.div`
   display: flex;
