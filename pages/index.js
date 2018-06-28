@@ -47,7 +47,7 @@ class Landing extends PureComponent {
               <Emoji>👋</Emoji>
               <Intro>
                 <div>Hi I'm <span style={{fontWeight: 600}}>Jack Hanford</span></div>
-                <div>I'm a senior software engineer at <Anchor href='https://eaze.com' target='_blank'>Eaze</Anchor>.</div>
+                <div>I'm a software engineer at <Anchor href='https://lattice.com' target='_blank'>lattice</Anchor>.</div>
               </Intro>
 
               <Row>
