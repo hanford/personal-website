@@ -1,8 +1,8 @@
 [https://jackhanford.com](https://jackhanford.com)
 
 ```sh
-$ npm install
-$ npm run dev
+$ yarn install
+$ yarn run dev
 ```
 
 To build the site on your own, you'll need a github access token saved in now.
