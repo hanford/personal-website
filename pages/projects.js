@@ -40,7 +40,7 @@ class Projects extends PureComponent {
 
           <Title>Projects</Title>
 
-          <p>Lately I've been obssessed with open source software which I keep on <Anchor href='https://github.com/hanford' target='_blank'>GitHub</Anchor>. I've been writing JavaScript profressionally for around 4 years, and have become an expert with some of the latest and greatest frontend frameworks including <Anchor href='https://www.npmjs.com/package/virtual-dom' target='_blank'>virtual-dom</Anchor>, <Anchor href='https://angular.io' target='_blank'>AngularJS</Anchor>, <Anchor href='https://facebook.github.io/react' target='_blank'>ReactJS</Anchor> and most recently <Anchor href='https://github.com/zeit/next.js' target='_blank'>Next.js</Anchor>.</p>
+          <p>Lately I've been obssessed with open source software which I keep on <Anchor href='https://github.com/hanford' target='_blank'>GitHub</Anchor>. I've been writing JavaScript professionally for around 4 years, and have become an expert with some of the latest and greatest frontend frameworks including <Anchor href='https://www.npmjs.com/package/virtual-dom' target='_blank'>virtual-dom</Anchor>, <Anchor href='https://angular.io' target='_blank'>AngularJS</Anchor>, <Anchor href='https://facebook.github.io/react' target='_blank'>ReactJS</Anchor> and most recently <Anchor href='https://github.com/zeit/next.js' target='_blank'>Next.js</Anchor>.</p>
 
           {
             repos.map(({ name, id, description, stargazers_count: stars, language, html_url: html }) => (
