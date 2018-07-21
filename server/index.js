@@ -26,6 +26,13 @@ const cachedRoutes = [
 app.prepare().then(() => {
   const Renderer = render(app)
 
+  if (!dev) {
+    server.get('*', (_, res, next) => {
+      res.setHeader('Cache-Control', 'max-age=86400, immutable')
+      next()
+    })
+  }
+
   cachedRoutes.forEach(route => {
     server.get(route, (req, res) => Renderer(req, res, route))
   })
