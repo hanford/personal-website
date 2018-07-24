@@ -171,7 +171,7 @@ const projects = [
   {
     path: 'https://trends.now.sh',
     name: 'Trends ⭐️',
-    about: 'Ultra high performance github trending PWA built with Next.js and Redux but only ~10 lines of client side Javascript',
+    about: 'Ultra high performance github trending PWA built with Next.js and GraphQL but only ~15 lines of client side Javascript',
   },
   {
     path: '/fast-flix',
