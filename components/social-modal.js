@@ -1,75 +1,79 @@
-import Drawer from 'react-drag-drawer'
-import styled, { css } from 'react-emotion'
+import Drawer from 'react-drag-drawer';
+import styled, { css } from 'react-emotion';
 
 export const SocialModal = ({ toggle, open }) => (
-  <Drawer
-    open={open}
-    onRequestClose={toggle}
-    modalElementClass={Card}
-  >
+  <Drawer open={open} onRequestClose={toggle} modalElementClass={Card}>
     <Content>
       <List>
         <Link
-          link='https://github.com/hanford'
-          text='Github'
-          icon='ion-social-github'
+          link="https://github.com/hanford"
+          text="Github"
+          icon="ion-social-github"
         />
 
         <Link
-          link='https://www.twitter.com/jackhanford'
-          text='Twitter'
-          icon='ion-social-twitter-outline'
+          link="https://www.twitter.com/jackhanford"
+          text="Twitter"
+          icon="ion-social-twitter-outline"
         />
 
         <Link
-          link='https://www.instagram.com/jackhanford'
-          text='Instagram'
-          icon='ion-social-instagram-outline'
+          link="https://www.instagram.com/jackhanford"
+          text="Instagram"
+          icon="ion-social-instagram-outline"
         />
 
         <Link
-          link='/snapchat'
-          text='Snapchat'
-          icon='ion-social-snapchat-outline'
+          link="/snapchat"
+          text="Snapchat"
+          icon="ion-social-snapchat-outline"
         />
 
         <Link
-          link='https://facebook.com/jackhanford'
-          text='Facebook'
-          icon='ion-social-facebook-outline'
+          link="https://facebook.com/jackhanford"
+          text="Facebook"
+          icon="ion-social-facebook-outline"
         />
 
         <Link
-          link='mailto:jackhanford@gmail.com'
-          text='Email'
-          icon='ion-ios-email-outline'
+          link="mailto:jackhanford@gmail.com"
+          text="Email"
+          icon="ion-ios-email-outline"
         />
 
         <Link
-          link='https://www.linkedin.com/in/jack-hanford-98352761/'
-          text='Linkedin'
-          icon='ion-social-linkedin-outline'
+          link="https://www.linkedin.com/in/jack-hanford-98352761/"
+          text="Linkedin"
+          icon="ion-social-linkedin-outline"
         />
 
         <Item onClick={toggle}>
-          <i style={{fontSize: '2rem', marginRight: '2rem'}} className='ion-close-round' /> Close
+          <i
+            style={{ fontSize: '2rem', marginRight: '2rem' }}
+            className="ion-close-round"
+          />{' '}
+          Close
         </Item>
       </List>
     </Content>
   </Drawer>
-)
+);
 
 const Link = ({ icon, text, link }) => (
   <Item>
-    <Anchor href={link} target='_blank'>
-      <i style={{fontSize: '2rem', marginRight: '2rem'}} className={`${icon}`} /> {text}
+    <Anchor href={link} target="_blank">
+      <i
+        style={{ fontSize: '2rem', marginRight: '2rem' }}
+        className={`${icon}`}
+      />{' '}
+      {text}
     </Anchor>
   </Item>
-)
+);
 
-const noop = () => {}
+const noop = () => {};
 
-export default SocialModal
+export default SocialModal;
 
 const Card = css`
   background-color: white;
@@ -77,12 +81,12 @@ const Card = css`
   position: relative;
   padding: 2rem;
 
-  @media(max-width: 767px) {
+  @media (max-width: 767px) {
     width: 100%;
     height: 100%;
     margin-top: 20%;
   }
-`
+`;
 
 const Content = styled.div`
   width: 50rem;
@@ -90,7 +94,7 @@ const Content = styled.div`
   margin: 0 auto;
   position: relative;
   font-size: 1.6rem;
-`
+`;
 
 const Close = styled.button`
   border: 0;
@@ -104,24 +108,24 @@ const Close = styled.button`
   padding-left: 3rem;
   width: 100%;
   text-align: left;
-`
+`;
 
 const List = styled.ul`
   min-width: 32rem;
   padding-left: 0;
   list-style: none;
-`
+`;
 
 const Item = styled.li`
   padding: 1rem;
   cursor: pointer;
   display: flex;
   align-items: center;
-`
+`;
 
 const Anchor = styled.a`
   display: flex;
   align-items: center;
   color: black;
   text-decoration: none;
-`
+`;

@@ -1,21 +1,18 @@
-import { Fragment } from 'react'
-import styled from 'react-emotion'
-import Link from 'next/link'
+import { Fragment } from 'react';
+import styled from 'react-emotion';
+import Link from 'next/link';
 
 export const Container = ({ children }) => (
   <Fragment>
-    <Link href='/'>
+    <Link href="/">
       <BackButton>Back</BackButton>
     </Link>
 
-    <Component>
-
-      {children}
-    </Component>
+    <Component>{children}</Component>
   </Fragment>
-)
+);
 
-export default Container
+export default Container;
 
 const BackButton = styled.a`
   display: block;
@@ -27,10 +24,10 @@ const BackButton = styled.a`
   background-color: white;
   font-size: 16px;
   text-decoration: none;
-  box-shadow: 0 0rem 2rem rgba(0,0,0,0.15);
+  box-shadow: 0 0rem 2rem rgba(0, 0, 0, 0.15);
   border-radius: 0.4rem;
   cursor: pointer;
-`
+`;
 
 const Component = styled.div`
   display: flex;
@@ -40,4 +37,4 @@ const Component = styled.div`
   text-align: center;
   overflow: hidden !important;
   font-size: 1.6rem;
-`
+`;

@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import styled from 'react-emotion'
+import Link from 'next/link';
+import styled from 'react-emotion';
 
 const Anchor = styled.a`
   color: #d40052;
@@ -10,10 +10,10 @@ const Anchor = styled.a`
   right: 2rem;
   font-size: 3rem;
   cursor: pointer;
-`
+`;
 
 export const BackButton = props => (
-  <Link href='/'>
+  <Link href="/">
     <Anchor>×</Anchor>
   </Link>
-)
+);

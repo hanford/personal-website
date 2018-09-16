@@ -1,22 +1,22 @@
-import { Component, Fragment } from 'react'
-import styled from 'react-emotion'
-import Observer from 'react-intersection-observer'
+import { Component, Fragment } from 'react';
+import styled from 'react-emotion';
+import Observer from 'react-intersection-observer';
 
 if (typeof window !== 'undefined') {
-  require('intersection-observer')
+  require('intersection-observer');
 }
 
 export class Screen extends Component {
   state = {
-    hideNavbar: true
-  }
+    hideNavbar: true,
+  };
 
   backToTop = event => {
-    window.scrollTo(0, 0)
-  }
+    window.scrollTo(0, 0);
+  };
 
-  render () {
-    const { scale, children } = this.props
+  render() {
+    const { scale, children } = this.props;
 
     return (
       <Fragment>
@@ -29,19 +29,17 @@ export class Screen extends Component {
         </Observer>
 
         <Container scale={scale}>
-          <Card>
-            {children}
-          </Card>
+          <Card>{children}</Card>
         </Container>
       </Fragment>
-    )
+    );
   }
 }
 
 const SrollMeasure = styled.div`
   width: 100%;
   height: 1px;
-`
+`;
 
 const Container = styled.div`
   max-width: 100%;
@@ -49,10 +47,10 @@ const Container = styled.div`
   will-change: transform;
   transform: scale(${({ scale }) => scale});
 
-  @media(max-width: 767px) {
+  @media (max-width: 767px) {
     padding: 2rem;
   }
-`
+`;
 
 const Card = styled.div`
   width: 76rem;
@@ -63,12 +61,12 @@ const Card = styled.div`
   margin: 0 auto;
   background-color: white;
   border-radius: 0.4rem;
-  box-shadow: 0 1rem 3.5rem rgba(0,0,0,0.2);
+  box-shadow: 0 1rem 3.5rem rgba(0, 0, 0, 0.2);
 
-  @media(max-width: 767px) {
+  @media (max-width: 767px) {
     padding: 2rem;
   }
-`
+`;
 
 const Navbar = styled.nav`
   width: 100%;
@@ -89,6 +87,6 @@ const Navbar = styled.nav`
   backdrop-filter: saturate(180%) blur(20px);
   background-color: rgba(255, 255, 255, 0.75) !important;
 
-  transform: translateY(${({ hide }) => hide ? -6 : 0}rem);
+  transform: translateY(${({ hide }) => (hide ? -6 : 0)}rem);
   transition: all 0.4s;
-`
+`;

@@ -1,16 +1,25 @@
-import HeadTag from 'next/head'
+import HeadTag from 'next/head';
 
 export const Head = ({ title, description }) => (
   <HeadTag>
     <title>{title || 'Jack Hanford'}</title>
-    <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-    <meta name='name' content={title || 'Jack Hanford'} />
-    <meta name='description' content={description || 'Engineer - Hacker - Technology Addict'} />
-    <meta name='theme-color' content='#db594b' />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <meta name="name" content={title || 'Jack Hanford'} />
+    <meta
+      name="description"
+      content={description || 'Engineer - Hacker - Technology Addict'}
+    />
+    <meta name="theme-color" content="#db594b" />
 
-    <link rel='stylesheet' type='text/css' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+    />
 
-    <style dangerouslySetInnerHTML={{__html: `
+    <style
+      dangerouslySetInnerHTML={{
+        __html: `
       @font-face {
         font-family: 'Brandon';
         font-style: normal;
@@ -47,8 +56,10 @@ export const Head = ({ title, description }) => (
       #__next {
         font-size: 1.6rem;
       }
-    `}} />
+    `,
+      }}
+    />
   </HeadTag>
-)
+);
 
-export default Head
+export default Head;

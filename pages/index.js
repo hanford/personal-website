@@ -1,57 +1,65 @@
-import React, { PureComponent } from 'react'
-import Link from 'next/link'
-import Drawer from 'react-drag-drawer'
-import styled from 'react-emotion'
-import { Motion, spring, presets } from 'react-motion'
-import withSegment from '../hocs/segment'
+import React, { PureComponent } from 'react';
+import Link from 'next/link';
+import Drawer from 'react-drag-drawer';
+import styled from 'react-emotion';
+import { Motion, spring, presets } from 'react-motion';
+import withSegment from '../hocs/segment';
 
-import { SocialModal, Head, Article, Screen, Emoji } from '../components'
+import { SocialModal, Head, Article, Screen, Emoji } from '../components';
 
 class Landing extends PureComponent {
   state = {
-    expanded: false
-  }
+    expanded: false,
+  };
 
   toggle = () => {
-    this.setState((state) => {
+    this.setState(state => {
       return {
-        expanded: !state.expanded
-      }
-    })
-  }
+        expanded: !state.expanded,
+      };
+    });
+  };
 
-  componentDidMount () {
-    window.addEventListener('beforeinstallprompt', function (event) {
+  componentDidMount() {
+    window.addEventListener('beforeinstallprompt', function(event) {
       event.userChoice.then(function(choiceResult) {
-        console.log(choiceResult.outcome)
+        console.log(choiceResult.outcome);
 
-        if(choiceResult.outcome == 'dismissed') {
-          console.log('User cancelled home screen install')
+        if (choiceResult.outcome == 'dismissed') {
+          console.log('User cancelled home screen install');
         } else {
-          console.log('User added to home screen')
+          console.log('User added to home screen');
         }
-      })
-    })
+      });
+    });
   }
 
-  render () {
-    const { expanded } = this.state
+  render() {
+    const { expanded } = this.state;
 
     return (
       <Body>
         <Head />
 
-        <Motion style={{shrink: spring(expanded ? 0.8 : 1, presets.stiff)}}>
+        <Motion style={{ shrink: spring(expanded ? 0.8 : 1, presets.stiff) }}>
           {({ shrink }) => (
             <Screen scale={shrink}>
               <Emoji>👋</Emoji>
               <Intro>
-                <div>Hi I'm <span style={{fontWeight: 600}}>Jack Hanford</span></div>
-                <div>I'm a software engineer at <Anchor href='https://lattice.com' target='_blank'>lattice</Anchor>.</div>
+                <div>
+                  Hi I'm <span style={{ fontWeight: 600 }}>Jack Hanford</span>
+                </div>
+                <div>
+                  I'm a software engineer at{' '}
+                  <Anchor href="https://lattice.com" target="_blank">
+                    lattice
+                  </Anchor>
+                  .
+                </div>
               </Intro>
 
               <Row>
-                <Link prefetch href='/projects'>
+                <Link prefetch href="/projects">
                   <Button>Projects</Button>
                 </Link>
                 <Button onClick={this.toggle}>Contact me</Button>
@@ -59,27 +67,25 @@ class Landing extends PureComponent {
 
               <Title>Projects</Title>
 
-              {
-                projects.map(p => (
-                  <Article
-                    key={p.kname}
-                    path={p.path}
-                    name={p.name}
-                    about={p.about}
-                  />
-                ))
-              }
+              {projects.map(p => (
+                <Article
+                  key={p.kname}
+                  path={p.path}
+                  name={p.name}
+                  about={p.about}
+                />
+              ))}
             </Screen>
           )}
         </Motion>
 
         <SocialModal open={expanded} toggle={this.toggle} />
       </Body>
-    )
+    );
   }
 }
 
-export default withSegment(Landing)
+export default withSegment(Landing);
 
 const Body = styled.div`
   width: 100%;
@@ -90,13 +96,13 @@ const Body = styled.div`
   flex-direction: column;
   color: #32325d;
   font-size: 1.6rem;
-`
+`;
 
 const Anchor = styled.a`
   color: #d40052;
   font-weight: 600;
   text-decoration: underline;
-`
+`;
 
 const Intro = styled.div`
   font-size: 2rem;
@@ -112,18 +118,18 @@ const Intro = styled.div`
     line-height: 2rem
     font-size: 1.6rem;
   }
-`
+`;
 
 const Button = styled.button`
   display: block;
   line-height: 4rem;
   padding: 0 1.4rem;
-  box-shadow: 0 0.4rem 0.6rem rgba(50,50,93,.10);
+  box-shadow: 0 0.4rem 0.6rem rgba(50, 50, 93, 0.1);
   background: #fff;
   border-radius: 0.4rem;
   font-size: 1.2rem;
   text-transform: uppercase;
-  letter-spacing: .025em;
+  letter-spacing: 0.025em;
   text-decoration: none;
   border: 0px;
   cursor: pointer;
@@ -143,7 +149,7 @@ const Button = styled.button`
     background-color: #db594b;
     color: white;
   }
-`
+`;
 
 const Row = styled.div`
   display: flex;
@@ -151,7 +157,7 @@ const Row = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-`
+`;
 
 const Title = styled.div`
   margin: 4rem -1rem 1rem;
@@ -160,18 +166,20 @@ const Title = styled.div`
   padding: 0 1rem;
   letter-spacing: 0.03em;
   font-weight: bold;
-`
+`;
 
 const projects = [
   {
     path: 'https://www.youtube.com/watch?v=JjRV-l9jSYE',
     name: 'Rewriting Eaze.com with Next.js',
-    about: 'On 4/28/18 I gave a ~15 minute talk at Zeit Day about my experience rewriting a large consumer facing website with Next.js',
+    about:
+      'On 4/28/18 I gave a ~15 minute talk at Zeit Day about my experience rewriting a large consumer facing website with Next.js',
   },
   {
     path: 'https://trends.now.sh',
     name: 'Trends ⭐️',
-    about: 'Ultra high performance github trending PWA built with Next.js and GraphQL but only ~15 lines of client side Javascript',
+    about:
+      'Ultra high performance github trending PWA built with Next.js and GraphQL but only ~15 lines of client side Javascript',
   },
   {
     path: '/fast-flix',
@@ -181,12 +189,14 @@ const projects = [
   {
     path: '/uber-chrome',
     name: 'Uber chrome',
-    about: 'A chrome extension allowing you to order and uber from your desktop',
+    about:
+      'A chrome extension allowing you to order and uber from your desktop',
   },
   {
     path: '/instachrome',
     name: 'Instachrome',
-    about: 'A chrome extension for browsing instagram with around 11,000 active users',
+    about:
+      'A chrome extension for browsing instagram with around 11,000 active users',
   },
   {
     path: '/chirp',
@@ -196,21 +206,25 @@ const projects = [
   {
     path: 'https://react-drag-drawer.jackhanford.com',
     name: 'React Drag Drawer',
-    about: 'Mobile first ReactJS modal component with native touch gesture support',
+    about:
+      'Mobile first ReactJS modal component with native touch gesture support',
   },
   {
     path: 'https://react-kanban.jackhanford.com',
     name: 'React Kanban',
-    about: 'Custom react drag and drop interface built trello style but with better animations',
+    about:
+      'Custom react drag and drop interface built trello style but with better animations',
   },
   {
     path: 'https://react-fab-fan.jackhanford.com',
     name: 'React Fab Fan',
-    about: 'A material design inspired floating action button animation built with physics',
+    about:
+      'A material design inspired floating action button animation built with physics',
   },
   {
     path: '/youtube-darkmode',
     name: 'Youtube darkmode',
-    about: 'Google was redesigning youtube and also adding darkmode, this enables it right now',
-  }
-]
+    about:
+      'Google was redesigning youtube and also adding darkmode, this enables it right now',
+  },
+];

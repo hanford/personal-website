@@ -1,4 +1,4 @@
-import styled from 'react-emotion'
+import styled from 'react-emotion';
 
 const FrameComponent = styled.iframe`
   width: 60rem;
@@ -10,16 +10,16 @@ const FrameComponent = styled.iframe`
   border: 0;
   margin-top: 1rem;
   margin-bottom: 2rem;
-`
+`;
 
 export const Frame = ({ src }) => (
   <FrameComponent
-    width='100%'
-    height='360'
+    width="100%"
+    height="360"
     src={src}
-    frameborder='0'
+    frameborder="0"
     allowfullscreen
   />
-)
+);
 
-export default Frame
+export default Frame;

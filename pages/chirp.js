@@ -1,70 +1,82 @@
-import { PureComponent } from 'react'
-import GithubBadge from 'react-github-badge'
-import styled from 'react-emotion'
-import withSegment from '../hocs/segment'
+import { PureComponent } from 'react';
+import GithubBadge from 'react-github-badge';
+import styled from 'react-emotion';
+import withSegment from '../hocs/segment';
 
-import { Head, CtaButton, HeroImage, Title, Description, Frame, Container } from '../components'
+import {
+  Head,
+  CtaButton,
+  HeroImage,
+  Title,
+  Description,
+  Frame,
+  Container,
+} from '../components';
 
 class Chirp extends PureComponent {
-  render () {
+  render() {
     return (
       <Container>
         <Head
-          title='Chirp | Jack Hanford'
-          description='A desktop twitter application built for all platforms'
+          title="Chirp | Jack Hanford"
+          description="A desktop twitter application built for all platforms"
         />
 
         <GithubBadge
-          url='https://github.com/hanford/chirp'
-          title='Star on Github'
+          url="https://github.com/hanford/chirp"
+          title="Star on Github"
         />
 
         <Hero>
-          <Title>Chirp <span style={{fontSize: '3rem'}}>🐦</span></Title>
-          <Description>A desktop twitter application built for all platforms</Description>
+          <Title>
+            Chirp <span style={{ fontSize: '3rem' }}>🐦</span>
+          </Title>
+          <Description>
+            A desktop twitter application built for all platforms
+          </Description>
 
-          <HeroImage src='../static/chirp.jpg' />
+          <HeroImage src="../static/chirp.jpg" />
 
           <Section>
             <h3>Downloads</h3>
 
             <Row>
               <Button
-                target='_blank'
-                href='https://file-cjddyxvqbc.now.sh/Chirp-darwin-x64.zip'
-                download='Chirp.zip'
+                target="_blank"
+                href="https://file-cjddyxvqbc.now.sh/Chirp-darwin-x64.zip"
+                download="Chirp.zip"
               >
                 Mac
               </Button>
 
               <Button
-                target='_blank'
-                href='https://file-fevwnujbqw.now.sh/Chirp-linux-x64.zip'
-                download='Chirp.zip'
+                target="_blank"
+                href="https://file-fevwnujbqw.now.sh/Chirp-linux-x64.zip"
+                download="Chirp.zip"
               >
                 Linux
               </Button>
 
               <Button
-                target='_blank'
-                href='https://file-pwszcfrfqv.now.sh/Chirp-win32-x64.zip'
-                download='Chirp.zip'
+                target="_blank"
+                href="https://file-pwszcfrfqv.now.sh/Chirp-win32-x64.zip"
+                download="Chirp.zip"
               >
                 Windows
               </Button>
             </Row>
           </Section>
 
-          <h2 style={{marginTop: '14rem'}}>Video</h2>
+          <h2 style={{ marginTop: '14rem' }}>Video</h2>
 
-          <Frame src='https://www.youtube.com/embed/OfysGhGIHp8' />
+          <Frame src="https://www.youtube.com/embed/OfysGhGIHp8" />
         </Hero>
       </Container>
-    )
+    );
   }
 }
 
-export default withSegment(Chirp)
+export default withSegment(Chirp);
 
 const Hero = styled.div`
   max-width: 100%;
@@ -74,13 +86,13 @@ const Hero = styled.div`
   margin: 6rem 0;
   min-height: 60rem;
   padding: 2rem;
-`
+`;
 
 const Section = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 6rem;
-`
+`;
 
 const Row = styled.div`
   display: flex;
@@ -88,21 +100,22 @@ const Row = styled.div`
   justify-cotent: space-between;
   margin: auto;
 
-  @media(max-width: 768px) {
+  @media (max-width: 768px) {
     flex-direction: column;
   }
-`
+`;
 
 const Button = styled.a`
   display: block;
   line-height: 4rem;
   padding: 0 1.4rem;
-  box-shadow: 0 0.4rem 0.6rem rgba(50,50,93,.11), 0 0.1rem 0.3rem rgba(0,0,0,.08);
+  box-shadow: 0 0.4rem 0.6rem rgba(50, 50, 93, 0.11),
+    0 0.1rem 0.3rem rgba(0, 0, 0, 0.08);
   background: #fff;
   border-radius: 0.4rem;
   font-size: 1.2rem;
   text-transform: uppercase;
-  letter-spacing: .025em;
+  letter-spacing: 0.025em;
   color: #32325d;
   text-decoration: none;
   border: 0px;
@@ -115,9 +128,8 @@ const Button = styled.a`
   font-weight: bold;
   min-width: 20rem;
 
-
-  @media(max-width: 768px) {
+  @media (max-width: 768px) {
     margin: 1.5rem 0;
     min-width: 24rem;
   }
-`
+`;

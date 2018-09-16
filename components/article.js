@@ -1,21 +1,20 @@
-import Link from 'next/link'
-import styled from 'react-emotion'
+import Link from 'next/link';
+import styled from 'react-emotion';
 
-export const Article = ({path, name, about, stars = '', language = ''}) => (
+export const Article = ({ path, name, about, stars = '', language = '' }) => (
   <Link href={path}>
-    <Container href={path} target='_blank'>
-
+    <Container href={path} target="_blank">
       <Title>{name}</Title>
       <About>{about}</About>
 
-      <Content style={{display: language ? 'flex' : 'none'}}>
+      <Content style={{ display: language ? 'flex' : 'none' }}>
         <Other>⭐️ {stars}</Other>
-        <div style={{marginLeft: '1rem'}}>·</div>
-        <Other style={{marginLeft: '1rem'}}>{language}</Other>
+        <div style={{ marginLeft: '1rem' }}>·</div>
+        <Other style={{ marginLeft: '1rem' }}>{language}</Other>
       </Content>
     </Container>
   </Link>
-)
+);
 
 const Container = styled.a`
   display: block;
@@ -27,32 +26,32 @@ const Container = styled.a`
   margin-right: -1rem;
   text-decoration: none;
   color: black;
-  opacity: ${({ opacity}) => opacity};
+  opacity: ${({ opacity }) => opacity};
 
   &:hover {
     border: 1px solid #d40052;
   }
-`
+`;
 
 const Title = styled.h4`
   color: #d40052;
   margin: 0;
   font-size: 1.8rem;
-`
+`;
 
 const Content = styled.div`
   display: flex;
   align-items: center;
-`
+`;
 
 const Other = styled.div`
   font-size: 1.2rem;
   opacity: 0.75;
   font-weight: bold;
-`
+`;
 
 const About = styled.p`
   margin: 0;
-`
+`;
 
-export default Article
+export default Article;

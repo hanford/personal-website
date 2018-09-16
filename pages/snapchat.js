@@ -1,15 +1,15 @@
-import Link from 'next/link'
-import styled from 'react-emotion'
+import Link from 'next/link';
+import styled from 'react-emotion';
 
-import { Head } from '../components'
-import withSegment from '../hocs/segment'
+import { Head } from '../components';
+import withSegment from '../hocs/segment';
 
 const Container = styled.div`
   display: flex;
   max-width: 100%;
   justify-content: center;
   margin-top: 16rem;
-`
+`;
 
 const Content = styled.div`
   max-width: 100%;
@@ -17,7 +17,7 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-self: center;
-`
+`;
 
 const Back = styled.button`
   background-color: transparent;
@@ -27,24 +27,24 @@ const Back = styled.button`
   font-size: 1.6rem;
   cursor: pointer;
   outline: none;
-`
+`;
 
 const Snapcode = styled.img`
   height: 20rem;
-`
+`;
 
-function Snapchat () {
+function Snapchat() {
   return (
     <Container>
-      <Head title='Snapchat | Jack Hanford' />
+      <Head title="Snapchat | Jack Hanford" />
       <Content>
-        <Snapcode src='../static/snapcode.png' />
-        <Link href='/'>
+        <Snapcode src="../static/snapcode.png" />
+        <Link href="/">
           <Back>Back</Back>
         </Link>
       </Content>
     </Container>
-  )
+  );
 }
 
-export default withSegment(Snapchat)
+export default withSegment(Snapchat);
