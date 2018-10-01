@@ -4354,9 +4354,9 @@ react-dom@^16.5.2:
     prop-types "^15.6.2"
     schedule "^0.5.0"
 
-react-drag-drawer@~3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/react-drag-drawer/-/react-drag-drawer-3.2.0.tgz#8fecae6493b3cd6754f6126372ec0f164218d22e"
+react-drag-drawer@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/react-drag-drawer/-/react-drag-drawer-3.3.0.tgz#5e4d911dea3ec98911647ba7309e85e73ec272e3"
   dependencies:
     emotion "~9.1.2"
     global "~4.3.2"
