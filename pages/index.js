@@ -3,8 +3,8 @@ import Link from 'next/link';
 import Drawer from 'react-drag-drawer';
 import styled from 'react-emotion';
 import { Motion, spring, presets } from 'react-motion';
-import withSegment from '../hocs/segment';
 
+import withSegment from '../hocs/segment';
 import { SocialModal, Head, Article, Screen, Emoji } from '../components';
 
 class Landing extends PureComponent {

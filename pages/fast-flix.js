@@ -1,8 +1,8 @@
 import { PureComponent } from 'react';
 import Link from 'next/link';
 import GithubBadge from 'react-github-badge';
-import withSegment from '../hocs/segment';
 
+import withSegment from '../hocs/segment';
 import {
   Head,
   Title,

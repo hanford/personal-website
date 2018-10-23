@@ -1,8 +1,8 @@
 import { PureComponent } from 'react';
 import GithubBadge from 'react-github-badge';
 import styled from 'react-emotion';
-import withSegment from '../hocs/segment';
 
+import withSegment from '../hocs/segment';
 import {
   Head,
   CtaButton,
