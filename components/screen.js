@@ -24,9 +24,7 @@ export class Screen extends Component {
           Back to top
         </Navbar>
 
-        <Observer onChange={hideNavbar => this.setState({ hideNavbar })}>
-          <SrollMeasure />
-        </Observer>
+        <SrollMeasure onChange={hideNavbar => this.setState({ hideNavbar })} />
 
         <Container scale={scale}>
           <Card>{children}</Card>
@@ -36,7 +34,7 @@ export class Screen extends Component {
   }
 }
 
-const SrollMeasure = styled.div`
+const SrollMeasure = styled(Observer)`
   width: 100%;
   height: 1px;
 `;

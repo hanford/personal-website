@@ -11,9 +11,9 @@ export default function withTakedown(Component) {
     };
 
     toggleDrawer = () => {
-      this.setState(() => {
+      this.setState(prevState => {
         return {
-          open: !this.state.open,
+          open: !prevState.open,
         };
       });
     };
