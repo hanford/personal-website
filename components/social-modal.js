@@ -1,8 +1,7 @@
 import Drawer from 'react-drag-drawer';
-import styled, { css } from 'react-emotion';
+import styled from 'react-emotion';
 
 export const SocialModal = ({ toggle, open }) => (
-  <Drawer open={open} onRequestClose={toggle} modalElementClass={Card}>
     <Content>
       <List>
         <Link
@@ -56,7 +55,6 @@ export const SocialModal = ({ toggle, open }) => (
         </Item>
       </List>
     </Content>
-  </Drawer>
 );
 
 const Link = ({ icon, text, link }) => (
@@ -74,19 +72,6 @@ const Link = ({ icon, text, link }) => (
 const noop = () => {};
 
 export default SocialModal;
-
-const Card = css`
-  background-color: white;
-  border-radius: 0.4rem;
-  position: relative;
-  padding: 2rem;
-
-  @media (max-width: 767px) {
-    width: 100%;
-    height: 100%;
-    margin-top: 20%;
-  }
-`;
 
 const Content = styled.div`
   width: 50rem;

@@ -1,34 +1,34 @@
-import React, { PureComponent } from 'react';
-import Link from 'next/link';
-import Drawer from 'react-drag-drawer';
-import styled from 'react-emotion';
-import { Motion, spring, presets } from 'react-motion';
+import React, { PureComponent } from "react";
+import Link from "next/link";
+import Drawer from "react-drag-drawer";
+import styled, { css } from "react-emotion";
+import { Motion, spring, presets } from "react-motion";
 
-import withSegment from '../hocs/segment';
-import { SocialModal, Head, Article, Screen, Emoji } from '../components';
+import withSegment from "../hocs/segment";
+import { SocialModal, Head, Article, Screen, Emoji } from "../components";
 
 class Landing extends PureComponent {
   state = {
-    expanded: false,
+    expanded: false
   };
 
   toggle = () => {
     this.setState(state => {
       return {
-        expanded: !state.expanded,
+        expanded: !state.expanded
       };
     });
   };
 
   componentDidMount() {
-    window.addEventListener('beforeinstallprompt', function(event) {
+    window.addEventListener("beforeinstallprompt", function(event) {
       event.userChoice.then(function(choiceResult) {
         console.log(choiceResult.outcome);
 
-        if (choiceResult.outcome == 'dismissed') {
-          console.log('User cancelled home screen install');
+        if (choiceResult.outcome == "dismissed") {
+          console.log("User cancelled home screen install");
         } else {
-          console.log('User added to home screen');
+          console.log("User added to home screen");
         }
       });
     });
@@ -50,7 +50,7 @@ class Landing extends PureComponent {
                   Hi I'm <span style={{ fontWeight: 600 }}>Jack Hanford</span>
                 </div>
                 <div>
-                  I'm a software engineer at{' '}
+                  I'm a software engineer at{" "}
                   <Anchor href="https://lattice.com" target="_blank">
                     lattice
                   </Anchor>
@@ -79,7 +79,13 @@ class Landing extends PureComponent {
           )}
         </Motion>
 
-        <SocialModal open={expanded} toggle={this.toggle} />
+        <Drawer
+          open={expanded}
+          onRequestClose={this.toggle}
+          modalElementClass={Card}
+        >
+          <SocialModal />
+        </Drawer>
       </Body>
     );
   }
@@ -168,63 +174,75 @@ const Title = styled.div`
   font-weight: bold;
 `;
 
+const Card = css`
+  background-color: white;
+  border-radius: 0.4rem;
+  position: relative;
+  padding: 2rem;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    height: 100%;
+    margin-top: 20%;
+  }
+`;
+
 const projects = [
   {
-    path: 'https://www.youtube.com/watch?v=JjRV-l9jSYE',
-    name: 'Rewriting Eaze.com with Next.js',
+    path: "https://www.youtube.com/watch?v=JjRV-l9jSYE",
+    name: "Rewriting Eaze.com with Next.js",
     about:
-      'On 4/28/18 I gave a ~15 minute talk at Zeit Day about my experience rewriting a large consumer facing website with Next.js',
+      "On 4/28/18 I gave a ~15 minute talk at Zeit Day about my experience rewriting a large consumer facing website with Next.js"
   },
   {
-    path: 'https://trends.now.sh',
-    name: 'Trends ⭐️',
+    path: "https://trends.now.sh",
+    name: "Trends ⭐️",
     about:
-      'Ultra high performance github trending PWA built with Next.js and GraphQL but only ~15 lines of client side Javascript',
+      "Ultra high performance github trending PWA built with Next.js and GraphQL but only ~15 lines of client side Javascript"
   },
   {
-    path: '/fast-flix',
-    name: 'Fast Flix 🍿',
-    about: 'Change the playback rate of any video on netflix',
+    path: "/fast-flix",
+    name: "Fast Flix 🍿",
+    about: "Change the playback rate of any video on netflix"
   },
   {
-    path: '/uber-chrome',
-    name: 'Uber chrome',
+    path: "/uber-chrome",
+    name: "Uber chrome",
+    about: "A chrome extension allowing you to order and uber from your desktop"
+  },
+  {
+    path: "/instachrome",
+    name: "Instachrome",
     about:
-      'A chrome extension allowing you to order and uber from your desktop',
+      "A chrome extension for browsing instagram with around 11,000 active users"
   },
   {
-    path: '/instachrome',
-    name: 'Instachrome',
+    path: "/chirp",
+    name: "Chirp 🐦",
+    about: "A desktop twitter application built for all platforms"
+  },
+  {
+    path: "https://react-drag-drawer.jackhanford.com",
+    name: "React Drag Drawer",
     about:
-      'A chrome extension for browsing instagram with around 11,000 active users',
+      "Mobile first ReactJS modal component with native touch gesture support"
   },
   {
-    path: '/chirp',
-    name: 'Chirp 🐦',
-    about: 'A desktop twitter application built for all platforms',
-  },
-  {
-    path: 'https://react-drag-drawer.jackhanford.com',
-    name: 'React Drag Drawer',
+    path: "https://react-kanban.jackhanford.com",
+    name: "React Kanban",
     about:
-      'Mobile first ReactJS modal component with native touch gesture support',
+      "Custom react drag and drop interface built trello style but with better animations"
   },
   {
-    path: 'https://react-kanban.jackhanford.com',
-    name: 'React Kanban',
+    path: "https://react-fab-fan.jackhanford.com",
+    name: "React Fab Fan",
     about:
-      'Custom react drag and drop interface built trello style but with better animations',
+      "A material design inspired floating action button animation built with physics"
   },
   {
-    path: 'https://react-fab-fan.jackhanford.com',
-    name: 'React Fab Fan',
+    path: "/youtube-darkmode",
+    name: "Youtube darkmode",
     about:
-      'A material design inspired floating action button animation built with physics',
-  },
-  {
-    path: '/youtube-darkmode',
-    name: 'Youtube darkmode',
-    about:
-      'Google was redesigning youtube and also adding darkmode, this enables it right now',
-  },
+      "Google was redesigning youtube and also adding darkmode, this enables it right now"
+  }
 ];
