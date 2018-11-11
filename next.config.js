@@ -27,7 +27,7 @@ module.exports = withOffline({
   //     '/youtube-darkmode': { page: '/youtube-darkmode' },
   //   }
   // },
-  webpack(config) {
+  webpack (config) {
     if (ANALYZE) {
       const opts = ANALYZE === 1 ? AnalyzeOpts : AnalyzeGetStats;
 
