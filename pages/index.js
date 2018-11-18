@@ -84,7 +84,7 @@ class Landing extends PureComponent {
           onRequestClose={this.toggle}
           modalElementClass={Card}
         >
-          <SocialModal />
+          <SocialModal toggle={this.toggle} />
         </Drawer>
       </Body>
     );
