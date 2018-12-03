@@ -208,7 +208,7 @@ const projects = [
   {
     path: "/uber-chrome",
     name: "Uber chrome",
-    about: "A chrome extension allowing you to order and uber from your desktop"
+    about: "A chrome extension allowing you to order an uber from your desktop"
   },
   {
     path: "/instachrome",
