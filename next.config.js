@@ -1,39 +1,40 @@
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const withOffline = require('next-offline');
-const { ANALYZE } = process.env;
+const withOffline = moduleExists('next-offline')
+  ? require('next-offline')
+  : {};
 
-const AnalyzeOpts = {
-  analyzerMode: 'server',
-  analyzerPort: 8888,
-  openAnalyzer: true,
+const isDev = process.env.NODE_ENV !== 'production'
+
+const nextConfig = {
+  workboxOpts: {
+    swDest: 'static/service-worker.js',
+    runtimeCaching: [
+      {
+        urlPattern: /^https?.*/,
+        handler: 'networkFirst',
+        options: {
+          cacheName: 'https-calls',
+          networkTimeoutSeconds: 15,
+          expiration: {
+            maxEntries: 150,
+            maxAgeSeconds: 30 * 24 * 60 * 60
+          },
+          cacheableResponse: {
+            statuses: [0, 200]
+          }
+        }
+      }
+    ]
+  }
 };
 
-const AnalyzeGetStats = {
-  statsFilename: 'stats.json',
-  analyzerMode: 'disabled',
-  generateStatsFile: true,
-};
+module.exports = moduleExists('next-offline')
+  ? withOffline(nextConfig)
+  : nextConfig
 
-module.exports = withOffline({
-  // async exportPathMap () {
-  //   return {
-  //     '/': { page: '/' },
-  //     '/chirp': { page: '/chirp' },
-  //     '/fast-flix': { page: '/fast-flix' },
-  //     '/instachrome': { page: '/instachrome' },
-  //     '/projects': { page: '/projects' },
-  //     '/snapchat': { page: '/snapchat' },
-  //     '/uber-chrome': { page: '/uber-chrome' },
-  //     '/youtube-darkmode': { page: '/youtube-darkmode' },
-  //   }
-  // },
-  webpack (config) {
-    if (ANALYZE) {
-      const opts = ANALYZE === 1 ? AnalyzeOpts : AnalyzeGetStats;
-
-      config.plugins.push(new BundleAnalyzerPlugin(opts));
-    }
-
-    return config;
-  },
-});
+function moduleExists(name) {
+  try {
+    return require.resolve(name);
+  } catch (error) {
+    return false;
+  }
+}
