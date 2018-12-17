@@ -12,7 +12,6 @@
   "author": "Jack Hanford",
   "license": "MIT",
   "dependencies": {
-    "await-wrap": "0.1.0",
     "emotion": "~8.0.12",
     "emotion-server": "~8.0.12",
     "github-api": "~3.0.0",

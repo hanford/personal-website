@@ -1145,10 +1145,6 @@ autodll-webpack-plugin@0.4.2:
     webpack-merge "^4.1.0"
     webpack-sources "^1.0.1"
 
-await-wrap@0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/await-wrap/-/await-wrap-0.1.0.tgz#0deb91a58d97c3db2b5af95abf95b7c2e49a765e"
-
 axios@^0.15.2:
   version "0.15.3"
   resolved "http://registry.npmjs.org/axios/-/axios-0.15.3.tgz#2c9d638b2e191a08ea1d6cc988eadd6ba5bdc053"

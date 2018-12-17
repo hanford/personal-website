@@ -2,7 +2,6 @@ import React, { PureComponent, Fragment } from 'react';
 import GitHub from 'github-api';
 import sortOn from 'sort-on';
 import styled from 'react-emotion';
-import wrap from 'await-wrap';
 
 import { Title, Head, Article, Screen, BackButton, Emoji } from '../components';
 import withSegment from '../hocs/segment';
@@ -13,12 +12,9 @@ const me = gh.getUser(USER_NAME);
 
 class Projects extends PureComponent {
   static async getInitialProps() {
-    const {
-      err,
-      data: { data },
-    } = await wrap(me.listRepos());
+    const { data } = await me.listRepos();
 
-    if (err || !data) return { repos: [] };
+    if (!data) return { repos: [] };
 
     let myRepos = data.filter(
       ({ owner, fork, stargazers_count: stars }) =>
