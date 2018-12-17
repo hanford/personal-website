@@ -5,6 +5,9 @@
     "jackhanford.com",
     "www.jackhanford.com"
   ],
+  "env": {
+    "GITHUB_ACCESS_TOKEN": "@github-access-token"
+  },
   "routes": [	
     {	
       "src": "^/service-worker.js$",	

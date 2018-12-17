@@ -8,7 +8,7 @@ import { Title, Head, Article, Screen, BackButton, Emoji } from '../components';
 import withSegment from '../hocs/segment';
 
 const USER_NAME = 'hanford';
-const gh = new GitHub({ token: process.env.GITHUB_TOKEN });
+const gh = new GitHub({ token: process.env.GITHUB_ACCESS_TOKEN });
 const me = gh.getUser(USER_NAME);
 
 class Projects extends PureComponent {
