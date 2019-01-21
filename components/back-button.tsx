@@ -12,7 +12,7 @@ const Anchor = styled.a`
   cursor: pointer;
 `;
 
-export const BackButton = props => (
+export const BackButton = () => (
   <Link href="/">
     <Anchor>×</Anchor>
   </Link>

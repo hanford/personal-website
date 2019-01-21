@@ -1,6 +1,6 @@
 import HeadTag from 'next/head';
 
-export const Head = ({ title, description }) => (
+export const Head = ({ title, description }: {title?: string, description?: string}) => (
   <HeadTag>
     <title>{title || 'Jack Hanford'}</title>
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -33,8 +33,7 @@ export const Head = ({ title, description }) => (
         font-style: normal;
         font-weight: 600;
         font-display: auto;
-        src: local('Brandon'),
-             url('/static/brandon-medium.woff') format('woff');
+        src: local('Brandon'), url('/static/brandon-medium.woff') format('woff');
       }
 
       html,

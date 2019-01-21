@@ -1,7 +1,15 @@
 import Link from 'next/link';
 import styled from 'react-emotion';
 
-export const Article = ({ path, name, about, stars = '', language = '' }) => (
+interface Props {
+  path: string,
+  name: string,
+  about: string,
+  stars: string,
+  language: string
+}
+
+export const Article = ({ path, name, about, stars = '', language = '' }: Props) => (
   <Link href={path}>
     <Container href={path} target="_blank">
       <Title>{name}</Title>
@@ -26,7 +34,7 @@ const Container = styled.a`
   margin-right: -1rem;
   text-decoration: none;
   color: black;
-  opacity: ${({ opacity }) => opacity};
+  opacity: ${({ opacity }: { opacity?: number }) => opacity};
 
   &:hover {
     border: 1px solid #d40052;

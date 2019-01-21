@@ -17,7 +17,7 @@ const Inner = styled.div`
   margin: 0 auto;
 `;
 
-export const Content = ({ children }) => (
+export const Content = ({ children }: { children: React.ReactNode }) => (
   <Outer>
     <Inner>{children}</Inner>
   </Outer>

@@ -1,4 +1,4 @@
-export const Emoji = ({ children }) => (
+export const Emoji = ({ children }: { children: React.ReactNode }) => (
   <div style={{ fontSize: '4rem' }}>{children}</div>
 );
 

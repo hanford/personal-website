@@ -1,20 +1,19 @@
-import { PureComponent } from 'react';
-import Link from 'next/link';
+import { Component } from 'react';
 import GithubBadge from 'react-github-badge';
 
-import withSegment from '../hocs/segment';
 import {
-  Head,
-  Title,
-  CtaButton,
-  HeroImage,
-  Frame,
-  Content,
-  Description,
   Container,
+  Content,
+  CtaButton,
+  Description,
+  Frame,
+  Head,
+  HeroImage,
+  Title,
 } from '../components';
+import withSegment from '../hocs/segment';
 
-class FastFlix extends PureComponent {
+class FastFlix extends Component {
   render() {
     return (
       <Container>

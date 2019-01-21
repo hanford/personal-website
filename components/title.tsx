@@ -7,7 +7,7 @@ const TitleComponent = styled.h1`
   margin: 0;
 `;
 
-export const Title = ({ children }) => (
+export const Title = ({ children }: { children: React.ReactNode }) => (
   <TitleComponent>{children}</TitleComponent>
 );
 

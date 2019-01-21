@@ -23,7 +23,13 @@ const Button = styled.a`
   font-weight: bold;
 `;
 
-export const CtaButton = ({ link, children, onClick = () => {}, ...props }) => (
+interface Props {
+  link: string,
+  children: React.ReactNode,
+  onClick: () => void
+}
+
+export const CtaButton = ({ link, children, onClick, ...props }: Props) => (
   <Button onClick={onClick} target="_blank" href={link} {...props}>
     {children}
   </Button>

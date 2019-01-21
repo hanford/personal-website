@@ -2,6 +2,10 @@ const withOffline = moduleExists('next-offline')
   ? require('next-offline')
   : {};
 
+const withTypescript = moduleExists('@zeit/next-typescript')
+  ? require('@zeit/next-typescript')
+  : {};
+
 const isDev = process.env.NODE_ENV !== 'production'
 
 const nextConfig = {
@@ -28,7 +32,7 @@ const nextConfig = {
 };
 
 module.exports = moduleExists('next-offline')
-  ? withOffline(nextConfig)
+  ? withOffline(withTypescript(nextConfig))
   : nextConfig
 
 function moduleExists(name) {

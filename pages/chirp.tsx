@@ -1,19 +1,19 @@
-import { PureComponent } from 'react';
-import GithubBadge from 'react-github-badge';
+import { Component } from 'react';
 import styled from 'react-emotion';
+import GithubBadge from 'react-github-badge';
 
-import withSegment from '../hocs/segment';
 import {
-  Head,
-  CtaButton,
-  HeroImage,
-  Title,
+  Container,
   Description,
   Frame,
-  Container,
+  Head,
+  HeroImage,
+  Title,
 } from '../components';
 
-class Chirp extends PureComponent {
+import withSegment from '../hocs/segment';
+
+class Chirp extends Component {
   render() {
     return (
       <Container>

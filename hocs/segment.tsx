@@ -1,9 +1,9 @@
 import hoistStatics from 'hoist-non-react-statics';
-import { PureComponent } from 'react';
 import Segment from 'load-segment';
+import * as React from 'react';
 
 export default Component => {
-  class withSegment extends PureComponent {
+  class WithSegment extends React.Component {
     componentDidMount() {
       Segment({ key: 'ZxJCBTbXZd76MG9R33zSOb43ULCjknzN' });
     }
@@ -13,5 +13,5 @@ export default Component => {
     }
   }
 
-  return hoistStatics(withSegment, Component);
+  return hoistStatics(WithSegment, Component);
 };

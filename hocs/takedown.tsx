@@ -1,11 +1,15 @@
 import hoistStatics from 'hoist-non-react-statics';
-import { PureComponent, Fragment } from 'react';
+import { Component as RC, Fragment } from 'react';
+import Drawer from 'react-drag-drawer';
 import styled, { css } from 'react-emotion';
 import requestCallback from 'request-callback';
-import Drawer from 'react-drag-drawer';
+
+interface State {
+  open: boolean
+}
 
 export default function withTakedown(Component) {
-  class withTakedownComponent extends PureComponent {
+  class WithTakedownComponent extends RC<void, State> {
     state = {
       open: false,
     };
@@ -48,7 +52,7 @@ export default function withTakedown(Component) {
     }
   }
 
-  return hoistStatics(withTakedownComponent, Component);
+  return hoistStatics(WithTakedownComponent, Component);
 }
 
 const TakeDown = css`

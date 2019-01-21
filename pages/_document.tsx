@@ -1,10 +1,8 @@
-import Document, { Head, Main, NextScript } from 'next/document';
-
 import { extractCritical } from 'emotion-server';
-import { fontFace } from 'emotion';
+import Document, { Head, Main, NextDocumentContext, NextScript } from 'next/document';
 
 export default class DocumentComponent extends Document {
-  static getInitialProps({ renderPage }) {
+  static getInitialProps({ renderPage }: NextDocumentContext) {
     const page = renderPage();
     const stylesTAG = extractCritical(page.html);
 

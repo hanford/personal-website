@@ -1,21 +1,18 @@
 import React, { PureComponent } from 'react';
-import Link from 'next/link';
 import GithubBadge from 'react-github-badge';
-import Drawer from 'react-drag-drawer';
-import styled, { css } from 'react-emotion';
 
 import {
-  Head,
+  Container,
+  Content,
   CtaButton,
+  Description,
+  Frame,
+  Head,
   HeroImage,
   Title,
-  Frame,
-  Content,
-  Description,
-  Container,
 } from '../components';
-import withTakedown from '../hocs/takedown';
 import withSegment from '../hocs/segment';
+import withTakedown from '../hocs/takedown';
 
 class Instachrome extends PureComponent {
   render() {

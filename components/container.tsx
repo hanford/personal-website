@@ -1,15 +1,15 @@
-import { Fragment } from 'react';
-import styled from 'react-emotion';
 import Link from 'next/link';
+import * as React from 'react';
+import styled from 'react-emotion';
 
-export const Container = ({ children }) => (
-  <Fragment>
+export const Container = ({ children }: { children: React.ReactNode }) => (
+  <React.Fragment>
     <Link href="/">
       <BackButton>Back</BackButton>
     </Link>
 
     <Component>{children}</Component>
-  </Fragment>
+  </React.Fragment>
 );
 
 export default Container;

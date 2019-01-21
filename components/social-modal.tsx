@@ -1,7 +1,10 @@
-import Drawer from "react-drag-drawer";
 import styled, { css } from "react-emotion";
 
-export const SocialModal = ({ toggle }) => (
+interface Props {
+  toggle?: () => void
+}
+
+export const SocialModal = ({ toggle }:  Props) => (
   <Content>
     <List>
       <Link
@@ -63,7 +66,13 @@ export const SocialModal = ({ toggle }) => (
   </Content>
 );
 
-const Link = ({ icon, text, link }) => (
+interface LinkProps {
+  icon: string,
+  text: string,
+  link: string 
+}
+
+const Link = ({ icon, text, link }: LinkProps) => (
   <Item>
     <Anchor href={link} target="_blank">
       <i
@@ -74,8 +83,6 @@ const Link = ({ icon, text, link }) => (
     </Anchor>
   </Item>
 );
-
-const noop = () => {};
 
 export default SocialModal;
 

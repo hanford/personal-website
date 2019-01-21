@@ -10,6 +10,6 @@ const Hero = styled.img`
   border: 0;
 `;
 
-export const HeroImage = ({ src }) => <Hero src={src} />;
+export const HeroImage = ({ src }: { src: string }) => <Hero src={src} />;
 
 export default HeroImage;

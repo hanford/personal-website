@@ -1,35 +1,34 @@
-import React, { PureComponent } from "react";
 import Link from "next/link";
+import React, { Component } from "react";
 import Drawer from "react-drag-drawer";
 import styled, { css } from "react-emotion";
-import { Motion, spring, presets } from "react-motion";
+import { Motion, presets, spring } from "react-motion";
 
+import { Article, Emoji, Head, Screen, SocialModal } from "../components";
 import withSegment from "../hocs/segment";
-import { SocialModal, Head, Article, Screen, Emoji } from "../components";
 
-class Landing extends PureComponent {
+interface State {
+  expanded: boolean
+}
+
+class Landing extends Component<void, State> {
   state = {
     expanded: false
   };
 
   toggle = () => {
-    this.setState(state => {
+    this.setState(prevState => {
       return {
-        expanded: !state.expanded
+        expanded: !prevState.expanded
       };
     });
   };
 
   componentDidMount() {
-    window.addEventListener("beforeinstallprompt", function(event) {
-      event.userChoice.then(function(choiceResult) {
+    window.addEventListener("beforeinstallprompt", (event: any) => {
+      event.userChoice.then((choiceResult) => {
+        // tslint:disable-next-line
         console.log(choiceResult.outcome);
-
-        if (choiceResult.outcome == "dismissed") {
-          console.log("User cancelled home screen install");
-        } else {
-          console.log("User added to home screen");
-        }
       });
     });
   }
@@ -59,7 +58,7 @@ class Landing extends PureComponent {
               </Intro>
 
               <Row>
-                <Link prefetch href="/projects">
+                <Link prefetch={true} href="/projects">
                   <Button>Projects</Button>
                 </Link>
                 <Button onClick={this.toggle}>Contact me</Button>
@@ -69,7 +68,7 @@ class Landing extends PureComponent {
 
               {projects.map(p => (
                 <Article
-                  key={p.kname}
+                  key={p.name}
                   path={p.path}
                   name={p.name}
                   about={p.about}

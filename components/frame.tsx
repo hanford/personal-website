@@ -12,13 +12,13 @@ const FrameComponent = styled.iframe`
   margin-bottom: 2rem;
 `;
 
-export const Frame = ({ src }) => (
+export const Frame = ({ src }: { src: string }) => (
   <FrameComponent
     width="100%"
-    height="360"
+    height={360}
     src={src}
-    frameborder="0"
-    allowfullscreen
+    frameBorder={0}
+    allowFullScreen={true}
   />
 );
 
