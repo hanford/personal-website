@@ -36,7 +36,7 @@ class Instachrome extends PureComponent {
 
           <CtaButton
             target="_blank"
-            href="/static/instachrome.zip"
+            link="/static/instachrome.zip"
             download="Instachrome.zip"
           >
             Download .zip

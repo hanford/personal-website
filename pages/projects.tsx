@@ -1,23 +1,41 @@
-import React, { PureComponent, Fragment } from 'react';
 import GitHub from 'github-api';
-import sortOn from 'sort-on';
+import React, { Component, Fragment } from 'react';
 import styled from 'react-emotion';
+import sortOn from 'sort-on';
 
-import { Title, Head, Article, Screen, BackButton, Emoji } from '../components';
+import { Article, BackButton, Head, Screen, Title } from '../components';
 import withSegment from '../hocs/segment';
 
 const USER_NAME = 'hanford';
 const gh = new GitHub({ token: process.env.GITHUB_ACCESS_TOKEN });
+// tslint:disable-next-line
 const me = gh.getUser(USER_NAME);
 
-class Projects extends PureComponent {
+interface Repo {
+  name: string,
+  id: string,
+  description: string,
+  stargazers_count: string,
+  language: string,
+  html_url: string
+}
+
+interface Props {
+  repos: Array<Repo>,
+}
+
+class Projects extends Component<Props> {
   static async getInitialProps() {
     const { data } = await me.listRepos();
 
-    if (!data) return { repos: [] };
+    if (!data) {
+      return {
+        repos: []
+      };
+    }
 
-    let myRepos = data.filter(
-      ({ owner, fork, stargazers_count: stars }) =>
+    const myRepos = data.filter(
+      ({ fork, owner, stargazers_count: stars }) =>
         owner.login === USER_NAME && !fork && stars > 0
     );
 

@@ -1,20 +1,19 @@
-import { PureComponent } from 'react';
-import Link from 'next/link';
+import { Component } from 'react';
 import GithubBadge from 'react-github-badge';
 
 import {
-  Head,
-  CtaButton,
-  Title,
-  HeroImage,
-  Frame,
-  Content,
-  Description,
   Container,
+  Content,
+  CtaButton,
+  Description,
+  Frame,
+  Head,
+  HeroImage,
+  Title,
 } from '../components';
 import withSegment from '../hocs/segment';
 
-class YoutubeDarkmode extends PureComponent {
+class YoutubeDarkmode extends Component {
   render() {
     return (
       <Container>

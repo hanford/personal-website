@@ -5,8 +5,8 @@ interface Props {
   path: string,
   name: string,
   about: string,
-  stars: string,
-  language: string
+  stars?: string,
+  language?: string
 }
 
 export const Article = ({ path, name, about, stars = '', language = '' }: Props) => (

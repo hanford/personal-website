@@ -14,23 +14,32 @@ const Button = styled.a`
   color: #32325d;
   text-decoration: none;
   border: 0px;
-  cursor: pointer;
   outline: none;
   transition: all 0.25s ease-out;
   border: 2px solid #db594b;
   color: #db594b;
   margin: 4rem auto 0;
   font-weight: bold;
+  cursor: ${({ disabled }: { disabled: boolean }) => disabled ? 'not-allowed' : 'pointer'};
 `;
 
 interface Props {
-  link: string,
+  link?: string,
   children: React.ReactNode,
-  onClick: () => void
+  onClick?: () => void,
+  download?: string,
+  target?: string,
+  disabled?: boolean
 }
 
-export const CtaButton = ({ link, children, onClick, ...props }: Props) => (
-  <Button onClick={onClick} target="_blank" href={link} {...props}>
+export const CtaButton = ({ link, children, onClick, disabled, ...props }: Props) => (
+  <Button
+    onClick={onClick}
+    target="_blank"
+    href={link}
+    disabled={disabled}
+    {...props}
+  >
     {children}
   </Button>
 );

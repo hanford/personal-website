@@ -1,19 +1,19 @@
 import React from 'react';
-import Link from 'next/link';
 import GithubBadge from 'react-github-badge';
 
 import {
-  Head,
+  Container,
+  Content,
   CtaButton,
+  Description,
+  Frame,
+  Head,
   HeroImage,
   Title,
-  Frame,
-  Content,
-  Description,
-  Container,
 } from '../components';
-import withTakedown from '../hocs/takedown';
+
 import withSegment from '../hocs/segment';
+import withTakedown from '../hocs/takedown';
 
 function UberChrome() {
   return (
@@ -35,7 +35,7 @@ function UberChrome() {
 
         <HeroImage src="../static/uber-chrome.jpg" />
 
-        <CtaButton>Add to Google chrome</CtaButton>
+        <CtaButton disabled={true}>Add to Google chrome</CtaButton>
 
         <h2 style={{ marginTop: '8rem' }}>How to video</h2>
         <p style={{ maxWidth: '60rem', margin: '0 auto' }}>

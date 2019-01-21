@@ -8,7 +8,7 @@ if (typeof window !== 'undefined') {
 }
 
 interface Props {
-  scale: number,
+  scale?: number,
   children: React.ReactNode
 }
 

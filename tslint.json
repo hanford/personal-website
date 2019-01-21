@@ -10,7 +10,8 @@
     "no-angle-bracket-type-assertion": true,
     "member-access": false,
     "max-classes-per-file": false,
-    "variable-name": false
+    "variable-name": false,
+    "array-type": [true, "generic"]
   },
   "rulesDirectory": [],
   "linterOptions": {
