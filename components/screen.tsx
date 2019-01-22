@@ -1,4 +1,4 @@
-import { Component, Fragment, SyntheticEvent } from 'react';
+import { Fragment, useState } from 'react';
 import styled from 'react-emotion';
 import Observer from 'react-intersection-observer';
 
@@ -12,36 +12,25 @@ interface Props {
   children: React.ReactNode
 }
 
-export class Screen extends Component<Props>{
-  state = {
-    hideNavbar: true,
-  };
+const backToTop = () => window.scrollTo(0, 0);
 
-  backToTop = (event: SyntheticEvent) => {
-    window.scrollTo(0, 0);
-  };
+export function Screen ({ scale = 1, children }: Props) {
+  const [visible, setVisibileState] = useState(true)
+  const setVisible = (isVisible: boolean) => setVisibileState(isVisible)
 
-  handleVisibilityChange = (hideNavbar: boolean) => {
-    this.setState({ hideNavbar })
-  }
+  return (
+    <Fragment>
+      <Navbar hide={visible} onClick={backToTop}>
+        Back to top
+      </Navbar>
 
-  render() {
-    const { scale, children } = this.props;
+      <ScrollMeausure onChange={setVisible} />
 
-    return (
-      <Fragment>
-        <Navbar hide={this.state.hideNavbar} onClick={this.backToTop}>
-          Back to top
-        </Navbar>
-
-        <ScrollMeausure onChange={this.handleVisibilityChange} />
-
-        <Container scale={scale}>
-          <Card>{children}</Card>
-        </Container>
-      </Fragment>
-    );
-  }
+      <Container scale={scale}>
+        <Card>{children}</Card>
+      </Container>
+    </Fragment>
+  )
 }
 
 const ScrollMeausure = styled(Observer)`

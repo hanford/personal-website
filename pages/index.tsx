@@ -1,93 +1,85 @@
 import Link from "next/link";
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import Drawer from "react-drag-drawer";
 import styled, { css } from "react-emotion";
-import { Motion, presets, spring } from "react-motion";
+import { Spring } from 'react-spring'
 
 import { Article, Emoji, Head, Screen, SocialModal } from "../components";
 import withSegment from "../hocs/segment";
 
-interface State {
-  expanded: boolean
-}
+function Landing() {
+  const [isExpanded, setExpanded] = useState(false);
+  const toggle = () => setExpanded(!isExpanded)
 
-class Landing extends Component<void, State> {
-  state = {
-    expanded: false
-  };
-
-  toggle = () => {
-    this.setState(prevState => {
-      return {
-        expanded: !prevState.expanded
-      };
-    });
-  };
-
-  componentDidMount() {
-    window.addEventListener("beforeinstallprompt", (event: any) => {
-      event.userChoice.then((choiceResult) => {
+  useEffect(() => {
+    function beforeInstallPrompt (event: any) {
+      event.userChoice.then(choiceResult => {
         // tslint:disable-next-line
         console.log(choiceResult.outcome);
       });
-    });
-  }
+    }
 
-  render() {
-    const { expanded } = this.state;
+    window.addEventListener("beforeinstallprompt", beforeInstallPrompt);
 
-    return (
-      <Body>
-        <Head />
+    return () => {
+      window.removeEventListener('beforeinstallprompt', beforeInstallPrompt)
+    }
+  }, []);
 
-        <Motion style={{ shrink: spring(expanded ? 0.8 : 1, presets.stiff) }}>
-          {({ shrink }) => (
-            <Screen scale={shrink}>
-              <Emoji>👋</Emoji>
-              <Intro>
-                <div>
-                  Hi I'm <span style={{ fontWeight: 600 }}>Jack Hanford</span>
-                </div>
-                <div>
-                  I'm a software engineer at{" "}
-                  <Anchor href="https://lattice.com" target="_blank">
-                    lattice
-                  </Anchor>
-                  .
-                </div>
-              </Intro>
+  return (
+    <Body>
+      <Head />
 
-              <Row>
-                <Link prefetch={true} href="/projects">
-                  <Button>Projects</Button>
-                </Link>
-                <Button onClick={this.toggle}>Contact me</Button>
-              </Row>
+      <Spring
+        from={{ scale: 1 }}
+        to={{ scale: isExpanded ? 0.8 : 1 }}
+      >
+        {({ scale }) => (
+          <Screen scale={scale}>
+            <Emoji>👋</Emoji>
+            <Intro>
+              <div>
+                Hi I'm <span style={{ fontWeight: 600 }}>Jack Hanford</span>
+              </div>
+              <div>
+                I'm a software engineer at{" "}
+                <Anchor href="https://lattice.com" target="_blank">
+                  lattice
+                </Anchor>
+                .
+              </div>
+            </Intro>
 
-              <Title>Projects</Title>
+            <Row>
+              <Link prefetch={true} href="/projects">
+                <Button>Projects</Button>
+              </Link>
+              <Button onClick={toggle}>Contact me</Button>
+            </Row>
 
-              {projects.map(p => (
-                <Article
-                  key={p.name}
-                  path={p.path}
-                  name={p.name}
-                  about={p.about}
-                />
-              ))}
-            </Screen>
-          )}
-        </Motion>
+            <Title>Projects</Title>
 
-        <Drawer
-          open={expanded}
-          onRequestClose={this.toggle}
-          modalElementClass={Card}
-        >
-          <SocialModal toggle={this.toggle} />
-        </Drawer>
-      </Body>
-    );
-  }
+            {projects.map(p => (
+              <Article
+                key={p.name}
+                path={p.path}
+                name={p.name}
+                about={p.about}
+              />
+            ))}
+          </Screen>
+        )}
+      </Spring>
+
+      <Drawer
+        open={isExpanded}
+        onRequestClose={toggle}
+        modalElementClass={Card}
+      >
+        <SocialModal toggle={toggle} />
+      </Drawer>
+    </Body>
+  );
 }
 
 export default withSegment(Landing);

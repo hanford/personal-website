@@ -1,5 +1,5 @@
 import GitHub from 'github-api';
-import React, { Component, Fragment } from 'react';
+import { Fragment } from 'react';
 import styled from 'react-emotion';
 import sortOn from 'sort-on';
 
@@ -24,93 +24,89 @@ interface Props {
   repos: Array<Repo>,
 }
 
-class Projects extends Component<Props> {
-  static async getInitialProps() {
-    const { data } = await me.listRepos();
+function Projects ({ repos }: Props) {
+  return (
+    <Fragment>
+      <Head title="Projects | Jack Hanford" />
 
-    if (!data) {
-      return {
-        repos: []
-      };
-    }
+      <Screen>
+        <BackButton />
 
-    const myRepos = data.filter(
-      ({ fork, owner, stargazers_count: stars }) =>
-        owner.login === USER_NAME && !fork && stars > 0
-    );
+        <Title>Projects</Title>
 
-    const repos = sortOn(myRepos, '-stargazers_count');
+        <p>
+          Lately I've been obssessed with open source software which I keep on{' '}
+          <Anchor href="https://github.com/hanford" target="_blank">
+            GitHub
+          </Anchor>
+          . I've been writing JavaScript professionally for around 4 years,
+          and have become an expert with some of the latest and greatest
+          frontend frameworks including{' '}
+          <Anchor
+            href="https://www.npmjs.com/package/virtual-dom"
+            target="_blank"
+          >
+            virtual-dom
+          </Anchor>
+          ,{' '}
+          <Anchor href="https://angular.io" target="_blank">
+            AngularJS
+          </Anchor>
+          ,{' '}
+          <Anchor href="https://facebook.github.io/react" target="_blank">
+            ReactJS
+          </Anchor>{' '}
+          and most recently{' '}
+          <Anchor href="https://github.com/zeit/next.js" target="_blank">
+            Next.js
+          </Anchor>
+          .
+        </p>
 
+        {repos.map(
+          ({
+            name,
+            id,
+            description,
+            stargazers_count: stars,
+            language,
+            html_url: html,
+          }) => (
+            <Article
+              key={id}
+              path={html}
+              name={name}
+              about={description}
+              stars={stars}
+              language={language}
+            />
+          )
+        )}
+      </Screen>
+    </Fragment>
+  );
+}
+
+Projects.getInitialProps = async () => {
+  const { data } = await me.listRepos();
+
+  if (!data) {
     return {
-      repos,
+      repos: []
     };
   }
 
-  render() {
-    const { repos } = this.props;
+  const myRepos = data.filter(
+    ({ fork, owner, stargazers_count: stars }) =>
+      owner.login === USER_NAME && !fork && stars > 0
+  );
 
-    return (
-      <Fragment>
-        <Head title="Projects | Jack Hanford" />
+  const repos = sortOn(myRepos, '-stargazers_count');
 
-        <Screen>
-          <BackButton />
-
-          <Title>Projects</Title>
-
-          <p>
-            Lately I've been obssessed with open source software which I keep on{' '}
-            <Anchor href="https://github.com/hanford" target="_blank">
-              GitHub
-            </Anchor>
-            . I've been writing JavaScript professionally for around 4 years,
-            and have become an expert with some of the latest and greatest
-            frontend frameworks including{' '}
-            <Anchor
-              href="https://www.npmjs.com/package/virtual-dom"
-              target="_blank"
-            >
-              virtual-dom
-            </Anchor>
-            ,{' '}
-            <Anchor href="https://angular.io" target="_blank">
-              AngularJS
-            </Anchor>
-            ,{' '}
-            <Anchor href="https://facebook.github.io/react" target="_blank">
-              ReactJS
-            </Anchor>{' '}
-            and most recently{' '}
-            <Anchor href="https://github.com/zeit/next.js" target="_blank">
-              Next.js
-            </Anchor>
-            .
-          </p>
-
-          {repos.map(
-            ({
-              name,
-              id,
-              description,
-              stargazers_count: stars,
-              language,
-              html_url: html,
-            }) => (
-              <Article
-                key={id}
-                path={html}
-                name={name}
-                about={description}
-                stars={stars}
-                language={language}
-              />
-            )
-          )}
-        </Screen>
-      </Fragment>
-    );
-  }
-}
+  return {
+    repos,
+  };
+} 
 
 export default withSegment(Projects);
 

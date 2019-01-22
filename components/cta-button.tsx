@@ -32,7 +32,7 @@ interface Props {
   disabled?: boolean
 }
 
-export const CtaButton = ({ link, children, onClick, disabled, ...props }: Props) => (
+export const CtaButton = ({ link, children, onClick, disabled = false, ...props }: Props) => (
   <Button
     onClick={onClick}
     target="_blank"
