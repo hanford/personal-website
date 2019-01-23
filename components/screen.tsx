@@ -8,13 +8,12 @@ if (typeof window !== 'undefined') {
 }
 
 interface Props {
-  scale?: number,
   children: React.ReactNode
 }
 
 const backToTop = () => window.scrollTo(0, 0);
 
-export function Screen ({ scale = 1, children }: Props) {
+export function Screen ({ children }: Props) {
   const [visible, setVisibileState] = useState(true)
   const setVisible = (isVisible: boolean) => setVisibileState(isVisible)
 
@@ -26,7 +25,7 @@ export function Screen ({ scale = 1, children }: Props) {
 
       <ScrollMeausure onChange={setVisible} />
 
-      <Container scale={scale}>
+      <Container>
         <Card>{children}</Card>
       </Container>
     </Fragment>
@@ -42,7 +41,6 @@ const Container = styled.div`
   max-width: 100%;
   padding: 8rem 2rem;
   will-change: transform;
-  transform: scale(${({ scale }: { scale: number }) => scale});
 
   @media (max-width: 767px) {
     padding: 2rem;

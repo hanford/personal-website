@@ -1,18 +1,17 @@
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Drawer from "react-drag-drawer";
 import styled, { css } from "react-emotion";
-import { Spring } from 'react-spring'
 
 import { Article, Emoji, Head, Screen, SocialModal } from "../components";
 import withSegment from "../hocs/segment";
 
 function Landing() {
   const [isExpanded, setExpanded] = useState(false);
-  const toggle = () => setExpanded(!isExpanded)
+  const toggle = () => setExpanded(!isExpanded);
 
   useEffect(() => {
-    function beforeInstallPrompt (event: any) {
+    function beforeInstallPrompt(event: any) {
       event.userChoice.then(choiceResult => {
         // tslint:disable-next-line
         console.log(choiceResult.outcome);
@@ -22,54 +21,42 @@ function Landing() {
     window.addEventListener("beforeinstallprompt", beforeInstallPrompt);
 
     return () => {
-      window.removeEventListener('beforeinstallprompt', beforeInstallPrompt)
-    }
+      window.removeEventListener("beforeinstallprompt", beforeInstallPrompt);
+    };
   }, []);
 
   return (
     <Body>
       <Head />
 
-      <Spring
-        from={{ scale: 1 }}
-        to={{ scale: isExpanded ? 0.8 : 1 }}
-      >
-        {({ scale }) => (
-          <Screen scale={scale}>
-            <Emoji>👋</Emoji>
-            <Intro>
-              <div>
-                Hi I'm <span style={{ fontWeight: 600 }}>Jack Hanford</span>
-              </div>
-              <div>
-                I'm a software engineer at{" "}
-                <Anchor href="https://lattice.com" target="_blank">
-                  lattice
-                </Anchor>
-                .
-              </div>
-            </Intro>
+      <Screen>
+        <Emoji>👋</Emoji>
+        <Intro>
+          <div>
+            Hi I'm <span style={{ fontWeight: 600 }}>Jack Hanford</span>
+          </div>
+          <div>
+            I'm a software engineer at{" "}
+            <Anchor href="https://lattice.com" target="_blank">
+              lattice
+            </Anchor>
+            .
+          </div>
+        </Intro>
 
-            <Row>
-              <Link prefetch={true} href="/projects">
-                <Button>Projects</Button>
-              </Link>
-              <Button onClick={toggle}>Contact me</Button>
-            </Row>
+        <Row>
+          <Link prefetch={true} href="/projects">
+            <Button>Projects</Button>
+          </Link>
+          <Button onClick={toggle}>Contact me</Button>
+        </Row>
 
-            <Title>Projects</Title>
+        <Title>Projects</Title>
 
-            {projects.map(p => (
-              <Article
-                key={p.name}
-                path={p.path}
-                name={p.name}
-                about={p.about}
-              />
-            ))}
-          </Screen>
-        )}
-      </Spring>
+        {projects.map(p => (
+          <Article key={p.name} path={p.path} name={p.name} about={p.about} />
+        ))}
+      </Screen>
 
       <Drawer
         open={isExpanded}
