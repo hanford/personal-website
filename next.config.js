@@ -9,6 +9,7 @@ const withTypescript = moduleExists('@zeit/next-typescript')
 const isDev = process.env.NODE_ENV !== 'production'
 
 const nextConfig = {
+  target: 'serverless',
   workboxOpts: {
     swDest: 'static/service-worker.js',
     runtimeCaching: [
