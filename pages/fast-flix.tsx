@@ -49,4 +49,5 @@ function FastFlix () {
     </Container>
   )
 }
+
 export default withSegment(FastFlix);
