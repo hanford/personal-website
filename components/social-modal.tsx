@@ -103,20 +103,6 @@ const Content = styled.div`
   font-size: 1.6rem;
 `;
 
-const Close = styled.button`
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  font-size: 2rem;
-  color: red;
-  z-index: 5;
-  padding: 1rem;
-  font-size: 1.4rem;
-  padding-left: 3rem;
-  width: 100%;
-  text-align: left;
-`;
-
 const List = styled.ul`
   min-width: 32rem;
   padding-left: 0;

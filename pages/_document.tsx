@@ -1,12 +1,12 @@
 import { extractCritical } from 'emotion-server';
-import Document, { Head, Main, NextDocumentContext, NextScript } from 'next/document';
+import Document, { Head, Main, NextScript } from 'next/document';
 
 interface Props {
   css: any
 }
 
 export default class DocumentComponent extends Document<Props> {
-  static getInitialProps({ renderPage }: NextDocumentContext) {
+  static getInitialProps({ renderPage }: any) {
     const page = renderPage();
     const stylesTAG = extractCritical(page.html);
 
