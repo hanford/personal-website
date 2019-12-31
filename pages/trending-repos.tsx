@@ -6,11 +6,11 @@ import withSegment from "../hocs/segment";
 function Snapchat() {
   return (
     <Container>
-      <Head title="Github Trends | Jack Hanford" />
+      <Head title="Trending Repos | Jack Hanford" />
       <Page width="700">
         <div>
           <Icon src="../static/github-trends.png" />
-          <Heading>Github Trends</Heading>
+          <Heading>Trending Repos</Heading>
           <P>Mac OS and iOS app for browsing trending github repos</P>
           <AppStoreLogo />
         </div>
@@ -30,7 +30,7 @@ function Snapchat() {
         <PlatformCopy>
           <Heading>Desktop and mobile</Heading>
           <P>
-            Github trends is written with Swift UI, so it's code runs on all
+            Trending Repos is written with Swift UI, so it's code runs on all
             apple devices
           </P>
         </PlatformCopy>
