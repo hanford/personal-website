@@ -7,13 +7,13 @@ function Snapchat() {
   return (
     <Container>
       <Head title="Trending Repos | Jack Hanford" />
-      <Page width="700">
-        <div>
+      <Page width="800">
+        <Cta>
           <Icon src="../static/github-trends.png" />
           <Heading>Trending Repos</Heading>
           <P>Mac OS and iOS app for browsing trending github repos</P>
           <AppStoreLogo />
-        </div>
+        </Cta>
 
         <div>
           <LightPhone src="../static/trends-light.png" />
@@ -113,6 +113,15 @@ const Heading = styled.div`
   margin-top: 24px;
 `;
 
+const Cta = styled.div`
+  @media (max-width: 800px) {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+`;
+
 const Container = styled.div`
   display: flex;
   align-items: center;
@@ -134,6 +143,7 @@ const Container = styled.div`
 `;
 
 const Page = styled.div`
+  justify-content: space-between;
   max-width: 100%;
   width: ${({ width }: any) => width}px;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
@@ -144,6 +154,7 @@ const Page = styled.div`
 
   @media (max-width: 800px) {
     flex-direction: column;
+    justify-content: center;
   }
 `;
 
