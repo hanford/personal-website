@@ -3,7 +3,7 @@ import styled from "react-emotion";
 import { Head } from "../components";
 import withSegment from "../hocs/segment";
 
-function Snapchat() {
+function TrendingRepos() {
   return (
     <Container>
       <Head title="Trending Repos | Jack Hanford" />
@@ -28,9 +28,9 @@ function Snapchat() {
         </div>
 
         <PlatformCopy>
-          <Heading>Desktop and mobile</Heading>
+          <Heading>Mac / iPad / iPhone</Heading>
           <P>
-            Trending Repos is written with Swift UI, so it's code runs on all
+            Trending Repos is written with SwiftUI, so it's code runs on all
             apple devices
           </P>
         </PlatformCopy>
@@ -39,13 +39,12 @@ function Snapchat() {
   );
 }
 
-const AppStoreLogo = props => (
+const AppStoreLogo = () => (
   <svg
     width={200}
     height={60}
     viewBox="0 0 539.856 160"
     style={{ marginTop: 16 }}
-    {...props}
   >
     <g transform="scale(4.00216 4.0011)">
       <path
@@ -228,4 +227,4 @@ const DarkMac = styled.img`
   }
 `;
 
-export default withSegment(Snapchat);
+export default withSegment(TrendingRepos);
