@@ -20,7 +20,7 @@
     "hoist-non-react-statics": "~2.3.1",
     "intersection-observer": "^0.5.1",
     "load-segment": "~1.0.1",
-    "next": "^9.2.0",
+    "next": "^9.3.0",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-drag-drawer": "^3.3.0",
