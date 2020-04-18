@@ -24,7 +24,7 @@ interface Props {
   repos: Array<Repo>;
 }
 
-function Projects({ repos }: Props) {
+function Projects({ repos = [] }: Props) {
   return (
     <Fragment>
       <Head title="Projects | Jack Hanford" />
@@ -70,7 +70,7 @@ function Projects({ repos }: Props) {
             description,
             stargazers_count: stars,
             language,
-            html_url: html
+            html_url: html,
           }) => (
             <Article
               key={id}
@@ -87,12 +87,14 @@ function Projects({ repos }: Props) {
   );
 }
 
-Projects.getInitialProps = async () => {
+export const getStaticProps = async () => {
   const { data } = await me.listRepos();
 
   if (!data) {
     return {
-      repos: []
+      props: {
+        repos: [],
+      },
     };
   }
 
@@ -104,7 +106,9 @@ Projects.getInitialProps = async () => {
   const repos = sortOn(myRepos, "-stargazers_count");
 
   return {
-    repos
+    props: {
+      repos,
+    },
   };
 };
 
