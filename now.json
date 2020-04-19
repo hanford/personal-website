@@ -1,21 +1,28 @@
-
 {
   "version": 2,
-  "alias": [
-    "jackhanford.com",
-    "www.jackhanford.com"
-  ],
+  "alias": ["jackhanford.com", "www.jackhanford.com"],
   "env": {
     "GITHUB_ACCESS_TOKEN": "@github-access-token"
   },
-  "routes": [	
-    {	
-      "src": "^/service-worker.js$",	
-      "dest": "/_next/static/service-worker.js",
-      "headers": {
-        "cache-control": "public, max-age=43200, immutable",
-        "Service-Worker-Allowed": "/"
-      }
+  "rewrites": [
+    {
+      "source": "^/service-worker.js$",
+      "destination": "/_next/static/service-worker.js"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/service-worker.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=43200, immutable"
+        },
+        {
+          "key": "Service-Worker-Allowed",
+          "value": "/"
+        }
+      ]
     }
   ],
   "builds": [
