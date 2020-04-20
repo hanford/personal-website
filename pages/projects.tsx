@@ -92,6 +92,7 @@ export const getStaticProps = async () => {
 
   if (!data) {
     return {
+      unstable_revalidate: 60,
       props: {
         repos: [],
       },
@@ -106,6 +107,7 @@ export const getStaticProps = async () => {
   const repos = sortOn(myRepos, "-stargazers_count");
 
   return {
+    unstable_revalidate: 60,
     props: {
       repos,
     },
