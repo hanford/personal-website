@@ -12,7 +12,7 @@ function Landing() {
 
   useEffect(() => {
     function beforeInstallPrompt(event: any) {
-      event.userChoice.then(choiceResult => {
+      event.userChoice.then((choiceResult) => {
         // tslint:disable-next-line
         console.log(choiceResult.outcome);
       });
@@ -53,7 +53,7 @@ function Landing() {
 
         <Title>Projects</Title>
 
-        {projects.map(p => (
+        {projects.map((p) => (
           <Article key={p.name} path={p.path} name={p.name} about={p.about} />
         ))}
       </Screen>
@@ -170,57 +170,57 @@ const projects = [
     path: "https://www.youtube.com/watch?v=JjRV-l9jSYE",
     name: "Rewriting Eaze.com with Next.js",
     about:
-      "On 4/28/18 I gave a ~15 minute talk at Zeit Day about my experience rewriting a large consumer facing website with Next.js"
+      "On 4/28/18 I gave a ~15 minute talk at Zeit Day about my experience rewriting a large consumer facing website with Next.js",
   },
   {
     path: "https://trends.now.sh",
     name: "Trends ⭐️",
     about:
-      "Ultra high performance github trending PWA built with Next.js and GraphQL but only ~15 lines of client side Javascript"
+      "Ultra high performance github trending PWA built with Next.js and GraphQL but only ~15 lines of client side Javascript",
   },
   {
     path: "/fast-flix",
     name: "Fast Flix 🍿",
-    about: "Change the playback rate of any video on netflix"
+    about: "Change the playback rate of any video on netflix",
   },
   {
     path: "/uber-chrome",
     name: "Uber chrome",
-    about: "A chrome extension allowing you to order an uber from your desktop"
+    about: "A chrome extension allowing you to order an uber from your desktop",
   },
   {
     path: "/instachrome",
     name: "Instachrome",
     about:
-      "A chrome extension for browsing instagram with around 11,000 active users"
+      "A chrome extension for browsing instagram with around 11,000 active users",
   },
   {
     path: "/chirp",
     name: "Chirp 🐦",
-    about: "A desktop twitter application built for all platforms"
+    about: "A desktop twitter application built for all platforms",
   },
   {
     path: "https://react-drag-drawer.jackhanford.com",
     name: "React Drag Drawer",
     about:
-      "Mobile first ReactJS modal component with native touch gesture support"
+      "Mobile first ReactJS modal component with native touch gesture support",
   },
   {
     path: "https://react-kanban.jackhanford.com",
     name: "React Kanban",
     about:
-      "Custom react drag and drop interface built trello style but with better animations"
+      "Custom react drag and drop interface built trello style but with better animations",
   },
   {
     path: "https://react-fab-fan.jackhanford.com",
     name: "React Fab Fan",
     about:
-      "A material design inspired floating action button animation built with physics"
+      "A material design inspired floating action button animation built with physics",
   },
   {
     path: "/youtube-darkmode",
     name: "Youtube darkmode",
     about:
-      "Google was redesigning youtube and also adding darkmode, this enables it right now"
-  }
+      "Google was redesigning youtube and also adding darkmode, this enables it right now",
+  },
 ];
