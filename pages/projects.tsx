@@ -79,6 +79,7 @@ function Projects({ repos = [] }: Props) {
               about={description}
               stars={stars}
               language={language}
+              isExternal
             />
           )
         )}

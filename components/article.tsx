@@ -1,28 +1,38 @@
-import Link from 'next/link';
-import styled from 'react-emotion';
+import Link from "next/link";
+import styled from "react-emotion";
 
 interface Props {
-  path: string,
-  name: string,
-  about: string,
-  stars?: string,
-  language?: string
+  path: string;
+  name: string;
+  about: string;
+  stars?: string;
+  language?: string;
+  isExternal: boolean;
 }
 
-export const Article = ({ path, name, about, stars = '', language = '' }: Props) => (
-  <Link href={path}>
+export const Article = ({
+  path,
+  name,
+  about,
+  stars = "",
+  language = "",
+  isExternal,
+}: Props) => {
+  const children = (
     <Container href={path} target="_blank">
       <Title>{name}</Title>
       <About>{about}</About>
 
-      <Content style={{ display: language ? 'flex' : 'none' }}>
+      <Content style={{ display: language ? "flex" : "none" }}>
         <Other>⭐️ {stars}</Other>
-        <div style={{ marginLeft: '1rem' }}>·</div>
-        <Other style={{ marginLeft: '1rem' }}>{language}</Other>
+        <div style={{ marginLeft: "1rem" }}>·</div>
+        <Other style={{ marginLeft: "1rem" }}>{language}</Other>
       </Content>
     </Container>
-  </Link>
-);
+  );
+
+  return isExternal ? children : <Link href={path}>{children}</Link>;
+};
 
 const Container = styled.a`
   display: block;

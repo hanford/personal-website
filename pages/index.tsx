@@ -54,7 +54,13 @@ function Landing() {
         <Title>Projects</Title>
 
         {projects.map((p) => (
-          <Article key={p.name} path={p.path} name={p.name} about={p.about} />
+          <Article
+            key={p.name}
+            path={p.path}
+            name={p.name}
+            about={p.about}
+            isExternal={p.isExternal}
+          />
         ))}
       </Screen>
 
@@ -169,57 +175,67 @@ const projects = [
   {
     path: "https://www.youtube.com/watch?v=JjRV-l9jSYE",
     name: "Rewriting Eaze.com with Next.js",
+    isExternal: true,
     about:
       "On 4/28/18 I gave a ~15 minute talk at Zeit Day about my experience rewriting a large consumer facing website with Next.js",
   },
   {
     path: "https://trends.now.sh",
     name: "Trends ⭐️",
+    isExternal: true,
     about:
       "Ultra high performance github trending PWA built with Next.js and GraphQL but only ~15 lines of client side Javascript",
   },
   {
     path: "/fast-flix",
     name: "Fast Flix 🍿",
+    isExternal: false,
     about: "Change the playback rate of any video on netflix",
   },
   {
     path: "/uber-chrome",
     name: "Uber chrome",
+    isExternal: false,
     about: "A chrome extension allowing you to order an uber from your desktop",
   },
   {
     path: "/instachrome",
     name: "Instachrome",
+    isExternal: false,
     about:
       "A chrome extension for browsing instagram with around 11,000 active users",
   },
   {
     path: "/chirp",
     name: "Chirp 🐦",
+    isExternal: false,
     about: "A desktop twitter application built for all platforms",
   },
   {
-    path: "https://react-drag-drawer.jackhanford.com",
+    path: "https://react-drag-drawer.now.sh",
     name: "React Drag Drawer",
+    isExternal: true,
     about:
       "Mobile first ReactJS modal component with native touch gesture support",
   },
   {
-    path: "https://react-kanban.jackhanford.com",
+    path: "https://react-kanban.now.sh/",
     name: "React Kanban",
+    isExternal: true,
     about:
       "Custom react drag and drop interface built trello style but with better animations",
   },
   {
-    path: "https://react-fab-fan.jackhanford.com",
+    path: "https://react-fab-fan.now.sh",
     name: "React Fab Fan",
+    isExternal: true,
     about:
       "A material design inspired floating action button animation built with physics",
   },
   {
     path: "/youtube-darkmode",
     name: "Youtube darkmode",
+    isExternal: false,
     about:
       "Google was redesigning youtube and also adding darkmode, this enables it right now",
   },
