@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "alias": ["jackhanford.com", "www.jackhanford.com"],
   "env": {
     "GITHUB_ACCESS_TOKEN": "@github-access-token"
   },
