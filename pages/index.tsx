@@ -226,13 +226,6 @@ const projects = [
       "Custom react drag and drop interface built trello style but with better animations",
   },
   {
-    path: "https://react-fab-fan.now.sh",
-    name: "React Fab Fan",
-    isExternal: true,
-    about:
-      "A material design inspired floating action button animation built with physics",
-  },
-  {
     path: "/youtube-darkmode",
     name: "Youtube darkmode",
     isExternal: false,
