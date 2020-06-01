@@ -121,4 +121,8 @@ const Anchor = styled.a`
   color: #d40052;
   font-weight: 600;
   text-decoration: underline;
+
+  @media (prefers-color-scheme: dark) {
+    color: white;
+  }
 `;

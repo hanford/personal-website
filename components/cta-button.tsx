@@ -1,4 +1,4 @@
-import styled from 'react-emotion';
+import styled from "react-emotion";
 
 const Button = styled.a`
   display: block;
@@ -6,12 +6,10 @@ const Button = styled.a`
   padding: 0 1.4rem;
   box-shadow: 0 0.4rem 0.6rem rgba(50, 50, 93, 0.11),
     0 0.1rem 0.3rem rgba(0, 0, 0, 0.08);
-  background: #fff;
   border-radius: 0.4rem;
   font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 0.025em;
-  color: #32325d;
   text-decoration: none;
   border: 0px;
   outline: none;
@@ -20,19 +18,32 @@ const Button = styled.a`
   color: #db594b;
   margin: 4rem auto 0;
   font-weight: bold;
-  cursor: ${({ disabled }: { disabled: boolean }) => disabled ? 'not-allowed' : 'pointer'};
+
+  cursor: ${({ disabled }: { disabled: boolean }) =>
+    disabled ? "not-allowed" : "pointer"};
+
+  @media (prefers-color-scheme: dark) {
+    color: white;
+    border-color: white;
+  }
 `;
 
 interface Props {
-  link?: string,
-  children: React.ReactNode,
-  onClick?: () => void,
-  download?: string,
-  target?: string,
-  disabled?: boolean
+  link?: string;
+  children: React.ReactNode;
+  onClick?: () => void;
+  download?: string;
+  target?: string;
+  disabled?: boolean;
 }
 
-export const CtaButton = ({ link, children, onClick, disabled = false, ...props }: Props) => (
+export const CtaButton = ({
+  link,
+  children,
+  onClick,
+  disabled = false,
+  ...props
+}: Props) => (
   <Button
     onClick={onClick}
     target="_blank"

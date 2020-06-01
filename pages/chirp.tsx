@@ -1,5 +1,5 @@
-import styled from 'react-emotion';
-import GithubBadge from 'react-github-badge';
+import styled from "react-emotion";
+import GithubBadge from "react-github-badge";
 
 import {
   Container,
@@ -8,11 +8,12 @@ import {
   Head,
   HeroImage,
   Title,
-} from '../components';
+  Content,
+} from "../components";
 
-import withSegment from '../hocs/segment';
+import withSegment from "../hocs/segment";
 
-function Chirp () {
+function Chirp() {
   return (
     <Container>
       <Head
@@ -25,9 +26,9 @@ function Chirp () {
         title="Star on Github"
       />
 
-      <Hero>
+      <Content>
         <Title>
-          Chirp <span style={{ fontSize: '3rem' }}>🐦</span>
+          Chirp <span style={{ fontSize: "3rem" }}>🐦</span>
         </Title>
         <Description>
           A desktop twitter application built for all platforms
@@ -65,25 +66,15 @@ function Chirp () {
           </Row>
         </Section>
 
-        <h2 style={{ marginTop: '14rem' }}>Video</h2>
+        <h2 style={{ marginTop: "14rem" }}>Video</h2>
 
         <Frame src="https://www.youtube.com/embed/OfysGhGIHp8" />
-      </Hero>
+      </Content>
     </Container>
-  )
+  );
 }
 
 export default withSegment(Chirp);
-
-const Hero = styled.div`
-  max-width: 100%;
-  width: 100%;
-  background-color: white;
-  color: rgba(0, 0, 0, 0.8);
-  margin: 6rem 0;
-  min-height: 60rem;
-  padding: 2rem;
-`;
 
 const Section = styled.div`
   display: flex;
@@ -106,27 +97,26 @@ const Button = styled.a`
   display: block;
   line-height: 4rem;
   padding: 0 1.4rem;
-  box-shadow: 0 0.4rem 0.6rem rgba(50, 50, 93, 0.11),
-    0 0.1rem 0.3rem rgba(0, 0, 0, 0.08);
-  background: #fff;
+  box-shadow: 0 0.4rem 0.6rem rgba(50, 50, 93, 0.1);
   border-radius: 0.4rem;
   font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 0.025em;
-  color: #32325d;
   text-decoration: none;
+  width: 120px;
   border: 0px;
   cursor: pointer;
   outline: none;
   transition: all 0.25s ease-out;
   border: 2px solid #db594b;
   color: #db594b;
-  margin: 0 1.5rem;
   font-weight: bold;
-  min-width: 20rem;
+  font-family: Brandon;
+  background-color: transparent;
+  margin-right: 1rem;
 
-  @media (max-width: 768px) {
-    margin: 1.5rem 0;
-    min-width: 24rem;
+  @media (prefers-color-scheme: dark) {
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.9);
   }
 `;

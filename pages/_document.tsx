@@ -1,8 +1,8 @@
-import { extractCritical } from 'emotion-server';
-import Document, { Head, Main, NextScript } from 'next/document';
+import { extractCritical } from "emotion-server";
+import Document, { Head, Main, NextScript } from "next/document";
 
 interface Props {
-  css: any
+  css: any;
 }
 
 export default class DocumentComponent extends Document<Props> {

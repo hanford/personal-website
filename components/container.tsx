@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import * as React from 'react';
-import styled from 'react-emotion';
+import Link from "next/link";
+import * as React from "react";
+import styled from "react-emotion";
 
 export const Container = ({ children }: { children: React.ReactNode }) => (
   <React.Fragment>
@@ -27,6 +27,10 @@ const BackButton = styled.a`
   box-shadow: 0 0rem 2rem rgba(0, 0, 0, 0.15);
   border-radius: 0.4rem;
   cursor: pointer;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: transparent;
+  }
 `;
 
 const Component = styled.div`

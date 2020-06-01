@@ -84,7 +84,6 @@ const Body = styled.div`
   position: relative;
   justify-content: center;
   flex-direction: column;
-  color: #32325d;
   font-size: 1.6rem;
 `;
 
@@ -92,6 +91,10 @@ const Anchor = styled.a`
   color: #d40052;
   font-weight: 600;
   text-decoration: underline;
+
+  @media (prefers-color-scheme: dark) {
+    color: rgba(255, 255, 255, 0.9);
+  }
 `;
 
 const Intro = styled.div`
@@ -115,7 +118,6 @@ const Button = styled.button`
   line-height: 4rem;
   padding: 0 1.4rem;
   box-shadow: 0 0.4rem 0.6rem rgba(50, 50, 93, 0.1);
-  background: #fff;
   border-radius: 0.4rem;
   font-size: 1.2rem;
   text-transform: uppercase;
@@ -130,14 +132,15 @@ const Button = styled.button`
   font-weight: bold;
   font-family: Brandon;
   width: 100%;
+  background-color: transparent;
+
+  @media (prefers-color-scheme: dark) {
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.9);
+  }
 
   &:first-of-type {
     margin-right: 1rem;
-  }
-
-  &:hover {
-    background-color: #db594b;
-    color: white;
   }
 `;
 

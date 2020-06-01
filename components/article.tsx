@@ -44,7 +44,10 @@ const Container = styled.a`
   margin-right: -1rem;
   text-decoration: none;
   color: black;
-  opacity: ${({ opacity }: { opacity?: number }) => opacity};
+
+  @media (prefers-color-scheme: dark) {
+    color: rgba(255, 255, 255, 0.8);
+  }
 
   &:hover {
     border: 1px solid #d40052;
@@ -55,6 +58,10 @@ const Title = styled.h4`
   color: #d40052;
   margin: 0;
   font-size: 1.8rem;
+
+  @media (prefers-color-scheme: dark) {
+    color: white;
+  }
 `;
 
 const Content = styled.div`
@@ -64,7 +71,6 @@ const Content = styled.div`
 
 const Other = styled.div`
   font-size: 1.2rem;
-  opacity: 0.75;
   font-weight: bold;
 `;
 

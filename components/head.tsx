@@ -1,14 +1,22 @@
-import HeadTag from 'next/head';
+import HeadTag from "next/head";
 
-export const Head = ({ title, description }: {title?: string, description?: string}) => (
+export const Head = ({
+  title,
+  description,
+}: {
+  title?: string;
+  description?: string;
+}) => (
   <HeadTag>
-    <title>{title || 'Jack Hanford'}</title>
+    <title>{title || "Jack Hanford"}</title>
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    <meta name="name" content={title || 'Jack Hanford'} />
+    <meta name="name" content={title || "Jack Hanford"} />
+
     <meta
       name="description"
-      content={description || 'Engineer - Hacker - Technology Addict'}
+      content={description || "Engineer - Hacker - Technology Addict"}
     />
+
     <meta name="theme-color" content="#db594b" />
 
     <link
@@ -20,42 +28,61 @@ export const Head = ({ title, description }: {title?: string, description?: stri
     <style
       dangerouslySetInnerHTML={{
         __html: `
-      @font-face {
-        font-family: 'Brandon';
-        font-style: normal;
-        font-weight: 300;
-        font-display: auto;
-        src: local('Brandon'), url('/static/brandon-regular.woff') format('woff');
-      }
+        @font-face {
+          font-family: 'Brandon';
+          font-style: normal;
+          font-weight: 300;
+          font-display: auto;
+          src: local('Brandon'), url('/static/brandon-regular.woff') format('woff');
+        }
 
-      @font-face {
-        font-family: 'Brandon';
-        font-style: normal;
-        font-weight: 600;
-        font-display: auto;
-        src: local('Brandon'), url('/static/brandon-medium.woff') format('woff');
-      }
+        @font-face {
+          font-family: 'Brandon';
+          font-style: normal;
+          font-weight: 600;
+          font-display: auto;
+          src: local('Brandon'), url('/static/brandon-medium.woff') format('woff');
+        }
 
-      html,
-      body,
-      #__next {
-        font-family: Brandon, Arial;
-        width: 100%;
-        overflow: auto;
-        margin: 0;
-        padding: 0;
-        font-size: 10px;
-        background: linear-gradient(-45deg, #D20B54 0%, #FFB849 100%) center center fixed;
-      }
+        html,
+        body {
+          background: linear-gradient(-45deg, #d20b54 0%, #ffb849 100%);
+        }
 
-      * {
-        box-sizing: border-box;
-      }
+        @media (prefers-color-scheme: dark) {
+          html,
+          body {
+            background: #333;
+          }
+        }
 
-      #__next {
-        font-size: 1.6rem;
-      }
-    `,
+        html,
+        body,
+        #__next {
+          font-family: Brandon, Arial;
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+          margin: 0;
+          padding: 0;
+          font-size: 10px;
+          color: #32325d;
+        }
+
+        @media (prefers-color-scheme: dark) {
+          html, body, #__next {
+            color: rgba(255,255,255,0.9);
+          }
+        }
+          
+        * {
+          box-sizing: border-box;
+        }
+
+        #__next {
+          font-size: 1.6rem;
+        }
+      `,
       }}
     />
   </HeadTag>

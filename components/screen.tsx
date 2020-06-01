@@ -1,41 +1,23 @@
-import { Fragment, useState } from 'react';
-import styled from 'react-emotion';
-import Observer from 'react-intersection-observer';
+import styled from "react-emotion";
 
-if (typeof window !== 'undefined') {
+if (typeof window !== "undefined") {
   // tslint:disable-next-line
-  require('intersection-observer');
+  require("intersection-observer");
 }
 
 interface Props {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
-const backToTop = () => window.scrollTo(0, 0);
-
-export function Screen ({ children }: Props) {
-  const [visible, setVisibileState] = useState(true)
-  const setVisible = (isVisible: boolean) => setVisibileState(isVisible)
-
+export function Screen({ children }: Props) {
   return (
-    <Fragment>
-      <Navbar hide={visible} onClick={backToTop}>
-        Back to top
-      </Navbar>
-
-      <ScrollMeausure onChange={setVisible} />
-
+    <>
       <Container>
         <Card>{children}</Card>
       </Container>
-    </Fragment>
-  )
+    </>
+  );
 }
-
-const ScrollMeausure = styled(Observer)`
-  width: 100%;
-  height: 1px;
-`;
 
 const Container = styled.div`
   max-width: 100%;
@@ -50,13 +32,15 @@ const Container = styled.div`
 const Card = styled.div`
   width: 76rem;
   max-width: 100%;
-  color: #32325d;
   padding: 4rem;
   position: relative;
   margin: 0 auto;
   background-color: white;
   border-radius: 0.4rem;
-  box-shadow: 0 1rem 3.5rem rgba(0, 0, 0, 0.2);
+
+  @media (prefers-color-scheme: dark) {
+    background: #333;
+  }
 
   @media (max-width: 767px) {
     padding: 2rem;

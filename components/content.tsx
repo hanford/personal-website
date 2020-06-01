@@ -1,4 +1,4 @@
-import styled from 'react-emotion';
+import styled from "react-emotion";
 
 const Outer = styled.div`
   max-width: 100%;
@@ -8,6 +8,10 @@ const Outer = styled.div`
   padding: 2rem 0;
   margin-top: 6rem;
   min-height: 60rem;
+  @media (prefers-color-scheme: dark) {
+    color: rgba(255, 255, 255, 0.9);
+    background-color: transparent;
+  }
 `;
 
 const Inner = styled.div`
