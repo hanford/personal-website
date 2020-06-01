@@ -1,11 +1,11 @@
-import hoistStatics from 'hoist-non-react-statics';
-import { Component as RC, Fragment } from 'react';
-import Drawer from 'react-drag-drawer';
-import styled, { css } from 'react-emotion';
-import requestCallback from 'request-callback';
+import hoistStatics from "hoist-non-react-statics";
+import { Component as RC } from "react";
+import Drawer from "react-drag-drawer";
+import styled, { css } from "react-emotion";
+import requestCallback from "request-callback";
 
 interface State {
-  open: boolean
+  open: boolean;
 }
 
 export default function withTakedown(Component) {
@@ -15,7 +15,7 @@ export default function withTakedown(Component) {
     };
 
     toggleDrawer = () => {
-      this.setState(prevState => {
+      this.setState((prevState) => {
         return {
           open: !prevState.open,
         };
@@ -28,7 +28,7 @@ export default function withTakedown(Component) {
 
     render() {
       return (
-        <Fragment>
+        <>
           <Drawer
             onRequestClose={this.toggleDrawer}
             open={this.state.open}
@@ -40,14 +40,14 @@ export default function withTakedown(Component) {
               was breaking chrome's terms of service around copyright
               infringement. I've since decided to remove Instachrome and
               UberChrome from the chrome web store as a result - however the
-              code will continue to live on{' '}
-              <a href="https://github.com/hanford">Github</a>.
+              code will continue to live on{" "}
+              <Anchor href="https://github.com/hanford">Github</Anchor>.
             </Text>
             <Button onClick={this.toggleDrawer}>Got it</Button>
           </Drawer>
 
           <Component {...this.props} />
-        </Fragment>
+        </>
       );
     }
   }
@@ -71,6 +71,9 @@ const TakeDown = css`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (prefers-color-scheme: dark) {
+    background-color: #545454;
+  }
 `;
 
 const Emoji = styled.h1`
@@ -88,5 +91,16 @@ const Button = styled.button`
   width: 100%;
   border-radius: 0.4rem;
   font-size: 1.6rem;
+  cursor: pointer;
   margin-top: 2rem;
+
+  @media (prefers-color-scheme: dark) {
+    color: white;
+  }
+`;
+
+const Anchor = styled.a`
+  @media (prefers-color-scheme: dark) {
+    color: white;
+  }
 `;
