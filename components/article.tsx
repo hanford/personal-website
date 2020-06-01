@@ -72,6 +72,11 @@ const Content = styled.div`
 const Other = styled.div`
   font-size: 1.2rem;
   font-weight: bold;
+  opacity: 0.75;
+
+  @media (prefers-color-scheme: dark) {
+    opacity: 1;
+  }
 `;
 
 const About = styled.p`
