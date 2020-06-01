@@ -172,6 +172,10 @@ const Card = css`
     height: 100%;
     margin-top: 20%;
   }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: #545454;
+  }
 `;
 
 const projects = [

@@ -1,10 +1,10 @@
 import styled, { css } from "react-emotion";
 
 interface Props {
-  toggle?: () => void
+  toggle?: () => void;
 }
 
-export const SocialModal = ({ toggle }:  Props) => (
+export const SocialModal = ({ toggle }: Props) => (
   <Content>
     <List>
       <Link
@@ -13,11 +13,7 @@ export const SocialModal = ({ toggle }:  Props) => (
         icon="ion-social-github"
       />
 
-      <Link
-        link="https://www.npmjs.com/~hanford"
-        text="NPM"
-        icon={NPM_ICON}
-      />
+      <Link link="https://www.npmjs.com/~hanford" text="NPM" icon={NPM_ICON} />
 
       <Link
         link="https://www.twitter.com/jackhanford"
@@ -67,9 +63,9 @@ export const SocialModal = ({ toggle }:  Props) => (
 );
 
 interface LinkProps {
-  icon: string,
-  text: string,
-  link: string 
+  icon: string;
+  text: string;
+  link: string;
 }
 
 const Link = ({ icon, text, link }: LinkProps) => (
@@ -93,7 +89,7 @@ const NPM_ICON = css`
   background-size: 2rem;
   height: 2rem;
   width: 2rem;
-`
+`;
 
 const Content = styled.div`
   width: 50rem;
@@ -114,6 +110,11 @@ const Item = styled.li`
   cursor: pointer;
   display: flex;
   align-items: center;
+  color: black;
+
+  @media (prefers-color-scheme: dark) {
+    color: rgba(255, 255, 255, 0.9);
+  }
 `;
 
 const Anchor = styled.a`
@@ -121,4 +122,8 @@ const Anchor = styled.a`
   align-items: center;
   color: black;
   text-decoration: none;
+
+  @media (prefers-color-scheme: dark) {
+    color: rgba(255, 255, 255, 0.9);
+  }
 `;
