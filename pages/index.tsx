@@ -33,12 +33,12 @@ function Landing() {
         <Emoji>👋</Emoji>
         <Intro>
           <div>
-            Hi I'm <span style={{ fontWeight: 600 }}>Jack Hanford</span>
+            <span style={{ fontWeight: 600 }}>Jack Hanford</span>
           </div>
           <div>
-            I'm a staff software engineer at{" "}
+            Staff software engineer at{" "}
             <Anchor href="https://lattice.com" target="_blank">
-              lattice
+              Lattice
             </Anchor>
             .
           </div>
