@@ -36,7 +36,7 @@ function Landing() {
             Hi I'm <span style={{ fontWeight: 600 }}>Jack Hanford</span>
           </div>
           <div>
-            I'm a software engineer at{" "}
+            I'm a staff software engineer at{" "}
             <Anchor href="https://lattice.com" target="_blank">
               lattice
             </Anchor>
@@ -163,9 +163,10 @@ const Title = styled.div`
 
 const Card = css`
   background-color: white;
-  border-radius: 0.4rem;
+  border-radius: 1rem;
   position: relative;
   padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 
   @media (max-width: 767px) {
     width: 100%;

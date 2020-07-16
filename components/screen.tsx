@@ -34,7 +34,7 @@ const Card = styled.div`
   border-radius: 0.4rem;
 
   @media (prefers-color-scheme: dark) {
-    background: #333;
+    background: #0e0e0e;
   }
 
   @media (max-width: 767px) {

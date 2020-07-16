@@ -39,6 +39,5 @@ const Component = styled.div`
   height: 100%;
   justify-content: center;
   text-align: center;
-  overflow: hidden !important;
   font-size: 1.6rem;
 `;

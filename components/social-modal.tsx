@@ -1,4 +1,4 @@
-import styled, { css } from "react-emotion";
+import styled from "react-emotion";
 
 interface Props {
   toggle?: () => void;
@@ -7,89 +7,42 @@ interface Props {
 export const SocialModal = ({ toggle }: Props) => (
   <Content>
     <List>
-      <Link
-        link="https://github.com/hanford"
-        text="Github"
-        icon="ion-social-github"
-      />
+      <Link link="https://github.com/hanford" text="Github" />
 
-      <Link link="https://www.npmjs.com/~hanford" text="NPM" icon={NPM_ICON} />
+      <Link link="https://www.npmjs.com/~hanford" text="NPM" />
 
-      <Link
-        link="https://www.twitter.com/jackhanford"
-        text="Twitter"
-        icon="ion-social-twitter-outline"
-      />
+      <Link link="https://www.twitter.com/jackhanford" text="Twitter" />
 
-      <Link
-        link="https://www.instagram.com/jackhanford"
-        text="Instagram"
-        icon="ion-social-instagram-outline"
-      />
+      <Link link="https://www.instagram.com/jackhanford" text="Instagram" />
 
-      <Link
-        link="/snapchat"
-        text="Snapchat"
-        icon="ion-social-snapchat-outline"
-      />
+      <Link link="/snapchat" text="Snapchat" />
 
-      <Link
-        link="https://facebook.com/jackhanford"
-        text="Facebook"
-        icon="ion-social-facebook-outline"
-      />
+      <Link link="https://facebook.com/jackhanford" text="Facebook" />
 
-      <Link
-        link="mailto:jackhanford@gmail.com"
-        text="Email"
-        icon="ion-ios-email-outline"
-      />
+      <Link link="mailto:jackhanford@gmail.com" text="Email" />
 
       <Link
         link="https://www.linkedin.com/in/jack-hanford-98352761/"
         text="Linkedin"
-        icon="ion-social-linkedin-outline"
       />
 
-      <Item onClick={toggle}>
-        <i
-          style={{ fontSize: "2rem", marginRight: "2rem" }}
-          className="ion-close-round"
-        />{" "}
-        Close
-      </Item>
+      <Item onClick={toggle}>Close</Item>
     </List>
   </Content>
 );
 
 interface LinkProps {
-  icon: string;
   text: string;
   link: string;
 }
 
-const Link = ({ icon, text, link }: LinkProps) => (
-  <Item>
-    <Anchor href={link} target="_blank">
-      <i
-        style={{ fontSize: "2rem", marginRight: "2rem" }}
-        className={`${icon}`}
-      />{" "}
-      {text}
-    </Anchor>
-  </Item>
+const Link = ({ text, link }: LinkProps) => (
+  <Anchor href={link} target="_blank">
+    {text}
+  </Anchor>
 );
 
 export default SocialModal;
-
-const NPM_ICON = css`
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 18 7"><path fill="#000" d="M0,0h18v6H9v1H5V6H0V0z M1,5h2V2h1v3h1V1H1V5z M6,1v5h2V5h2V1H6z M8,2h1v2H8V2z M11,1v4h2V2h1v3h1V2h1v3h1V1H11z"/><polygon fill="#FFFFFF" points="1,5 3,5 3,2 4,2 4,5 5,5 5,1 1,1 "/><path fill="#FFFFFF" d="M6,1v5h2V5h2V1H6z M9,4H8V2h1V4z"/><polygon fill="#FFFFFF" points="11,1 11,5 13,5 13,2 14,2 14,5 15,5 15,2 16,2 16,5 17,5 17,1 "/></svg>');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 2rem;
-  height: 2rem;
-  width: 2rem;
-`;
 
 const Content = styled.div`
   width: 50rem;
@@ -111,6 +64,11 @@ const Item = styled.li`
   display: flex;
   align-items: center;
   color: black;
+  border-radius: 1rem;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
 
   @media (prefers-color-scheme: dark) {
     color: rgba(255, 255, 255, 0.9);
@@ -118,12 +76,20 @@ const Item = styled.li`
 `;
 
 const Anchor = styled.a`
-  display: flex;
-  align-items: center;
   color: black;
   text-decoration: none;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
 
   @media (prefers-color-scheme: dark) {
     color: rgba(255, 255, 255, 0.9);
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
   }
 `;

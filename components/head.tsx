@@ -52,7 +52,7 @@ export const Head = ({
         @media (prefers-color-scheme: dark) {
           html,
           body {
-            background: #333;
+            background: #0e0e0e;
           }
         }
 
