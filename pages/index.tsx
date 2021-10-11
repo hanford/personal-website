@@ -101,7 +101,7 @@ function Landing() {
         }
 
         .about {
-          line-height: 2rem
+          line-height: 2rem;
           font-size: 1.6rem;
         }
 
@@ -157,7 +157,7 @@ function Landing() {
         }
 
         @media (max-width: 767px) {
-          .card {
+          :global(.card) {
             width: 100%;
             height: 100%;
             margin-top: 20%;
