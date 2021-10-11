@@ -174,7 +174,7 @@ function Landing() {
             color: rgba(255, 255, 255, 0.9);
           }
 
-          .card {
+          :global(.card) {
             background-color: #545454;
           }
         }
@@ -207,8 +207,8 @@ const projects = [
     about: "Change the playback rate of any video on netflix",
   },
   {
-    path: "/uber-chrome",
-    name: "Uber chrome",
+    path: "/uberchrome",
+    name: "Uberchrome",
     isExternal: false,
     about: "A chrome extension allowing you to order an uber from your desktop",
   },

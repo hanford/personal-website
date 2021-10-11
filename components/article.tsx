@@ -18,7 +18,7 @@ export const Article = ({
   isExternal,
 }: Props) => {
   const children = (
-    <a className="container" href={path} target="_blank">
+    <a className="container" href={path} target={isExternal ? "_blank" : ""}>
       <div className="title">{name}</div>
       <p className="about">{about}</p>
 
