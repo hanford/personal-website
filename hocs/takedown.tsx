@@ -92,7 +92,7 @@ export default function withTakedown(Component) {
               align-items: center;
             }
             @media (prefers-color-scheme: dark) {
-              .takedown {
+              :global(.takedown) {
                 background-color: #545454;
               }
             }
