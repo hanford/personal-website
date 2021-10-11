@@ -1,10 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
-interface Props {
-  css: any;
-}
-
-export default class DocumentComponent extends Document<Props> {
+export default class DocumentComponent extends Document {
   render() {
     return (
       <Html>

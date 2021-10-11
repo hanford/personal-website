@@ -22,6 +22,7 @@ export const Container = ({ children }: { children: React.ReactNode }) => (
         border-radius: 0.4rem;
         cursor: pointer;
       }
+
       @media (prefers-color-scheme: dark) {
         a {
           background-color: transparent;

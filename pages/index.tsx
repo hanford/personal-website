@@ -35,12 +35,12 @@ function Landing() {
             <div>
               <span style={{ fontWeight: 600 }}>Jack Hanford</span>
             </div>
-            <div>
+
+            <div className="about">
               Staff software engineer at{" "}
               <a className="anchor" href="https://lattice.com" target="_blank">
                 Lattice
               </a>
-              .
             </div>
           </div>
 
@@ -67,8 +67,7 @@ function Landing() {
         <Drawer
           open={isExpanded}
           onRequestClose={toggle}
-          // modalElementClass={"card"}
-          className="card"
+          modalElementClass={"card"}
         >
           <SocialModal toggle={toggle} />
         </Drawer>
@@ -87,8 +86,8 @@ function Landing() {
         .anchor {
           color: #d40052;
           font-weight: 600;
-          text-decoration: underline;
-          }
+          text-decoration: none;
+        }
 
         .intro {
           font-size: 2rem;
@@ -100,8 +99,8 @@ function Landing() {
         .intro > div:first-child {
           margin-bottom: 2rem;
         }
-      
-        .intro > div:last-child {
+
+        .about {
           line-height: 2rem
           font-size: 1.6rem;
         }
@@ -129,7 +128,40 @@ function Landing() {
         }
 
         button:first-of-type {
-margin-right: 1rem;
+          margin-right: 1rem;
+        }
+
+        .row {
+          display: flex;
+          margin: 1rem auto;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+        }
+
+        .title {
+          margin: 4rem -1rem 1rem;
+          font-size: 2rem;
+          line-height: 2rem;
+          padding: 0 1rem;
+          letter-spacing: 0.03em;
+          font-weight: bold;
+        }
+
+        :global(.card) {
+          background-color: white;
+          border-radius: 1rem;
+          position: relative;
+          padding: 2rem;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 767px) {
+          .card {
+            width: 100%;
+            height: 100%;
+            margin-top: 20%;
+          }
         }
 
         @media (prefers-color-scheme: dark) {
@@ -146,39 +178,6 @@ margin-right: 1rem;
             background-color: #545454;
           }
         }
-
-        .row {
-          display: flex;
-          margin: 1rem auto;
-          align-items: center;
-          justify-content: space-between;
-          width: 100%;
-        }
-
-        .title{
-          margin: 4rem -1rem 1rem;
-          font-size: 2rem;
-          line-height: 2rem;
-          padding: 0 1rem;
-          letter-spacing: 0.03em;
-          font-weight: bold;
-        }
-
-        .card {
-          background-color: white;
-          border-radius: 1rem;
-          position: relative;
-          padding: 2rem;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        @media (max-width: 767px) {
-        .card {
-          width: 100%;
-          height: 100%;
-          margin-top: 20%;
-        }
-      }
       `}</style>
     </>
   );

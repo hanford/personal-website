@@ -2,36 +2,5 @@
   "version": 2,
   "env": {
     "GITHUB_ACCESS_TOKEN": "@github-access-token"
-  },
-  "rewrites": [
-    {
-      "source": "/service-worker.js",
-      "destination": "/_next/static/service-worker.js"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/service-worker.js",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=43200, immutable"
-        },
-        {
-          "key": "Service-Worker-Allowed",
-          "value": "/"
-        }
-      ]
-    }
-  ],
-  "builds": [
-    {
-      "src": "next.config.js",
-      "use": "@now/next"
-    },
-    {
-      "src": "static/*",
-      "use": "@now/static"
-    }
-  ]
+  }
 }
