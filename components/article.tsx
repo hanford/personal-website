@@ -50,6 +50,7 @@ export const Article = ({
         .title {
           color: #d40052;
           margin: 0;
+          font-weight: bold;
           font-size: 1.8rem;
         }
 
