@@ -1,5 +1,4 @@
 import Link from "next/link";
-import styled from "react-emotion";
 
 interface Props {
   path: string;
@@ -19,68 +18,74 @@ export const Article = ({
   isExternal,
 }: Props) => {
   const children = (
-    <Container href={path} target="_blank">
-      <Title>{name}</Title>
-      <About>{about}</About>
+    <a className="container" href={path} target="_blank">
+      <div className="title">{name}</div>
+      <p className="about">{about}</p>
 
-      <Content style={{ display: language ? "flex" : "none" }}>
-        <Other>⭐️ {stars}</Other>
+      <div className="content" style={{ display: language ? "flex" : "none" }}>
+        <div className="outer">⭐️ {stars}</div>
         <div style={{ marginLeft: "1rem" }}>·</div>
-        <Other style={{ marginLeft: "1rem" }}>{language}</Other>
-      </Content>
-    </Container>
+        <div className="outer" style={{ marginLeft: "1rem" }}>
+          {language}
+        </div>
+      </div>
+
+      <style jsx>{`
+        .container {
+          display: block;
+          transition: all 0.2s linear;
+          border-radius: 0.4rem;
+          border: 1px solid transparent;
+          padding: 1rem;
+          margin-left: -1rem;
+          margin-right: -1rem;
+          text-decoration: none;
+          color: black;
+        }
+
+        .container:hover {
+          border: 1px solid #d40052;
+        }
+
+        .title {
+          color: #d40052;
+          margin: 0;
+          font-size: 1.8rem;
+        }
+
+        .about {
+          margin: 0;
+        }
+
+        .content {
+          display: flex;
+          align-items: center;
+        }
+
+        .outer {
+          font-size: 1.2rem;
+          font-weight: bold;
+          opacity: 0.75;
+        }
+
+        @media (prefers-color-scheme: dark) {
+          .container {
+            color: rgba(255, 255, 255, 0.8);
+          }
+
+          .title {
+            color: white;
+          }
+
+          .outer {
+            opacity: 1;
+          }
+        }
+      `}</style>
+    </a>
   );
 
   return isExternal ? children : <Link href={path}>{children}</Link>;
 };
-
-const Container = styled.a`
-  display: block;
-  transition: all 0.2s linear;
-  border-radius: 0.4rem;
-  border: 1px solid transparent;
-  padding: 1rem;
-  margin-left: -1rem;
-  margin-right: -1rem;
-  text-decoration: none;
-  color: black;
-
-  @media (prefers-color-scheme: dark) {
-    color: rgba(255, 255, 255, 0.8);
-  }
-
-  &:hover {
-    border: 1px solid #d40052;
-  }
-`;
-
-const Title = styled.h4`
-  color: #d40052;
-  margin: 0;
-  font-size: 1.8rem;
-
-  @media (prefers-color-scheme: dark) {
-    color: white;
-  }
-`;
-
-const Content = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const Other = styled.div`
-  font-size: 1.2rem;
-  font-weight: bold;
-  opacity: 0.75;
-
-  @media (prefers-color-scheme: dark) {
-    opacity: 1;
-  }
-`;
-
-const About = styled.p`
-  margin: 0;
-`;
 
 export default Article;

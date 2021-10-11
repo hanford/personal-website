@@ -1,27 +1,14 @@
-import { extractCritical } from "emotion-server";
-import Document, { Head, Main, NextScript } from "next/document";
+import Document, { Html, Head, Main, NextScript } from "next/document";
 
 interface Props {
   css: any;
 }
 
 export default class DocumentComponent extends Document<Props> {
-  static getInitialProps({ renderPage }: any) {
-    const page = renderPage();
-    const stylesTAG = extractCritical(page.html);
-
-    return {
-      ...renderPage(),
-      ...stylesTAG,
-    };
-  }
-
   render() {
     return (
-      <html>
+      <Html>
         <Head>
-          <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
-
           <link
             rel="apple-touch-icon"
             sizes="180x180"
@@ -46,7 +33,7 @@ export default class DocumentComponent extends Document<Props> {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Drawer from "react-drag-drawer";
-import styled, { css } from "react-emotion";
 
 import { Article, Emoji, Head, Screen, SocialModal } from "../components";
 import withSegment from "../hocs/segment";
@@ -26,158 +25,166 @@ function Landing() {
   }, []);
 
   return (
-    <Body>
-      <Head />
+    <>
+      <div className="body">
+        <Head />
 
-      <Screen>
-        <Emoji>👋</Emoji>
-        <Intro>
-          <div>
-            <span style={{ fontWeight: 600 }}>Jack Hanford</span>
+        <Screen>
+          <Emoji>👋</Emoji>
+          <div className="intro">
+            <div>
+              <span style={{ fontWeight: 600 }}>Jack Hanford</span>
+            </div>
+            <div>
+              Staff software engineer at{" "}
+              <a className="anchor" href="https://lattice.com" target="_blank">
+                Lattice
+              </a>
+              .
+            </div>
           </div>
-          <div>
-            Staff software engineer at{" "}
-            <Anchor href="https://lattice.com" target="_blank">
-              Lattice
-            </Anchor>
-            .
+
+          <div className="row">
+            <Link prefetch href="/projects">
+              <button>Projects</button>
+            </Link>
+            <button onClick={toggle}>Contact me</button>
           </div>
-        </Intro>
 
-        <Row>
-          <Link prefetch={true} href="/projects">
-            <Button>Projects</Button>
-          </Link>
-          <Button onClick={toggle}>Contact me</Button>
-        </Row>
+          <div className="title">Projects</div>
 
-        <Title>Projects</Title>
+          {projects.map((p) => (
+            <Article
+              key={p.name}
+              path={p.path}
+              name={p.name}
+              about={p.about}
+              isExternal={p.isExternal}
+            />
+          ))}
+        </Screen>
 
-        {projects.map((p) => (
-          <Article
-            key={p.name}
-            path={p.path}
-            name={p.name}
-            about={p.about}
-            isExternal={p.isExternal}
-          />
-        ))}
-      </Screen>
+        <Drawer
+          open={isExpanded}
+          onRequestClose={toggle}
+          // modalElementClass={"card"}
+          className="card"
+        >
+          <SocialModal toggle={toggle} />
+        </Drawer>
+      </div>
+      <style jsx>{`
+        .body {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          position: relative;
+          justify-content: center;
+          flex-direction: column;
+          font-size: 1.6rem;
+        }
 
-      <Drawer
-        open={isExpanded}
-        onRequestClose={toggle}
-        modalElementClass={Card}
-      >
-        <SocialModal toggle={toggle} />
-      </Drawer>
-    </Body>
+        .anchor {
+          color: #d40052;
+          font-weight: 600;
+          text-decoration: underline;
+          }
+
+        .intro {
+          font-size: 2rem;
+          line-height: 2rem;
+          letter-spacing: 0.03em;
+          margin: 1rem 0 2rem;
+        }
+
+        .intro > div:first-child {
+          margin-bottom: 2rem;
+        }
+      
+        .intro > div:last-child {
+          line-height: 2rem
+          font-size: 1.6rem;
+        }
+
+        button {
+          display: block;
+          line-height: 4rem;
+          padding: 0 1.4rem;
+          box-shadow: 0 0.4rem 0.6rem rgba(50, 50, 93, 0.1);
+          border-radius: 0.4rem;
+          font-size: 1.2rem;
+          text-transform: uppercase;
+          letter-spacing: 0.025em;
+          text-decoration: none;
+          border: 0px;
+          cursor: pointer;
+          outline: none;
+          transition: all 0.25s ease-out;
+          border: 2px solid #db594b;
+          color: #db594b;
+          font-weight: bold;
+          font-family: Brandon;
+          width: 100%;
+          background-color: transparent;
+        }
+
+        button:first-of-type {
+margin-right: 1rem;
+        }
+
+        @media (prefers-color-scheme: dark) {
+          .anchor {
+            color: rgba(255, 255, 255, 0.9);
+          }
+
+          button {
+            border: 2px solid rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.9);
+          }
+
+          .card {
+            background-color: #545454;
+          }
+        }
+
+        .row {
+          display: flex;
+          margin: 1rem auto;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+        }
+
+        .title{
+          margin: 4rem -1rem 1rem;
+          font-size: 2rem;
+          line-height: 2rem;
+          padding: 0 1rem;
+          letter-spacing: 0.03em;
+          font-weight: bold;
+        }
+
+        .card {
+          background-color: white;
+          border-radius: 1rem;
+          position: relative;
+          padding: 2rem;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 767px) {
+        .card {
+          width: 100%;
+          height: 100%;
+          margin-top: 20%;
+        }
+      }
+      `}</style>
+    </>
   );
 }
 
 export default withSegment(Landing);
-
-const Body = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  justify-content: center;
-  flex-direction: column;
-  font-size: 1.6rem;
-`;
-
-const Anchor = styled.a`
-  color: #d40052;
-  font-weight: 600;
-  text-decoration: underline;
-
-  @media (prefers-color-scheme: dark) {
-    color: rgba(255, 255, 255, 0.9);
-  }
-`;
-
-const Intro = styled.div`
-  font-size: 2rem;
-  line-height: 2rem;
-  letter-spacing: 0.03em;
-  margin: 1rem 0 2rem;
-
-  & > div:first-child {
-    margin-bottom: 2rem;
-  }
-
-  & > div:last-child {
-    line-height: 2rem
-    font-size: 1.6rem;
-  }
-`;
-
-const Button = styled.button`
-  display: block;
-  line-height: 4rem;
-  padding: 0 1.4rem;
-  box-shadow: 0 0.4rem 0.6rem rgba(50, 50, 93, 0.1);
-  border-radius: 0.4rem;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.025em;
-  text-decoration: none;
-  border: 0px;
-  cursor: pointer;
-  outline: none;
-  transition: all 0.25s ease-out;
-  border: 2px solid #db594b;
-  color: #db594b;
-  font-weight: bold;
-  font-family: Brandon;
-  width: 100%;
-  background-color: transparent;
-
-  @media (prefers-color-scheme: dark) {
-    border: 2px solid rgba(255, 255, 255, 0.9);
-    color: rgba(255, 255, 255, 0.9);
-  }
-
-  &:first-of-type {
-    margin-right: 1rem;
-  }
-`;
-
-const Row = styled.div`
-  display: flex;
-  margin: 1rem auto;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-`;
-
-const Title = styled.div`
-  margin: 4rem -1rem 1rem;
-  font-size: 2rem;
-  line-height: 2rem;
-  padding: 0 1rem;
-  letter-spacing: 0.03em;
-  font-weight: bold;
-`;
-
-const Card = css`
-  background-color: white;
-  border-radius: 1rem;
-  position: relative;
-  padding: 2rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-
-  @media (max-width: 767px) {
-    width: 100%;
-    height: 100%;
-    margin-top: 20%;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    background-color: #545454;
-  }
-`;
 
 const projects = [
   {

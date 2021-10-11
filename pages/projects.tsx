@@ -1,6 +1,4 @@
 import GitHub from "github-api";
-import { Fragment } from "react";
-import styled from "react-emotion";
 import sortOn from "sort-on";
 
 import { Article, BackButton, Head, Screen, Title } from "../components";
@@ -26,7 +24,7 @@ interface Props {
 
 function Projects({ repos = [] }: Props) {
   return (
-    <Fragment>
+    <>
       <Head title="Projects | Jack Hanford" />
 
       <Screen>
@@ -36,30 +34,43 @@ function Projects({ repos = [] }: Props) {
 
         <p>
           Lately I've been obssessed with open source software which I keep on{" "}
-          <Anchor href="https://github.com/hanford" target="_blank">
+          <a
+            className="anchor"
+            href="https://github.com/hanford"
+            target="_blank"
+          >
             GitHub
-          </Anchor>
+          </a>
           . I've been writing JavaScript professionally for around 4 years, and
           have become an expert with some of the latest and greatest frontend
           frameworks including{" "}
-          <Anchor
+          <a
+            className="anchor"
             href="https://www.npmjs.com/package/virtual-dom"
             target="_blank"
           >
             virtual-dom
-          </Anchor>
+          </a>
           ,{" "}
-          <Anchor href="https://angular.io" target="_blank">
+          <a className="anchor" href="https://angular.io" target="_blank">
             AngularJS
-          </Anchor>
+          </a>
           ,{" "}
-          <Anchor href="https://facebook.github.io/react" target="_blank">
+          <a
+            className="anchor"
+            href="https://facebook.github.io/react"
+            target="_blank"
+          >
             ReactJS
-          </Anchor>{" "}
+          </a>{" "}
           and most recently{" "}
-          <Anchor href="https://github.com/zeit/next.js" target="_blank">
+          <a
+            className="anchor"
+            href="https://github.com/zeit/next.js"
+            target="_blank"
+          >
             Next.js
-          </Anchor>
+          </a>
           .
         </p>
 
@@ -84,7 +95,20 @@ function Projects({ repos = [] }: Props) {
           )
         )}
       </Screen>
-    </Fragment>
+
+      <style jsx>{`
+        .anchor {
+          color: #d40052;
+          font-weight: 600;
+          text-decoration: underline;
+        }
+        @media (prefers-color-scheme: dark) {
+          .anchor {
+            color: white;
+          }
+        }
+      `}</style>
+    </>
   );
 }
 
@@ -116,13 +140,3 @@ export const getStaticProps = async () => {
 };
 
 export default withSegment(Projects);
-
-const Anchor = styled.a`
-  color: #d40052;
-  font-weight: 600;
-  text-decoration: underline;
-
-  @media (prefers-color-scheme: dark) {
-    color: white;
-  }
-`;
