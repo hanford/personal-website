@@ -42,7 +42,7 @@ function Chirp() {
             <div className="row">
               <a
                 target="_blank"
-                href="https://file-cjddyxvqbc.now.sh/Chirp-darwin-x64.zip"
+                href="https://github.com/hanford/chirp/suites/4014076500/artifacts/101365603"
                 download="Chirp.zip"
               >
                 Mac
@@ -50,7 +50,7 @@ function Chirp() {
 
               <a
                 target="_blank"
-                href="https://file-fevwnujbqw.now.sh/Chirp-linux-x64.zip"
+                href="https://github.com/hanford/chirp/suites/4014076500/artifacts/101365602"
                 download="Chirp.zip"
               >
                 Linux
@@ -58,7 +58,7 @@ function Chirp() {
 
               <a
                 target="_blank"
-                href="https://file-pwszcfrfqv.now.sh/Chirp-win32-x64.zip"
+                href="https://github.com/hanford/chirp/suites/4014076500/artifacts/101365604"
                 download="Chirp.zip"
               >
                 Windows
