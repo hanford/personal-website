@@ -1,7 +1,7 @@
 import GitHub from "github-api";
 import sortOn from "sort-on";
 
-import { Article, BackButton, Head, Screen, Title } from "../components";
+import { Article, Head, Screen, Title, Container } from "../components";
 import withSegment from "../hocs/segment";
 
 const USER_NAME = "hanford";
@@ -26,77 +26,82 @@ function Projects({ repos = [] }: Props) {
   return (
     <>
       <Head title="Projects | Jack Hanford" />
+      <Container>
+        <div className="text-reset">
+          <Screen>
+            <Title>Projects</Title>
 
-      <Screen>
-        <BackButton />
+            <p>
+              Lately I've been obssessed with open source software which I keep
+              on{" "}
+              <a
+                className="anchor"
+                href="https://github.com/hanford"
+                target="_blank"
+              >
+                GitHub
+              </a>
+              . I've been writing JavaScript professionally for around 4 years,
+              and have become an expert with some of the latest and greatest
+              frontend frameworks including{" "}
+              <a
+                className="anchor"
+                href="https://www.npmjs.com/package/virtual-dom"
+                target="_blank"
+              >
+                virtual-dom
+              </a>
+              ,{" "}
+              <a className="anchor" href="https://angular.io" target="_blank">
+                AngularJS
+              </a>
+              ,{" "}
+              <a
+                className="anchor"
+                href="https://facebook.github.io/react"
+                target="_blank"
+              >
+                ReactJS
+              </a>{" "}
+              and most recently{" "}
+              <a
+                className="anchor"
+                href="https://github.com/zeit/next.js"
+                target="_blank"
+              >
+                Next.js
+              </a>
+              .
+            </p>
 
-        <Title>Projects</Title>
-
-        <p>
-          Lately I've been obssessed with open source software which I keep on{" "}
-          <a
-            className="anchor"
-            href="https://github.com/hanford"
-            target="_blank"
-          >
-            GitHub
-          </a>
-          . I've been writing JavaScript professionally for around 4 years, and
-          have become an expert with some of the latest and greatest frontend
-          frameworks including{" "}
-          <a
-            className="anchor"
-            href="https://www.npmjs.com/package/virtual-dom"
-            target="_blank"
-          >
-            virtual-dom
-          </a>
-          ,{" "}
-          <a className="anchor" href="https://angular.io" target="_blank">
-            AngularJS
-          </a>
-          ,{" "}
-          <a
-            className="anchor"
-            href="https://facebook.github.io/react"
-            target="_blank"
-          >
-            ReactJS
-          </a>{" "}
-          and most recently{" "}
-          <a
-            className="anchor"
-            href="https://github.com/zeit/next.js"
-            target="_blank"
-          >
-            Next.js
-          </a>
-          .
-        </p>
-
-        {repos.map(
-          ({
-            name,
-            id,
-            description,
-            stargazers_count: stars,
-            language,
-            html_url: html,
-          }) => (
-            <Article
-              key={id}
-              path={html}
-              name={name}
-              about={description}
-              stars={stars}
-              language={language}
-              isExternal
-            />
-          )
-        )}
-      </Screen>
+            {repos.map(
+              ({
+                name,
+                id,
+                description,
+                stargazers_count: stars,
+                language,
+                html_url: html,
+              }) => (
+                <Article
+                  key={id}
+                  path={html}
+                  name={name}
+                  about={description}
+                  stars={stars}
+                  language={language}
+                  isExternal
+                />
+              )
+            )}
+          </Screen>
+        </div>
+      </Container>
 
       <style jsx>{`
+        .text-reset {
+          text-align: left;
+        }
         .anchor {
           color: #d40052;
           font-weight: 600;

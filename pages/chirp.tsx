@@ -114,10 +114,17 @@ function Chirp() {
             background-color: transparent;
             margin-right: 1rem;
           }
+
           @media (prefers-color-scheme: dark) {
             a {
               color: rgba(255, 255, 255, 0.9);
               border: 2px solid rgba(255, 255, 255, 0.9);
+            }
+          }
+
+          @media (max-width: 767px) {
+            a {
+              margin-bottom: 1rem;
             }
           }
         `}

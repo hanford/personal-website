@@ -3,7 +3,7 @@ import Link from "next/link";
 export const Container = ({ children }: { children: React.ReactNode }) => (
   <>
     <Link href="/">
-      <a>Back</a>
+      <a>&larr; Back</a>
     </Link>
 
     <div className="component">{children}</div>
@@ -21,11 +21,13 @@ export const Container = ({ children }: { children: React.ReactNode }) => (
         box-shadow: 0 0rem 2rem rgba(0, 0, 0, 0.15);
         border-radius: 0.4rem;
         cursor: pointer;
+        font-family: apple-system, BlinkMacSystemFont;
       }
 
       @media (prefers-color-scheme: dark) {
         a {
           background-color: transparent;
+          color: white;
         }
       }
 
