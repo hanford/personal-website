@@ -4191,11 +4191,6 @@ react-drag-drawer@^3.3.0:
     react-intersection-observer "~3.0.3"
     react-motion "~0.5.2"
 
-react-github-badge@~0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/react-github-badge/-/react-github-badge-0.4.0.tgz#997b42d9d1b9acc4e86dd46fe6d0959ee9d38b4e"
-  integrity sha512-WMm5LLcEgUXQLOPFIoOx5gG82kGBpWULi6exS813BIKRJC5bB3+GEqhGe9m5+nsAQCvMo3JPrkRVJsl5Bc8hLQ==
-
 react-intersection-observer@~3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/react-intersection-observer/-/react-intersection-observer-3.0.3.tgz#3df67f413c36c28b02426e7fdbf9670790fb50ab"

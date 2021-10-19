@@ -27,6 +27,7 @@ export const CtaButton = ({
 
     <style jsx>{`
       a {
+        width: 100%;
         display: block;
         line-height: 4rem;
         padding: 0 1.4rem;
@@ -42,7 +43,6 @@ export const CtaButton = ({
         transition: all 0.25s ease-out;
         border: 2px solid #db594b;
         color: #db594b;
-        margin: 4rem auto 0;
         font-weight: bold;
       }
 

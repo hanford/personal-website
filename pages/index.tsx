@@ -2,7 +2,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Drawer from "react-drag-drawer";
 
-import { Article, Emoji, Head, Screen, SocialModal } from "../components";
+import { Article, Emoji, Head, Card, SocialModal } from "../components";
 import withSegment from "../hocs/segment";
 
 function Landing() {
@@ -29,7 +29,7 @@ function Landing() {
       <div className="body">
         <Head />
 
-        <Screen>
+        <Card>
           <Emoji>👋</Emoji>
           <div className="intro">
             <div>
@@ -62,7 +62,7 @@ function Landing() {
               isExternal={p.isExternal}
             />
           ))}
-        </Screen>
+        </Card>
 
         <Drawer
           open={isExpanded}

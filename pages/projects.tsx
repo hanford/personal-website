@@ -1,7 +1,7 @@
 import GitHub from "github-api";
 import sortOn from "sort-on";
 
-import { Article, Head, Screen, Title, Container } from "../components";
+import { Article, Head, Card, Title, Container } from "../components";
 import withSegment from "../hocs/segment";
 
 const USER_NAME = "hanford";
@@ -28,7 +28,7 @@ function Projects({ repos = [] }: Props) {
       <Head title="Projects | Jack Hanford" />
       <Container>
         <div className="text-reset">
-          <Screen>
+          <Card>
             <Title>Projects</Title>
 
             <p>
@@ -94,7 +94,7 @@ function Projects({ repos = [] }: Props) {
                 />
               )
             )}
-          </Screen>
+          </Card>
         </div>
       </Container>
 

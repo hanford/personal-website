@@ -7,13 +7,15 @@ export const Container = ({ children }: { children: React.ReactNode }) => (
     </Link>
 
     <div className="component">{children}</div>
+
     <style jsx>{`
       a {
         display: block;
         position: fixed;
+        z-index: 2;
         top: 1rem;
         left: 1rem;
-        padding: 16px;
+        padding: 8px;
         text-align: center;
         background-color: white;
         font-size: 16px;
@@ -26,7 +28,7 @@ export const Container = ({ children }: { children: React.ReactNode }) => (
 
       @media (prefers-color-scheme: dark) {
         a {
-          background-color: transparent;
+          background-color: black;
           color: white;
         }
       }
@@ -34,7 +36,6 @@ export const Container = ({ children }: { children: React.ReactNode }) => (
       .component {
         display: flex;
         max-width: 100%;
-        height: 100%;
         justify-content: center;
         text-align: center;
         font-size: 1.6rem;

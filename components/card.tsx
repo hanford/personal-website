@@ -2,7 +2,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-export function Screen({ children }: Props) {
+export function Card({ children }: Props) {
   return (
     <>
       <div className="container">
@@ -13,7 +13,6 @@ export function Screen({ children }: Props) {
         .container {
           max-width: 100%;
           padding: 8rem 2rem;
-          will-change: transform;
         }
 
         .card {
@@ -22,6 +21,7 @@ export function Screen({ children }: Props) {
           padding: 4rem;
           position: relative;
           margin: 0 auto;
+          margin-bottom: 4rem;
           background-color: white;
           border-radius: 0.4rem;
         }
@@ -36,6 +36,11 @@ export function Screen({ children }: Props) {
           .card,
           .container {
             padding: 2rem;
+          }
+
+          .card {
+            width: 100%;
+            margin-top: 4rem;
           }
         }
       `}</style>
