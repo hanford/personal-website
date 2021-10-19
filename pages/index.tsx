@@ -176,6 +176,7 @@ function Landing() {
 
           :global(.card) {
             background-color: #545454;
+            box-shadow: none;
           }
         }
       `}</style>
