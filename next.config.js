@@ -1,6 +1,6 @@
 module.exports = {
   experimental: {
-    swcLoader: false,
-    swcMinify: false,
+    swcLoader: true,
+    swcMinify: true,
   },
 };
