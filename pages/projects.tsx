@@ -131,7 +131,7 @@ export const getStaticProps = async () => {
 
   const myRepos = data.filter(
     ({ fork, owner, stargazers_count: stars }) =>
-      owner.login === USER_NAME && !fork && stars > 0
+      owner.login === USER_NAME && !fork && stars > 10
   );
 
   const repos = sortOn(myRepos, "-stargazers_count");

@@ -17,14 +17,6 @@ export const Head = ({
       content={description || "Engineer - Hacker - Technology Addict"}
     />
 
-    <meta name="theme-color" content="#db594b" />
-
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
-    />
-
     <style
       dangerouslySetInnerHTML={{
         __html: `
@@ -44,10 +36,6 @@ export const Head = ({
           src: local('Brandon'), url('/static/brandon-medium.woff') format('woff');
         }
 
-        html,
-        body {
-          background: linear-gradient(-45deg, #d20b54 0%, #ffb849 100%);
-        }
 
         @media (prefers-color-scheme: dark) {
           html,

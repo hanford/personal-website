@@ -153,7 +153,6 @@ function Landing() {
           border-radius: 1rem;
           position: relative;
           padding: 2rem;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         @media (max-width: 767px) {

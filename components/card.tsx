@@ -12,7 +12,7 @@ export function Card({ children }: Props) {
       <style jsx>{`
         .container {
           max-width: 100%;
-          padding: 8rem 2rem;
+          padding: 4rem 2rem;
         }
 
         .card {
