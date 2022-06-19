@@ -37,7 +37,7 @@ function Landing() {
             </div>
 
             <div className="about">
-              Staff software engineer at{" "}
+              Senior Staff Software Engineer at{" "}
               <a className="anchor" href="https://lattice.com" target="_blank">
                 Lattice
               </a>
