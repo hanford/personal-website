@@ -2,9 +2,7 @@ import Link from "next/link";
 
 export const BackButton = () => (
   <>
-    <Link href="/">
-      <a>×</a>
-    </Link>
+    <Link href="/">×</Link>
 
     <style jsx>{`
       a {

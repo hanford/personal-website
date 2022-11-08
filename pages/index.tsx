@@ -45,9 +45,13 @@ function Landing() {
           </div>
 
           <div className="row">
-            <Link prefetch href="/projects">
+            <Link
+              href="/projects"
+              style={{ display: "flex", width: "100%", textDecoration: "none" }}
+            >
               <button>Projects</button>
             </Link>
+
             <button onClick={toggle}>Contact me</button>
           </div>
 

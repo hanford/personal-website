@@ -18,7 +18,7 @@ export const Article = ({
   isExternal,
 }: Props) => {
   const children = (
-    <a className="container" href={path} target={isExternal ? "_blank" : ""}>
+    <>
       <div className="title">{name}</div>
       <p className="about">{about}</p>
 
@@ -29,6 +29,24 @@ export const Article = ({
           {language}
         </div>
       </div>
+    </>
+  );
+
+  return (
+    <>
+      {isExternal ? (
+        <a
+          className="container"
+          href={path}
+          target={isExternal ? "_blank" : ""}
+        >
+          {children}
+        </a>
+      ) : (
+        <Link href={path} style={{ textDecoration: "none" }}>
+          <span className="container">{children}</span>
+        </Link>
+      )}
 
       <style jsx>{`
         .container {
@@ -83,10 +101,8 @@ export const Article = ({
           }
         }
       `}</style>
-    </a>
+    </>
   );
-
-  return isExternal ? children : <Link href={path}>{children}</Link>;
 };
 
 export default Article;
