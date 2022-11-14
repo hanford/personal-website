@@ -12,7 +12,6 @@ import {
   Title,
 } from "../components";
 
-import withSegment from "../hocs/segment";
 import withTakedown from "../hocs/takedown";
 
 function UberChrome() {
@@ -51,4 +50,4 @@ function UberChrome() {
 
 const hasTakedown = withTakedown(UberChrome);
 
-export default withSegment(hasTakedown);
+export default hasTakedown;

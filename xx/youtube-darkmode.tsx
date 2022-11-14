@@ -9,7 +9,6 @@ import {
   HeroImage,
   Title,
 } from "../components";
-import withSegment from "../hocs/segment";
 
 function YoutubeDarkmode() {
   return (
@@ -50,4 +49,4 @@ function YoutubeDarkmode() {
   );
 }
 
-export default withSegment(YoutubeDarkmode);
+export default YoutubeDarkmode;

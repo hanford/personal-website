@@ -1,13 +1,13 @@
-import GitHub from "github-api";
+// import GitHub from "github-api";
 import sortOn from "sort-on";
 
 import { Article, Head, Card, Title, Container } from "../components";
-import withSegment from "../hocs/segment";
+// import withSegment from "../hocs/segment";
 
-const USER_NAME = "hanford";
-const gh = new GitHub({ token: process.env.GITHUB_ACCESS_TOKEN });
+// const USER_NAME = "hanford";
+// const gh = new GitHub({ token: process.env.GITHUB_ACCESS_TOKEN });
 // tslint:disable-next-line
-const me = gh.getUser(USER_NAME);
+// const me = gh.getUser(USER_NAME);
 
 interface Repo {
   name: string;
@@ -22,7 +22,9 @@ interface Props {
   repos: Array<Repo>;
 }
 
-function Projects({ repos = [] }: Props) {
+function Projects(props: Props) {
+  console.log(props);
+  const { repos = [] } = props;
   return (
     <>
       <Head title="Projects | Jack Hanford" />
@@ -74,7 +76,13 @@ function Projects({ repos = [] }: Props) {
               .
             </p>
 
-            {repos.map(
+            <ul>
+              <li>{props.runtime}</li>
+              <li>{props.uuid}</li>
+              <li>{props.status}</li>
+            </ul>
+
+            {/* {repos.map(
               ({
                 name,
                 id,
@@ -93,7 +101,7 @@ function Projects({ repos = [] }: Props) {
                   isExternal
                 />
               )
-            )}
+            )} */}
           </Card>
         </div>
       </Container>
@@ -117,31 +125,63 @@ function Projects({ repos = [] }: Props) {
   );
 }
 
-export const getStaticProps = async () => {
-  const { data } = await me.listRepos();
-
-  if (!data) {
-    return {
-      revalidate: 60,
-      props: {
-        repos: [],
-      },
-    };
-  }
-
-  const myRepos = data.filter(
-    ({ fork, owner, stargazers_count: stars }) =>
-      owner.login === USER_NAME && !fork && stars > 0
+export const getServerSideProps = async () => {
+  const res = await fetch(
+    "https://api.github.com/users/hanford/repos?per_page=100"
   );
 
-  const repos = sortOn(myRepos, "-stargazers_count");
+  // const data = await res.json();
+  // const filtered = data
+  //   .filter((k) => !k.fork && k.stargazers_count > 0)
+  //   .map(({ name, id, description, stargazers_count, language, html_url }) => ({
+  //     name,
+  //     id,
+  //     description,
+  //     stargazers_count,
+  //     language,
+  //     html_url,
+  //   }));
+
+  // if (!filtered.length) {
+  //   return { props: { repos: [] } };
+  // }
 
   return {
-    revalidate: 60,
     props: {
-      repos,
+      // repos: filtered,
+      status: res.status,
+      runtime: process.env.NEXT_RUNTIME,
+      uuid: await fetch("https://uuid.rocks/plain").then((response) =>
+        response.text()
+      ),
     },
   };
+
+  // return {
+  //   props: {
+  //     repos: [],
+  //   },
+  // };
+  // const { data } = await me.listRepos();
+  // if (!data) {
+  //   return {
+  //     revalidate: 60,
+  //     props: {
+  //       repos: [],
+  //     },
+  //   };
+  // }
+  // const myRepos = data.filter(
+  //   ({ fork, owner, stargazers_count: stars }) =>
+  //     owner.login === USER_NAME && !fork && stars > 0
+  // );
+  // const repos = sortOn(myRepos, "-stargazers_count");
+  // return {
+  //   revalidate: 60,
+  //   props: {
+  //     repos,
+  //   },
+  // };
 };
 
-export default withSegment(Projects);
+export default Projects;

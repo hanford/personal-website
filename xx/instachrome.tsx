@@ -9,7 +9,7 @@ import {
   ButtonRow,
   Title,
 } from "../components";
-import withSegment from "../hocs/segment";
+
 import withTakedown from "../hocs/takedown";
 
 function Instachrome() {
@@ -53,4 +53,4 @@ function Instachrome() {
 
 const hasTakedown = withTakedown(Instachrome);
 
-export default withSegment(hasTakedown);
+export default hasTakedown;

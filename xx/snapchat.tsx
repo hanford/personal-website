@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import { Head } from "../components";
-import withSegment from "../hocs/segment";
 
 function Snapchat() {
   return (
@@ -104,4 +103,4 @@ const Back = (props) => {
   );
 };
 
-export default withSegment(Snapchat);
+export default Snapchat;

@@ -1,11 +1,11 @@
-import hoistStatics from 'hoist-non-react-statics';
-import Segment from 'load-segment';
-import * as React from 'react';
+import hoistStatics from "hoist-non-react-statics";
+import Segment from "load-segment";
+import * as React from "react";
 
-export default Component => {
+export default (Component) => {
   class WithSegment extends React.Component {
     componentDidMount() {
-      Segment({ key: 'ZxJCBTbXZd76MG9R33zSOb43ULCjknzN' });
+      Segment({ key: "ZxJCBTbXZd76MG9R33zSOb43ULCjknzN" });
     }
 
     render() {

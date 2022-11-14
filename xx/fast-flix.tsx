@@ -10,8 +10,6 @@ import {
   Title,
 } from "../components";
 
-import withSegment from "../hocs/segment";
-
 function FastFlix() {
   return (
     <Container>
@@ -47,4 +45,4 @@ function FastFlix() {
   );
 }
 
-export default withSegment(FastFlix);
+export default FastFlix;

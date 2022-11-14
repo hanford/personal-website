@@ -1,5 +1,4 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
@@ -15,15 +14,8 @@
     "sourceMap": true,
     "skipLibCheck": true,
     "baseUrl": ".",
-    "typeRoots": [
-      "./node_modules/@types"
-    ],
-    "lib": [
-      "dom",
-      "es2015",
-      "es2016",
-      "es2017.object"
-    ],
+    "typeRoots": ["./node_modules/@types"],
+    "lib": ["dom", "es2015", "es2016", "es2017.object"],
     "strictNullChecks": true,
     "strict": false,
     "forceConsistentCasingInFileNames": true,
@@ -32,12 +24,6 @@
     "isolatedModules": true,
     "incremental": true
   },
-  "exclude": [
-    "node_modules"
-  ],
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ]
+  "exclude": ["node_modules"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "./styled-jsx.d.ts"]
 }

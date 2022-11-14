@@ -9,8 +9,6 @@ import {
   Card,
 } from "../components";
 
-import withSegment from "../hocs/segment";
-
 function Chirp() {
   return (
     <>
@@ -131,4 +129,4 @@ function Chirp() {
   );
 }
 
-export default withSegment(Chirp);
+export default Chirp;

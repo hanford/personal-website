@@ -1,9 +1,8 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import Drawer from "react-drag-drawer";
+// import Drawer from "react-drag-drawer";
 
 import { Article, Emoji, Head, Card, SocialModal } from "../components";
-import withSegment from "../hocs/segment";
 
 function Landing() {
   const [isExpanded, setExpanded] = useState(false);
@@ -64,13 +63,13 @@ function Landing() {
           ))}
         </Card>
 
-        <Drawer
+        {/* <Drawer
           open={isExpanded}
           onRequestClose={toggle}
           modalElementClass={"card"}
         >
           <SocialModal toggle={toggle} />
-        </Drawer>
+        </Drawer> */}
       </div>
       <style jsx>{`
         .body {
@@ -184,7 +183,7 @@ function Landing() {
   );
 }
 
-export default withSegment(Landing);
+export default Landing;
 
 const projects = [
   {
