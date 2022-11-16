@@ -23,15 +23,13 @@ interface Props {
 }
 
 function Projects(props: Props) {
-  console.log(props);
-  const { repos = [] } = props;
   return (
     <>
       <Head title="Projects | Jack Hanford" />
       <Container>
         <div className="text-reset">
           <Card>
-            <Title>Projects</Title>
+            <Title styles={{ marginBottom: 24 }}>Projects</Title>
 
             {/* <p>
               Lately I've been obssessed with open source software which I keep
@@ -76,14 +74,26 @@ function Projects(props: Props) {
               .
             </p> */}
 
-            <ul>
-              <li>
-                Rendered using at {props.runtime} on {props.renderedAt}
-              </li>
-              <li>Server Generated UUID: {props.uuid}</li>
-              <li>Github API: {props.status}</li>
-            </ul>
+            <div className="col">
+              <div className="row">
+                <span>{capitalizeFirstLetter(props.runtime)} runtime</span>
+                <span>
+                  Rendered at{" "}
+                  {new Date(props.renderedAt).toLocaleString("en-US", {
+                    timeZone: "America/Los_Angeles",
+                  })}
+                </span>
+              </div>
 
+              <div className="row">
+                <span>Server Generated UUID</span>
+                <span>{props.uuid}</span>
+              </div>
+              {/* <div className="row">
+                <span>Github API</span>
+                <span>{props.status}</span>
+              </div> */}
+            </div>
             {/* {repos.map(
               ({
                 name,
@@ -117,6 +127,26 @@ function Projects(props: Props) {
           font-weight: 600;
           text-decoration: underline;
         }
+
+        .col {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .row {
+          display: flex;
+          padding-top: 16px;
+          padding-bottom: 16px;
+          flex-direction: row;
+          width: 100%;
+          justify-content: space-between;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .row:last-of-type {
+          border-bottom: 0;
+        }
+
         @media (prefers-color-scheme: dark) {
           .anchor {
             color: white;
@@ -158,7 +188,7 @@ export const getServerSideProps = async () => {
     props: {
       // repos: filtered,
       status: res.status,
-      renderedAt: new Date().toLocaleString(),
+      renderedAt: Date.now(),
       runtime: process.env.NEXT_RUNTIME,
       uuid: await fetch("https://uuid.rocks/plain").then((response) =>
         response.text()
@@ -192,5 +222,9 @@ export const getServerSideProps = async () => {
   //   },
   // };
 };
+
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 export default Projects;

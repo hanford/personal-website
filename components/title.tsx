@@ -1,6 +1,13 @@
-export const Title = ({ children }: { children: React.ReactNode }) => (
-  <h1>
+export const Title = ({
+  children,
+  styles,
+}: {
+  children: React.ReactNode;
+  styles: React.StyleHTMLAttributes<HTMLHeadingElement>;
+}) => (
+  <h1 style={styles}>
     {children}
+
     <style jsx>{`
       h1 {
         letter-spacing: 0.03em;
