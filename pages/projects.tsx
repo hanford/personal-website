@@ -33,7 +33,7 @@ function Projects(props: Props) {
           <Card>
             <Title>Projects</Title>
 
-            <p>
+            {/* <p>
               Lately I've been obssessed with open source software which I keep
               on{" "}
               <a
@@ -74,18 +74,14 @@ function Projects(props: Props) {
                 Next.js
               </a>
               .
-            </p>
+            </p> */}
 
             <ul>
-              <li>Runtime: {props.runtime}</li>
               <li>
-                Server Generated UUID:
-                {props.uuid}
+                Rendered using at {props.runtime} on {props.renderedAt}
               </li>
-              <li>
-                Github API
-                {props.status}
-              </li>
+              <li>Server Generated UUID: {props.uuid}</li>
+              <li>Github API: {props.status}</li>
             </ul>
 
             {/* {repos.map(
@@ -162,6 +158,7 @@ export const getServerSideProps = async () => {
     props: {
       // repos: filtered,
       status: res.status,
+      renderedAt: new Date().toLocaleString(),
       runtime: process.env.NEXT_RUNTIME,
       uuid: await fetch("https://uuid.rocks/plain").then((response) =>
         response.text()
