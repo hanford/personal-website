@@ -77,9 +77,15 @@ function Projects(props: Props) {
             </p>
 
             <ul>
-              <li>{props.runtime}</li>
-              <li>{props.uuid}</li>
-              <li>{props.status}</li>
+              <li>Runtime: {props.runtime}</li>
+              <li>
+                Server Generated UUID:
+                {props.uuid}
+              </li>
+              <li>
+                Github API
+                {props.status}
+              </li>
             </ul>
 
             {/* {repos.map(
@@ -127,7 +133,13 @@ function Projects(props: Props) {
 
 export const getServerSideProps = async () => {
   const res = await fetch(
-    "https://api.github.com/users/hanford/repos?per_page=100"
+    "https://api.github.com/users/hanford/repos?per_page=100",
+    {
+      headers: {
+        authorization: `Bearer ${process.env.GITHUB_ACCESS_TOKEN}`,
+        Accept: "application/vnd.github.preview",
+      },
+    }
   );
 
   // const data = await res.json();
