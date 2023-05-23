@@ -59,7 +59,7 @@ export const Head = ({
         html,
         body,
         #__next {
-          font-family: Brandon, Arial;
+          font-family: Brandon, -apple-system, BlinkMacSystemFont,Helvetica, Arial, sans-serif;
           width: 100%;
           height: 100%;
           overflow: auto;
