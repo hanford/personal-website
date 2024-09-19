@@ -1,6 +1,3 @@
 {
-  "version": 2,
-  "env": {
-    "GITHUB_ACCESS_TOKEN": "@github-access-token"
-  }
+  "version": 2
 }
