@@ -1,0 +1,82 @@
+---
+export interface Props {
+  path: string;
+  name: string;
+  about: string;
+  stars?: string;
+  language?: string;
+  isExternal: boolean;
+}
+
+const { path, name, about, stars = "", language = "", isExternal } = Astro.props;
+---
+
+<a class="container" href={path} target={isExternal ? "_blank" : ""}>
+  <div class="title">{name}</div>
+  <p class="about">{about}</p>
+
+  {language && (
+    <div class="content">
+      <div class="outer">⭐️ {stars}</div>
+      <div style="margin-left: 1rem;">·</div>
+      <div class="outer" style="margin-left: 1rem;">
+        {language}
+      </div>
+    </div>
+  )}
+
+  <style>
+    .container {
+      display: block;
+      transition: all 0.2s linear;
+      border-radius: 0.4rem;
+      border: 1px solid transparent;
+      padding: 1rem;
+      margin-left: -1rem;
+      margin-right: -1rem;
+      text-decoration: none;
+      color: black;
+    }
+
+    .container:hover {
+      border: 1px solid #d40052;
+    }
+
+    .title {
+      color: #d40052;
+      margin: 0;
+      font-weight: bold;
+      font-size: 1.8rem;
+    }
+
+    .about {
+      margin: 0;
+    }
+
+    .content {
+      display: flex;
+      align-items: center;
+    }
+
+    .outer {
+      font-size: 1.2rem;
+      font-weight: bold;
+      opacity: 0.75;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .container {
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .title {
+        color: white;
+      }
+
+      .outer {
+        opacity: 1;
+      }
+    }
+  </style>
+</a>
+

@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Snapchat | Jack Hanford">
+  <div class="outer">
+    <div class="inner">
+      <img src="/snapcode.png" class="snapcode" alt="Snapchat Snapcode" />
+
+      <div>
+        <a href="/" class="back">Back</a>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .snapcode {
+      max-width: 20rem;
+      flex-grow: 0;
+    }
+
+    .outer {
+      max-width: 100%;
+      width: 100%;
+      background-color: white;
+      color: rgba(0, 0, 0, 0.8);
+      padding: 2rem 0;
+      margin-top: 6rem;
+      min-height: 60rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .outer {
+        color: rgba(255, 255, 255, 0.9);
+        background-color: transparent;
+      }
+    }
+
+    .inner {
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .back {
+      background-color: transparent;
+      margin-top: 3rem;
+      color: white;
+      border: 0;
+      font-size: 1.6rem;
+      cursor: pointer;
+      outline: none;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .back:hover {
+      text-decoration: underline;
+    }
+  </style>
+</Layout>
+

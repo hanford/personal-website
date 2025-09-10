@@ -1,0 +1,50 @@
+<section class="container">
+  <div class="card">
+    <slot />
+  </div>
+</section>
+
+<style>
+  .container {
+    max-width: 100%;
+    padding: 8rem 2rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .card {
+    width: 76rem;
+    max-width: 100%;
+    padding: 4rem;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .card {
+      background: #545454;
+      box-shadow: none;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .card {
+      width: 100%;
+      height: 100%;
+      padding: 2rem;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card {
+      padding: 1.5rem;
+    }
+  }
+</style>

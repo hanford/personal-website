@@ -1,45 +1,21 @@
 {
-  "name": "personal-website",
-  "version": "1.0.0",
-  "description": "",
+  "name": "pw2",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "export": "npm run build && next export",
-    "lint": "tslint '**/*.tsx' -e '**/node_modules/**'",
-    "typecheck": "tsc"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "wrangler pages deploy dist",
+    "astro": "astro"
   },
-  "author": "Jack Hanford",
-  "license": "MIT",
   "dependencies": {
-    "github-api": "~3.0.0",
-    "hoist-non-react-statics": "~2.3.1",
-    "load-segment": "~1.0.1",
-    "next": "12.0.3",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-drag-drawer": "^3.3.0",
-    "request-callback": "~1.0.2",
-    "sort-on": "~1.3.0",
-    "styled-jsx": "^5.0.0-beta.3"
+    "@astrojs/cloudflare": "^12.6.8",
+    "@astrojs/vercel": "^8.2.7",
+    "astro": "^5.12.9",
+    "vercel": "^46.1.0"
   },
   "devDependencies": {
-    "@types/next": "^7.0.6",
-    "@types/react": "^16.7.20",
-    "@types/react-dom": "^16.0.11",
-    "cross-env": "~5.1.1",
-    "husky": "^0.14.3",
-    "prettier": "^1.14.2",
-    "pretty-quick": "^1.6.0",
-    "tslint": "^5.12.1",
-    "tslint-config-prettier": "^1.17.0",
-    "tslint-react": "^3.6.0",
-    "typescript": "^4.1.3"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
+    "@astrojs/check": "^0.5.0",
+    "typescript": "^5.0.0"
   }
 }

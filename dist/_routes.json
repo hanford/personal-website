@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "include": [
+    "/*"
+  ],
+  "exclude": [
+    "/",
+    "/_astro/*",
+    "/apple-touch-icon.png",
+    "/chirp.jpg",
+    "/darkmode.jpg",
+    "/fast-flix.jpg",
+    "/favicon-16x16.png",
+    "/favicon-32x32.png",
+    "/favicon.svg",
+    "/github-trends.png",
+    "/icon144.png",
+    "/icon192.png",
+    "/icon512.png",
+    "/instachrome.jpg",
+    "/instachrome.zip",
+    "/manifest.json",
+    "/snapcode.png",
+    "/trends-dark-mac.png",
+    "/trends-dark.png",
+    "/trends-light-mac.png",
+    "/trends-light.png",
+    "/trends.jpg",
+    "/uber-chrome.jpg",
+    "/fonts/*",
+    "/chirp",
+    "/instachrome",
+    "/projects",
+    "/snapchat",
+    "/uberchrome",
+    "/wedding"
+  ]
+}
