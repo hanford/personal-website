@@ -7,3 +7,6 @@ out
 .vscode
 .vercel
 .env.local
+
+dist
+.astro
