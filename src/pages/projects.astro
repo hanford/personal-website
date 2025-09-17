@@ -16,9 +16,6 @@ const detroitFmt = new Intl.DateTimeFormat('en-US', {
 
 const regeneratedAtLocal = detroitFmt.format(now);
 
-// Also keep an ISO/UTC for debugging or APIs
-const regeneratedAtISO = now.toISOString();
-
 interface GitHubRepo {
   id: number;
   name: string;

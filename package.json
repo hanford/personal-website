@@ -5,12 +5,12 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "wrangler pages deploy",
-    "deploy": "bun run build && bun run preview",
+    "preview": "vercel",
+    "deploy": "vercel --prod",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^12.6.8",
+    "@astrojs/vercel": "^8.2.7",
     "astro": "5.13.7"
   },
   "devDependencies": {

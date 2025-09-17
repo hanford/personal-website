@@ -1,12 +1,10 @@
 import { defineConfig } from "astro/config";
-
-import cloudflare from "@astrojs/cloudflare";
+import vercel from "@astrojs/vercel";
 
 export default defineConfig({
-  adapter: cloudflare({
-    platformProxy: {
-      enabled: true,
+  adapter: vercel({
+    isr: {
+      expiration: 60 * 60 * 24,
     },
-    imageService: "cloudflare",
   }),
 });
