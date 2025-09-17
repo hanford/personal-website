@@ -3,21 +3,20 @@ import Layout from '../layouts/Layout.astro';
 import Article from '../components/Article.astro';
 import Card from '../components/Card.astro';
 
-export const prerender = true;
+// export const prerender = true
 
+// Generate fresh timestamp for each request
 const now = new Date();
 
-// Optional: format for America/Detroit (your local time)
+// Format for America/Detroit (your local time)
 const detroitFmt = new Intl.DateTimeFormat('en-US', {
   year: 'numeric', month: '2-digit', day: '2-digit',
   hour: '2-digit', minute: '2-digit', second: '2-digit',
-  hour12: false
+  hour12: false,
+  timeZone: 'America/Detroit'
 });
 
 const regeneratedAtLocal = detroitFmt.format(now);
-
-// Also keep an ISO/UTC for debugging or APIs
-const regeneratedAtISO = now.toISOString();
 
 interface GitHubRepo {
   id: number;
@@ -28,6 +27,10 @@ interface GitHubRepo {
   html_url: string;
   fork: boolean;
 }
+
+// Set cache headers for better performance
+// Cache for 5 minutes to balance freshness with performance
+Astro.response.headers.set('Cache-Control', 'public, max-age=300, s-maxage=300');
 
 // Fetch repositories from GitHub API
 const username = 'hanford';
@@ -43,7 +46,13 @@ async function fetchAllRepos(username: string): Promise<GitHubRepo[]> {
   
   while (true) {
     const response = await fetch(
-      `https://api.github.com/users/${username}/repos?sort=stargazers&direction=desc&per_page=${perPage}&page=${page}`
+      `https://api.github.com/users/${username}/repos?sort=stargazers&direction=desc&per_page=${perPage}&page=${page}`,
+      {
+        headers: {
+          'Accept': 'application/vnd.github.v3+json',
+          'User-Agent': 'personal-website'
+        }
+      }
     );
     
     if (!response.ok) {
