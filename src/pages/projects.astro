@@ -1,15 +1,19 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Article from '../components/Article.astro';
-import Card from '../components/Card.astro';
+import Root from "../layouts/Root.astro";
+import Article from "../components/Article.astro";
+import Card from "../components/Card.astro";
 
 const now = new Date();
 
-const pstFmt = new Intl.DateTimeFormat('en-US', {
-  year: 'numeric', month: '2-digit', day: '2-digit',
-  hour: '2-digit', minute: '2-digit', second: '2-digit',
+const pstFmt = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+  hour: "2-digit",
+  minute: "2-digit",
+  second: "2-digit",
   hour12: false,
-  timeZone: 'America/Los_Angeles'
+  timeZone: "America/Los_Angeles",
 });
 
 const regeneratedAtLocal = pstFmt.format(now);
@@ -19,7 +23,7 @@ const USER_NAME = "hanford";
 interface GitHubRepo {
   id: number;
   owner: {
-    login: string
+    login: string;
   };
   name: string;
   description: string | null;
@@ -30,16 +34,21 @@ interface GitHubRepo {
 }
 
 async function fetchGitHubRepos(username: string) {
-  const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`, {
-    headers: {
-      'Authorization': `token ${import.meta.env.GITHUB_ACCESS_TOKEN}`,
-      'Accept': 'application/vnd.github.v3+json',
-      'User-Agent': 'personal-website'
+  const response = await fetch(
+    `https://api.github.com/users/${username}/repos?sort=updated&per_page=100`,
+    {
+      headers: {
+        Authorization: `token ${import.meta.env.GITHUB_ACCESS_TOKEN}`,
+        Accept: "application/vnd.github.v3+json",
+        "User-Agent": "personal-website",
+      },
     }
-  });
+  );
 
   if (!response.ok) {
-    throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
+    throw new Error(
+      `GitHub API error: ${response.status} ${response.statusText}`
+    );
   }
 
   return response.json();
@@ -50,33 +59,31 @@ const data = await fetchGitHubRepos(USER_NAME);
 const repos = data
   .filter(
     ({ fork, owner, stargazers_count: stars }: GitHubRepo) =>
-      owner.login === USER_NAME && !fork && stars > 5
+      owner.login === USER_NAME && !fork && stars >= 5
   )
-  .sort((a: GitHubRepo, b: GitHubRepo) => b.stargazers_count - a.stargazers_count);
+  .sort(
+    (a: GitHubRepo, b: GitHubRepo) => b.stargazers_count - a.stargazers_count
+  );
 ---
 
-<Layout title="Projects | Jack Hanford">
+<Root title="Projects | Jack Hanford">
   <a href={import.meta.env.BASE_URL} class="back-button">
     <span class="arrow">←</span>
-     <span>Back</span>
+    <span>Back</span>
   </a>
 
   <Card>
     <h1 class="title">Projects</h1>
 
     <p>
-      Lately I've been obssessed with open source software which I keep
-      on{" "}
-      <a
-        class="anchor"
-        href="https://github.com/hanford"
-        target="_blank"
-      >
+      Lately I've been obssessed with open source software which I keep on{" "}
+      <a class="anchor" href="https://github.com/hanford" target="_blank">
         GitHub
       </a>
-      . I've been writing JavaScript professionally for around 4 years,
-      and have become an expert with some of the latest and greatest
-      frontend frameworks including{" "}
+      . I've been writing JavaScript professionally for around 4 years, and have
+      become an expert with some of the latest and greatest frontend frameworks including{
+        " "
+      }
       <a
         class="anchor"
         href="https://www.npmjs.com/package/virtual-dom"
@@ -89,34 +96,28 @@ const repos = data
         AngularJS
       </a>
       ,{" "}
-      <a
-        class="anchor"
-        href="https://facebook.github.io/react"
-        target="_blank"
-      >
+      <a class="anchor" href="https://facebook.github.io/react" target="_blank">
         ReactJS
       </a>{" "}
       and most recently{" "}
-      <a
-        class="anchor"
-        href="https://github.com/zeit/next.js"
-        target="_blank"
-      >
+      <a class="anchor" href="https://github.com/zeit/next.js" target="_blank">
         Next.js
       </a>
       .
     </p>
 
-    {repos.map((repo: GitHubRepo) => (
-      <Article
-        path={repo.html_url}
-        name={repo.name}
-        about={repo.description || 'No description available'}
-        stars={repo.stargazers_count.toString()}
-        language={repo.language || undefined}
-        isExternal={true}
-      />
-    ))}
+    {
+      repos.map((repo: GitHubRepo) => (
+        <Article
+          path={repo.html_url}
+          name={repo.name}
+          about={repo.description || "No description available"}
+          stars={repo.stargazers_count.toString()}
+          language={repo.language || undefined}
+          isExternal={true}
+        />
+      ))
+    }
 
     <p><pre>Rendered {regeneratedAtLocal}</pre></p>
   </Card>
@@ -131,7 +132,7 @@ const repos = data
       flex-direction: column;
       font-size: 1.6rem;
     }
-    
+
     .title {
       margin: 0 0 2rem 0;
       font-size: 2rem;
@@ -187,6 +188,9 @@ const repos = data
       .anchor {
         color: white;
       }
+      .back-button {
+        color: white;
+      }
     }
   </style>
-</Layout>
+</Root>

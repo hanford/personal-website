@@ -8,22 +8,31 @@ export interface Props {
   isExternal: boolean;
 }
 
-const { path, name, about, stars = "", language = "", isExternal } = Astro.props;
+const {
+  path,
+  name,
+  about,
+  stars = "",
+  language = "",
+  isExternal,
+} = Astro.props;
 ---
 
 <a class="container" href={path} target={isExternal ? "_blank" : ""}>
   <div class="title">{name}</div>
   <p class="about">{about}</p>
 
-  {language && (
-    <div class="content">
-      <div class="outer">⭐️ {stars}</div>
-      <div style="margin-left: 1rem;">·</div>
-      <div class="outer" style="margin-left: 1rem;">
-        {language}
+  {
+    language && (
+      <div class="content">
+        <div class="outer">⭐️ {stars}</div>
+        <div style="margin-left: 1rem;">·</div>
+        <div class="outer" style="margin-left: 1rem;">
+          {language}
+        </div>
       </div>
-    </div>
-  )}
+    )
+  }
 
   <style>
     .container {
@@ -79,4 +88,3 @@ const { path, name, about, stars = "", language = "", isExternal } = Astro.props
     }
   </style>
 </a>
-

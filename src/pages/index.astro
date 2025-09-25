@@ -1,8 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Article from '../components/Article.astro';
-import SocialModal from '../components/SocialModal.astro';
-import Card from '../components/Card.astro';
+import Root from "../layouts/Root.astro";
+import Article from "../components/Article.astro";
+import SocialModal from "../components/SocialModal.astro";
+import Card from "../components/Card.astro";
 
 const projects = [
   {
@@ -48,7 +48,7 @@ const projects = [
 ];
 ---
 
-<Layout>
+<Root>
   <Card>
     <span class="emoji">👋</span>
 
@@ -59,9 +59,7 @@ const projects = [
 
       <div class="about">
         Engineering leader at{" "}
-        <a class="link" href="https://lattice.com" target="_blank">
-          Lattice
-        </a>
+        <a class="link" href="https://lattice.com" target="_blank"> Lattice </a>
       </div>
     </div>
 
@@ -74,16 +72,17 @@ const projects = [
 
     <div class="title">Projects</div>
 
-    {projects.map((p: any) => (
-      <Article
-        path={p.path}
-        name={p.name}
-        about={p.about}
-        isExternal={p.isExternal}
-      />
-    ))}
+    {
+      projects.map((p: any) => (
+        <Article
+          path={p.path}
+          name={p.name}
+          about={p.about}
+          isExternal={p.isExternal}
+        />
+      ))
+    }
   </Card>
-
 
   <dialog id="contactDialog">
     <div class="dialog-content">
@@ -99,8 +98,13 @@ const projects = [
       display: block;
     }
 
-    dialog, dialog::backdrop {
-      transition: display 1s allow-discrete, overlay 1s allow-discrete, opacity 0.1s, transform 0.2s;
+    dialog,
+    dialog::backdrop {
+      transition:
+        display 1s allow-discrete,
+        overlay 1s allow-discrete,
+        opacity 0.1s,
+        transform 0.2s;
       opacity: 0;
     }
 
@@ -119,7 +123,6 @@ const projects = [
     dialog[open]::backdrop {
       opacity: 1;
     }
-    
 
     @starting-style {
       dialog[open]::backdrop {
@@ -199,7 +202,8 @@ const projects = [
       width: 100%;
       gap: 1rem;
 
-      a, .btn {
+      a,
+      .btn {
         width: 100%;
       }
     }
@@ -267,24 +271,24 @@ const projects = [
   </style>
 
   <script>
-    const contactBtn = document.getElementById('contactBtn');
-    const dialog = document.getElementById('contactDialog');
-    const closeBtn = document.getElementById('closeBtn');
+    const contactBtn = document.getElementById("contactBtn");
+    const dialog = document.getElementById("contactDialog");
+    const closeBtn = document.getElementById("closeBtn");
 
     if (contactBtn && dialog instanceof HTMLDialogElement && closeBtn) {
-      contactBtn.addEventListener('click', () => {
+      contactBtn.addEventListener("click", () => {
         dialog.showModal();
       });
 
-      closeBtn.addEventListener('click', () => {
+      closeBtn.addEventListener("click", () => {
         dialog.close();
       });
 
-      dialog.addEventListener('click', (event) => {
+      dialog.addEventListener("click", (event) => {
         if (event.target === dialog) {
           dialog.close();
         }
       });
     }
   </script>
-</Layout>
+</Root>

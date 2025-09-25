@@ -4,10 +4,13 @@ export interface Props {
   description?: string;
 }
 
-const { title = "Jack Hanford", description = "Engineer - Hacker - Technology Addict" } = Astro.props;
+const {
+  title = "Jack Hanford",
+  description = "Engineer - Hacker - Technology Addict",
+} = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,41 +18,31 @@ const { title = "Jack Hanford", description = "Engineer - Hacker - Technology Ad
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="theme-color" content="#db594b" />
-    
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/favicon-16x16.png"
-    />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/manifest.json" />
-    
+
     <style>
       @font-face {
-        font-family: 'Brandon';
+        font-family: "Brandon";
         font-style: normal;
         font-weight: 300;
         font-display: auto;
-        src: local('Brandon'), url('/fonts/brandon-regular.woff') format('woff');
+        src:
+          local("Brandon"),
+          url("/fonts/brandon-regular.woff") format("woff");
       }
 
       @font-face {
-        font-family: 'Brandon';
+        font-family: "Brandon";
         font-style: normal;
         font-weight: 600;
         font-display: auto;
-        src: local('Brandon'), url('/fonts/brandon-medium.woff') format('woff');
+        src:
+          local("Brandon"),
+          url("/fonts/brandon-medium.woff") format("woff");
       }
 
       html,
@@ -66,7 +59,13 @@ const { title = "Jack Hanford", description = "Engineer - Hacker - Technology Ad
 
       html,
       body {
-        font-family: Brandon, -apple-system, BlinkMacSystemFont,Helvetica, Arial, sans-serif;
+        font-family:
+          Brandon,
+          -apple-system,
+          BlinkMacSystemFont,
+          Helvetica,
+          Arial,
+          sans-serif;
         width: 100%;
         height: 100%;
         overflow: auto;
@@ -77,11 +76,12 @@ const { title = "Jack Hanford", description = "Engineer - Hacker - Technology Ad
       }
 
       @media (prefers-color-scheme: dark) {
-        html, body {
-          color: rgba(255,255,255,0.9);
+        html,
+        body {
+          color: rgba(255, 255, 255, 0.9);
         }
       }
-        
+
       * {
         box-sizing: border-box;
       }
