@@ -12,7 +12,7 @@ const pstFmt = new Intl.DateTimeFormat("en-US", {
   hour: "2-digit",
   minute: "2-digit",
   second: "2-digit",
-  hour12: false,
+  hour12: true,
   timeZone: "America/Los_Angeles",
 });
 
@@ -54,7 +54,10 @@ async function fetchGitHubRepos(username: string) {
   return response.json();
 }
 
+const startTime = Date.now();
 const data = await fetchGitHubRepos(USER_NAME);
+const endTime = Date.now();
+const responseTime = endTime - startTime;
 
 const repos = data
   .filter(
@@ -119,10 +122,19 @@ const repos = data
       ))
     }
 
-    <p><pre>Rendered {regeneratedAtLocal}</pre></p>
+    <p class="meta">
+      Rendered {regeneratedAtLocal}<br />
+      Github API response time: {responseTime}ms
+    </p>
   </Card>
 
   <style>
+    .meta {
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.4);
+      font-family: monospace;
+    }
+
     .container {
       width: 100%;
       display: flex;
