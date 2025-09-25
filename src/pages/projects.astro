@@ -57,7 +57,8 @@ const repos = data
 
 <Layout title="Projects | Jack Hanford">
   <a href={import.meta.env.BASE_URL} class="back-button">
-    ← Back
+    <span class="arrow">←</span>
+     <span>Back</span>
   </a>
 
   <Card>
@@ -153,6 +154,15 @@ const repos = data
       z-index: 2;
       backdrop-filter: blur(20px);
       background-color: transparent;
+    }
+
+    .arrow {
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+
+    .back-button:hover .arrow {
+      transform: translateX(-4px);
     }
 
     @media (max-width: 767px) {
