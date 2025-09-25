@@ -3,9 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import Article from '../components/Article.astro';
 import Card from '../components/Card.astro';
 
-export const prerender = true
-
-// Generate fresh timestamp for each request
 const now = new Date();
 
 const pstFmt = new Intl.DateTimeFormat('en-US', {
@@ -17,8 +14,13 @@ const pstFmt = new Intl.DateTimeFormat('en-US', {
 
 const regeneratedAtLocal = pstFmt.format(now);
 
+const USER_NAME = "hanford";
+
 interface GitHubRepo {
   id: number;
+  owner: {
+    login: string
+  };
   name: string;
   description: string | null;
   stargazers_count: number;
@@ -27,59 +29,30 @@ interface GitHubRepo {
   fork: boolean;
 }
 
-// Fetch repositories from GitHub API
-const username = 'hanford';
-// Adjust this value to show repos with different minimum star counts
-// Set to 0 to show all repos, or higher numbers like 10, 50, 100 for more selective filtering
-const minStars = 5; // Only show repos with at least 5 stars
+async function fetchGitHubRepos(username: string) {
+  const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`, {
+    headers: {
+      'Authorization': `token ${import.meta.env.GITHUB_ACCESS_TOKEN}`,
+      'Accept': 'application/vnd.github.v3+json',
+      'User-Agent': 'personal-website'
+    }
+  });
 
-// Function to fetch all repositories using pagination
-async function fetchAllRepos(username: string): Promise<GitHubRepo[]> {
-  const allRepos: GitHubRepo[] = [];
-  let page = 1;
-  const perPage = 100;
-  
-  while (true) {
-    const response = await fetch(
-      `https://api.github.com/users/${username}/repos?sort=stargazers&direction=desc&per_page=${perPage}&page=${page}`,
-      {
-        headers: {
-          'Accept': 'application/vnd.github.v3+json',
-        }
-      }
-    );
-    
-    if (!response.ok) {
-      console.error(`Failed to fetch repos page ${page}:`, response.status);
-      break;
-    }
-    
-    const repos: GitHubRepo[] = await response.json();
-    
-    // If we get fewer repos than perPage, we've reached the end
-    if (repos.length < perPage) {
-      allRepos.push(...repos);
-      break;
-    }
-    
-    allRepos.push(...repos);
-    page++;
+  if (!response.ok) {
+    throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
   }
-  
-  return allRepos;
+
+  return response.json();
 }
 
-const repos: GitHubRepo[] = await fetchAllRepos(username)
-  .then((data: GitHubRepo[]) => {
-    // Filter out forks and repos with fewer than minStars
-    return data
-      .filter((repo: GitHubRepo) => !repo.fork && repo.stargazers_count >= minStars)
-      .sort((a: GitHubRepo, b: GitHubRepo) => b.stargazers_count - a.stargazers_count);
-  })
-  .catch(error => {
-    console.error('Error fetching repos:', error);
-    return [];
-  });
+const data = await fetchGitHubRepos(USER_NAME);
+
+const repos = data
+  .filter(
+    ({ fork, owner, stargazers_count: stars }: GitHubRepo) =>
+      owner.login === USER_NAME && !fork && stars > 5
+  )
+  .sort((a: GitHubRepo, b: GitHubRepo) => b.stargazers_count - a.stargazers_count);
 ---
 
 <Layout title="Projects | Jack Hanford">
@@ -133,7 +106,7 @@ const repos: GitHubRepo[] = await fetchAllRepos(username)
       .
     </p>
 
-    {repos.map((repo) => (
+    {repos.map((repo: GitHubRepo) => (
       <Article
         path={repo.html_url}
         name={repo.name}
@@ -144,7 +117,7 @@ const repos: GitHubRepo[] = await fetchAllRepos(username)
       />
     ))}
 
-    <p><pre>rendered {regeneratedAtLocal}</pre></p>
+    <p><pre>Rendered {regeneratedAtLocal}</pre></p>
   </Card>
 
   <style>
